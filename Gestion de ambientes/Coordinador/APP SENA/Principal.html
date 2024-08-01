@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Principal.css">
+  <link rel="stylesheet" href="menu_notificacion.css">
+  <link rel="stylesheet" href="Pass.css"> 
+  <link rel="stylesheet" href="User.css"> 
+</head>
+
+<body>
+  <div class="grid-container">
+    
+    <header class="header">
+      <nav class="contenedor_header">
+        <div class="navheader">
+          <button class="menu-toggle" id="toggleButton">
+            <img src="IMG-ICONS/bx-menu.svg" alt="menu">
+          </button>
+          <ul class="navigation-menu">
+            <li class="navigation-item">
+              <img src="IMG-ICONS/bx-lock .svg" alt="Notificaciones" class="subheader__img">
+              <a href="#" class="menu_item" id="submenuToggle1">Contraseña</a>
+            </li>
+            <li class="navigation-item">
+              <img src="IMG-ICONS/bx-log-out.svg" alt="Notificaciones" class="subheader__img">
+              <a href="#" class="menu_item" id="submenuToggle2">Salir</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+    <nav class="navbar">
+      <img src="IMG-ICONS/Logo SENA.png" alt="logosena" class="img_sena">
+      <ul class="navbar__list">
+        <!-- Submenú: Gestión de Usuarios -->
+        <li class="navbar__item">
+          <div class="navbar__button navbar__button--click" id="gestion-usuarios">
+            <div class="navbar__circle">
+              <img src="IMG-ICONS\bxs-user-account.svg" class="navbar__img">
+            </div>
+            <a href="#" class="navbar__link">Gestión de Usuarios</a>
+            <img src="IMG-ICONS\bx-chevron-down.svg" class="navbar__arrow">
+          </div>
+          <ul class="navbar__submenu" id="submenu-usuarios">
+            <li class="navbar__submenu-item"> 
+              <img src="IMG-ICONS/bx-user-plus.svg" class="navbar__submenu-img">
+              <a href="#" id="createUserLink" class="navbar__submenu-link">Crear Usuario</a>
+            </li>
+            <li class="navbar__submenu-item"> 
+              <img src="IMG-ICONS/bx-cog.svg" class="navbar__submenu-img">
+              <a href="#" class="navbar__submenu-link">Ajustar Usuario</a>
+            </li>
+          </ul>
+        </li>
+    
+        <!-- Submenú: Gestión de Ambientes -->
+        <li class="navbar__item">
+          <div class="navbar__button navbar__button--click" id="gestion-ambientes">
+            <div class="navbar__circle">
+              <img src="IMG-ICONS/BxBuildingHouse.svg" class="navbar__img">
+            </div>
+            <a href="#" class="navbar__link">Gestión de Ambientes</a>
+            <img src="IMG-ICONS/bx-chevron-down.svg" class="navbar__arrow">
+          </div>
+          <ul class="navbar__submenu" id="submenu-ambientes">
+            <li class="navbar__submenu-item"> 
+              <img src="IMG-ICONS/bxs-clinic.svg" class="navbar__submenu-img">
+              <a href="#" class="navbar__submenu-link">Crear Ambiente</a>
+            </li>
+            <li class="navbar__submenu-item"> 
+              <img src="IMG-ICONS/bx-cog.svg" class="navbar__submenu-img">
+              <a href="#" class="navbar__submenu-link">Ajustar Ambiente</a>
+            </li>
+            <li class="navbar__submenu-item"> 
+              <img src="IMG-ICONS\bx-comment-check.svg" class="navbar__submenu-img">
+              <a href="#" class="navbar__submenu-link">Reportes</a>
+            </li>
+          </ul>
+        </li>
+    
+        <!-- Elemento simple: Gestión de Reservas -->
+        <li class="navbar__item">
+          <div class="navbar__button">
+            <div class="navbar__circle">
+              <img src="IMG-ICONS/bxs-calendar.svg" class="navbar__img">
+            </div>
+            <a href="#" class="navbar__link">Gestión de Reservas</a>
+          </div>
+        </li>
+        <!-- Elemento simple: Historial -->
+        <li class="navbar__item">
+          <div class="navbar__button">
+            <div class="navbar__circle">
+              <img src="IMG-ICONS/bx-line-chart.svg" class="navbar__img">
+            </div>
+            <a href="#" class="navbar__link">Historial</a>
+            <img src="IMG-ICONS/bx-chevron-down.svg" class="navbar__arrow">
+          </div>
+          <ul class="navbar__submenu" id="submenu-historial">
+            <li class="navbar__submenu-item"> 
+              <img src="IMG-ICONS/bx-calendar-x.svg" class="navbar__submenu-img">
+              <a href="#" class="navbar__submenu-link">Cancelación reservas</a>
+            </li>
+            <li class="navbar__submenu-item"> 
+              <img src="IMG-ICONS/bx-chalkboard.svg" class="navbar__submenu-img">
+              <a href="#" class="navbar__submenu-link">Uso de Ambientes</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main">
+      <div class="contenedor_main hidden">
+        <div class="form-container">
+          <div class="titulo_form">
+            <img src="IMG-ICONS/bxs-key.svg" alt="Cambio de Contraseña" class="form-icon">
+            <h2>Cambio de Contraseña</h2>
+            <button type="button" class="close-form">
+            <img src="IMG-ICONS/bx-x.svg" alt="" class="close-icon">
+            </button>
+          </div>
+          <form class="password-form">
+            <div class="form-group">
+              <label for="current-password">Contraseña Actual</label>
+              <div class="password-wrapper">
+                <input type="password" id="current-password" name="current-password">
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('current-password')">👁️</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="new-password">Nueva Contraseña</label>
+              <div class="password-wrapper">
+                <input type="password" id="new-password" name="new-password">
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('new-password')">👁️</button>
+              </div>
+            </div>
+            <button type="submit" class="submit-button">Actualizar</button>
+          </form>
+        </div>
+      </div>
+
+    <div class="form_newuser">
+            <form class="newuser">
+              <div class="container_tittleform">
+                <div class="icon-wrapper">
+                  <img src="IMG-ICONS/bx-user-plus.svg" class="main_form-img" alt="Ícono de usuario">
+                </div>
+                <h2 class="tittle_newuser">Datos Nuevo Usuario</h2>
+              </div>
+              <button type="button" class="close-form2">
+                  <img src="IMG-ICONS/bx-x.svg" alt="" class="close-icon2">
+                  </button>
+                <div class="form-row">
+                    <div class="form_userlabel">
+                        <label for="full-name" class="form-label">Nombre:</label>
+                        <input type="text" id="full-name" name="full-name" class="form-control" placeholder="Nombre Completo" required>
+                    </div>
+                    <div class="form_userlabel">
+                        <label for="sena-email" class="form-label">Correo SENA:</label>
+                        <input type="email" id="sena-email" name="sena-email" class="form-control" placeholder="correo@sena.edu.co" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form_userlabel">
+                        <label for="alt-email" class="form-label">Correo Alternativo:</label>
+                        <input type="email" id="alt-email" name="alt-email" class="form-control" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div class="form_userlabel">
+                        <label for="phone" class="form-label">Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Número de Teléfono" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form_userlabel">
+                        <label for="id-number" class="form-label">Número Identificación:</label>
+                        <input type="text" id="id-number" name="id-number" class="form-control" placeholder="Número de Identificación" required>
+                    </div>
+                    <div class="form_userlabel">
+                        <label for="password" class="form-label">Contraseña:</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+                    </div>
+                </div>
+
+                    <legend class="form-label">Rol:</legend>
+                    <div class="form-check">
+                        <input type="radio" id="coordinador" name="role" value="coordinador" class="form-check-input" required>
+                        <label for="coordinador" class="form-check-label">Coordinador</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="equipo-alistamiento" name="role" value="equipo-alistamiento" class="form-check-input" required>
+                        <label for="equipo-alistamiento" class="form-check-label">Alistamiento</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="instructor" name="role" value="instructor" class="form-check-input" required>
+                        <label for="instructor" class="form-check-label">Instructor</label>
+                    </div>
+
+                <div class="botton_newuser">
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </div>
+
+                <img src="IMG-ICONS/sena-boys.jpg" class="main_img_end">
+            </form>
+        </div>
+    </main>   
+  
+    
+    <footer class="footer">
+      <!-- Contenido del FOOTER -->
+      <p>&copy; 2024 Todos los derechos reservados.</p>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  <script src="Principal.js"></script>
+  <script src="Pass.js"></script>
+  <script src="User.js"></script>
+  <script src="menu_notificacion.js"></script>
+</body>
+</html>
+

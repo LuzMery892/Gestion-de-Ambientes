@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+  
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 5fr 4fr 1fr;
+    gap: 0;
+    width: 100vw; /* Usa el ancho completo del viewport */
+    height: 100vh;
+    border: 2px solid #ccc;
+    padding: 0;
+}
+  
+.header {
+    grid-column: 3 / span 6; /* Ajusta el área de la columna */
+    grid-row: 1 / span 1;
+    background-color: #04324D;
+}
+  
+.navbar {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 6;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Usa el ancho completo del contenedor */
+}
+  
+.footer {
+    grid-column: 3 / span 4; 
+    grid-row: 5;
+    background-color: #dca5a5;
+}
+
+.main {
+    position: relative;
+    grid-column: 3 / span 4; /* Ajusta para que ocupe el espacio deseado */
+    grid-row: 2 / span 4;   /* Ajusta para ocupar el espacio deseado */
+    background-color: white;
+    display: flex;
+    justify-content: center; /* Centra el formulario horizontalmente */
+    align-items: center; /* Centra el formulario verticalmente */
+    overflow: hidden; /* Evita que el contenido se desborde del contenedor */
+}
+
+.header, .navbar, .main, .footer {
+    border: 2px solid #1f1d1d;
+    padding: 0px;
+  }
+  
+
+  .form_newuser {
+    position: relative; /* Cambiado a relative para que ocupe el contenedor principal */
+    background-color: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Ajusta el espaciado interno según sea necesario */
+    width: 90%; /* Ajusta el formulario al 100% del ancho del contenedor */
+    height: 90%; /* Ajusta el formulario al 100% de la altura del contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    border: 3px solid #ccc; /* Borde gris */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: auto; /* Permite el desplazamiento si el contenido excede el tamaño del contenedor */
+}
+
+
+.form_newuser > * {
+    max-width: 100%; /* Evita que los elementos internos se desborden del formulario */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+
+/* Estilo para cada fila de formulario */
+.form-row {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 50px; /* Espacio entre los elementos dentro de la fila */
+    justify-content: space-between; 
+}
+
+/* Ajustar los elementos dentro de cada fila */
+.form_userlabel {
+    flex: 1 1 calc(50% - 25px); 
+    max-width: calc(50% - 25px); 
+    display: flex;
+    flex-direction: column;   
+    position: relative;
+}
+
+.form-control {
+    width: 95%; /* Ajusta al ancho del contenedor padre */
+    max-width: 500px; /* Ajusta según el ancho máximo deseado */
+    height: 40px; /* Altura del campo de entrada */
+    padding: 10px 15px; /* Espacio interno del campo */
+    font-size: 14px; /* Tamaño de la fuente */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    border: 2px solid #ccc; /* Sin borde por defecto */
+    border-radius: 10px; /* Sin bordes redondeados */
+    background-color:  white;
+    color: black; /* Color del texto */
+}
+
+.tittle_newuser {
+    font-size: 18px; 
+    margin: 20px;    
+    color:#04324D;
+      }
+
+/* Estilo para el fieldset */
+.form_rollabel {
+    padding: 20px; 
+    border-left: 1px solid #ddd; 
+    margin-top: 10px; 
+}
+
+/* Estilo para el legend */
+.form-label {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    margin-left: 20px
+    ;
+    font-weight: bold; 
+    color: #04324D;
+}
+
+/* Estilo para cada opción dentro del fieldset */
+.form-check {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+/* Ajusta el tamaño del input de radio */
+.form-check-input {
+    margin-right: 10px; 
+    width: 10px; 
+    height: 10px; 
+    background-color: #1fb530;
+}
+
+/* Ajusta el margen y tamaño de las etiquetas */
+.form-check-label {
+    font-size: 12px; 
+    color:#04324D;
+    margin: 0; 
+}
+
+/* Botón de crear usuario */
+.btn-primary {
+    background-color: #04324D;
+    color: #fff;
+    padding: 10px 60px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 16px;
+    margin-left: 250px;
+}
+.btn-primary:hover {
+    background-color: #1fb530;
+}
+
+.close-form2 {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.close-icon2 {
+    width: 24px;
+    height: 24px;
+}
+
+.main_img_end {
+    position: absolute;
+    bottom: 10px; /* Distancia desde la parte inferior del contenedor */
+    right: 10px; /* Distancia desde la parte derecha del contenedor */
+    width: 250px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: 1; 
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.container_tittleform {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-wrapper {
+    width: 50px; /* Tamaño del círculo */
+    height: 50px; /* Tamaño del círculo */
+    background-color: #04324D; /* Color verde del círculo */
+    border-radius: 50%; /* Hace que el contenedor sea un círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Espacio entre el círculo y el texto */
+  }
+  
+  .main_form-img {
+    width: 30px; /* Tamaño del ícono dentro del círculo */
+    height: 30px; /* Tamaño del ícono dentro del círculo */
+    filter: brightness(0) invert(1);
+  }

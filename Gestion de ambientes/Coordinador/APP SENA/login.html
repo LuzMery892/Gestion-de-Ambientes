@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="Login.css">
+
+</head>
+
+<body>
+<div class="grid-container">
+    
+  <header class="header">
+    <div class="container">
+      <img src="IMG-ICONS/Logo SENA.png" alt="Logo SENA" class="img_sena">
+      <div class="header-info">
+        <h1>Centro de Servicios de Salud</h1>
+        <h2>Regional Antioquia</h2>
+      </div>
+    </div>
+      <div class="header-img">
+        <img src="IMG-ICONS/sena-push.jpg" alt="Logo SENA" class="transicion_img">
+        <img src="IMG-ICONS/Instructor-sena.png" alt="Logo SENA" class="transicion_img">
+        <img src="IMG-ICONS/sena-boys.jpg" alt="Logo SENA" class=" transicion_img">
+      </div>
+  </header>
+
+  <nav class="navbar">
+    <img src="" alt="Notificaciones" class="img_principal">
+  </nav>
+
+
+  <main class="main">
+    <div class="container_main">
+      <form class="login-form">
+        <h2 class="form-title">Inicio de Sesión</h2>
+        <div class="form-group">
+          <label for="data_login">Nombre Usuario</label>
+          <div class="user-wrapper">
+            <input type="text" name="usuario" placeholder="" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="data_login">Contraseña</label>
+          <div class="password-wrapper">
+            <input id="password" type="password" name="contraseña" placeholder="" required>
+            <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+          </div>  
+        </div>
+        <div class="link_pass">
+        <a href="#">¿Olvidó su contraseña?</a>
+      </div>
+        <div class="form-group">
+          <button type="submit" class="submit-button">Ingresar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2024 Centro de Servicios de Salud - Regional Antioquia
+  </footer>
+</div>
+<script src="Login.js"></script>
+</body>
+</html>

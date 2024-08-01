@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 5fr 4fr 1fr;
+    gap: 0;
+    width: 100vw; /* Asegura que el contenedor use el ancho completo del viewport */
+    height: 100vh;
+    border: 2px solid #ccc;
+    padding: 0;
+  }
+  
+  .header, .navbar, .main, .footer {
+    border: 2px solid #1f1d1d;
+    padding: 0px;
+  }
+  
+  .header {
+    grid-column: 3 / span 2; /* Asegura que el área de la columna esté bien ajustada */
+    grid-row: 1/span 1;
+    background-color: #04324D;
+  }
+  
+  .navbar {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 6;
+    display: flex; /* Cambiado a flex para un comportamiento de bloque */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: -5%; 
+    background-color: #f6f1f1a4;
+  }
+  
+  .main {
+    grid-column: 3 / span 6; /* Ajusta para que coincida con la cabecera */
+    grid-row: 2 / span 6;
+    background-color:white;
+    display: flex;
+  }
+  
+  .footer {
+    grid-column: 3 / span 4; /* Ajusta para que coincida con la cabecera */
+    grid-row: 5;
+    background-color: #dca5a5;
+  }
+  
+  
+  /* Estilo general para el contenedor del header */
+  .contenedor_header {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos al final del contenedor */
+    align-items: flex-start; /* Centra los elementos verticalmente */
+    padding: 10px; /* Espaciado interno */
+    position: relative; /* Necesario para posicionar el menú desplegable */
+  }
+  
+  /* Estilo para el contenedor de la navegación */
+  .navheader {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    position: relative; /* Necesario para el posicionamiento absoluto del menú */
+  }
+  
+  /* Estilo para el botón de menú */
+  .menu-toggle {
+    background: none; /* Sin fondo para el botón */
+    border: none; /* Sin borde para el botón */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    padding: 0; /* Sin espaciado interno */
+    margin-right: 20px; /* Espacio a la derecha del botón */
+  
+  }
+  
+  /* Estilo para la imagen dentro del botón */
+  .menu-toggle img {
+    width: 30px; /* Ajusta el tamaño de la imagen del menú */
+    height: auto; /* Mantiene la proporción de la imagen */
+    filter: brightness(0) invert(1);
+  }
+  
+  /* Estilo para el menú de navegación */
+  .navigation-menu {
+    background-color: white;
+    display: none; /* Oculta el menú por defecto */
+    list-style: none; /* Elimina las viñetas de la lista */
+    padding: 0; /* Sin espaciado interno */
+    margin: 0; /* Sin margen */
+    position: absolute; /* Posiciona el menú absolutamente */
+    top: 80%; /* Posiciona el menú debajo del contenedor */
+    right: 50%; /* Alinea el menú a la izquierda */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
+    padding: 10px; /* Espaciado interno del menú */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    display: flex;
+    flex-direction: column; /* Alinea los ítems verticalmente */
+    gap: 10px; /* Espacio entre ítems */
+    border-color: #38de38;
+  }
+  /* Estilo para los ítems del menú */
+  .navigation-item {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 5px; /* Espaciado interno */
+  }
+  
+  /* Estilo para las imágenes dentro de los ítems del menú */
+  .subheader__img {
+    width: 20px; /* Ajusta el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 10px; /* Espacio a la derecha de la imagen */
+    filter: invert(32%) sepia(87%) saturate(516%) hue-rotate(115deg) brightness(95%) contrast(101%)
+  }
+  
+  /* Estilo para los enlaces del menú */
+  .menu_item {
+    color: #04324D; /* Color del texto */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    font-size: 14px; /* Tamaño del texto */
+  }
+  
+  /* Estilo para el hover en los enlaces del menú */
+  .navigation-item:hover {
+    background-color: #ade8ad; /* Color de fondo en hover */
+    padding: 1px;
+  }
+  

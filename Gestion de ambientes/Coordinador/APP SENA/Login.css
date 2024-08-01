@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    width: 100%; /* Asegura que el ancho del cuerpo no exceda el viewport */
+    height: 100%;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 5fr 4fr 1fr;
+    gap: 0;
+    width: 100vw; /* Asegura que el contenedor use el ancho completo del viewport */
+    height: 100vh;
+    border: 2px solid #ccc;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .header {
+    grid-row: 1; /* Está en la fila 1 */
+    grid-column: 1 / span 6; /* Ocupa desde la columna 1 hasta la 6 */
+    background-color: #04324D;
+    display: flex;
+    justify-content: space-between; 
+    position: relative;
+  }
+  
+  .navbar {
+    grid-row: 2 / span 4; /* Está en las filas 2 a 6 */
+    grid-column: 1 / span 4; /* Ocupa desde la columna 1 hasta la 4 */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente en el contenedor */
+    align-items: center; /* Centra el contenido verticalmente en el contenedor */
+    box-sizing: border-box; 
+  }
+
+  .main {
+    grid-row: 2 / span 4; /* Está en las filas 2 a 6 */
+    grid-column: 5 / span 2; /* Ocupa desde la columna 5 hasta la 6 */
+    background-color: white;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 70vh; /* Asegura que el main ocupe al menos el alto de la pantalla */
+    box-sizing: border-box;
+  }
+  
+  .footer {
+    grid-row: 4; /* Está en la fila 6 */
+    grid-column: 1 / span 6; /* Ocupa todas las columnas de 1 a 6 */
+    background-color: #1fb530;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 10px; /* Espaciado interno opcional */
+    height: 60px; /* Ajusta según el tamaño deseado del footer */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho disponible */
+    box-sizing: border-box; 
+  }
+
+ 
+  /*header*/
+  .img_sena {
+    position: relative;
+    max-width: 100px;
+    height: 70px;
+    margin-left: 30px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+ 
+  .header-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+  
+  .header-info h1 {
+    font-size: 30px;
+    margin-bottom: 0px; /* Espacio entre h1 y h2 */
+    color: white;
+    
+  }
+  
+  .header-info h2 {
+    font-size: 20px;
+    color:white;
+    margin-left: 120px;
+  }
+   
+ 
+  .header-img {
+    position: absolute; /* Permite que el contenedor se posicione en relación al contenedor padre */
+    right: 0; /* Alinea el contenedor a la derecha del header */
+    top: 0; /* Alinea el contenedor en la parte superior del header */
+    height: 100%; /* Ajusta la altura del contenedor de las imágenes de transición */
+    overflow: hidden; /* Oculta cualquier imagen fuera del contenedor */
+    display: flex;
+    align-items: right; /* Alinea verticalmente las imágenes en el contenedor */
+    z-index: 1; 
+    clip-path: polygon(6% 0, 100% 0%, 100% 100%, 9% 100%, 0 26%);
+  }
+  
+    .transicion_img {
+      width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+      height: auto; /* Ajusta la imagen al tamaño del contenedor */
+      transition: opacity 1s ease-in-out; /* Transición suave para el cambio de opacidad */
+    }
+
+
+/*nabvar*/
+
+  
+  .img_principal {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  }
+  
+  /*main*/
+
+  .container_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* Aumentado el ancho para un diseño más espacioso */
+    max-width: 400px; 
+    padding: 20px;
+    border-radius: 10px;
+  }
+    
+  .form-title {
+    font-size: 16px;
+    font-weight: bold;
+    color:#1fb530;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1fb530;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  .login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f1f1a4; /* Color de fondo claro */
+    border: 3px solid #38de38;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+  
+  label {
+    color: #6c757d; /* Color de texto más suave */
+    font-size: 14px;
+    margin-left: 15px;
+  }
+  
+  .user-wrapper, .password-wrapper {
+    position: relative;
+  }
+  
+  .user-wrapper input, .password-wrapper input {
+    width: 90%;
+    padding: 5px;
+    background-color: #f6f1f1a4;
+    border: none; /* Elimina el borde por defecto */
+    border-bottom: 2px solid #ced4da; /* Línea inferior del borde */
+    border-radius: 0; /* Elimina el borde redondeado */
+    box-shadow: none; /* Elimina la sombra interna */
+    transition: border-color 0.2s ease-in-out;
+    margin: 10px;
+    outline: none; /* Elimina el borde de enfoque predeterminado del navegador */
+  }
+  
+  .user-wrapper input:focus, .password-wrapper input:focus {
+    border-bottom-color: #04324D; /* Cambia el color de la línea inferior cuando está enfocado */
+  }
+  
+  .user-wrapper input:hover, .password-wrapper input:hover {
+    border-bottom-color: #38de38; /* Cambia el color de la línea inferior cuando se pasa el cursor sobre él */
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Tamaño del ícono del ojo */
+    outline: none;
+  }
+  
+  .toggle-password:focus {
+    outline: none; /* Evita que aparezca el borde de enfoque cuando se hace clic */
+  }
+  
+  .link_pass {
+    position: relative;
+    transform: translateY(-20%);
+    text-decoration: none;
+    color: #04324D;
+    padding: 5px;
+    font-size: 12px;
+    margin-left: 70px;
+  }
+  
+
+  .password-link{
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  color: #f6f1f1a4;
+  text-decoration: none;
+  text-decoration: underline;
+  font-size: 14px; /* Tamaño de fuente */
+  }
+
+  .submit-button {
+    background-color: #04324D;
+    color: #fff;
+    padding: 10px 80px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin: 10px;
+    margin-left: 30px;
+    font-size: 16px;
+  }
+  
+  .submit-button:hover {
+    background-color: #1fb530
+  }  
