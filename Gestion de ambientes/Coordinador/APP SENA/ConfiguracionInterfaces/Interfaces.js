@@ -3,9 +3,9 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CoordinadorDashboard from './components/CoordinadorRuta';
-import AlistamientoDashboard from './components/AlistamientoRuta';
-import InstructorDashboard from './components/InstructorRuta';
+import CoordinadorRuta from './components/CoordinadorRuta';
+import AlistamientoRuta from './components/AlistamientoRuta';
+import InstructorRuta from './components/InstructorRuta';
 import Login from './components/Login';
 
 function App() {
