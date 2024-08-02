@@ -12,9 +12,9 @@ function App() {
     return (
         <Router>
             <Switch>
-                <Route path="/coordinador/dashboard" component={CoordinadorRuta} />
-                <Route path="/alistamiento/dashboard" component={AlistamientoRuta} />
-                <Route path="/instructor/dashboard" component={InstructorRuta} />
+                <Route path="/coordinador/Ruta" component={CoordinadorRuta} />
+                <Route path="/alistamiento/Ruta" component={AlistamientoRuta} />
+                <Route path="/instructor/Ruta" component={InstructorRuta} />
                 <Route path="/login" component={Login} />
                 <Route path="/" exact component={Login} />
             </Switch>
