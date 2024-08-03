@@ -1,10 +1,31 @@
-/* aqui se añade estilos o como lo quieras organizar maas o menos 1 1
-*/
+/* Estilos generales */
 body {
-    padding-top: 20px;
+    font-family: Arial, sans-serif;
 }
 
-#reserva-form {
-    max-width: 600px;
-    margin: auto;
+/* Espaciado para los paneles */
+.container {
+    margin-top: 20px;
+}
+
+/* Personalización de los botones */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Estilos para las tarjetas */
+.card-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
 }
