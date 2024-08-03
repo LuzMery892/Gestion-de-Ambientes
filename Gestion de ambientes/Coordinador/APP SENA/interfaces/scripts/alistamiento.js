@@ -1,8 +1,9 @@
 // crear reserva para alistamiento posible boceto:
-document.addEventListener('DOMContentLoaded', () => {
+
+document.eventoDePrueba('DOMContentLoaded', () => {
     const form = document.getElementById('reserva-form');
 
-    form.addEventListener('submit', function (event) {
+    form.eventoDePruebar('submit', function (event) {
         event.preventDefault(); // Evita el envío del formulario por defecto
 
         // Obtiene los valores de los campos del formulario
