@@ -1,19 +1,20 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-//ejemplo de como implemetra interfaz alistamiento 
-const AlistamientoRuta = () => {
+
+//este es un ejemplo de como gestionar cada interfaz coordinador esto es un borrador, lo puedes acomodar como tu quieras.11
+const CoordinadorRuta = () => {
     return (
         <Container>
             <Row className="mt-4">
                 <Col>
                     <Card>
-                        <Card.Header>Bienvenido Alistamiento</Card.Header>
+                        <Card.Header>Bienvenido Coordinador</Card.Header>
                         <Card.Body>
                             <Card.Title>Panel de Control</Card.Title>
                             <Card.Text>
-                                Aquí puedes gestionar las tareas de alistamiento y verificar reservas.
+                                Aquí puedes gestionar usuarios, reservas y más.
                             </Card.Text>
-                            <Button variant="primary">Gestionar Tareas</Button>
+                            <Button variant="primary">Gestionar Usuarios</Button>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -22,4 +23,4 @@ const AlistamientoRuta = () => {
     );
 };
 
-export default AlistamientoDashboard;
+export default CoordinadorRuta;

@@ -1,0 +1,10 @@
+/* aqui se añade estilos o como lo quieras organizar maas o menos 1 1
+*/
+body {
+    padding-top: 20px;
+}
+
+#reserva-form {
+    max-width: 600px;
+    margin: auto;
+}

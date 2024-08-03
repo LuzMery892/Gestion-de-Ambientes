@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-//ejemplo de como implementar interfaz del instructor, te dejo las bases tu las corriges como tu quieras 
+//ejemplo de como implementar interfaz del instructor, te dejo las bases tu las corriges como tu quieras 11
 const InstructorRuta = () => {
     return (
         <Container>
@@ -22,4 +22,4 @@ const InstructorRuta = () => {
     );
 };
 
-export default InstructorDashboard;
+export default InstructorRuta;
