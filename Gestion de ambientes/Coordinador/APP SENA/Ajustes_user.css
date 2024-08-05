@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+  
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 5fr 4fr 1fr;
+    gap: 0;
+    width: 100vw; 
+    height: 100vh;
+    border: 2px solid #ccc;
+    padding: 0;
+}
+  
+.header {
+    grid-column: 3 / span 6; /* Ajusta el área de la columna */
+    grid-row: 1 / span 1;
+    background-color: #04324D;
+}
+  
+.navbar {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 6;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+}
+  
+.footer {
+    grid-column: 3 / span 4; 
+    grid-row: 5;
+    background-color: #dca5a5;
+}
+
+.header, .navbar, .main, .footer {
+    border: 2px solid #1f1d1d;
+    padding: 0px;
+  }
+
+/* Estilos básicos para el contenedor principal */
+.main {
+  position: relative;
+  grid-column: 3 / span 4; /* Ajusta para que ocupe el espacio deseado */
+  grid-row: 2 / span 4;   /* Ajusta para ocupar el espacio deseado */
+  background-color: white;
+  display: flex;
+  justify-content: center; /* Centra el contenedor horizontalmente */
+  align-items: center; /* Centra el contenedor verticalmente */
+  overflow: hidden; /* Evita que el contenido se desborde del contenedor */
+  padding: 10px; /* Elimina el padding del contenedor principal */
+}
+
+/* Ajusta el contenedor de ajustes de usuario */
+.container_user_setting {
+  background-color: white; /* Fondo blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  width: 100%; /* Ocupa todo el ancho disponible del contenedor principal */
+  height: 100%; /* Ocupa toda la altura disponible del contenedor principal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 2px solid #ccc; /* Borde gris */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  overflow: auto; /* Permite el desplazamiento si el contenido excede el tamaño del contenedor */
+  margin: 10px; /* Elimina el margen alrededor del contenedor */
+}
+
+.role-group {
+  display: flex;
+  flex-direction: row; /* Alinea los elementos en una fila horizontal */
+  align-items: center; /* Centra verticalmente los elementos en la fila */
+  gap: 20px; /* Espacio entre los elementos dentro de .role-group */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
+  margin-bottom: 20px; /* Espacio inferior para separar del contenido siguiente */
+}
+
+/* Estilo del encabezado */
+.role-group h3 {
+  font-size: 14px; /* Tamaño de la fuente del encabezado */
+  color: #333;
+  margin: 0; /* Elimina el margen por defecto */
+  white-space: nowrap; /* Evita que el texto del encabezado se envuelva */
+}
+
+/* Estilo del contenedor de opciones de rol */
+.role-options {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las opciones se envuelvan si no caben en una fila */
+  gap: 0px; /* Espacio entre las opciones */
+  flex-grow: 1; /* Permite que el contenedor de opciones crezca para ocupar el espacio disponible */
+}
+
+.role-option {
+  background-color: #1fb530;
+  padding: 7px 10px; /* Ajusta el padding para que sea adecuado al contenido */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-align: center; /* Centra el texto en las opciones */
+  box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+  color: white;
+}
+
+.role-option:hover {
+  background-color: #ade8ad; /* Color de fondo en hover */
+  color: #04324D; /* Color del texto en hover */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño en hover */
+}
+
+/* Estilo del botón de búsqueda */
+.search-container {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos en el contenedor de búsqueda */
+  gap: 10px; /* Espacio entre la barra de búsqueda y el botón */
+  flex-shrink: 0; /* Evita que el contenedor de búsqueda se reduzca */
+}
+
+.search-bar {
+  display: flex;
+  flex-grow: 1; /* Permite que la barra de búsqueda crezca para llenar el espacio disponible */
+}
+
+/* Estilo del campo de búsqueda */
+.search-bar input[type="text"] {
+  flex: 1; /* Ocupa el espacio disponible en la barra de búsqueda */
+  height: 30px; /* Altura del campo de búsqueda */
+  padding: 10px; /* Espaciado interno */
+  border: 2px solid #ccc; /* Borde gris por defecto */
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: 12px; /* Tamaño de la fuente */
+  box-sizing: border-box; /* Incluye el borde y padding en el tamaño total */
+  transition: border-color 0.3s ease; /* Transición suave para el color del borde */
+}
+
+/* Estilo cuando el campo de búsqueda tiene el foco */
+.search-bar input[type="text"]:focus {
+  border-color: #1fb530; /* Color de borde cuando el campo tiene el foco */
+  outline: none; /* Elimina el borde de enfoque predeterminado del navegador */
+}
+
+.search-button {
+  height: 35px; /* Altura del botón */
+  background-color: #04324D; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: 2px solid #ccc; /* Borde del botón */
+  border-radius: 10px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de mano */
+  font-size: 10px; /* Tamaño de la fuente ajustado */
+  transition: background-color 0.2s ease-in-out; /* Transición suave para el color de fondo */
+  width: 70%; /* Hace que el botón ocupe el ancho completo de su contenedor */
+  display: flex; /* Utiliza flexbox para alinear el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+.search-button:hover {
+  background-color: #1fb530; /* Color de fondo en hover */
+}
+
+/* Estilos para la tabla */
+table {
+  width: 100%; /* Ancho completo */
+  border-collapse: collapse; /* Colapsa los bordes de las celdas */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+table thead {
+  background-color: #f2f2f2; /* Color de fondo gris claro */
+}
+
+table th {
+  color: #333; /* Color del texto del encabezado */
+  font-size: 14px; /* Tamaño de la fuente del encabezado */
+  padding: 10px; /* Espaciado interno */
+  border-bottom: 2px solid #ddd; /* Borde inferior gris claro */
+}
+
+table td {
+  font-size: 14px; /* Tamaño de la fuente de las celdas */
+  padding: 10px; /* Espaciado interno */
+  border-bottom: 1px solid #ddd; /* Borde inferior gris claro */
+}
+
+/* Estilo para las filas de la tabla */
+table tr:hover {
+  background-color: #e0f7e9; /* Color de fondo verde claro en hover */
+}
+
+/* Estilos para los botones de acción en la tabla */
+.action-buttons button {
+  background-color: #04324D; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 5px 10px; /* Espaciado interno */
+  cursor: pointer; /* Cursor de mano */
+  font-size: 12px; /* Tamaño de la fuente */
+  margin-right: 5px; /* Espacio entre los botones */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.action-buttons button:hover {
+  background-color: #1fb530; /* Color de fondo en hover */
+}
+
+/* Estilos para el botón de guardar cambios */
+.save-button {
+  background-color: #04324D; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cursor de mano */
+  font-size: 16px; /* Tamaño de la fuente */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.save-button:hover {
+  background-color: #1fb530; /* Color de fondo en hover */
+}
+
+
+.titulo_setting {
+  display: flex;
+  align-items: center;
+}
+
+.icon-setting {
+  width: 50px; /* Tamaño del círculo */
+  height: 50px; /* Tamaño del círculo */
+  background-color: #04324D; /* Color verde del círculo */
+  border-radius: 50%; /* Hace que el contenedor sea un círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px; /* Espacio entre el círculo y el texto */
+}
+
+.main_setting-img {
+  width: 30px;
+  height: 30px; 
+  filter: brightness(0) invert(1);
+}
+
+
+p {
+  color: #333; /* Color del texto */
+  font-size: 16px;
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+
+.close-form3 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.close-icon3 {
+  width: 24px;
+  height: 24px;
+}
