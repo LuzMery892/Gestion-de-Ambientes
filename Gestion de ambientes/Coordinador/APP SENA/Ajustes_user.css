@@ -57,6 +57,7 @@ padding: 10px;
 }
 
 .container_user_setting {
+display: none; 
 background-color: white;
 border-radius: 8px;
 padding: 20px;

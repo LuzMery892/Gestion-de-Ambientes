@@ -185,10 +185,10 @@ body {
 
 .main_img_end {
     position: absolute;
-    bottom: 10px; /* Distancia desde la parte inferior del contenedor */
-    right: 10px; /* Distancia desde la parte derecha del contenedor */
-    width: 250px; /* Ajusta el tamaño de la imagen según sea necesario */
-    height: auto; /* Mantiene la proporción de la imagen */
+    bottom: 10px; 
+    right: 10px; 
+    width: 250px; 
+    height: auto; 
     z-index: 1; 
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
@@ -199,18 +199,18 @@ body {
   }
   
   .icon-wrapper {
-    width: 50px; /* Tamaño del círculo */
-    height: 50px; /* Tamaño del círculo */
-    background-color: #04324D; /* Color verde del círculo */
-    border-radius: 50%; /* Hace que el contenedor sea un círculo */
+    width: 50px; 
+    height: 50px; 
+    background-color: #04324D; 
+    border-radius: 50%; 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px; /* Espacio entre el círculo y el texto */
+    margin-right: 10px; 
   }
   
   .main_form-img {
-    width: 30px; /* Tamaño del ícono dentro del círculo */
-    height: 30px; /* Tamaño del ícono dentro del círculo */
+    width: 30px; 
+    height: 30px; 
     filter: brightness(0) invert(1);
   }

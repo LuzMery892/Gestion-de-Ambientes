@@ -203,6 +203,6 @@ input {
   
   /* Estilo para el ícono del botón de cerrar */
   .close-icon {
-    width: 24px; /* Ajusta el tamaño del ícono según sea necesario */
-    height: auto; /* Mantiene la proporción del ícono */
+    width: 24px; 
+    height: auto; 
   }
