@@ -81,7 +81,7 @@ body {
 .form-row {
     display: flex;
     flex-wrap: wrap; 
-    gap: 50px; /* Espacio entre los elementos dentro de la fila */
+    gap: 10px; /* Espacio entre los elementos dentro de la fila */
     justify-content: space-between; 
 }
 
@@ -151,6 +151,12 @@ body {
     font-size: 12px; 
     color:#04324D;
     margin: 0; 
+}
+
+.button-container {
+    display: flex;         
+    width: 100%;             /* Asegura que el contenedor ocupe el ancho completo del padre */
+    box-sizing: border-box;    
 }
 
 /* Botón de crear usuario */
