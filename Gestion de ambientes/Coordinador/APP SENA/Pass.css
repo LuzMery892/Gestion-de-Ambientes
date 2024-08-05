@@ -47,50 +47,57 @@ body {
     background-color: #dca5a5;
   }
 
-  .hidden {
-    display: none;
-  }
-  .contenedor_main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+  .modal-pass{
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000; 
+    max-width: 90%;
+    width: 300px; 
+}
+
+/* Estilo para el overlay del modal */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
     position: fixed;
     top: 0;
-    left: 400px; 
-    right: 0;
-    bottom: 0;
-    z-index: 500; 
-  }
-  
-   
-  /* Estilo para el contenedor del formulario */
-  .form-container {
-    position: relative;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    background-color: #f6f1f1a4; 
-    border-radius: 20px; 
-    border: 3px solid #38de38; 
-    padding: 30px;
-    width: 150%;
-    max-width: 200px; 
-  }
-
-  .hidden {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); 
+    z-index: 9999; 
+}
+.hidden {
     display: none;
-  }
+}  
+  
+.form-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  border: 3px solid #38de38;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px; /* Ajusta según sea necesario */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
 
-  /* Estilo para el título del formulario */
-  .titulo_form {
-    display: flex;
-    align-items: center; 
-    gap: 5px; 
-    margin-bottom: 10px; 
-    top: 20px;
-  }
+/* Estilo para el título del formulario */
+.titulo_form {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Ajusta el espacio entre el icono y el texto según sea necesario */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  position: relative; /* Cambiado a relative para ajustarse dentro del contenedor */
+  top: 0; /* Restablece la posición top a 0 para evitar solapamiento */
+  width: 100%; /* Asegura que el título ocupa todo el ancho del contenedor */
+}
+
   
   .titulo_form h2 {
     font-size: 14px; 
@@ -102,10 +109,6 @@ body {
   .main__img {
     width: 30px; 
     height: auto; 
-  }
-  
-  .form-icon{
-    filter: invert(32%) sepia(87%) saturate(516%) hue-rotate(115deg) brightness(95%) contrast(101%);
   }
   
  /* Estilo para los grupos de formulario */
@@ -158,7 +161,7 @@ input {
 }
 
 .password-wrapper input {
-  width: 100%;
+  width: calc(100% - 40px); 
   padding-right: 40px;
 }
 
@@ -190,19 +193,24 @@ input {
   padding: 10px;
 }
   
-  .close-form {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Estilo para el ícono del botón de cerrar */
-  .close-icon {
-    width: 24px; 
-    height: auto; 
-  }
+.close-form {
+  position: absolute; /* Posiciona el botón en relación con el contenedor del título */
+  top: -20PX; /* Alinea el botón al tope del contenedor */
+  right: -10PX; /* Alinea el botón al borde derecho del contenedor */
+  background: none; /* Quita el fondo del botón */
+  border: none; /* Quita el borde del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  margin: 0; /* Elimina el margen del botón */
+  padding: 0; /* Elimina el padding del botón */
+}
+
+/* Estilo para el ícono del botón de cerrar */
+.close-icon {
+  width: 24px; /* Ajusta el tamaño del ícono del botón de cerrar */
+  height: auto; /* Mantiene la proporción del ícono */
+}
+
+/* Estilo para el ícono del título */
+.form-icon {
+  filter: invert(32%) sepia(87%) saturate(516%) hue-rotate(115deg) brightness(95%) contrast(101%);
+}

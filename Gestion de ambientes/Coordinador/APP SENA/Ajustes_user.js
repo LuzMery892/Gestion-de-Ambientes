@@ -1,31 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Obtener referencias a los elementos
-  const closeButton3 = document.querySelector('.close-form3'); 
-  const containerUserSetting = document.querySelector('.container_user_setting'); 
-  const openButton3 = document.getElementById('SettingUserLink'); 
-
-  // Función para mostrar el formulario
-  const showForm = () => {
-      containerUserSetting.style.display = 'block'; 
-  };
-
-  // Función para ocultar el formulario
-  const hideForm = () => {
-      containerUserSetting.style.display = 'none'; 
-  };
-
-  // Manejar clic en el botón de cierre
-  if (closeButton3) {
-      closeButton3.addEventListener('click', () => {
-          hideForm(); 
-      });
-  }
-
-  // Manejar clic en el enlace para abrir el formulario
-  if (openButton3) {
-      openButton3.addEventListener('click', (event) => {
-          event.preventDefault(); 
-          showForm(); 
-      });
-  }
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const createUserLink = document.getElementById('settingUserLink');
+    const formNewUser = document.querySelector('.container_user_setting');
+    const closeFormButton = document.querySelector('.close-form3');
+  
+    // Muestra el formulario y el overlay
+    createUserLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      formNewUser.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+  
+    // Cierra el formulario y el overlay
+    closeFormButton.addEventListener('click', function() {
+      formNewUser.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  
+    // Cierra el formulario y el overlay si se hace clic en el overlay
+    overlay.addEventListener('click', function() {
+      formNewUser.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  
+    // Oculta el formulario y el overlay al cargar la página
+    formNewUser.style.display = 'none';
+    overlay.style.display = 'none';
+  });
