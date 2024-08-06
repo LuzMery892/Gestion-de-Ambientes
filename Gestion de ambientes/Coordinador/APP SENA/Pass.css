@@ -47,32 +47,18 @@ body {
     background-color: #dca5a5;
   }
 
-  .modal-pass{
-    display: none; 
-    position: fixed;
+  .container_pass {
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10000; 
-    max-width: 90%;
-    width: 300px; 
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    padding: 20px;
 }
 
-/* Estilo para el overlay del modal */
-.modal-overlay {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); 
-    z-index: 9999; 
-}
 .hidden {
-    display: none;
-}  
-  
+  display: none;
+}
 .form-container {
   position: relative;
   display: flex;
@@ -80,22 +66,22 @@ body {
   align-items: center;
   background-color: white;
   border-radius: 20px;
-  border: 3px solid #38de38;
+  border: 3px solid #ccc;
   padding: 30px;
   width: 100%;
-  max-width: 400px; /* Ajusta según sea necesario */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  max-width: 400px;
+  box-sizing: border-box; 
 }
 
 /* Estilo para el título del formulario */
 .titulo_form {
   display: flex;
   align-items: center;
-  gap: 10px; /* Ajusta el espacio entre el icono y el texto según sea necesario */
-  margin-bottom: 20px; /* Espacio debajo del título */
-  position: relative; /* Cambiado a relative para ajustarse dentro del contenedor */
-  top: 0; /* Restablece la posición top a 0 para evitar solapamiento */
-  width: 100%; /* Asegura que el título ocupa todo el ancho del contenedor */
+  gap: 10px; 
+  margin-bottom: 20px; 
+  position: relative; 
+  top: 0; 
+  width: 100%; 
 }
 
   
@@ -193,21 +179,20 @@ input {
   padding: 10px;
 }
   
-.close-form {
-  position: absolute; /* Posiciona el botón en relación con el contenedor del título */
-  top: -20PX; /* Alinea el botón al tope del contenedor */
-  right: -10PX; /* Alinea el botón al borde derecho del contenedor */
-  background: none; /* Quita el fondo del botón */
-  border: none; /* Quita el borde del botón */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  margin: 0; /* Elimina el margen del botón */
-  padding: 0; /* Elimina el padding del botón */
+.close_form {
+  position: absolute; 
+  top: -20PX; 
+  right: -10PX; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  margin: 0; 
 }
 
 /* Estilo para el ícono del botón de cerrar */
 .close-icon {
-  width: 24px; /* Ajusta el tamaño del ícono del botón de cerrar */
-  height: auto; /* Mantiene la proporción del ícono */
+  width: 24px; 
+  height: auto; 
 }
 
 /* Estilo para el ícono del título */

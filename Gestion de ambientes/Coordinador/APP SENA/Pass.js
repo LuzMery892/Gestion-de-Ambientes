@@ -1,38 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Obtener elementos del DOM
-  const modal = document.getElementById('modal-pass');
-  const modalOverlay = document.getElementById('modalOverlay');
   const submenuToggle = document.getElementById('submenuToggle1');
-  const closeFormButton = document.querySelector('.close-form');
+  const containerPass = document.getElementById('container_pass');
+  const closeFormButton = document.querySelector('.close_form');
 
-  // Función para abrir el modal
-  function openModal() {
-      modal.style.display = 'block';
-      modalOverlay.style.display = 'block';
-  }
+  // Muestra el formulario
+  submenuToggle.addEventListener('click', function(event) {
+      event.preventDefault();
+      containerPass.classList.remove('hidden');
+  });
 
-  // Función para cerrar el modal
-  function closeModal() {
-      modal.style.display = 'none';
-      modalOverlay.style.display = 'none';
-  }
+  // Cierra el formulario
+  closeFormButton.addEventListener('click', function() {
+      containerPass.classList.add('hidden');
+  });
+
+  // Cierra el formulario si se hace clic fuera de él
+  document.addEventListener('click', function(event) {
+      if (!containerPass.contains(event.target) && !submenuToggle.contains(event.target)) {
+          containerPass.classList.add('hidden');
+      }
+  });
 
   // Función para alternar la visibilidad de la contraseña
-  function togglePasswordVisibility(inputId) {
+  window.togglePasswordVisibility = function(inputId) {
       const input = document.getElementById(inputId);
       const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
       input.setAttribute('type', type);
-  }
-
-  // Añadir evento click al enlace para abrir el modal
-  submenuToggle.addEventListener('click', function(event) {
-      event.preventDefault(); // Evita el comportamiento predeterminado del enlace
-      openModal();
-  });
-
-  // Añadir evento click al botón de cerrar el modal
-  closeFormButton.addEventListener('click', function() {
-      closeModal();
-  });
-
+  };
 });
