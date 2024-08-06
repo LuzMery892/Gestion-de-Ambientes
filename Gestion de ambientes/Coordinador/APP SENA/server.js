@@ -20,4 +20,4 @@ app.listen(port, () => {
 //inicia el servidor con este comando : node server.js (Ejecuta el servidor Node.js para servir la app frontend)
 // ya ahi el proyecto estaria disponible en http://localhost:3000 
 //o si lo estas haciendo en visual studio code instala la extencion live server
-//IMPORTANTE para correr tu codigo lo haces desde index.html clic derecho y ejecutar
+//IMPORTANTE para correr tu codigo lo haces desde index.html clic derecho y ejecutar o desde cmd :node.js
