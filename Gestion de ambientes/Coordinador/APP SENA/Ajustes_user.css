@@ -318,3 +318,13 @@ button img {
 .action_botton:hover img {
   opacity: 0.8; 
 }
+
+.settinguser_img_end {
+  position: absolute;
+  bottom: 10px; 
+  right: 10px; 
+  width: 300px; 
+  height: auto; 
+  z-index: 1; 
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
