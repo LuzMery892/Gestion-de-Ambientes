@@ -69,3 +69,12 @@ const createUserLink = document.getElementById('createUserLink');
           window.location.href = 'Ambiente.html'; 
       });
   }
+
+  const settingAmbienteLink = document.getElementById('settingAmbienteLink');
+
+  if (settingAmbienteLink) {
+    settingAmbienteLink.addEventListener('click', function(event) {
+          event.preventDefault(); 
+          window.location.href = 'Ajustes_ambiente.html'; 
+      });
+  }

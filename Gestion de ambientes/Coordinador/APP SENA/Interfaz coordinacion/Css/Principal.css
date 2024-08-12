@@ -1,219 +1,445 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Evita el scroll en el body */
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas de igual tamaño */
+    grid-template-rows: auto 1fr auto; /* Fila superior (header), fila principal (main) y fila inferior (footer) */
+    gap: 0;
+    width: 100vw; /* Asegura que el contenedor use el ancho completo del viewport */
+    height: 100vh; /* Asegura que el contenedor use el alto completo del viewport */
+    padding: 0;
+  }
+  
+  #header {
+    grid-column: 3 / span 6; /* Header ocupa toda la fila de columnas */
+    grid-row: 1;
+    background-color: #04324D;
+  }
+  
+  #navbar {
+    grid-column: 1 / span 2; /* Navbar ocupa las dos primeras columnas */
+    grid-row: 1 / span 4; /* Navbar ocupa desde la fila 2 hasta 4 */
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f1f1a4;
+  }
+  
+  .main {
+    grid-column: 3 / span 4; /* Main ocupa desde la columna 3 hasta el final */
+    grid-row: 2 / span 4; /* Main ocupa desde la fila 2 hasta el final */
+    background-color: white;
+  }
+  
+  #footer {
+    grid-column: 1 / span 6; /* Footer ocupa toda la fila de columnas */
+    grid-row: 5;
+    background-color: #dca5a5;
+  }
+  
+
+
+  .container_pass {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+.form-container {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f2f2f2;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr 5fr 4fr 1fr;
-  gap: 0;
-  width: 100vw; /* Asegura que el contenedor use el ancho completo del viewport */
-  height: 100vh;
-  border: 2px solid #ccc;
-  padding: 0;
-}
-
-
-
-.header {
-  grid-column: 3 / span 2; /* Asegura que el área de la columna esté bien ajustada */
-  grid-row: 1/span 1;
-  background-color: #04324D;
-}
-
-.navbar {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 6;
-  display: flex; /* Cambiado a flex para un comportamiento de bloque */
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  border: 3px solid #ccc;
+  padding: 30px;
   width: 100%;
-  margin-left: -5%; 
-  background-color: #f6f1f1a4;
+  max-width: 400px;
+  box-sizing: border-box; 
 }
 
-.main {
-    grid-column: 3 / span 6;
-    grid-row: 2 / span 6;
-    background-color: white;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+/* Estilo para el título del formulario */
+.titulo_form {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 20px; 
+  position: relative; 
+  top: 0; 
+  width: 100%; 
+}
+
+  
+  .titulo_form h2 {
+    font-size: 14px; 
+    color: #04324D;
   }
-
-
-.footer {
-  grid-column: 3 / span 4; /* Ajusta para que coincida con la cabecera */
-  grid-row: 5;
-  background-color: #dca5a5;
+  
+  
+  /* Estilo para el ícono del título */
+  .main__img {
+    width: 30px; 
+    height: auto; 
+  }
+  
+ /* Estilo para los grupos de formulario */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
 }
 
-
-
-/* inicio NAVBARRR */
-.img_sena {
-  position: relative;
-  max-width: 100px;
-  height: 80px;
-  margin: 25px;
+form label {
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #04324D;
 }
 
-.navbar__list {
-  list-style: none;
-  padding: 0;
-  margin: 10px;
+/* Estilo para los labels */
+label {
+  margin-bottom: 5px;
+  font-size: 10px;
 }
 
-.navbar__item {
-  position: relative;
-  margin-bottom: 0;
+form input {
   padding: 10px;
-  transition: margin-bottom 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.navbar__button {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  width: 100%;
-  background-color: #f6f1f1a4;
   border: 1px solid #ccc;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, border-radius 0.3s;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 90%;
+  box-shadow: none;
+}
+
+form input:focus {
+  border-color: #38de38;
+  outline: none;
+}
+
+/* Estilo para los inputs */
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 90%;
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
-.navbar__button:hover {
-  background-color: #38de38;
-  border-radius: 30px;
-  color: white;
-  border: 2px solid #bbb;
+.password-wrapper input {
+  width: calc(100% - 40px); 
+  padding-right: 40px;
 }
 
-.navbar__button:hover::before {
-  content: '';
+.password-wrapper .toggle-password {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: -1;
-}
-
-.navbar__img {
-  width: 35px;
-  height: 30px;
-  margin-right: 8px;
-  filter: brightness(0) invert(1);
-}
-
-.navbar__link {
-  flex-grow: 1;
-  color: #04324D;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.navbar__circle {
-  width: 55px;
-  height: 55px;
-  background-color: #38de38;
-  border-radius: 50%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin-right: 7px;
-  overflow: hidden;
-}
-
-.navbar__arrow {
-  margin-left: 2px;
-  width: 25px;
-  height: 25px;
-  transition: transform 0.3s;
-}
-
-.navbar__arrow--rotate {
-  transform: rotate(180deg);
-}
-
-.navbar__submenu {
-  display: none;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  left: 60px;
-  width: 80%;
-  border-left: 1px solid #38de38;
-  z-index: 1;
-  transition: height 0.3s ease;
-  overflow: hidden;
-}
-
-.navbar__submenu--show {
-  display: block;
-}
-
-.navbar__submenu-item {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.navbar__submenu-img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
-}
-
-.navbar__submenu-link {
-  color: #04324D;
-  text-decoration: none;
-  display: block;
-  padding: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
   font-size: 12px;
 }
 
-.navbar__submenu-item:hover {
-  background-color: #ade8ad;
+/* Estilo para el botón de envío */
+.submit-button {
+  background-color: #04324D;
+  color: white;
   border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo para el botón de envío en hover */
+.submit-button:hover {
+  background-color: #38de38;
+  padding: 10px;
+}
+  
+.close_form {
+  position: absolute; 
+  top: -20PX; 
+  right: -10PX; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  margin: 0; 
+}
+
+/* Estilo para el ícono del botón de cerrar */
+.close-icon {
+  width: 24px; 
+  height: auto; 
+}
+
+/* Estilo para el ícono del título */
+.form-icon {
+  filter: invert(32%) sepia(87%) saturate(516%) hue-rotate(115deg) brightness(95%) contrast(101%);
 }
 
 
-/* Estilos para el contenedor de imágenes */
-.img_principal {
-  display: flex;
-  gap: 10px; /* Espacio entre las imágenes */
-}
+/* NAVBAR*/
 
-/* Estilos para las imágenes */
-.main_img {
-  max-width: 100%; /* Asegura que las imágenes no se salgan del contenedor */
-  height: auto; /* Mantiene la proporción de las imágenes */
-  border-radius: 8px; /* Bordes redondeados opcionales */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para las imágenes */
-  /* Ajusta el tamaño si es necesario */
-}
+.navbar {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 6;
+    display: flex; /* Cambiado a flex para un comportamiento de bloque */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: -5%; 
+    background-color: #f6f1f1a4;
+  }
+  
+  .main {
+    grid-column: 3 / span 6; /* Ajusta para que coincida con la cabecera */
+    grid-row: 2 / span 6;
+    background-color:white;
+    display: flex;
+  }
+  
+  .footer {
+    grid-column: 3 / span 4; /* Ajusta para que coincida con la cabecera */
+    grid-row: 5;
+    background-color: #dca5a5;
+  }
+  
+  
+  
+  /* inicio NAVBARRR */
+  .img_sena {
+    position: relative;
+    max-width: 100px;
+    height: 80px;
+    margin: 5px;
+  }
+  
+  .navbar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+  }
+  
+  .navbar__item {
+    position: relative;
+    margin-bottom: 0;
+    padding: 10px;
+    transition: margin-bottom 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .navbar__button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    background-color: #f6f1f1a4;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, border-radius 0.3s;
+    position: relative;
+  }
+  
+  .navbar__button:hover {
+    background-color: #38de38;
+    border-radius: 30px;
+    color: white;
+    border: 2px solid #bbb;
+  }
+  
+  .navbar__button:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+  
+  .navbar__img {
+    width: 35px;
+    height: 30px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .navbar__link {
+    flex-grow: 1;
+    color: #04324D;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .navbar__circle {
+    width: 55px;
+    height: 55px;
+    background-color: #38de38;
+    border-radius: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: 7px;
+    overflow: hidden;
+  }
+  
+  .navbar__arrow {
+    margin-left: 2px;
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s;
+  }
+  
+  .navbar__arrow--rotate {
+    transform: rotate(180deg);
+  }
+  
+  .navbar__submenu {
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    width: 80%;
+    border-left: 1px solid #38de38;
+    z-index: 1;
+    transition: height 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .navbar__submenu--show {
+    display: block;
+  }
+  
+  .navbar__submenu-item {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__submenu-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
+  }
+  
+  .navbar__submenu-link {
+    color: #04324D;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .navbar__submenu-item:hover {
+    background-color: #ade8ad;
+    border-radius: 20px;
+  }
+  
 
-/* Opcional: Estilos adicionales si quieres que las imágenes se ajusten a un tamaño específico */
-.img_principal img {
-  width: 100px; /* Ajusta según el tamaño deseado */
-  height: auto; /* Mantiene la proporción */
-}
+  /*HEADER*/
+  /* Estilo general para el contenedor del header */
+  .contenedor_header {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start; 
+    padding: 10px; 
+    position: relative; 
+  }
+  
+  /* Estilo para el contenedor de la navegación */
+  .navheader {
+    display: flex;
+    align-items: center; 
+    position: relative; 
+  }
+  
+  /* Estilo para el botón de menú */
+  .menu-toggle {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0; 
+    margin-right: 20px; 
+  
+  }
+  
+  /* Estilo para la imagen dentro del botón */
+  .menu-toggle img {
+    width: 30px; 
+    height: auto; 
+    filter: brightness(0) invert(1);
+  }
+  
+  /* Estilo para el menú de navegación */
+  .navigation-menu {
+    background-color: white;
+    display: none; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    position: absolute; 
+    top: 80%; 
+    right: 50%; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    padding: 10px; 
+    z-index: 1000; 
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    border-color: #38de38;
+  }
+  /* Estilo para los ítems del menú */
+  .navigation-item {
+    display: flex;
+    align-items: center; 
+    padding: 5px; 
+  }
+  
+  /* Estilo para las imágenes dentro de los ítems del menú */
+  .subheader__img {
+    width: 20px; 
+    height: auto; 
+    margin-right: 10px; 
+    filter: invert(32%) sepia(87%) saturate(516%) hue-rotate(115deg) brightness(95%) contrast(101%)
+  }
+  
+  /* Estilo para los enlaces del menú */
+  .menu_item {
+    color: #04324D; 
+    text-decoration: none; 
+    font-size: 14px; 
+  }

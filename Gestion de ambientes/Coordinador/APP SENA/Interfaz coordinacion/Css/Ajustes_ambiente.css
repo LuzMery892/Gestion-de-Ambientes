@@ -1,0 +1,318 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 5fr 4fr 1fr;
+    gap: 0;
+    width: 100vw; 
+    height: 100vh;
+    border: 2px solid #ccc;
+    padding: 0;
+  }
+
+  .footer {
+    grid-column: 3 / span 4; 
+    grid-row: 5;
+    background-color: #dca5a5;
+  }
+  
+    
+  .main {
+  position: relative;
+  grid-column: 1 / span 6;
+  grid-row: 2 / span 3;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  }
+  
+  .header{
+    position: relative;
+    grid-column: 1 / span 6;
+    grid-row: 1;
+    background-color: #04324D;
+    display: flex;
+  }
+  
+
+      .container_ambiente_setting {
+        background-color: white;
+        padding: 30px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: auto;
+        margin: 10px;
+        position: relative;
+      }
+      
+      .titulo_settingAmb {
+        display: flex; 
+        align-items: center; 
+        margin-bottom: 20px; 
+      }
+      
+      .titulo_settinAmb h2 {
+        font-size: 20px; 
+        color: #04324D; 
+        margin: 0; 
+      }
+  
+        /* Contenedor principal para la búsqueda, dividido en dos columnas */
+  .container_busquedaAmb {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    padding: 10px; 
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para cada columna dentro del contenedor de búsqueda */
+  .column_Amb {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+  }
+  
+  /* Estilo para los títulos dentro de cada columna */
+  .column_Amb h3 {
+    font-size: 12px; 
+    color: #04324D; 
+    margin: 0 0 10px 0; 
+    text-align: center; 
+  }
+  
+    /* Estilo para la barra de búsqueda */
+  .search-containerAmb {
+    display: flex; 
+    align-items: center; 
+    margin-left: 70px;
+    gap: 20px; 
+    width: 50%; 
+  }
+  
+  .search-barAmb {
+    flex: 1; 
+  }
+  
+  .search-barAmb input[type="text"] {
+    height: 20px; 
+    padding: 5px; 
+    border: 2px solid #ccc; 
+    border-radius: 10px; 
+    font-size: 12px; 
+    transition: border-color 0.3s ease; 
+    width: 100%; 
+  }
+  
+  .search-barAmb input[type="text"]:focus {
+    border-color: #16a34a; 
+    outline: none; 
+  }
+  
+  /* Estilo para el botón de búsqueda */
+  .search-buttonAmb {
+    background-color: #04324D; 
+    color: white; 
+    border: none;
+    padding: 8px 15px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 12px; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .search-buttonAmb:hover {
+    background-color: #1fb530;
+  }
+  
+  /* Contenedor de la tabla */
+.table-containerAmb {
+  width: 100%; 
+  margin-bottom: 20px;
+  overflow-x: auto; 
+}
+
+/* Estilo de la tabla */
+.table_amb {
+  width: 100%; 
+  border-collapse: collapse; 
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd; 
+}
+
+tbody tr:first-child {
+  border-top: 1px solid #ddd; 
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #04324D; 
+}
+
+th {
+  background-color: white; 
+  border: 2px solid #cce;
+  color: #04324D; 
+  font-size: 14px;
+  text-align: center; 
+  padding: 10px; 
+}
+
+td {
+  padding: 3px;
+  text-align: left; 
+  box-sizing: border-box; 
+  font-size: 12px;
+  border: 1px solid #ccc;
+}
+
+/* Botones de acción dentro de la tabla */
+td.action-buttons {
+  text-align: center; 
+}
+
+.action-buttonAmb {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+  button img {
+    width: 30px; 
+    height: 30px;
+    filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
+  }
+  
+  .save-button-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; 
+  }
+  
+  /* Estilo del botón de guardar */
+  .save-button {
+    background-color: #04324D; 
+    color: #fff; 
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    width: 30%;
+    text-align: center; 
+  }
+  
+  .save-button:hover {
+    background-color: #1fb530; 
+  }
+  
+  
+    .icon-setting {
+    width: 50px;
+    height: 50px;
+    background-color: #04324D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: -20px;
+    }
+  
+    .main_setting-img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    }
+  
+    p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+
+
+    }
+    .close_form4 {
+      position: absolute; 
+      top: -2px; 
+      right: 10px; 
+      background: none; 
+      border: none;
+      cursor: pointer; 
+      padding: 0; 
+  }
+  
+  .close_form4 img {
+      width: 20px; 
+      height: auto; 
+  }
+  
+    /* Estilo base para los botones */
+  .action-buttonAmb {
+    border: none;
+    background: transparent; 
+    cursor: pointer; 
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  /* Efecto de hover para el botón */
+  .action-buttonAmb:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+  
+  
+  /* Estilo para las imágenes dentro del botón */
+  .action-buttonAmb img {
+    width: 15px; 
+    height: 15px;
+    transition: opacity 0.3s ease; 
+  }
+  
+  /* Efecto de hover en la imagen */
+  .action-buttonAmb:hover img {
+    opacity: 0.8; 
+  }
+  
+
+  /* Estilo general para el select */
+select {
+  font-size: 14px; 
+  padding: 7px; 
+  border: 2px solid #ccc; 
+  border-radius: 10px; 
+  background-color: #fff; 
+  color: #333; 
+  width: 50%; 
+  max-width: 300px; 
+  box-sizing: border-box; 
+  cursor: pointer;
+  outline: none; 
+}
+
+
+/* Estilo para el contenedor del select en el estado de focus */
+select:focus {
+  border-color: #38de38; 
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2); 
+}
+
+

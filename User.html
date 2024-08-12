@@ -6,7 +6,7 @@
   <title>Aplicativo Gestión de Ambientes</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/layout.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/User.css">
 </head>
 <body>
@@ -61,7 +61,7 @@
                 <div class="button-container">
                     <button type="submit" class="btn-primary">Crear</button>
                 </div>
-                <img src="Gestion de ambientes/Coordinador/APP SENA/app/IMG-ICONSsena-boys.jpg" class="main_img_end">
+                <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-boys.jpg" class="main_img_end">
             </form>
         </div>
     </main>   
@@ -89,8 +89,8 @@
         document.body.appendChild(navbarScript);
   
         const UserScript = document.createElement('script');
-        passScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ajustes_user.js';
-        document.body.appendChild(passScript);
+        UserScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ajustes_user.js';
+        document.body.appendChild(UserScript);
     }
     
       loadContent(); // Inicia la carga de contenido
