@@ -1,5 +1,16 @@
+.main {
+  position: relative;
+  grid-column: 3 / span 4; 
+  grid-row: 2 / span 3;   
+  background-color: white;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  overflow: hidden; 
+}
+
 .container_pass {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
@@ -7,15 +18,11 @@
   background-color: white;
   border-radius: 20px; 
   box-sizing: border-box;
-  width: 100%;
+  width: 50%;
   max-width: 600px; 
   height: auto; 
   overflow: auto;
-}
-
-
-.hidden {
-display: none;
+  box-shadow: none;
 }
 
 .form-container {
@@ -27,9 +34,10 @@ background-color: white;
 border-radius: 20px;
 border: 3px solid #ccc;
 padding: 30px;
-width: 100%;
+width: 70%;
 max-width: 400px;
 box-sizing: border-box; 
+  box-shadow: none;
 }
 
 /* Estilo para el título del formulario */

@@ -202,7 +202,7 @@ th {
 }
 
 td {
-  padding: 10px;
+  padding: 3px;
   text-align: left; 
   box-sizing: border-box; 
   font-size: 12px;
@@ -310,8 +310,8 @@ button img {
 
 /* Estilo para las imágenes dentro del botón */
 .action_botton img {
-  width: 24px; 
-  height: 24px;
+  width: 15px; 
+  height: 15px;
   transition: opacity 0.3s ease; 
 }
 
@@ -322,10 +322,9 @@ button img {
 
 .settinguser_img_end {
   position: absolute;
-  bottom: 10px; 
+  bottom: 0px; 
   right: 10px; 
-  width: 300px; 
+  width: 250px; 
   height: auto; 
-  z-index: 1; 
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
