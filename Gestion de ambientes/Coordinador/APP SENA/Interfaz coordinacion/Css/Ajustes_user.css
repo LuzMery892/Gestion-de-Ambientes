@@ -68,6 +68,7 @@ padding: 10px;
     margin: 10px;
     position: relative;
     }
+    
     .titulo_setting {
       display: flex; 
       align-items: center; 
@@ -274,16 +275,20 @@ button img {
   font-size: 16px;
   margin-bottom: 20px;
   }
-
   .close_form3 {
+    position: absolute; 
+    top: -2px; 
+    right: 10px; 
+    background: none; 
     border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-  }
+    cursor: pointer; 
+    padding: 0; 
+}
 
+.close_form3 img {
+    width: 20px; /* Ajusta el tamaño del ícono */
+    height: auto; /* Mantiene la proporción del ícono */
+}
 
   /* Estilo base para los botones */
 .action_botton {

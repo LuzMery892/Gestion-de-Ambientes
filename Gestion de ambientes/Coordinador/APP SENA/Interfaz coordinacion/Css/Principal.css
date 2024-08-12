@@ -197,8 +197,23 @@ body {
 }
 
 
+/* Estilos para el contenedor de imágenes */
+.img_principal {
+  display: flex;
+  gap: 10px; /* Espacio entre las imágenes */
+}
+
+/* Estilos para las imágenes */
 .main_img {
-  width: 100%; /* Asegura que la imagen ocupa todo el ancho del contenedor */
-  height: 100%; /* Asegura que la imagen ocupa todo el alto del contenedor */
-  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+  max-width: 100%; /* Asegura que las imágenes no se salgan del contenedor */
+  height: auto; /* Mantiene la proporción de las imágenes */
+  border-radius: 8px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para las imágenes */
+  /* Ajusta el tamaño si es necesario */
+}
+
+/* Opcional: Estilos adicionales si quieres que las imágenes se ajusten a un tamaño específico */
+.img_principal img {
+  width: 100px; /* Ajusta según el tamaño deseado */
+  height: auto; /* Mantiene la proporción */
 }
