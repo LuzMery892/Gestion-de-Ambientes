@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; 
-    width: 100%; /* Asegura que el ancho del cuerpo no exceda el viewport */
+    width: 100%; 
     height: 100%;
   }
   
@@ -12,7 +12,7 @@ body {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr 5fr 4fr 1fr;
     gap: 0;
-    width: 100vw; /* Asegura que el contenedor use el ancho completo del viewport */
+    width: 100vw; 
     height: 100vh;
     border: 2px solid #ccc;
     padding: 0;
@@ -20,8 +20,8 @@ body {
   }
   
   .header {
-    grid-row: 1; /* Está en la fila 1 */
-    grid-column: 1 / span 6; /* Ocupa desde la columna 1 hasta la 6 */
+    grid-row: 1; 
+    grid-column: 1 / span 6; 
     background-color: #04324D;
     display: flex;
     justify-content: space-between; 
@@ -29,38 +29,38 @@ body {
   }
   
   .navbar {
-    grid-row: 2 / span 4; /* Está en las filas 2 a 6 */
-    grid-column: 1 / span 4; /* Ocupa desde la columna 1 hasta la 4 */
+    grid-row: 2 / span 4; 
+    grid-column: 1 / span 4; 
     background-color: #ffffff;
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente en el contenedor */
-    align-items: center; /* Centra el contenido verticalmente en el contenedor */
+    justify-content: center; 
+    align-items: center; 
     box-sizing: border-box; 
   }
 
   .main {
-    grid-row: 2 / span 4; /* Está en las filas 2 a 6 */
-    grid-column: 5 / span 2; /* Ocupa desde la columna 5 hasta la 6 */
+    grid-row: 2 / span 4; 
+    grid-column: 5 / span 2; 
     background-color: white;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    min-height: 70vh; /* Asegura que el main ocupe al menos el alto de la pantalla */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 70vh; 
     box-sizing: border-box;
   }
   
   .footer {
-    grid-row: 4; /* Está en la fila 6 */
-    grid-column: 1 / span 6; /* Ocupa todas las columnas de 1 a 6 */
+    grid-row: 4; 
+    grid-column: 1 / span 6; 
     background-color: #1fb530;
     color: #ffffff;
     text-align: center;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    padding: 10px; /* Espaciado interno opcional */
-    height: 60px; /* Ajusta según el tamaño deseado del footer */
-    width: 100%; /* Asegura que el footer ocupe todo el ancho disponible */
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px; 
+    height: 60px; 
+    width: 100%; 
     box-sizing: border-box; 
   }
 
@@ -86,7 +86,7 @@ body {
   
   .header-info h1 {
     font-size: 30px;
-    margin-bottom: 0px; /* Espacio entre h1 y h2 */
+    margin-bottom: 0px; 
     color: white;
     
   }
@@ -99,21 +99,21 @@ body {
    
  
   .header-img {
-    position: absolute; /* Permite que el contenedor se posicione en relación al contenedor padre */
-    right: 0; /* Alinea el contenedor a la derecha del header */
-    top: 0; /* Alinea el contenedor en la parte superior del header */
-    height: 100%; /* Ajusta la altura del contenedor de las imágenes de transición */
-    overflow: hidden; /* Oculta cualquier imagen fuera del contenedor */
+    position: absolute; 
+    right: 0; 
+    top: 0; 
+    height: 100%; 
+    overflow: hidden; 
     display: flex;
-    align-items: right; /* Alinea verticalmente las imágenes en el contenedor */
+    align-items: right; 
     z-index: 1; 
     clip-path: polygon(6% 0, 100% 0%, 100% 100%, 9% 100%, 0 26%);
   }
   
     .transicion_img {
-      width: 100%; /* Ajusta la imagen al tamaño del contenedor */
-      height: auto; /* Ajusta la imagen al tamaño del contenedor */
-      transition: opacity 1s ease-in-out; /* Transición suave para el cambio de opacidad */
+      width: 100%; 
+      height: auto; 
+      transition: opacity 1s ease-in-out; 
     }
 
 
@@ -121,8 +121,8 @@ body {
 
   
   .img_principal {
-    width: 100%; /* Ajusta el ancho al 100% del contenedor */
-    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+    width: 100%; 
+    height: auto; 
   }
   
   /*main*/
@@ -131,7 +131,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px; /* Aumentado el ancho para un diseño más espacioso */
+    width: 300px; 
     max-width: 400px; 
     padding: 20px;
     border-radius: 10px;
@@ -151,11 +151,11 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #f6f1f1a4; /* Color de fondo claro */
+    background-color: #f6f1f1a4; 
     border: 3px solid #38de38;
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); 
   }
   
   .form-group {
@@ -163,7 +163,7 @@ body {
   }
   
   label {
-    color: #6c757d; /* Color de texto más suave */
+    color: #6c757d;
     font-size: 14px;
     margin-left: 15px;
   }
@@ -176,21 +176,21 @@ body {
     width: 90%;
     padding: 5px;
     background-color: #f6f1f1a4;
-    border: none; /* Elimina el borde por defecto */
-    border-bottom: 2px solid #ced4da; /* Línea inferior del borde */
-    border-radius: 0; /* Elimina el borde redondeado */
-    box-shadow: none; /* Elimina la sombra interna */
+    border: none; 
+    border-bottom: 2px solid #ced4da; 
+    border-radius: 0; 
+    box-shadow: none; 
     transition: border-color 0.2s ease-in-out;
     margin: 10px;
-    outline: none; /* Elimina el borde de enfoque predeterminado del navegador */
+    outline: none; 
   }
   
   .user-wrapper input:focus, .password-wrapper input:focus {
-    border-bottom-color: #04324D; /* Cambia el color de la línea inferior cuando está enfocado */
+    border-bottom-color: #04324D; 
   }
   
   .user-wrapper input:hover, .password-wrapper input:hover {
-    border-bottom-color: #38de38; /* Cambia el color de la línea inferior cuando se pasa el cursor sobre él */
+    border-bottom-color: #38de38; 
   }
   
   .password-wrapper {
@@ -205,12 +205,12 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 16px; /* Tamaño del ícono del ojo */
+    font-size: 16px; 
     outline: none;
   }
   
   .toggle-password:focus {
-    outline: none; /* Evita que aparezca el borde de enfoque cuando se hace clic */
+    outline: none; 
   }
   
   .link_pass {
@@ -231,7 +231,7 @@ body {
   color: #f6f1f1a4;
   text-decoration: none;
   text-decoration: underline;
-  font-size: 14px; /* Tamaño de fuente */
+  font-size: 14px; 
   }
 
   .submit-button {

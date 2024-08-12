@@ -50,203 +50,281 @@ grid-column: 3 / span 4;
 grid-row: 2 / span 4;
 background-color: white;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 overflow: hidden;
 padding: 10px;
 }
 
-.container_user_setting {
-display: none; 
-background-color: white;
-border-radius: 8px;
-padding: 20px;
-width: 100%;
-height: 100%;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-border: 2px solid #ccc;
-box-sizing: border-box;
-overflow: auto;
-margin: 10px;
+    .container_user_setting {
+    display: none; 
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    margin: 10px;
+    }
+    .titulo_setting {
+      display: flex; 
+      align-items: center; 
+      margin-bottom: 20px; 
+    }
+    
+    .titulo_setting h2 {
+      font-size: 20px; 
+      color: #04324D; 
+      margin: 0; 
+    }
+
+      /* Contenedor principal para la búsqueda, dividido en dos columnas */
+.container_busqueda {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; 
+  padding: 20px; 
 }
 
-.role-group {
-display: flex;
-flex-direction: row;
-align-items: center;
-gap: 20px;
-flex-wrap: wrap;
-margin-bottom: 20px;
+/* Estilo para cada columna dentro del contenedor de búsqueda */
+.column {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
 }
 
-.role-group h3 {
-font-size: 14px;
-color: #333;
+/* Estilo para los títulos dentro de cada columna */
+.column h3 {
+  font-size: 12px; 
+  color: #04324D; 
+  margin: 0 0 10px 0; 
+  text-align: center; 
 }
 
+/* Estilo para las opciones de rol */
 .role-options {
-display: flex;
-flex-wrap: wrap;
-gap: 0px;
-flex-grow: 1;
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+  justify-content: center; 
+  width: 100%; 
 }
 
+/* Estilo para cada opción de rol */
 .role-option {
-background-color: #1fb530;
-padding: 7px 10px;
-cursor: pointer;
-transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
-text-align: center;
-color: white;
+  background-color: white; 
+  border: 2px solid #ccc; 
+  padding: 8px 10px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
+  text-align: center;
+  color: #04324D; 
+  border-radius: 10px; 
+  flex: 1; 
+  min-width: 80px; 
+  font-size: 12px; 
 }
 
 .role-option:hover {
-background-color: #ade8ad;
-color: #04324D;
-transform: scale(1.05);
+  background-color: #ade8ad; 
+  color: #04324D; 
+  border: #f2f2f2;
+  transform: scale(1.05); 
 }
 
+/* Estilo para la barra de búsqueda */
 .search-container {
-display: flex;
-align-items: center;
-gap: 10px;
-flex-shrink: 0;
+  display: flex; 
+  align-items: center; 
+  margin-left: 70px;
+  gap: 20px; 
+  width: 90%; 
 }
 
 .search-bar {
-display: flex;
-flex-grow: 1;
+  flex: 1; 
 }
 
 .search-bar input[type="text"] {
-flex: 1;
-height: 30px;
-padding: 10px;
-border: 2px solid #ccc;
-border-radius: 10px;
-font-size: 12px;
-transition: border-color 0.3s ease;
+  height: 20px; 
+  padding: 5px; 
+  border: 2px solid #ccc; 
+  border-radius: 10px; 
+  font-size: 12px; 
+  transition: border-color 0.3s ease; 
+  width: 100%; 
 }
 
 .search-bar input[type="text"]:focus {
-border-color: #1fb530;
+  border-color: #16a34a; 
+  outline: none; 
 }
 
+/* Estilo para el botón de búsqueda */
 .search-button {
-height: 35px;
-background-color: #04324D;
-color: white;
-border: 2px solid #ccc;
-border-radius: 10px;
-cursor: pointer;
-font-size: 10px;
-transition: background-color 0.2s ease-in-out;
-width: 70%;
-display: flex;
-align-items: center;
-justify-content: center;
+  background-color: #04324D; 
+  color: white; 
+  border: none;
+  padding: 8px 15px; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  font-size: 12px; 
+  transition: background-color 0.3s ease; 
 }
 
 .search-button:hover {
-background-color: #1fb530;
+  background-color: #1fb530;
 }
 
+ /* Contenedor de la tabla */
+.table-container {
+  width: 100%; 
+  margin-bottom: 20px;
+  overflow-x: auto; 
+}
+
+/* Estilo de la tabla */
 table {
-width: 100%;
-border-collapse: collapse;
-margin-bottom: 20px;
+  width: 100%; 
+  border-collapse: collapse; 
 }
 
-table thead {
-background-color: #f2f2f2;
+th {
+  background-color: white; 
+  border: 2px solid #ccc; 
+  color: #04324D; 
+  font-size: 14px;
+  text-align: center; 
+  padding: 10px; 
 }
 
-table th {
-color: #333;
-font-size: 14px;
-padding: 10px;
-border-bottom: 2px solid #ddd;
+td {
+  padding: 10px;
+  text-align: left; 
+  box-sizing: border-box; 
+  font-size: 12px;
+  border: 1px solid #ccc;
 }
 
-table td {
-font-size: 14px;
-padding: 10px;
-border-bottom: 1px solid #ddd;
+/* Botones de acción dentro de la tabla */
+td.action-buttons {
+  text-align: center; 
 }
 
-table tr:hover {
-background-color: #e0f7e9;
+button {
+  background-color: transparent; 
+  border: none;
+  cursor: pointer; 
+  padding: 5px; 
 }
 
-.action-buttons button {
-background-color: #04324D;
-color: white;
-border: none;
-border-radius: 5px;
-padding: 5px 10px;
-cursor: pointer;
-font-size: 12px;
-margin-right: 5px;
-transition: background-color 0.2s ease-in-out;
+button img {
+  width: 24px; 
+  height: 24px;
+  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
 }
 
-.action-buttons button:hover {
-background-color: #1fb530;
+.save-button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; 
 }
 
+/* Estilo del botón de guardar */
 .save-button {
-background-color: #04324D;
-color: white;
-border: none;
-border-radius: 5px;
-padding: 10px 20px;
-cursor: pointer;
-font-size: 16px;
-transition: background-color 0.2s ease-in-out;
+  background-color: #04324D; 
+  color: #fff; 
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  margin-top: 20px; 
+  width: 30%;
+  text-align: center; 
 }
 
 .save-button:hover {
-background-color: #1fb530;
+  background-color: #1fb530; 
 }
 
-.titulo_setting {
-display: flex;
-align-items: center;
+
+  .icon-setting {
+  width: 50px;
+  height: 50px;
+  background-color: #04324D;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  margin-top: -20px;
+  }
+
+  .main_setting-img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  }
+
+  p {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 20px;
+  }
+
+  .close-form3 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  }
+
+  .close-icon3 {
+  width: 24px;
+  height: 24px;
+  }
+
+
+  /* Estilo base para los botones */
+.action_botton {
+  border: none;
+  background: transparent; 
+  cursor: pointer; 
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-.icon-setting {
-width: 50px;
-height: 50px;
-background-color: #04324D;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-right: 10px;
+/* Efecto de hover para el botón */
+.action_botton:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-.main_setting-img {
-width: 30px;
-height: 30px;
-filter: brightness(0) invert(1);
+
+/* Estilo para las imágenes dentro del botón */
+.action_botton img {
+  width: 24px; 
+  height: 24px;
+  transition: opacity 0.3s ease; 
 }
 
-p {
-color: #333;
-font-size: 16px;
-margin-bottom: 20px;
+/* Efecto de hover en la imagen */
+.action_botton:hover img {
+  opacity: 0.8; 
 }
 
-.close-form3 {
-background: none;
-border: none;
-cursor: pointer;
-position: absolute;
-top: 20px;
-right: 30px;
-}
-
-.close-icon3 {
-width: 24px;
-height: 24px;
+.settinguser_img_end {
+  position: absolute;
+  bottom: 10px; 
+  right: 10px; 
+  width: 300px; 
+  height: auto; 
+  z-index: 1; 
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
