@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/layout.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Ajustes_user.css">
+</head>
+<body>
+  <div class="grid-container">
+    <header class = "header"></header>
+    <div id="navbar"></div>
+    
+    <main class="main">
+      <div class="container_user_setting">
+          <div class="titulo_setting">
+              <div class="icon-setting">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAdxJREFUSEvFltFRxDAMRH2dQCdQCVAJUAlQydEJdAJ5N9mbjSI5zjHM+ScTx9FKq5XkQ7vSOlwJt10K/GIOf7fW3vcGcAnwTwIC+FNr7XPUgb3Ab621x8I4UQM+tPYCf0203syR3c8Ix+n9LuxtgveAFZnoI1oAWB6dgNkX5Tz97MqRDJiIHAQj7GnFfOIg56vFedjheV4ZsEcQjb1OG65ofccxHHgu0GFNqTkdicDQA7DoBIhoMDyiWrGl8w8mRoDPqo/ArtrbSM/sEM4RGU/ow9hHUUo4gCBZi6gjsGjGIMYirb18Zmngf9G/KLce1XjpxjwNUjBReF07nbHmu1Rj0OlxL92QG6nodJEuQDNxSZRqFA6c7em8pwhtsEQzadNet5z4KBCnOutaEdiDEUPDwJ5LV2JF3VZq0gGyJS6nOopLo7ASl1fACrxXx1vlEZsUDcbncuxmw3W86q8zEgbVQFRWOFnNYs3v4TrmIAYFMtoyOY9z/i8ObtZxb0jImcWkmYF6Q2J1SajGIuA+Cj2fgBKN8hlFF3M/XE7qXhrk2UWgKrM/XQSix3r3C0IGnEZWGdt75/JpE23+62XPu1TMe1V+adB7I/b8u/iy61DF8mn/EuCuwdGPVwP+BYcbkx/LXuokAAAAAElFTkSuQmCC" class="main_setting-img" alt="Ícono setting">
+              </div>
+        <h2>Ajustes de usuario</h2>
+        <button type="button" class="close_form3">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtlNENwjAMRK+bwCYwCTAJowCTwCZlFHpSLEUlcc6tRPmIP1vXrz77PGCjGDbiooN/pnyX+q+k3gG4AngAeDX+7ADgNuXuWx0oM35OQBZ8A7g4cOYwl8FcF66Az6kLK1iC51DmHVvqKGAW8uBhKAuq4Bqcz01eqVObfQRcgnPxLJry5gsXBc/hi6BRqQ0yn2lr24vOinY8h1rRMDwCLm0vZ8yD4VltVceeZRSff8GVjhWfhuEKeARgtvEsk8Pv6bxWT7YCJpRHwrvTBiD8lE5mFbrUTm5B9aXSsVorlNfBIbnWJHep16gX+vYDg2Y2HyWbDqIAAAAASUVORK5CYII=" alt="close_form3" class="img_close_form3">
+          </button>
+        </div>
+        <p>Aquí puedes consultar, eliminar y actualizar la información de los usuarios.</p>
+      
+        <div class="container_busqueda">
+          <div class="column">
+            <h3>Consultar Usuario por rol</h3>
+            <div class="role-options">              
+                <div class="role-option" data-role="COORDINADOR">Coordinador</div>
+                <div class="role-option" data-role="ALISTAMIENTO">Alistamiento</div>
+                <div class="role-option" data-role="INSTRUCTOR">Instructor</div>                      
+            </div>
+          </div>
+          <div class="column">
+            <h3>Consultar Usuario por nombre</h3>
+            <div class="search-container">
+              <div class="search-bar">
+                <input type="text" id="searchName"/>
+              </div>
+              <button type="button" class="search-button" onclick="searchUser()">Buscar</button>
+            </div>
+          </div>
+        </div>
+        <div class="table-container"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>          
+              <th>Correo electrónico</th>
+              <th>Teléfono</th>
+              <th>Identificación</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            <tr>
+              <td> </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="action-buttons">
+                <button type="button" class="action_botton">
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="setting1">
+                  </button>
+                <button type="button" class="action_botton" data-nombre="nombre_del_usuario">
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ouLDrkuLHrHzTqX/Pe9AKs3kJ8Su2QpHKeOY+pDqYF8M13GHNnhUA17JOdUogb5nNr3jBUDFPESm4uxzYgf6SOGH0AL/E4AAAAASUVORK5CYII=" alt="eliminar"class="setting1">
+                </button>
+                </td>
+                <tr>  
+          </tbody>
+        </table> 
+
+  <div class="save-button-container">
+  <button type="button" class="save-button" onclick="saveChanges()">Guardar</button>
+</div>
+<img src= "C:\Users\Luz\Desktop\Gestion de ambientes\IMG-ICONS\sena-aprendizaje-1-1024x555.jpg" class="settinguser_img_end">
+</main>
+<div id="footer"></div>
+
+<script>
+  async function loadHTML(selector, file) {
+      const response = await fetch(file);
+      const text = await response.text();
+      document.querySelector(selector).innerHTML = text;
+  }
+
+  async function loadContent() {
+    await loadHTML('#navbar', 'navbar.html');
+    await loadHTML('#footer', 'footer.html');
+    
+     // Cargar los scripts después de cargar el contenido HTML
+    loadScripts();
+  }
+
+  function loadScripts() {
+    // Crear y agregar el script para navbar.js
+    const navbarScript = document.createElement('script');
+    navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+    document.body.appendChild(navbarScript);
+
+
+    const UserScript = document.createElement('script');
+    UserScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/User.js';
+    document.body.appendChild(UserScript);
+
+    
+    const Ajustes_userScript = document.createElement('script');
+    Ajustes_userScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ajustes_user.js';
+    document.body.appendChild(Ajustes_userScript);
+}
+
+  loadContent(); // Inicia la carga de contenido
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<script src=""></script>
+</div>
+</body>

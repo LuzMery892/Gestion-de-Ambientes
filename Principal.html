@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/layout.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/menu_notificacion.css">
+</head>
+<body>
+  <div class="grid-container">
+    <div id="header"></div>
+    <div id="navbar"></div>
+
+      <main class="main">
+        <img src="" alt="img_principal" class="main_img">
+    </main>   
+
+    <div id="footer"></div>
+
+    <script>
+      async function loadHTML(selector, file) {
+          const response = await fetch(file);
+          const text = await response.text();
+          document.querySelector(selector).innerHTML = text;
+      }
+
+      async function loadContent() {
+        await loadHTML('#header', 'header.html');
+        await loadHTML('#navbar', 'navbar.html');
+        await loadHTML('#footer', 'footer.html');
+        
+         // Cargar los scripts después de cargar el contenido HTML
+        loadScripts();
+      }
+
+      function loadScripts() {
+        // Crear y agregar el script para navbar.js
+        const navbarScript = document.createElement('script');
+        navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+        document.body.appendChild(navbarScript);
+  
+        // Crear y agregar el script para menu_notificacion.js
+        const menuNotificacionScript = document.createElement('script');
+        menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+        document.body.appendChild(menuNotificacionScript);
+
+        const passScript = document.createElement('script');
+        passScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/pass.js';
+        document.body.appendChild(passScript);
+      }
+
+      
+      loadContent(); // Inicia la carga de contenido
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  </div>
+</body>
