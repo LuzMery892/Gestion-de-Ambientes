@@ -1,258 +1,212 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+.main {
+  position: relative;
+  grid-column: 2 / span 5;
+  grid-row: 2 / span 3;
+  background-color:#f6f1f1a4;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 20px;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr 5fr 4fr 1fr;
-  gap: 0;
-  width: 100vw; 
-  height: 100vh;
-  border: 2px solid #ccc;
-  padding: 0;
-}
-
-.navbar {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 6;
-  display: flex; 
-  flex-direction: column;
-  align-items: center;
-  width: 100%; 
-}
-
-.footer {
-  grid-column: 3 / span 4; 
-  grid-row: 5;
-  background-color: #dca5a5;
-}
-
-
-
-.main {
-position: relative;
-grid-column: 3 / span 4;
-grid-row: 2 / span 3;
-background-color: white;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 10px;
-}
-
-.header{
+.container_user_setting {
+  background-color: white;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  margin: 10px;
   position: relative;
-  grid-column: 3 / span 4;
-  grid-row: 1;
-  background-color: #04324D;
-  display: flex;
+  border: 3px solid #ccc;
+  border-radius: 20px; 
 }
 
+.titulo_setting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
+.titulo_setting h2 {
+  font-size: 20px;
+  color: #04324D;
+  margin: 0;
+}
 
-    .container_user_setting {
-    background-color: white;
-    padding: 30px;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    overflow: auto;
-    margin: 10px;
-    position: relative;
-    }
-    
-    .titulo_setting {
-      display: flex; 
-      align-items: center; 
-      margin-bottom: 20px; 
-    }
-    
-    .titulo_setting h2 {
-      font-size: 20px; 
-      color: #04324D; 
-      margin: 0; 
-    }
-
-      /* Contenedor principal para la búsqueda, dividido en dos columnas */
+/* Contenedor principal para la búsqueda, dividido en dos columnas */
 .container_busqueda {
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  gap: 20px; 
-  padding: 20px; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
 }
 
 /* Estilo para cada columna dentro del contenedor de búsqueda */
 .column {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Estilo para los títulos dentro de cada columna */
 .column h3 {
-  font-size: 12px; 
-  color: #04324D; 
-  margin: 0 0 10px 0; 
-  text-align: center; 
+  font-size: 12px;
+  color: #04324D;
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
 /* Estilo para las opciones de rol */
 .role-options {
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 10px; 
-  justify-content: center; 
-  width: 100%; 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
 }
 
 /* Estilo para cada opción de rol */
 .role-option {
-  background-color: white; 
-  border: 2px solid #ccc; 
-  padding: 8px 10px; 
+  background-color: white;
+  border: 2px solid #ccc;
+  padding: 8px 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   text-align: center;
-  color: #04324D; 
-  border-radius: 10px; 
-  flex: 1; 
-  min-width: 80px; 
-  font-size: 12px; 
+  color: #04324D;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 80px;
+  font-size: 12px;
 }
 
 .role-option:hover {
-  background-color: #ade8ad; 
-  color: #04324D; 
+  background-color: #ade8ad;
+  color: #04324D;
   border: #f2f2f2;
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 /* Estilo para la barra de búsqueda */
 .search-container {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   margin-left: 70px;
-  gap: 20px; 
-  width: 90%; 
+  gap: 20px;
+  width: 90%;
 }
 
 .search-bar {
-  flex: 1; 
+  flex: 1;
 }
 
 .search-bar input[type="text"] {
-  height: 20px; 
-  padding: 5px; 
-  border: 2px solid #ccc; 
-  border-radius: 10px; 
-  font-size: 12px; 
-  transition: border-color 0.3s ease; 
-  width: 100%; 
+  height: 20px;
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 12px;
+  transition: border-color 0.3s ease;
+  width: 100%;
 }
 
 .search-bar input[type="text"]:focus {
-  border-color: #16a34a; 
-  outline: none; 
+  border-color: #16a34a;
+  outline: none;
 }
 
 /* Estilo para el botón de búsqueda */
 .search-button {
-  background-color: #04324D; 
-  color: white; 
+  background-color: #04324D;
+  color: white;
   border: none;
-  padding: 8px 15px; 
-  border-radius: 10px; 
-  cursor: pointer; 
-  font-size: 12px; 
-  transition: background-color 0.3s ease; 
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
   background-color: #1fb530;
 }
 
- /* Contenedor de la tabla */
+/* Contenedor de la tabla */
 .table-container {
-  width: 100%; 
+  width: 100%;
   margin-bottom: 20px;
-  overflow-x: auto; 
+  overflow-x: auto;
 }
 
 /* Estilo de la tabla */
 table {
-  width: 100%; 
-  border-collapse: collapse; 
+  width: 100%;
+  border-collapse: collapse;
 }
 
 th {
-  background-color: white; 
-  border: 2px solid #ccc; 
-  color: #04324D; 
+  background-color: white;
+  border: 2px solid #ccc;
+  color: #04324D;
   font-size: 14px;
-  text-align: center; 
-  padding: 10px; 
+  text-align: center;
+  padding: 10px;
 }
 
 td {
   padding: 5px;
-  text-align: left; 
-  box-sizing: border-box; 
+  text-align: left;
+  box-sizing: border-box;
   font-size: 12px;
   border: 1px solid #ccc;
 }
 
 /* Botones de acción dentro de la tabla */
 td.action-buttons {
-  text-align: center; 
+  text-align: center;
 }
 
 button {
-  background-color: transparent; 
+  background-color: transparent;
   border: none;
-  cursor: pointer; 
-  padding: 5px; 
+  cursor: pointer;
+  padding: 5px;
 }
 
 button img {
-  width: 24px; 
+  width: 24px;
   height: 24px;
   filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
 }
 
 .save-button-container {
   display: flex;
-  justify-content: center; 
-  margin-top: 20px; 
+  justify-content: center;
+  margin-top: 20px;
 }
 
 /* Estilo del botón de guardar */
 .save-button {
-  background-color: #04324D; 
-  color: #fff; 
+  background-color: #04324D;
+  color: #fff;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px; 
-  font-size: 16px; 
-  cursor: pointer; 
-  margin-top: 20px; 
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
   width: 30%;
-  text-align: center; 
+  text-align: center;
 }
 
 .save-button:hover {
-  background-color: #1fb530; 
+  background-color: #1fb530;
 }
 
-
-  .icon-setting {
+.icon-setting {
   width: 50px;
   height: 50px;
   background-color: #04324D;
@@ -262,69 +216,70 @@ button img {
   justify-content: center;
   margin-right: 10px;
   margin-top: -20px;
-  }
+}
 
-  .main_setting-img {
+.main_setting-img {
   width: 30px;
   height: 30px;
   filter: brightness(0) invert(1);
-  }
+}
 
-  p {
+p {
   color: #333;
   font-size: 16px;
   margin-bottom: 20px;
-  }
-  .close_form3 {
-    position: absolute; 
-    top: -2px; 
-    right: 10px; 
-    background: none; 
-    border: none;
-    cursor: pointer; 
-    padding: 0; 
+}
+
+.close_form3 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .close_form3 img {
-    width: 20px; /* Ajusta el tamaño del ícono */
-    height: auto; /* Mantiene la proporción del ícono */
+  width: 20px;
+  height: auto; 
 }
 
-  /* Estilo base para los botones */
+/* Estilo base para los botones */
 .action_botton {
   border: none;
-  background: transparent; 
-  cursor: pointer; 
+  background: transparent;
+  cursor: pointer;
   padding: 10px;
   display: inline-flex;
   align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efecto de hover para el botón */
 .action_botton:hover {
-  transform: scale(1.1); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Estilo para las imágenes dentro del botón */
 .action_botton img {
-  width: 15px; 
+  width: 15px;
   height: 15px;
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease;
 }
 
 /* Efecto de hover en la imagen */
 .action_botton:hover img {
-  opacity: 0.8; 
+  opacity: 0.8;
 }
 
 .settinguser_img_end {
   position: absolute;
-  bottom: 0px; 
-  right: 10px; 
-  width: 250px; 
-  height: auto; 
+  bottom: 0px;
+  right: 10px;
+  width: 250px;
+  height: auto;
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  margin: 10px;
 }

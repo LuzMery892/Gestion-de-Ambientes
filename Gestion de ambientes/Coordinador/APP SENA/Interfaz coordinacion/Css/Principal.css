@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #f6f1f1a4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,42 +11,36 @@ body {
   
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 columnas de igual tamaño */
-    grid-template-rows: auto 1fr auto; /* Fila superior (header), fila principal (main) y fila inferior (footer) */
-    gap: 0;
-    width: 100vw; /* Asegura que el contenedor use el ancho completo del viewport */
-    height: 100vh; /* Asegura que el contenedor use el alto completo del viewport */
+    grid-template-columns: 1.5fr repeat(5, 1fr); 
+    grid-template-rows: auto 1fr auto; 
+    gap: 0px;
+    width: 100vw; 
+    height: 100vh; 
     padding: 0;
   }
   
   #header {
-    grid-column: 3 / span 6; /* Header ocupa toda la fila de columnas */
+    grid-column: 2/ span 6; /* Header ocupa toda la fila de columnas */
     grid-row: 1;
-    background-color: #04324D;
+    background-color: #e0e0e0;
+    border-bottom-right-radius: 70px; /* Radio de redondeo en la esquina inferior derecha */
   }
   
   #navbar {
-    grid-column: 1 / span 2; /* Navbar ocupa las dos primeras columnas */
+    grid-column: 1; /* Navbar ocupa las dos primeras columnas */
     grid-row: 1 / span 4; /* Navbar ocupa desde la fila 2 hasta 4 */
     display: flex;
     flex-direction: column;
-    background-color: #f6f1f1a4;
+    background-color: #e0e0e0;
+    border-bottom-right-radius: 70px;
   }
   
   .main {
-    grid-column: 3 / span 4; /* Main ocupa desde la columna 3 hasta el final */
+    grid-column: 2 / span 4; /* Main ocupa desde la columna 3 hasta el final */
     grid-row: 2 / span 4; /* Main ocupa desde la fila 2 hasta el final */
     background-color: white;
   }
   
-  #footer {
-    grid-column: 1 / span 6; /* Footer ocupa toda la fila de columnas */
-    grid-row: 5;
-    background-color: #dca5a5;
-  }
-  
-
-
   .container_pass {
     position: absolute;
     top: 50%;
@@ -211,7 +205,7 @@ input {
     align-items: center;
     width: 100%;
     margin-left: -5%; 
-    background-color: #f6f1f1a4;
+    background-color: #e0e0e0;
   }
   
   .main {
@@ -234,7 +228,7 @@ input {
     position: relative;
     max-width: 100px;
     height: 80px;
-    margin: 5px;
+    margin: 30px;
   }
   
   .navbar__list {
@@ -393,7 +387,7 @@ input {
     border: none; 
     cursor: pointer; 
     padding: 0; 
-    margin-right: 20px; 
+    margin-right: 50px; 
   
   }
   
@@ -401,7 +395,7 @@ input {
   .menu-toggle img {
     width: 30px; 
     height: auto; 
-    filter: brightness(0) invert(1);
+    filter: sepia(100%) hue-rotate(200deg) saturate(200%);
   }
   
   /* Estilo para el menú de navegación */
@@ -421,12 +415,13 @@ input {
     flex-direction: column; 
     gap: 10px;
     border-color: #38de38;
+    border-radius: 5px;
   }
   /* Estilo para los ítems del menú */
   .navigation-item {
     display: flex;
     align-items: center; 
-    padding: 5px; 
+    padding: 10px; 
   }
   
   /* Estilo para las imágenes dentro de los ítems del menú */

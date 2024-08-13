@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
-  <link rel="stylesheet" href="Gestion de ambientes\Coordinador\APP SENA\Interfaz coordinacion\Css\Ambiente.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Ambiente.css">
 </head>
 <body>
   <div class="grid-container">
-    <header class ="header">   </header>
+
+    <div id="header"></div>
+    
     <div id="navbar"> </div>
 
     <main class="main">
@@ -108,7 +110,6 @@
     </div>
     </main>   
 
-    <div id="footer"></div>
 
     <script>
       async function loadHTML(selector, file) {
@@ -118,8 +119,8 @@
       }
 
       async function loadContent() {
+        await loadHTML('#header', 'header.html');
         await loadHTML('#navbar', 'navbar.html');
-        await loadHTML('#footer', 'footer.html');
   
         loadScripts();
       }
@@ -134,6 +135,10 @@
         const New_ambienteScript = document.createElement('script');
         New_ambienteScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ambiente.js';
         document.body.appendChild(New_ambienteScript);
+
+        const menuNotificacionScript = document.createElement('script');
+        menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+        document.body.appendChild(menuNotificacionScript);       
       }
       loadContent(); 
 

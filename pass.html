@@ -52,7 +52,7 @@
     </div>
 </div>
 </main>
-<div id="footer"></div>
+
 <script>
     async function loadHTML(selector, file) {
         const response = await fetch(file);
@@ -63,7 +63,7 @@
     async function loadContent() {
       await loadHTML('#header', 'header.html');
       await loadHTML('#navbar', 'navbar.html');
-      await loadHTML('#footer', 'footer.html');
+     
       
        // Cargar los scripts después de cargar el contenido HTML
       loadScripts();

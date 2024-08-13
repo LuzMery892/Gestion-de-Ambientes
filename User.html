@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/User.css">
+
 </head>
 <body>
   <div class="grid-container">
-    <header class ="header">   
-    </header>
+    <div id="header"></div>
     <div id="navbar"></div>
     <main class="main">
         <div class="form_newUser">
@@ -65,7 +65,7 @@
             </form>
         </div>
     </main>   
-    <div id="footer"></div>
+    
 
     <script>
       async function loadHTML(selector, file) {
@@ -75,8 +75,9 @@
       }
 
       async function loadContent() {
+        await loadHTML('#header', 'header.html');
         await loadHTML('#navbar', 'navbar.html');
-        await loadHTML('#footer', 'footer.html');
+
         
          // Cargar los scripts después de cargar el contenido HTML
         loadScripts();
@@ -91,7 +92,12 @@
         const UserScript = document.createElement('script');
         UserScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ajustes_user.js';
         document.body.appendChild(UserScript);
+         // Crear y agregar el script para menu_notificacion.js
+         const menuNotificacionScript = document.createElement('script');
+         menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+         document.body.appendChild(menuNotificacionScript);       
     }
+
     
       loadContent(); // Inicia la carga de contenido
     </script>

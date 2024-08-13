@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="grid-container">
-    <header class = "header"></header>
+    <div id="header"></div>
     <div id="navbar"></div>
     
     <main class="main">
@@ -82,7 +82,6 @@
 </div>
 <img src= "Gestion de ambientes/Coordinador/APP SENA/app/IMG-ICONS/sena-aprendizaje-1-1024x555.jpg" class="settinguser_img_end">
 </main>
-<div id="footer"></div>
 
 <script>
   async function loadHTML(selector, file) {
@@ -92,9 +91,9 @@
   }
 
   async function loadContent() {
+    await loadHTML('#header', 'header.html');
     await loadHTML('#navbar', 'navbar.html');
-    await loadHTML('#footer', 'footer.html');
-    
+       
      // Cargar los scripts después de cargar el contenido HTML
     loadScripts();
   }
@@ -104,16 +103,15 @@
     const navbarScript = document.createElement('script');
     navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
     document.body.appendChild(navbarScript);
-
-
-    const UserScript = document.createElement('script');
-    UserScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/User.js';
-    document.body.appendChild(UserScript);
-
     
+    const menuNotificacionScript = document.createElement('script');
+    menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+    document.body.appendChild(menuNotificacionScript);   
+
     const Ajustes_userScript = document.createElement('script');
     Ajustes_userScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ajustes_user.js';
     document.body.appendChild(Ajustes_userScript);
+      
 }
 
   loadContent(); // Inicia la carga de contenido

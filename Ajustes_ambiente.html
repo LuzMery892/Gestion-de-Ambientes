@@ -6,14 +6,18 @@
   <title>Aplicativo Gestión de Ambientes</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Principal.css">
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Ajustes_ambiente.css">
 </head>
+
+
 <body>
+  
   <div class="grid-container">
-    <header class="header">
-      <img src="" class="settinguser_img_end" alt="Imagen de fondo">
-    </header>
+
+    <div id="header"></div>
+    
+    <div id="navbar"> </div>
 
     <main class="main">
       <div class="container_ambiente_setting">
@@ -98,31 +102,40 @@
         </div>
       </div>
     </main>
-    <div id="footer"></div>
-  </div>
+    <script>
+      async function loadHTML(selector, file) {
+          const response = await fetch(file);
+          const text = await response.text();
+          document.querySelector(selector).innerHTML = text;
+      }
 
-  <script>
-    async function loadHTML(selector, file) {
-      const response = await fetch(file);
-      const text = await response.text();
-      document.querySelector(selector).innerHTML = text;
-    }
+      async function loadContent() {
+        await loadHTML('#header', 'header.html');
+        await loadHTML('#navbar', 'navbar.html');
+  
+        loadScripts();
+      }
 
-    async function loadContent() {
-      await loadHTML('#footer', 'footer.html');
-      loadScripts();
-    }
+      function loadScripts() {
+   
+        const navbarScript = document.createElement('script');
+        navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+        document.body.appendChild(navbarScript);
+  
+                
+        const Ajustes_ambientescript = document.createElement('script');
+        Ajustes_ambientescript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ajustes_ambiente.js';
+        document.body.appendChild(Ajustes_ambientescript);
 
-    function loadScripts() {
-      const Ajustes_ambientescript = document.createElement('script');
-      Ajustes_ambientescript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ajustes_ambiente.js';
-      document.body.appendChild(Ajustes_ambientescript);
-    }
+        const menuNotificacionScript = document.createElement('script');
+        menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+        document.body.appendChild(menuNotificacionScript);       
+      }
+      loadContent(); 
 
-    loadContent(); 
-
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+       
