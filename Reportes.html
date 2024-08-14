@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Reportes.css">
+</head>
+<body>
+  <div class="grid-container">
+    <div id="header"></div>
+    <div id="navbar"></div>
+    
+    <main class="main">
+
+        <div class="container_reportes">
+          
+        <div class="filters">
+            <select id="sedeFilter">
+                <option value="">Filtrar por Sede</option>
+                <option value="sede1">Sede 1</option>
+                <option value="sede2">Sede 2</option>
+            </select>
+            <select id="ambienteFilter">
+                <option value="">Filtrar por Ambiente</option>
+                <option value="ambiente1">Ambiente 1</option>
+                <option value="ambiente2">Ambiente 2</option>
+            </select>
+            <select id="estadoFilter">
+                <option value="">Filtrar por Estado</option>
+                <option value="pendiente">Pendiente</option>
+                <option value="en-progreso">En Progreso</option>
+                <option value="resuelto">Resuelto</option>
+            </select>
+            <input type="date" id="fechaFilter" />
+            <input type="text" id="searchBar" placeholder="Buscar reportes..." />
+            <button onclick="filterReports()">Buscar</button>
+        </div>
+        
+            <table id="reportTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Sede y Ambiente</th>
+                        <th>Estado</th>
+                        <th>Descripción</th>
+                        <th>Fecha de Creación</th>
+                        <th>Última Actualización</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="reportTableBody">
+                    <!-- Los reportes se insertarán aquí dinámicamente -->
+                </tbody>
+            </table>
+
+    </div>
+
+
+    </main>
+
+<script>
+  async function loadHTML(selector, file) {
+      const response = await fetch(file);
+      const text = await response.text();
+      document.querySelector(selector).innerHTML = text;
+  }
+
+  async function loadContent() {
+    await loadHTML('#header', 'header.html');
+    await loadHTML('#navbar', 'navbar.html');
+       
+     // Cargar los scripts después de cargar el contenido HTML
+    loadScripts();
+  }
+
+  function loadScripts() {
+    // Crear y agregar el script para navbar.js
+    const navbarScript = document.createElement('script');
+    navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+    document.body.appendChild(navbarScript);
+    
+    const menuNotificacionScript = document.createElement('script');
+    menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+    document.body.appendChild(menuNotificacionScript);   
+
+    const Ajustes_userScript = document.createElement('script');
+    Ajustes_userScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Reportes.js';
+    document.body.appendChild(Ajustes_userScript);
+}
+  loadContent(); // Inicia la carga de contenido
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<script src=""></script>
+</div>
+</body>

@@ -1,0 +1,168 @@
+.main {
+    position: relative;
+    grid-column: 2 / span 5;
+    grid-row: 2 / span 4;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Contenedor principal de novedades */
+.contenedor_principalNov {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre las secciones */
+    width: 100%;
+    margin: 20px;
+    position: relative;
+    border: 3px solid #ccc;
+    border-radius: 20px; 
+    padding: 20px; /* Espacio interno dentro del contenedor principal */
+    box-sizing: border-box; /* Incluye el padding y el border en el cálculo del ancho total */
+}
+
+/* Contenedor que alinea reportes y cierre-ambiente horizontalmente */
+.link_novedades {
+    display: flex;              /* Utiliza Flexbox para alinear los elementos horizontalmente */
+    justify-content: space-between; /* Espacio uniforme entre los elementos */
+    gap: 20px;                  /* Espacio entre los elementos */
+    width: 70%;                /* Asegura que el contenedor abarque todo el ancho disponible */
+    box-sizing: border-box;    /* Incluye el padding en el cálculo del ancho total */
+}
+
+/* Estilo para cada sección dentro de link_novedades */
+.reportes,
+.cierre-ambiente {
+    background-color: white;    /* Color de fondo para cada sección */
+    border: 1px solid #ddd;     /* Borde sutil alrededor de cada sección */
+    border-radius: 10px;        /* Bordes redondeados */
+    padding: 20px;              /* Espacio interno dentro de cada sección */
+    text-align: center;         /* Centra el texto dentro de cada sección */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor de cada sección */
+    flex: 1;                    /* Permite que los elementos se estiren para llenar el espacio disponible */
+    min-width: 150px;           /* Ancho mínimo para las secciones */
+    max-width: 45%;             /* Limita el ancho máximo para evitar que las secciones se vuelvan demasiado anchas */
+}
+
+.reportes h2,
+.cierre-ambiente h2 {
+    font-size: 18px; /* Tamaño del texto */
+    color: #04324D; /* Color del texto */
+    margin: 0; /* Elimina márgenes para alinear el texto con precisión */
+}
+
+.reportes {
+    background-color: #eaf6e9; /* Color de fondo específico para la sección de reportes */
+    border: 1px solid #d1e7d1; /* Borde sutil específico para la sección de reportes */
+}
+
+.cierre-ambiente {
+    background-color: #fef3e4; /* Color de fondo específico para la sección de cierre de ambientes */
+    border: 1px solid #f1d9b5; /* Borde sutil específico para la sección de cierre de ambientes */
+}
+
+
+
+/* Título y icono de novedades */
+.tittle_novedes {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el icono y el título */
+}
+
+p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+    }
+
+.tittle_newuser {
+    font-size: 20px;
+    color: #04324D;
+    margin: 20px;
+}
+
+.icono_novedad img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Contenedor de novedades alineado horizontalmente */
+.container_novedadesAmb {
+    display: flex;
+    gap: 20px; /* Espacio entre las secciones de novedades */
+    justify-content: center; /* Centra las secciones dentro del contenedor */
+}
+
+/* Estilo para cada sección dentro de container_novedadesAmb */
+.reportes,
+.cierre-ambiente {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1; /* Permite que las secciones se estiren para llenar el espacio disponible */
+    min-width: 150px; /* Establece un ancho mínimo para las secciones */
+    max-width: 300px; /* Establece un ancho máximo para las secciones */
+}
+
+/* Contenedor de tarjetas alineado horizontalmente */
+.card-container {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las tarjetas se envuelvan */
+    gap: 30px; /* Espacio entre tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente dentro del contenedor */
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+    width: 100%;
+    margin: 10px;
+    box-sizing: border-box; 
+}
+
+/* Estilo de cada tarjeta */
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 250px; /* Establece un ancho fijo para las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #04324D;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 12px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.close_form5 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .close_form5 img {
+    width: 20px;
+    height: auto; 
+  }

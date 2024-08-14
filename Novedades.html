@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Novedades.css">
+</head>
+<body>
+  <div class="grid-container">
+    <div id="header"></div>
+    <div id="navbar"></div>
+    
+    <main class="main">
+        <div class="contenedor_principalNov">
+            <div class="tittle_novedes">
+                <button type="button" class="close_form5">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar_novedades" class="close_form5">
+                    </button>
+                <div class="icono_novedad">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtloENwjAMBL+bwCTAJjAJMAkwCWwCm0Af1dUrpGBSRxUSkRCKlPj8ju26wUSrmYiLHHgGYB3s0A3AUW2m4DOAZTDUzBE+t42CqfJQCWpmV62wCzcK3gHYdiei3/7e2d23/+T8waNDzcRkEvGnq2qoCWVVMHk2Cbwa2KCmkmWjqkeB2Vi40jCm0L5kJNbFYEKvmTB6oOQXgwk1xfaG3PNNX5pDpgkVg2krhWtrzYU3NKsV7lFqZ0YpNiMK/6Q0FGxhZ60+G75jhSh2cF6O/A44+hvt+h5zKIgcgQYnEB0EmDRWp7xwKnlYufN25lKw3aEDDE/4Ghp9COrHlHDqwOjDsHxTo0V+pYoXtUKbeqdgJpO3ExWp1EvRY6zbocnADwZyYx+ytwPQAAAAAElFTkSuQmCC" class="navbar__submenu-img">
+                </div>
+                <h2 class="tittle_newuser"> Estado de Ambientes</h2>
+            </div>
+            <p>Seleccione la sede para visualizar el estado de los ambientes y reportes</p>
+      
+            <div class="link_novedades">
+                <div class="reportes">
+                    <h2>Seguir Reportes</h2>
+                </div>
+                <div class="cierre-ambiente">
+                    <h2>Modificar Estado Ambiente</h2>
+            </div>
+            </div>
+
+            <div class="card-container">
+                <!-- Sede 1 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Sede Central">
+                    <h3>Sede Central</h3>
+                    <p><strong>Total Ambientes:</strong> 15</p>
+                    <p><strong>Reportes Pendientes:</strong> 3</p>
+                    <p><strong>Ambientes Cerrados:</strong> 1</p>
+                </div>
+                <!-- Sede 2 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Sede Pomar">
+                    <h3>Sede Pomar</h3>
+                    <p><strong>Total Ambientes:</strong> 20</p>
+                    <p><strong>Reportes Pendientes:</strong> 7</p>
+                    <p><strong>Ambientes Cerrados:</strong> 1</p>
+                </div>
+                <!-- Sede 3 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Sede Buenos Aires">
+                    <h3>Sede Buenos Aires</h3>
+                    <p><strong>Total Ambientes:</strong> 10</p>
+                    <p><strong>Reportes Pendientes:</strong> 1</p>
+                    <p><strong>Ambientes Cerrados:</strong> 1</p>
+                </div>
+            </div>
+        </div>
+</main>
+
+<script>
+  async function loadHTML(selector, file) {
+      const response = await fetch(file);
+      const text = await response.text();
+      document.querySelector(selector).innerHTML = text;
+  }
+
+  async function loadContent() {
+    await loadHTML('#header', 'header.html');
+    await loadHTML('#navbar', 'navbar.html');
+       
+     // Cargar los scripts después de cargar el contenido HTML
+    loadScripts();
+  }
+
+  function loadScripts() {
+    // Crear y agregar el script para navbar.js
+    const navbarScript = document.createElement('script');
+    navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+    document.body.appendChild(navbarScript);
+    
+    const menuNotificacionScript = document.createElement('script');
+    menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+    document.body.appendChild(menuNotificacionScript);   
+
+    const Ajustes_userScript = document.createElement('script');
+    Ajustes_userScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Novedades.js';
+    document.body.appendChild(Ajustes_userScript);
+}
+  loadContent(); // Inicia la carga de contenido
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<script src=""></script>
+</div>
+</body>

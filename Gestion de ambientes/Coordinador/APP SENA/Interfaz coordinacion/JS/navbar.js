@@ -78,3 +78,12 @@ const createUserLink = document.getElementById('createUserLink');
           window.location.href = 'Ajustes_ambiente.html'; 
       });
   }
+
+  const ReportesAmbienteLink = document.getElementById('ReportesAmbienteLink');
+
+  if (ReportesAmbienteLink) {
+    ReportesAmbienteLink.addEventListener('click', function(event) {
+          event.preventDefault(); 
+          window.location.href = 'Novedades.html'; 
+      });
+  }
