@@ -2,18 +2,18 @@
   position: relative;
   grid-column: 2 / span 5; 
   grid-row: 2 / span 3;   
-  background-color: #f6f1f1a4;
+  background-color: white;
   display: flex;
   justify-content: center; 
   align-items: center; 
   overflow: hidden; 
-  margin: 20px;
+  margin: 10px;
 }
 
 
 .container_ambiente_setting {
       background-color: white;
-      padding: 30px;
+      padding: 10px;
       width: 100%;
       height: 100%;
       box-sizing: border-box;
@@ -22,27 +22,56 @@
       position: relative;
       border: 3px solid #ccc;
       border-radius: 10px;
-  
 }
 
-      .titulo_settingAmb {
-        display: flex; 
-        align-items: center; 
-        margin-bottom: 5px; 
-      }
-      
-      .titulo_settinAmb h2 {
-        font-size: 20px; 
-        color: #04324D; 
-        margin-top: -20px; 
-      }
+.titulo_settingAmb {
+  display: flex; /* Usa flexbox para alinear el contenido en una fila */
+  align-items: center; /* Alinea verticalmente los elementos en el centro */
+  gap: 10px; /* Espacio entre el ícono y el título */
+  margin: 10px; /* Espacio inferior para separar de otros contenidos */
+}
+
+/* Estilo del título */
+.titulo_settingAmb h2 {
+  font-size: 24px; /* Tamaño de la fuente del título */
+  font-weight: bold; /* Negrita para el título */
+  color: #04324D; /* Color del texto */
+  margin: 0; /* Elimina el margen por defecto del h2 */
+  line-height: 1.2; /* Altura de línea para mejorar la legibilidad */
+}
+
+
+.icon-setting {
+  width: 50px;
+  height: 50px;
+  background-color: #04324D;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-top: -10px;
+  }
+
+  .main_setting-img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  }
+
+  p {
+  color: #333;
+  font-size: 16px;
+  margin-left: 20px;
+
+  }
   
         /* Contenedor principal para la búsqueda, dividido en dos columnas */
   .container_busquedaAmb {
     display: grid; 
     grid-template-columns: 1fr 1fr; 
     padding: 10px; 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   /* Estilo para cada columna dentro del contenedor de búsqueda */
@@ -66,7 +95,7 @@
     align-items: center; 
     margin-left: 70px;
     gap: 20px; 
-    width: 50%; 
+    width: 60%; 
   }
   
   .search-barAmb {
@@ -107,14 +136,23 @@
   /* Contenedor de la tabla */
 .table-containerAmb {
   width: 100%; 
-  margin-bottom: 20px;
+  margin: 10px;
   overflow-x: auto; 
 }
 
 /* Estilo de la tabla */
 .table_amb {
-  width: 100%; 
+  width: auto;
   border-collapse: collapse; 
+  table-layout: auto; 
+  border: 1px solid #04324D;
+  overflow-x: auto; 
+}
+
+/* Color de fondo para el encabezado */
+
+th, td {
+  box-sizing: border-box; /* Asegura que el relleno y el borde se incluyan en el ancho total de la celda */
 }
 
 tbody tr {
@@ -126,12 +164,15 @@ tbody tr:first-child {
 }
 
 tbody tr:last-child {
-  border-bottom: 2px solid #ccc; 
+  border-bottom: 1px solid #04324D; 
 }
 
+
+thead th {
+  background-color: #ccc; 
+  border: 1px solid #04324D;
+}
 th {
-  background-color: white; 
-  border: 2px solid #cce;
   color: #04324D; 
   font-size: 12px;
   text-align: center; 
@@ -140,10 +181,14 @@ th {
 
 td {
   padding: 3px;
-  text-align: left; 
+  text-align: center; 
   box-sizing: border-box; 
   font-size: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #04324D;
+}
+
+tbody td {
+  border: none; /* Quita el borde interno de las celdas */
 }
 
 /* Botones de acción dentro de la tabla */
@@ -189,31 +234,7 @@ td.action-buttons {
   }
   
   
-    .icon-setting {
-    width: 50px;
-    height: 50px;
-    background-color: #04324D;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    margin-top: -20px;
-    }
   
-    .main_setting-img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1);
-    }
-  
-    p {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 20px;
-
-
-    }
     .close_form4 {
       position: absolute; 
       top: 10px; 
@@ -234,7 +255,7 @@ td.action-buttons {
     border: none;
     background: transparent; 
     cursor: pointer; 
-    padding: 10px;
+    padding: 0;
     display: inline-flex;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 

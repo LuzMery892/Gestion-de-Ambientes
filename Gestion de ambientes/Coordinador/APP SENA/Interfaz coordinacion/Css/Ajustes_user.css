@@ -2,13 +2,13 @@
   position: relative;
   grid-column: 2 / span 5;
   grid-row: 2 / span 3;
-  background-color:#f6f1f1a4;
+  background-color:white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
 }
 
 .container_user_setting {
@@ -27,7 +27,7 @@
 .titulo_setting {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .titulo_setting h2 {
@@ -40,8 +40,8 @@
 .container_busqueda {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
+  gap: 10px;
+  padding: 30px;
 }
 
 /* Estilo para cada columna dentro del contenedor de búsqueda */
@@ -139,29 +139,40 @@
   width: 100%;
   margin-bottom: 20px;
   overflow-x: auto;
+  
 }
 
 /* Estilo de la tabla */
 table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: auto;
+  border: 1px solid #04324D;
+  overflow: hidden;
+}
+/* Color de fondo para el encabezado */
+thead th {
+  background-color: #ccc; 
+  border: 1px solid #04324D;
 }
 
 th {
-  background-color: white;
-  border: 2px solid #ccc;
   color: #04324D;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
   padding: 10px;
 }
 
 td {
   padding: 5px;
-  text-align: left;
+  text-align: center;
   box-sizing: border-box;
   font-size: 12px;
   border: 1px solid #ccc;
+}
+
+tbody td {
+  border: none; /* Quita el borde interno de las celdas */
 }
 
 /* Botones de acción dentro de la tabla */
@@ -181,6 +192,12 @@ button img {
   height: 24px;
   filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
 }
+
+/* Opcional: mejorar la visibilidad de las filas alternas */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
 
 .save-button-container {
   display: flex;
@@ -227,7 +244,7 @@ button img {
 p {
   color: #333;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .close_form3 {

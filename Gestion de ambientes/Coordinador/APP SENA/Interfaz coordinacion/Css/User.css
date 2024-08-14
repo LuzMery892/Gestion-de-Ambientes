@@ -7,7 +7,7 @@
     justify-content: center; 
     align-items: center; 
     overflow: hidden; 
-    margin: 20px;
+    margin: 10px;
 }
 
     p {
@@ -36,7 +36,7 @@
 .form-row {
     display: flex;
     flex-wrap: wrap; 
-    gap: 10px; 
+    gap: 5px; 
     justify-content: space-between; 
 }
 
@@ -50,16 +50,17 @@
 }
 
 .form-control {
-    width: 90%; 
+    width: 80%; 
     max-width: 500px; 
     height: 40px; 
-    padding: 10px 15px; 
-    font-size: 14px; 
+    padding: 10px; 
+    font-size: 12px; 
     box-sizing: border-box; 
     border: 2px solid #ccc; 
     border-radius: 10px;
     background-color:  white;
     color: black;
+    margin-left: 40px;
 }
 
 .tittle_newuser {
@@ -78,10 +79,10 @@
 
 /* Estilo para el legend */
 .form-label {
-    font-size: 14px;
-    margin-top: 20px;
-    margin-bottom: 15px; 
-    margin-left: 20px;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    margin-left: 50px;
     font-weight: bold; 
     color: #04324D;
 }
@@ -91,6 +92,7 @@
     display: flex; 
     align-items: center; 
     margin-bottom: 10px; 
+    margin-left: 50px;
 }
 
 /* Ajusta el tamaño del input de radio */
@@ -106,6 +108,7 @@
     font-size: 14px; 
     color:#04324D;
     margin: 0; 
+    margin-left: 10px;
 }
 
 .button-container {

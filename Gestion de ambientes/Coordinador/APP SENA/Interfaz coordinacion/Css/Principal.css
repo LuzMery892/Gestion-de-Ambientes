@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f6f1f1a4;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,8 +22,8 @@ body {
   #header {
     grid-column: 2/ span 6; /* Header ocupa toda la fila de columnas */
     grid-row: 1;
-    background-color: #e0e0e0;
-    border-bottom-right-radius: 70px; /* Radio de redondeo en la esquina inferior derecha */
+    background-color: white;
+    border-bottom-right-radius: 0px; /* Radio de redondeo en la esquina inferior derecha */
   }
   
   #navbar {
@@ -33,14 +33,10 @@ body {
     flex-direction: column;
     background-color: #e0e0e0;
     border-bottom-right-radius: 70px;
+
   }
   
-  .main {
-    grid-column: 2 / span 4; /* Main ocupa desde la columna 3 hasta el final */
-    grid-row: 2 / span 4; /* Main ocupa desde la fila 2 hasta el final */
-    background-color: white;
-  }
-  
+ 
   .container_pass {
     position: absolute;
     top: 50%;
@@ -208,12 +204,6 @@ input {
     background-color: #e0e0e0;
   }
   
-  .main {
-    grid-column: 3 / span 6; /* Ajusta para que coincida con la cabecera */
-    grid-row: 2 / span 6;
-    background-color:white;
-    display: flex;
-  }
   
   .footer {
     grid-column: 3 / span 4; /* Ajusta para que coincida con la cabecera */
@@ -387,7 +377,7 @@ input {
     border: none; 
     cursor: pointer; 
     padding: 0; 
-    margin-right: 50px; 
+    margin-right: 30px; 
   
   }
   
@@ -421,9 +411,13 @@ input {
   .navigation-item {
     display: flex;
     align-items: center; 
-    padding: 10px; 
-  }
-  
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Añade una transición suave para el cambio de color */
+}
+
+.navigation-item:hover {
+    background-color: #ade8ad; /* Cambia el color de fondo al pasar el ratón */
+}
   /* Estilo para las imágenes dentro de los ítems del menú */
   .subheader__img {
     width: 20px; 
@@ -438,3 +432,142 @@ input {
     text-decoration: none; 
     font-size: 14px; 
   }
+
+ /* Estilo del contenedor principal */
+.main {
+  position: relative;
+  grid-column: 2 / span 5; /* Ocupa desde la columna 2 hasta la columna 7 */
+  grid-row: 2 / span 4;    /* Ocupa desde la fila 2 hasta la fila 5 */
+  background-color: #f6f1f1a4;
+  display: grid; /* Usamos grid para distribuir las columnas dentro del main */
+  gap: 10px; /* Espacio entre las columnas */
+  padding: 10px; /* Agrega espaciado alrededor del contenido */
+  box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+/* Estilo para el contenedor de la página principal */
+.contenedor_pagprincipal {
+  display: grid; /* Usamos grid para las columnas internas */
+  grid-template-columns: 40% 60%; /* Columna 1 ocupa 40% y columna 2 ocupa 60% */
+  gap: 10px; /* Espacio entre las columnas */
+  margin: 20px;
+}
+
+/* Estilo para la columna 1 */
+.column-1 {
+  display: grid; /* Usamos grid para las filas internas */
+  grid-template-rows: 1fr 1fr; /* Dos filas iguales (50% cada una) */
+  gap: 10px; /* Espacio entre las secciones */
+}
+
+/* Estilo para la columna 2 */
+.column-2 {
+  display: grid; /* Usamos grid para las filas internas */
+  grid-template-rows: 65% 35%; /* Primera fila ocupa el 70% y la segunda el 30% */
+  gap: 10px; /* Espacio entre las secciones */
+}
+
+/* Estilo para las secciones en ambas columnas */
+.section {
+  display: flex; /* Utiliza Flexbox para centrar el contenido dentro de la sección */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  position: relative; /* Para el posicionamiento relativo de los elementos dentro de la sección */
+  overflow: hidden; /* Asegura que el contenido no se desborde de la sección */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff; /* Fondo blanco para mejor visibilidad */
+}
+
+/* Estilo para la sección de imágenes en la columna 1 */
+.column-1 .section img {
+  width: 100%; /* La imagen ocupará el ancho de la sección */
+  height: 100%; /* La imagen ocupará la altura de la sección */
+  object-fit: cover; /* La imagen se recortará si es necesario para cubrir el contenedor sin distorsión */
+  display: block; /* Elimina el espacio extra debajo de la imagen */
+}
+
+/* Estilo para el contenedor del calendario */
+.contenedor_calendar {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el calendario */
+  justify-content: center; /* Alinea horizontalmente el calendario */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Ocupa todo el alto del contenedor */
+  overflow: hidden; /* Evita que el contenido se desborde del contenedor */
+  padding: 10px; /* Agrega un poco de espaciado interno para evitar el recorte */
+  box-sizing: border-box; /* Incluye el padding en el tamaño total del contenedor */
+}
+
+/* Estilos personalizados para el calendario */
+#calendar {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: auto; /* Ajusta la altura automáticamente */
+  overflow: hidden; /* Evita el desbordamiento del calendario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo del calendario */
+.flatpickr-calendar {
+  background: #ffffff; /* Fondo blanco para el calendario */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  padding: 2px; /* Espaciado interno */
+  font-size: 0.8rem; /* Tamaño de fuente reducido */
+  box-sizing: border-box; /* Incluye el padding y border en el tamaño total */
+}
+
+/* Cabecera del calendario */
+.flatpickr-header {
+  background: #007bff; /* Fondo azul para la cabecera */
+  color: #ffffff; /* Color blanco para el texto */
+  border-radius: 10px; /* Bordes redondeados en la cabecera */
+}
+
+/* Botones de la cabecera */
+.flatpickr-prev-month, .flatpickr-next-month {
+  color: #ffffff; /* Color blanco para los botones */
+}
+
+/* Títulos de los días de la semana */
+.flatpickr-days .flatpickr-day.weekend {
+  color: #007bff; /* Color azul para los fines de semana */
+}
+
+/* Días del mes */
+.flatpickr-day {
+  color: #333333; /* Color del texto de los días */
+  border-radius: 50%; /* Bordes redondeados para los días */
+  padding: 7px; /* Espaciado interno para los días */
+  margin: 2px; /* Espacio entre los días */
+  cursor: pointer; /* Cambia el cursor al pasar sobre los días */
+}
+
+/* Día seleccionado */
+.flatpickr-day.selected {
+  background: #007bff; /* Fondo azul para el día seleccionado */
+  color: #ffffff; /* Color blanco para el texto del día seleccionado */
+}
+
+/* Día actual */
+.flatpickr-day.today {
+  border: 2px solid #007bff; /* Bordes azul para el día actual */
+  background: #f0f8ff; /* Fondo claro para el día actual */
+}
+
+/* Días del mes dentro del calendario (hover) */
+.flatpickr-day:hover {
+  background: #f0f8ff; /* Fondo claro al pasar el mouse sobre los días */
+}
+
+/* Estilos para el contenedor del calendario cuando está en modo de selección de rango */
+.flatpickr-range {
+  border-radius: 0; /* Bordes rectos para el rango de selección */
+}
+
+/* Estilos para el rango seleccionado */
+.flatpickr-day.inRange {
+  background: #e6f7ff; /* Fondo azul claro para el rango seleccionado */
+}

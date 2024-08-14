@@ -29,58 +29,61 @@
       
         <div class="container_busqueda">
           <div class="column">
-            <h3>Consultar Usuario por rol</h3>
-            <div class="role-options">              
-                <div class="role-option" data-role="COORDINADOR">Coordinador</div>
-                <div class="role-option" data-role="ALISTAMIENTO">Alistamiento</div>
-                <div class="role-option" data-role="INSTRUCTOR">Instructor</div>                      
-            </div>
+              <h3>Consultar Usuario por rol</h3>
+              <div class="role-options">              
+                  <div class="role-option" data-role="COORDINADOR">Coordinador</div>
+                  <div class="role-option" data-role="ALISTAMIENTO">Alistamiento</div>
+                  <div class="role-option" data-role="INSTRUCTOR">Instructor</div>                      
+              </div>
           </div>
           <div class="column">
-            <h3>Consultar Usuario por nombre</h3>
-            <div class="search-container">
-              <div class="search-bar">
-                <input type="text" id="searchName"/>
+              <h3>Consultar Usuario por nombre</h3>
+              <div class="search-container">
+                  <div class="search-bar">
+                      <input type="text" id="searchName"/>
+                  </div>
+                  <button type="button" class="search-button" onclick="searchUser()">Buscar</button>
               </div>
-              <button type="button" class="search-button" onclick="searchUser()">Buscar</button>
-            </div>
           </div>
-        </div>
-        <div class="table-container"></div>
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>          
-              <th>Correo electrónico</th>
-              <th>Teléfono</th>
-              <th>Identificación</th>
-              <th>Rol</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="userTableBody">
-            <tr>
-              <td> </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="action-buttons">
-                <button type="button" class="action_botton">
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="setting1">
-                  </button>
-                <button type="button" class="action_botton" data-nombre="nombre_del_usuario">
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ouLDrkuLHrHzTqX/Pe9AKs3kJ8Su2QpHKeOY+pDqYF8M13GHNnhUA17JOdUogb5nNr3jBUDFPESm4uxzYgf6SOGH0AL/E4AAAAASUVORK5CYII=" alt="eliminar"class="setting1">
-                </button>
-                </td>
-                <tr>  
-          </tbody>
-        </table> 
-
+      </div>
+      <div class="table-container">
+          <table>
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th>Nombre</th>         
+                      <th>Correo SENA</th> 
+                      <th>Correo personal</th>
+                      <th>Teléfono</th>
+                      <th>Identificación</th>
+                      <th>Rol</th>
+                      <th>Acciones</th>
+                  </tr>
+              </thead>
+              <tbody id="userTableBody">
+                  <tr>
+                      <td><input type="checkbox" class="rowSelect"></td>
+                      <td>Nombre Ejemplo</td>
+                      <td>correo@ejemplo.com</td>
+                      <td>personal@ejemplo.com</td>
+                      <td>1234567890</td>
+                      <td>123456789</td>
+                      <td>Rol Ejemplo</td>
+                      <td class="action-buttons">
+                          <button type="button" class="action_botton" onclick="editRow(this)">
+                              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="setting1">
+                          </button>
+                          <button type="button" class="action_botton" onclick="deleteRow(this)">
+                              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ouLDrkuLHrHzTqX/Pe9AKs3kJ8Su2QpHKeOY+pDqYF8M13GHNnhUA17JOdUogb5nNr3jBUDFPESm4uxzYgf6SOGH0AL/E4AAAAASUVORK5CYII=" alt="eliminar" class="setting1">
+                          </button>
+                      </td>
+                  </tr>  
+                                 <!-- Más filas aquí -->
+              </tbody>
+          </table>
   <div class="save-button-container">
   <button type="button" class="save-button" onclick="saveChanges()">Guardar</button>
 </div>
-<img src= "Gestion de ambientes/Coordinador/APP SENA/app/IMG-ICONS/sena-aprendizaje-1-1024x555.jpg" class="settinguser_img_end">
 </main>
 
 <script>

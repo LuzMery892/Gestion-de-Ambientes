@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/menu_notificacion.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/calendar.css">
+  <style>
+    /* Estilos adicionales para el contenedor del calendario */
+    #calendar {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
   <div class="grid-container">
@@ -15,31 +23,38 @@
     <div id="navbar"></div>
 
     <main class="main">
-     <div class="column column-1">
-            <div class="section section-1">Sección 1</div>
-            <div class="section section-2">Sección 2</div>
-            <div class="section section-3">Sección 3</div>
-            <div class="section section-4">Sección 4</div>
+      <div class="contenedor_pagprincipal">
+      <div class="column column-1">
+        <div class="section section-1">
+          <p>Sección 1</p>
         </div>
-        <div class="column column-2">
-            <div class="section section-row1">Fila 1 (60%)</div>
-            <div class="section section-row2">Fila 2 (40%)</div>
+        <div class="section section-2">
+          <img src="image2.jpg" alt="Imagen 2">
+          <p>Sección 2</p>
         </div>
-  </main>
+      </div>
 
-
+      <div class="column column-2">
+        <div class="contenedor_calendar">
+          <div id="calendar"></div>
+        </div>
+        <div class="section section-row2">Fila 2 (30%)</div>
+      </div>
+    </div>
+    </main>
+    
     <script>
       async function loadHTML(selector, file) {
-          const response = await fetch(file);
-          const text = await response.text();
-          document.querySelector(selector).innerHTML = text;
+        const response = await fetch(file);
+        const text = await response.text();
+        document.querySelector(selector).innerHTML = text;
       }
 
       async function loadContent() {
         await loadHTML('#header', 'header.html');
         await loadHTML('#navbar', 'navbar.html');
         
-         // Cargar los scripts después de cargar el contenido HTML
+        // Cargar los scripts después de cargar el contenido HTML
         loadScripts();
       }
 
@@ -58,12 +73,27 @@
         passScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/pass.js';
         document.body.appendChild(passScript);
       }
-       loadContent(); // Inicia la carga de contenido
+      loadContent(); // Inicia la carga de contenido
     </script>
-  
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        flatpickr("#calendar", {
+          inline: true, // Muestra el calendario en línea
+          dateFormat: "d/m/Y", // Formato de la fecha
+          locale: "es" // Configura el idioma a español
+        });
+      });
+    </script>
+
+    <!-- Otros scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
   </div>
 </body>
+</html>

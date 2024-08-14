@@ -7,3 +7,9 @@ if (closeFormButton3 && containerUserSetting) {
     window.location.href = 'Principal.html'; // Redirige a Principal.html
   });
 }
+
+// Función para seleccionar o deseleccionar todas las filas
+function toggleSelectAll(source) {
+  const checkboxes = document.querySelectorAll('.rowSelect');
+  checkboxes.forEach(checkbox => checkbox.checked = source.checked);
+}
