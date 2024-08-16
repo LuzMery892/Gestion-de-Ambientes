@@ -19,61 +19,44 @@
     box-sizing: border-box;
     margin: 10px;
     position: relative;
-    border: 3px solid #ccc;
+    border: 4px solid #ccc;
     border-radius: 20px; 
+    align-items: center;
   }
-
-  .titulo_pomar {
-    display: flex; 
-    align-items: center; 
-    gap: 30px; 
-    margin-top: -10px; 
-  }
-/* Estilo para la imagen, si necesitas ajustar su tamaño */
-.arrow_left_pomar {
-    width: 30px; 
-    height: auto; 
-}
 
 /* Estilo para el <h1> */
 .sede1 {
     color: #04324D; 
-    margin-right: 50px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: -15px;
 }
 
 
 /* Estilo para el contenedor de reportes */
 .contenedor_reportes {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 10px; 
-  width: 100%; 
-  max-width: 600px; 
-  gap: 0; 
-  background-color: #e0e0e0;
-  margin-top: -31px;
-  margin-left: -31px;
-  border-top-left-radius: 20px; 
-  border-bottom-right-radius: 10px;
-  border: 2px solid #ccc;
-
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  background-color: white;
 }
 
-/* Estilo para los elementos dentro del contenedor */
+/* Estilo para cada pestaña */
 .select_amb {
-  font-size: 15px;
-  font-weight: bold;
-  padding: 12px;
-  background-color: #ccffcc;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  display: flex; 
-  align-items: center; 
-  background-color: white;
-  gap: 30px; 
-  border-radius: 10px;
+  padding: 10px 10px;
+  border: 2px solid #ccc; /* Borde para cada elemento */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-right: 5px; /* Espacio entre las pestañas */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el elemento */
+  transition: border-color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+
+/* Estilo para la pestaña activa */
+.select_amb.active {
+  border-color: #38de38; /* Color del borde cuando está activo */
+  background-color: #f9f9f9; /* Fondo ligeramente diferente para la pestaña activa */
+  font-weight: bold; /* Poner en negrita el texto de la pestaña activa */
 }
 
 .select_amb:hover {
@@ -82,13 +65,35 @@
   border-radius: 10px;
 }
 
+.tab-content {
+  padding: 20px;
+  border-top: 2px solid #ccc; /* Borde en la parte superior para separar el contenido */
+  width: 100%; /* Asegura que el tab-content ocupe el ancho completo de su contenedor */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido (la tabla) */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Estilo para las secciones de contenido de pestañas 
+.tab-pane {
+  display: none;
+}
+
+/* Estilo para mostrar la pestaña activa */
+.tab-pane.active {
+  display: block;
+}
 
 /*estado REPORTES*/
 .Buscar_pomar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho máximo para evitar que se extienda demasiado */
+  margin-bottom: 20px; /* Espacio debajo del contenedor de búsqueda */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; 
 }
 
 .Buscar{
@@ -99,18 +104,55 @@
 
 /* Estilo para los títulos dentro de los bloques de búsqueda */
 .Buscar h3 {
-  font-size: 14px;
+  font-size: 12px;
   color: #04324D;
   margin: 0 0 10px 0;
   text-align: center; /* Centra el texto */
 }
 
-estado-options{
+.estado-options{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   width: 100%;
+}
+
+/* Estilo para cada opción de rol */
+.estado-option {
+  background-color: white;
+  border: 3px solid #ccc;
+  padding: 8px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  color: #04324D;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 80px;
+  font-size: 12px;
+}
+
+.estado-option:hover {
+  color:  #04324D;
+  border: #f2f2f2;
+  transform: scale(1.05);
+  border: 3px solid #ccc;
+}
+
+/* Color de fondo para el estado Pendiente */
+.estado-option[data-role="Pendiente"] {
+  background-color: #ffcccc; /* Rojo claro */
+}
+
+/* Color de fondo para el estado En revisión */
+.estado-option[data-role="En revisión"] {
+  background-color: #dfeb75; /* Amarillo claro */
+}
+
+/* Color de fondo para el estado Cerrado */
+.estado-option[data-role="Cerrado"] {
+  background-color: #6fdb6f; /* Verde claro */
 }
 
 /* Estilo para el contenedor del formulario de filtro */
@@ -131,8 +173,8 @@ estado-options{
 
 .filter-group {
   display: flex;
-  flex-direction: column; /* Alinea verticalmente la etiqueta y el campo de fecha */
-  gap: 5px; /* Espacio entre la etiqueta y el campo de fecha */
+  flex-direction: column;
+  gap: 5px; 
 }
 
 
@@ -160,42 +202,13 @@ estado-options{
 .fechapomar-button:hover {
   background-color: #1fb530;
 }
-/*TABLAAAA*/
-
-/* Estilo para el selector de estado de reporte */
-.estado_reporte {
-  padding: 7px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
-  font-size: 14px;
-  background-color: white;
-  margin-left: 30px;
-}
-
-/* Opciones del selector de estado */
-.option-pending {
-  background-color: #d86060; /* Color para pendiente */
-}
-
-.option-in-review {
-  background-color: #ffffcc; /* Color para en revisión */
-}
-
-.option-closed {
-  background-color: #ccffcc; /* Color para cerrado */
-}
-
-/* Estilo para la tabla de reportes */
-.table-container {
-  width: 100%;
-  margin-top: 20px;
-  overflow-x: auto;
-}
 
 
 /* Estilo de la tabla */
+/* Estilo para la tabla de reportes */
 #reportTable {
   width: 100%;
+  max-width: 1200px; /* Limita el ancho máximo de la tabla */
   border-collapse: collapse;
   table-layout: auto;
   border: 1px solid #04324D;
@@ -208,7 +221,7 @@ thead th {
   color: #04324D;
   font-size: 12px;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* Estilo para las celdas de la tabla */

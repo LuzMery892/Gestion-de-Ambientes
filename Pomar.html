@@ -16,79 +16,83 @@
     
     <main class="main">
         <div class="container_sedePomar"> 
-            <div class="titulo_pomar">
-                 <h1 class ="sede1">Sede Pomar</h1>                
+            <h1 class ="sede1">Sede Pomar</h1>   
             <div class="contenedor_reportes">  
-                <div class="select_amb" data-role="Reportes - Novedades">Revisar los Reportes de Novedades</div>
-                <div class="select_amb" data-role="">Actualizar el Estado de los Ambientes</div>            
+                <div class="select_amb" data-role="Reportes - Novedades">Revisar Reportes</div>
+                <div class="select_amb" data-role="">Cerrar Ambiente</div>     
             </div>
-        </div> 
-          
-           
-            <div class="Buscar_pomar">
-                <div class="Buscar">
-                    <h3>Consultar reporte por estado</h3>
-                    <div class="estado-options">              
-                        <select class="estado_reporte">
-                            <option value="">Seleccione...</option>
-                            <option value="pendiente" class="option-pending">Por revisar</option>
-                            <option value="en-revision" class="option-in-review">En proceso</option>
-                            <option value="cerrado" class="option-closed">Cerrado</option>
-                        </select>                
-                    </div>
-                </div>
-                <div class="Buscar">
-                    <h3>Consultar reporte por fecha</h3>
-                    <div class="filter-container">
-                        <form id="dateFilterForm" class="filter-form">
-                            <div class="filter-group">
-                                <label for="reportDate"></label>
-                                <input type="date" id="reportDate" name="reportDate" required>
+      
+            <div class="tab-content">
+                <div class="tab-pane" id="reportes">
+                   
+                    <div class="Buscar_pomar">
+                
+                        <div class="Buscar">
+                            <h3>Consultar reporte por estado</h3>
+                            <div class="estado-options">              
+                                <div class="estado-options">              
+                                    <div class="estado-option" data-role="Pendiente">Pendiente</div>
+                                    <div class="estado-option" data-role="En revisión">En revisión</div>
+                                    <div class="estado-option" data-role="Cerrado">Cerrado</div>                      
+                                </div>             
                             </div>
-                            <button type="submit" class="fechapomar-button">Buscar</button>
-                        </form>
+                        </div>
+                        <div class="Buscar">
+                            <h3>Consultar reporte por fecha</h3>
+                            <div class="filter-container">
+                                <form id="dateFilterForm" class="filter-form">
+                                    <div class="filter-group">
+                                        <label for="reportDate"></label>
+                                        <input type="date" id="reportDate" name="reportDate" required>
+                                    </div>
+                                    <button type="submit" class="fechapomar-button">Buscar</button>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                  
+                 
+                    <table id="reportTable">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ambiente</th>
+                                    <th>Descripción</th>
+                                    <th>Reportado por</th>
+                                    <th>Fecha del reporte</th>
+                                    <th>Estado del reporte</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Oficina</td>
+                                    <td>Fugas en la tubería</td>
+                                    <td>Juan Pérez</td>
+                                    <td>2024-08-10</td>
+                                    <td>
+                                         <select class="select-status" onchange="updateStatus(this)">
+                                            <option value="pendiente" class="option-pending">Pendiente</option>
+                                            <option value="en-revision" class="option-in-review">En revisión</option>
+                                            <option value="cerrado" class="option-closed">Cerrado</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn-action btn-edit">Edit</button>
+                                        <button class="btn-action btn-delete">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+
+                <div class="tab-pane" id="actualizar">
+                  
                 </div>
             </div>
-
-
-         <div class="contenedor_tablapomar">
-            <table id="reportTable">
-                <table>
-                    <caption>Reporte de Novedades Sede Pomar</caption>
-                    <thead>
-                        <tr>
-                            <th>Ambiente</th>
-                            <th>Descripción</th>
-                            <th>Reportado por</th>
-                            <th>Fecha de reporte</th>
-                            <th>Estado</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Oficina</td>
-                            <td>Fugas en la tubería</td>
-                            <td>Juan Pérez</td>
-                            <td>2024-08-10</td>
-                            <td>
-                                 <select class="select-status" onchange="updateStatus(this)">
-                                    <option value="pendiente" class="option-pending">Pendiente</option>
-                                    <option value="en-revision" class="option-in-review">En revisión</option>
-                                    <option value="cerrado" class="option-closed">Cerrado</option>
-                                </select>
-                            </td>
-                            <td>
-                                <button class="btn-action btn-delete">Eliminar</button>
-                            </td>
-                        </tr>
-                      
-                        <!-- Más filas aquí -->
-                    </tbody>
-                </table>
-            </div>
-            </div>
+        </div>
+        </div>
+           
     </main>
 
 <script>
