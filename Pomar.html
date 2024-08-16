@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Pomar.css">
+</head>
+<body>
+  <div class="grid-container">
+    <div id="header"></div>
+    <div id="navbar"></div>
+    
+    <main class="main">
+        <div class="container_sedePomar"> 
+            <div class="titulo_pomar">
+                 <h1 class ="sede1">Sede Pomar</h1>                
+            <div class="contenedor_reportes">  
+                <div class="select_amb" data-role="Reportes - Novedades">Revisar los Reportes de Novedades</div>
+                <div class="select_amb" data-role="">Actualizar el Estado de los Ambientes</div>            
+            </div>
+        </div> 
+          
+           
+            <div class="Buscar_pomar">
+                <div class="Buscar">
+                    <h3>Consultar reporte por estado</h3>
+                    <div class="estado-options">              
+                        <select class="estado_reporte">
+                            <option value="">Seleccione...</option>
+                            <option value="pendiente" class="option-pending">Por revisar</option>
+                            <option value="en-revision" class="option-in-review">En proceso</option>
+                            <option value="cerrado" class="option-closed">Cerrado</option>
+                        </select>                
+                    </div>
+                </div>
+                <div class="Buscar">
+                    <h3>Consultar reporte por fecha</h3>
+                    <div class="filter-container">
+                        <form id="dateFilterForm" class="filter-form">
+                            <div class="filter-group">
+                                <label for="reportDate"></label>
+                                <input type="date" id="reportDate" name="reportDate" required>
+                            </div>
+                            <button type="submit" class="fechapomar-button">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+         <div class="contenedor_tablapomar">
+            <table id="reportTable">
+                <table>
+                    <caption>Reporte de Novedades Sede Pomar</caption>
+                    <thead>
+                        <tr>
+                            <th>Ambiente</th>
+                            <th>Descripción</th>
+                            <th>Reportado por</th>
+                            <th>Fecha de reporte</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Oficina</td>
+                            <td>Fugas en la tubería</td>
+                            <td>Juan Pérez</td>
+                            <td>2024-08-10</td>
+                            <td>
+                                 <select class="select-status" onchange="updateStatus(this)">
+                                    <option value="pendiente" class="option-pending">Pendiente</option>
+                                    <option value="en-revision" class="option-in-review">En revisión</option>
+                                    <option value="cerrado" class="option-closed">Cerrado</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="btn-action btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                      
+                        <!-- Más filas aquí -->
+                    </tbody>
+                </table>
+            </div>
+            </div>
+    </main>
+
+<script>
+  async function loadHTML(selector, file) {
+      const response = await fetch(file);
+      const text = await response.text();
+      document.querySelector(selector).innerHTML = text;
+  }
+
+  async function loadContent() {
+    await loadHTML('#header', 'header.html');
+    await loadHTML('#navbar', 'navbar.html');
+       
+     // Cargar los scripts después de cargar el contenido HTML
+    loadScripts();
+  }
+
+  function loadScripts() {
+    // Crear y agregar el script para navbar.js
+    const navbarScript = document.createElement('script');
+    navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+    document.body.appendChild(navbarScript);
+    
+    const menuNotificacionScript = document.createElement('script');
+    menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+    document.body.appendChild(menuNotificacionScript);   
+
+    const Ajustes_userScript = document.createElement('script');
+    Ajustes_userScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Pomar.js';
+    document.body.appendChild(Ajustes_userScript);
+}
+  loadContent(); // Inicia la carga de contenido
+</script>
+
+<script>
+    function updateStatus(selectElement) {
+        // Obtiene el valor seleccionado
+        const status = selectElement.value;
+
+        // Quita las clases de colores anteriores
+        selectElement.classList.remove('option-pending', 'option-in-review', 'option-closed');
+
+        // Añade la clase correspondiente según el valor seleccionado
+        if (status === 'pendiente') {
+            selectElement.classList.add('option-pending');
+        } else if (status === 'en-revision') {
+            selectElement.classList.add('option-in-review');
+        } else if (status === 'cerrado') {
+            selectElement.classList.add('option-closed');
+        }
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<script src=""></script>
+
+</div>
+</body>

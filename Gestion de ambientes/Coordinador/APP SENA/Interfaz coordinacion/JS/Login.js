@@ -4,9 +4,8 @@ function togglePassword() {
 
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
-    toggleButton.textContent = '👁️'; // Cambia el icono a uno que indica que la contraseña está visible
-  } else {
+    toggleButton.textContent = '👁️'; 
     passwordInput.type = 'password';
-    toggleButton.textContent = '👁️'; // Cambia el icono a uno que indica que la contraseña está oculta
+    toggleButton.textContent = '👁️';
   }
 }

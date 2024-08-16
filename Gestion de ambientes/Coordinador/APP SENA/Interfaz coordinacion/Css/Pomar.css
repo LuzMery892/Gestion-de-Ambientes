@@ -1,0 +1,258 @@
+.main {
+    position: relative;
+    grid-column: 2 / span 5;
+    grid-row: 2 / span 3;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .container_sedePomar{
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 10px;
+    position: relative;
+    border: 3px solid #ccc;
+    border-radius: 20px; 
+  }
+
+  .titulo_pomar {
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+    margin-top: -10px; 
+  }
+/* Estilo para la imagen, si necesitas ajustar su tamaño */
+.arrow_left_pomar {
+    width: 30px; 
+    height: auto; 
+}
+
+/* Estilo para el <h1> */
+.sede1 {
+    color: #04324D; 
+    margin-right: 50px;
+}
+
+
+/* Estilo para el contenedor de reportes */
+.contenedor_reportes {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px; 
+  width: 100%; 
+  max-width: 600px; 
+  gap: 0; 
+  background-color: #e0e0e0;
+  margin-top: -31px;
+  margin-left: -31px;
+  border-top-left-radius: 20px; 
+  border-bottom-right-radius: 10px;
+  border: 2px solid #ccc;
+
+}
+
+/* Estilo para los elementos dentro del contenedor */
+.select_amb {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px;
+  background-color: #ccffcc;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex; 
+  align-items: center; 
+  background-color: white;
+  gap: 30px; 
+  border-radius: 10px;
+}
+
+.select_amb:hover {
+  background-color: #1fb530; 
+  color: white;
+  border-radius: 10px;
+}
+
+
+/*estado REPORTES*/
+.Buscar_pomar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 30px;
+}
+
+.Buscar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo para los títulos dentro de los bloques de búsqueda */
+.Buscar h3 {
+  font-size: 14px;
+  color: #04324D;
+  margin: 0 0 10px 0;
+  text-align: center; /* Centra el texto */
+}
+
+estado-options{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Estilo para el contenedor del formulario de filtro */
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+  gap: 20px;
+  width: 90%;
+}
+
+/* Estilo para el formulario de filtro */
+.filter-form {
+  display: flex;
+  align-items: center; 
+  gap: 10px; /* Espacio entre los elementos del formulario */
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column; /* Alinea verticalmente la etiqueta y el campo de fecha */
+  gap: 5px; /* Espacio entre la etiqueta y el campo de fecha */
+}
+
+
+.filter-group input[type="date"] {
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Estilo para el botón de búsqueda */
+.fechapomar-button {
+  background-color: #04324D;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  margin-left: 20px;
+}
+
+.fechapomar-button:hover {
+  background-color: #1fb530;
+}
+/*TABLAAAA*/
+
+/* Estilo para el selector de estado de reporte */
+.estado_reporte {
+  padding: 7px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 14px;
+  background-color: white;
+  margin-left: 30px;
+}
+
+/* Opciones del selector de estado */
+.option-pending {
+  background-color: #d86060; /* Color para pendiente */
+}
+
+.option-in-review {
+  background-color: #ffffcc; /* Color para en revisión */
+}
+
+.option-closed {
+  background-color: #ccffcc; /* Color para cerrado */
+}
+
+/* Estilo para la tabla de reportes */
+.table-container {
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+
+/* Estilo de la tabla */
+#reportTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  border: 1px solid #04324D;
+  background-color: #fff;
+}
+
+/* Estilo del encabezado de la tabla */
+thead th {
+  background-color: #ccc;
+  color: #04324D;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Estilo para las celdas de la tabla */
+td {
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid #ccc;
+}
+
+/* Estilo para las celdas de acción */
+td.action-buttons {
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+button img {
+  width: 24px;
+  height: 24px;
+  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
+}
+
+/* Estilo para el botón de eliminar */
+.btn-delete {
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #cc0000;
+}
+
+/* Opcional: mejorar la visibilidad de las filas alternas */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

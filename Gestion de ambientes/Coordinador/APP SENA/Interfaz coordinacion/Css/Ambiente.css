@@ -2,7 +2,7 @@
     position: relative;
     grid-column: 2 / span 5; 
     grid-row: 2 / span 3;   
-    background-color: #f6f1f1a4;
+    background-color: white;
     display: flex;
     justify-content: center; 
     align-items: center; 
