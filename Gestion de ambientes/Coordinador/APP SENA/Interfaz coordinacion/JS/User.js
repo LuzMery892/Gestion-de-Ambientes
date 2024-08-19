@@ -1,24 +1,22 @@
-   // Obtén el botón de cerrar el formulario
-   const closeFormButton = document.querySelector('.close-form2');
-   // Obtén el contenedor del formulario
-   const formNewUser = document.querySelector('.form_newUser');
+// Obtén el botón de cerrar el formulario
+const closeFormButton = document.querySelector('.close-form2');
+// Obtén el contenedor del formulario
+const formNewUser = document.querySelector('.form_newUser');
 
-   // Verifica si el botón y el formulario existen
-   if (closeFormButton && formNewUser) {
-       // Maneja el clic en el botón de cerrar el formulario
-       closeFormButton.addEventListener('click', function() {
-           // Oculta el formulario
-           formNewUser.style.display = 'none';
-           // Redirige a Principal.html
-           window.location.href = 'Principal.html';
-       });
-   }
+// Verifica si el botón y el formulario existen
+if (closeFormButton && formNewUser) {
+    // Maneja el clic en el botón de cerrar el formulario
+    closeFormButton.addEventListener('click', function() {
+        // Oculta el formulario
+        formNewUser.style.display = 'none';
+        // Redirige a Principal.html
+        window.location.href = 'Principal.html';
+    });
+}
 
+/// CRUD USERS ///
 
-
-
-///CRUD USERS///
-
+// Función para filtrar usuarios por rol
 function filterByRole(role) {
     fetch(`/usuarios/listaPorRol?rol=${role}`)
         .then(response => response.json())
@@ -26,6 +24,7 @@ function filterByRole(role) {
         .catch(error => console.error('Error:', error));
 }
 
+// Función para buscar usuarios por nombre
 function searchUser() {
     const name = document.getElementById('searchName').value;
     fetch(`/usuarios/buscarusuarios_PorNombre?nombre=${name}`)
@@ -34,6 +33,7 @@ function searchUser() {
         .catch(error => console.error('Error:', error));
 }
 
+// Función para actualizar la tabla de usuarios con los datos obtenidos
 function updateUserTable(users) {
     const tbody = document.getElementById('userTableBody');
     tbody.innerHTML = '';
@@ -58,14 +58,14 @@ function updateUserTable(users) {
     });
 }
 
+// Función para editar un usuario
 function editUser(id) {
-    // Aquí deberías hacer una solicitud para obtener los detalles del usuario y mostrar un formulario de edición
     console.log('Editar usuario con ID:', id);
 }
 
+// Función para eliminar un usuario
 function deleteUser(id) {
     if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
-        // Aquí deberías hacer una solicitud DELETE al backend para eliminar el usuario
         fetch(`/usuarios/eliminar/${id}`, { method: 'DELETE' })
             .then(response => {
                 if (response.ok) {
@@ -79,12 +79,58 @@ function deleteUser(id) {
     }
 }
 
+// Función para guardar los cambios en la edición de un usuario
 function saveChanges() {
-    // Aquí deberías recopilar los datos del formulario de edición y enviar una solicitud PUT para guardar los cambios
-    console.log('Guardar cambios');
+    // Obtén los valores del formulario
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const telefono = document.getElementById('telefono').value;
+    const identificacion = document.getElementById('identificacion').value;
+    const rol = document.getElementById('rol').value;
+
+    // Crea el objeto con los datos del formulario
+    const userData = {
+        nombre: nombre,
+        correo: correo,
+        telefono: telefono,
+        identificacion: identificacion,
+        rol: rol
+    };
+
+    // Envía una solicitud POST al backend para crear un nuevo usuario
+    fetch('/usuarios/crear', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Usuario creado exitosamente');
+            formNewUser.style.display = 'none'; // Oculta el formulario al crear el usuario
+            window.location.href = 'Principal.html'; // Redirige a Principal.html
+        } else {
+            alert('Error al crear el usuario');
+        }
+    })
+    .catch(error => console.error('Error:', error));
 }
 
+// Función para cerrar el formulario de configuración
 function closeSettings() {
-    // Aquí deberías manejar el cierre del formulario de configuración
     console.log('Cerrar ajustes');
 }
+
+// Añade un evento al enviar el formulario para validar los campos de correo
+document.querySelector('form').addEventListener('submit', function(event) {
+    var correoAlternativo = document.getElementById('correoAlternativo').value;
+    var correoInstitucional = document.getElementById('correoInstitucional').value;
+
+    // Valida que solo uno de los correos esté lleno
+    if ((correoAlternativo && correoInstitucional) || (!correoAlternativo && !correoInstitucional)) {
+        alert('Debes ingresar solo un correo: alternativo o institucional.');
+        // Previene el envío del formulario
+        event.preventDefault();
+    }
+});
