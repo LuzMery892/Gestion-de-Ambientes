@@ -1,0 +1,271 @@
+.main {
+    position: relative;
+    grid-column: 2 / span 5;
+    grid-row: 2 / span 3;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .container_sedePomar{
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 10px;
+    position: relative;
+    border: 4px solid #ccc;
+    border-radius: 20px; 
+    align-items: center;
+  }
+
+/* Estilo para el <h1> */
+.sede1 {
+    color: #04324D; 
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: -15px;
+}
+
+
+/* Estilo para el contenedor de reportes */
+.contenedor_reportes {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+/* Estilo para cada pestaña */
+.select_amb {
+  padding: 10px 10px;
+  border: 2px solid #ccc; /* Borde para cada elemento */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-right: 5px; /* Espacio entre las pestañas */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el elemento */
+  transition: border-color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+
+/* Estilo para la pestaña activa */
+.select_amb.active {
+  border-color: #38de38; /* Color del borde cuando está activo */
+  background-color: #f9f9f9; /* Fondo ligeramente diferente para la pestaña activa */
+  font-weight: bold; /* Poner en negrita el texto de la pestaña activa */
+}
+
+.select_amb:hover {
+  background-color: #1fb530; 
+  color: white;
+  border-radius: 10px;
+}
+
+.tab-content {
+  padding: 20px;
+  border-top: 2px solid #ccc; /* Borde en la parte superior para separar el contenido */
+  width: 100%; /* Asegura que el tab-content ocupe el ancho completo de su contenedor */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido (la tabla) */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Estilo para las secciones de contenido de pestañas 
+.tab-pane {
+  display: none;
+}
+
+/* Estilo para mostrar la pestaña activa */
+.tab-pane.active {
+  display: block;
+}
+
+/*estado REPORTES*/
+.Buscar_pomar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho máximo para evitar que se extienda demasiado */
+  margin-bottom: 20px; /* Espacio debajo del contenedor de búsqueda */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; 
+}
+
+.Buscar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo para los títulos dentro de los bloques de búsqueda */
+.Buscar h3 {
+  font-size: 12px;
+  color: #04324D;
+  margin: 0 0 10px 0;
+  text-align: center; /* Centra el texto */
+}
+
+.estado-options{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Estilo para cada opción de rol */
+.estado-option {
+  background-color: white;
+  border: 3px solid #ccc;
+  padding: 8px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  color: #04324D;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 80px;
+  font-size: 12px;
+}
+
+.estado-option:hover {
+  color:  #04324D;
+  border: #f2f2f2;
+  transform: scale(1.05);
+  border: 3px solid #ccc;
+}
+
+/* Color de fondo para el estado Pendiente */
+.estado-option[data-role="Pendiente"] {
+  background-color: #ffcccc; /* Rojo claro */
+}
+
+/* Color de fondo para el estado En revisión */
+.estado-option[data-role="En revisión"] {
+  background-color: #dfeb75; /* Amarillo claro */
+}
+
+/* Color de fondo para el estado Cerrado */
+.estado-option[data-role="Cerrado"] {
+  background-color: #6fdb6f; /* Verde claro */
+}
+
+/* Estilo para el contenedor del formulario de filtro */
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+  gap: 20px;
+  width: 90%;
+}
+
+/* Estilo para el formulario de filtro */
+.filter-form {
+  display: flex;
+  align-items: center; 
+  gap: 10px; /* Espacio entre los elementos del formulario */
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+}
+
+
+.filter-group input[type="date"] {
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Estilo para el botón de búsqueda */
+.fechapomar-button {
+  background-color: #04324D;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  margin-left: 20px;
+}
+
+.fechapomar-button:hover {
+  background-color: #1fb530;
+}
+
+
+/* Estilo de la tabla */
+/* Estilo para la tabla de reportes */
+#reportTable {
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho máximo de la tabla */
+  border-collapse: collapse;
+  table-layout: auto;
+  border: 1px solid #04324D;
+  background-color: #fff;
+}
+
+/* Estilo del encabezado de la tabla */
+thead th {
+  background-color: #ccc;
+  color: #04324D;
+  font-size: 12px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilo para las celdas de la tabla */
+td {
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid #ccc;
+}
+
+/* Estilo para las celdas de acción */
+td.action-buttons {
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+button img {
+  width: 24px;
+  height: 24px;
+  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
+}
+
+/* Estilo para el botón de eliminar */
+.btn-delete {
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #cc0000;
+}
+
+/* Opcional: mejorar la visibilidad de las filas alternas */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

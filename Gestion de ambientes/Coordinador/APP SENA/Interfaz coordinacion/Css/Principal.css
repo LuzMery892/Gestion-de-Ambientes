@@ -299,8 +299,8 @@ input {
   
   .navbar__arrow {
     margin-left: 2px;
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     transition: transform 0.3s;
   }
   
@@ -438,7 +438,7 @@ input {
   position: relative;
   grid-column: 2 / span 5; /* Ocupa desde la columna 2 hasta la columna 7 */
   grid-row: 2 / span 4;    /* Ocupa desde la fila 2 hasta la fila 5 */
-  background-color: #f6f1f1a4;
+  background-color: white;
   display: grid; /* Usamos grid para distribuir las columnas dentro del main */
   gap: 10px; /* Espacio entre las columnas */
   padding: 10px; /* Agrega espaciado alrededor del contenido */

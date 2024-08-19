@@ -2,7 +2,7 @@
     position: relative;
     grid-column: 2 / span 5; 
     grid-row: 2 / span 3;   
-    background-color: #f6f1f1a4;
+    background-color: white;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -20,7 +20,7 @@
         overflow: auto;
         margin: 10px;
         position: relative;
-        border: 3px solid #ccc;
+        border: 4px solid #ccc;
         border-radius: 10px;
     
 }
@@ -60,7 +60,7 @@
 .form__ambiente textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
     background-color: white;
@@ -84,7 +84,7 @@
 .time-select-container input[type="text"] {
     flex: 1; 
     padding: 10px; 
-    border: 2px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 10px; 
     font-size: 12px; 
     max-width: 120px;

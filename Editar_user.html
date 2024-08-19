@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Editar_user.css">
+</head>
+<body>
+  <div class="grid-container">
+    <div id="header"></div>
+    <div id="navbar"></div>
+    
+<main class="main">
+    <div class="container_editUser" id="container_edit">
+    <div class="form-editarusuario">
+        <div class="titulo_edit">
+          <button type="button" class="close_form7">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar_edit">
+        </button>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATtJREFUSEvNlgEOwiAMRdlN9CZ6Ez2JehL1JHoTvYnuLeuCBGgHJEiyTBPo6y9t18F1WkMnrrOAN865Q6WDb+fczbdhAb/GQ8BrF/CtGNHAKL3WEr3zl/H3mf8amE0nBYyS5xyVnbK3GXgxNAM1R5uAUbmPKHyMEUgpbwI+hplqUN0EHIZZxOfCHQX7ByTpckZIKkLN21+fTII1AWMfKMa4b+6VCsjVfDPw2hJvCkY1j1bDOFkNBnSXLuTJlr6eajpV4FT9+mHHAVptGIVi8E+jVy4YOM3ET7ZiMJ82God1heVYDJbSsYKlxGR/MdgKTO3rBl76u/89jrXMWIKUqk5OIDEwEODcVe34M00esjTFperUc38BJpwUfO3S5rjJfrgpN7ZYHSoCY5yRtiaRfpIo5a3JO6vUNfu6gb8IxlgfT6zOAAAAAABJRU5ErkJggg=="alt="Notificaciones" class="editUser__img">
+        <h2>Mi Cuenta</h2>
+            </div>
+            <div class="edit-user">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="Editar" class="edit-button" onclick="enableEditing()">
+            </div>
+            <form class="editUser-form">
+                <div class="form-group_edit">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="form-group_edit">
+                    <label for="identificacion">Identificación</label>
+                    <input type="text" id="identificacion" name="identificacion">
+                </div>
+                <div class="form-group_edit">
+                    <label for="correo-sena">Correo SENA</label>
+                    <input type="email" id="correo-sena" name="correoSENA">
+                </div>
+                <div class="form-group_edit">
+                    <label for="correo-personal">Correo Electrónico Personal</label>
+                    <input type="email" id="correo-personal" name="correoPersonal">
+                </div>
+                <div class="form-group_edit">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                <button type="submit" class="editUser-button">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<script>
+    async function loadHTML(selector, file) {
+        const response = await fetch(file);
+        const text = await response.text();
+        document.querySelector(selector).innerHTML = text;
+    }
+  
+    async function loadContent() {
+      await loadHTML('#header', 'header.html');
+      await loadHTML('#navbar', 'navbar.html');
+     
+      
+       // Cargar los scripts después de cargar el contenido HTML
+      loadScripts();
+    }
+
+function loadScripts() {
+    // Crear y agregar  script para navbar.js
+        const navbarScript = document.createElement('script');
+        navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+        document.body.appendChild(navbarScript);
+
+        // Crear y agregar el script para menu_notificacion.js
+        const menuNotificacionScript = document.createElement('script');
+        menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+        document.body.appendChild(menuNotificacionScript);    
+
+        const passScript = document.createElement('script');
+        passScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Pass.js';
+        document.body.appendChild(passScript);
+
+        const Editar_user = document.createElement('script');
+        Editar_user.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Editar_user.js';
+        document.body.appendChild(Editar_user);  
+}
+  loadContent(); // Inicia la carga de contenido
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<script src=""></script>
+</div>
+</body>
