@@ -7,10 +7,8 @@ buttons.forEach(button => {
     const arrow = this.querySelector('.navbar__arrow');
     const parentItem = this.closest('.navbar__item');
 
-    // Verificar si el submenú está abierto
     const isSubmenuOpen = submenu && submenu.classList.contains('navbar__submenu--show');
 
-    // Cerrar todos los submenús y restablecer flechas y márgenes
     document.querySelectorAll('.navbar__submenu').forEach(sub => {
       if (sub !== submenu) {
         sub.classList.remove('navbar__submenu--show');
@@ -22,7 +20,6 @@ buttons.forEach(button => {
       }
     });
 
-    // Si el submenú estaba abierto, solo ciérralo, de lo contrario, ábrelo
     if (isSubmenuOpen) {
       submenu.classList.remove('navbar__submenu--show');
       if (arrow) {
@@ -44,46 +41,66 @@ buttons.forEach(button => {
 // Añadir redirección al hacer clic en el enlace 'createUserLink'
 const createUserLink = document.getElementById('createUserLink');
 
-  if (createUserLink) {
-    createUserLink.addEventListener('click', function(event) {
-      event.preventDefault(); 
-      window.location.href = 'User.html'; 
+if (createUserLink) {
+  createUserLink.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'User.html'; 
+  });
+}
+
+const settingUserLink = document.getElementById('settingUserLink');
+
+if (settingUserLink) {
+  settingUserLink.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'Ajustes_user.html'; 
+  });
+}
+
+const newAmbienteLink = document.getElementById('newAmbienteLink');
+
+if (newAmbienteLink) {
+  newAmbienteLink.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'Ambiente.html'; 
+  });
+}
+
+const settingAmbienteLink = document.getElementById('settingAmbienteLink');
+
+if (settingAmbienteLink) {
+  settingAmbienteLink.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'Ajustes_ambiente.html'; 
+  });
+}
+
+const ReportesAmbienteLink = document.getElementById('ReportesAmbienteLink');
+
+if (ReportesAmbienteLink) {
+  ReportesAmbienteLink.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'Novedades.html'; 
+  });
+}
+
+// Cargar notificaciones en la barra de navegación
+function cargarNotificacionesNavbar() {
+  const notificacionesNavbar = document.querySelector('.notificaciones-navbar');
+
+  if (notificacionesNavbar) {
+    const notificaciones = [
+      { mensaje: "Nueva reserva creada", fecha: "2024-08-20" },
+      { mensaje: "Reserva cancelada", fecha: "2024-08-19" }
+    ];
+
+    notificaciones.forEach(notificacion => {
+      const notificacionElement = document.createElement('div');
+      notificacionElement.className = 'notificacion-navbar';
+      notificacionElement.innerHTML = `<p>${notificacion.mensaje}</p><span>${notificacion.fecha}</span>`;
+      notificacionesNavbar.appendChild(notificacionElement);
     });
   }
+}
 
-  const settingUserLink = document.getElementById('settingUserLink');
-
-  if (settingUserLink) {
-      // Maneja el clic en el enlace
-      settingUserLink.addEventListener('click', function(event) {
-          event.preventDefault(); 
-          window.location.href = 'Ajustes_user.html'; 
-      });
-  }
-
-  const newAmbienteLink = document.getElementById('newAmbienteLink');
-
-  if (newAmbienteLink) {
-      newAmbienteLink.addEventListener('click', function(event) {
-          event.preventDefault(); 
-          window.location.href = 'Ambiente.html'; 
-      });
-  }
-
-  const settingAmbienteLink = document.getElementById('settingAmbienteLink');
-
-  if (settingAmbienteLink) {
-    settingAmbienteLink.addEventListener('click', function(event) {
-          event.preventDefault(); 
-          window.location.href = 'Ajustes_ambiente.html'; 
-      });
-  }
-
-  const ReportesAmbienteLink = document.getElementById('ReportesAmbienteLink');
-
-  if (ReportesAmbienteLink) {
-    ReportesAmbienteLink.addEventListener('click', function(event) {
-          event.preventDefault(); 
-          window.location.href = 'Novedades.html'; 
-      });
-  }
+window.addEventListener('DOMContentLoaded', cargarNotificacionesNavbar);

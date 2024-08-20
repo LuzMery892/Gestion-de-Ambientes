@@ -177,3 +177,31 @@
     height: 30px; 
     filter: brightness(0) invert(1);
   }
+
+
+  /* Estilo para el contenedor del select */
+.custom-select-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea el select a la izquierda del contenedor */
+    padding-left: 40px; /* Aumenta el espacio a la izquierda para mover el select más a la derecha */
+}
+
+/* Estilo personalizado para el select */
+.custom-select {
+    width: 200px; /* Ancho del select */
+    height: 40px; /* Altura del select */
+    padding: 10px; /* Espaciado interno del select */
+    border: 2px solid #ccc; /* Borde del select */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo */
+    color: #333; /* Color del texto */
+    font-size: 14px; /* Tamaño del texto */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para efecto de profundidad */
+    transition: border-color 0.3s ease; /* Transición para el borde */
+}
+
+/* Estilo cuando el select está en foco */
+.custom-select:focus {
+    border-color: #04324D; /* Color del borde cuando está en foco */
+    outline: none; /* Elimina el contorno por defecto */
+}
