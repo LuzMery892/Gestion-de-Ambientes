@@ -135,18 +135,18 @@
   
   /* Contenedor de la tabla */
 .table-containerAmb {
-  width: 100%; 
+  width: calc(100% - 20px);
   margin: 10px;
   overflow-x: auto; 
+  box-sizing: border-box;
 }
 
 /* Estilo de la tabla */
 .table_amb {
-  width: auto;
+  width: 100%;
   border-collapse: collapse; 
   table-layout: auto; 
   border: 1px solid #04324D;
-  overflow-x: auto; 
 }
 
 /* Color de fondo para el encabezado */

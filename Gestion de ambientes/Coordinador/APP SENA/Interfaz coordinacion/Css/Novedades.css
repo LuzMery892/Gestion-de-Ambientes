@@ -11,20 +11,23 @@
     margin: 10px;
 }
 
+
 /* Contenedor principal de novedades */
 .contenedor_principalNov {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espacio entre las secciones */
-    width: 100%;
-    margin: 10px;
+    gap: 5px; 
+    width: 100%; 
+    height: 100%;
+    padding: 30px; 
     position: relative;
-    border: 3px solid #ccc;
+    border: 4px solid #ccc;
     border-radius: 20px; 
-    padding: 10px; 
     box-sizing: border-box; 
-    max-width: 1200px; 
+    overflow: auto;
+    margin: 10px;
 }
+
 
 /* Título y icono de novedades */
 .container_tittleNov {
@@ -36,14 +39,14 @@
 
 .tittle_novedad {
     font-size: 20px; 
-    margin-top: 20px;  
     color:#04324D;   
+    margin-top: 0;
 }
 p {
     color: #333;
     font-size: 16px;
     margin-bottom: 20px;
-    margin-top: 5px;
+    margin-top: -5px;
     margin-left: 20px;
 }
 
@@ -56,7 +59,7 @@ p {
     align-items: center;
     justify-content: center;
     margin-right: 10px; 
-    margin-top: 10px;
+    margin-top: -20px;
  
   }
   .novedadIcon-img {
@@ -69,43 +72,55 @@ p {
 .card-container {
     display: flex;
     flex-wrap: nowrap; 
-    gap: 30px; 
+    gap: 20px; 
     justify-content: center; 
-    overflow-x: auto; 
-    width: 100%;
-    margin: 10px;
-    box-sizing: border-box; 
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+    padding: 10px; /* Espacio interno para las tarjetas */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
 
 /* Estilo de cada tarjeta */
 .card {
     background-color: white;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    width: 250px; 
+    flex: 1 1 250px; 
+    max-width: 300px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; 
 }
 
+/* Estilo para la imagen dentro de la tarjeta */
 .card img {
     width: 100%;
-    height: auto;
+    max-width: 200px; 
+    height: auto; 
+    max-height: 300px; 
+    min-height: 150px;
+    object-fit: cover; 
     border-radius: 10px;
+    margin-bottom: 10px; 
 }
 
+/* Estilo del título de la tarjeta */
 .card h3 {
-    font-size: 18px;
+    font-size: 14px; /* Tamaño de fuente relativo */
     color: #04324D;
     margin: 10px 0;
 }
 
+/* Estilo del texto en la tarjeta */
 .card p {
-    font-size: 12px;
+    font-size: 12px; /* Tamaño de fuente relativo */
     color: #333;
     margin: 5px 0;
 }
-
 .close_form5 {
     position: absolute;
     top: 10px;
