@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
   <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/User.css">
 </head>
-   <link rel="stylesheet" type="text/css" href="user.css">
 <body>
   <div class="grid-container">
     <div id="header"></div>
@@ -26,7 +25,7 @@
                 <button type="button" class="close-form2">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar formulario" class="close-form2">
                 </button>
-                <p>     Aquí puedes crear un nuevo usuario y elegir el rol en el que se desempeña.</p>
+                <p>Aquí puedes crear un nuevo usuario y elegir el rol en el que se desempeña.</p>
                 <div class="form-row">
                     <div class="form_userlabel">
                         <label for="nombre" class="form-label">Nombre</label>
@@ -55,7 +54,11 @@
                     </div>
                     <div class="form_userlabel">
                         <label for="cede-usuario" class="form-label">Centro de Formación</label>
-                        <input type="text" id="cede-usuario" name="cedeUsuario" class="form-control" placeholder="Centro de Formación" required>
+                        <select id="cede-usuario" name="cedeUsuario" class="form-control" required>
+                            <option value="">Seleccionar</option>
+                            <option value="1">Cede Central</option>
+                            <option value="2">Cede Buenaventura</option>
+                        </select>
                     </div>
                     <div>
                         <legend class="form-label">Rol:</legend>
@@ -92,7 +95,7 @@
         await loadHTML('#header', 'header.html');
         await loadHTML('#navbar', 'navbar.html');
         
-         // Cargar los scripts después de cargar el contenido HTML
+        // Cargar los scripts después de cargar el contenido HTML
         loadScripts();
       }
 
@@ -112,12 +115,10 @@
         document.body.appendChild(menuNotificacionScript);       
     }
 
-      loadContent(); // Inicia la carga de contenido
+      loadContent(); // Cargar el contenido y scripts
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    <script src="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/User.js"></script>
-    <script src=""></script>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 </html>
