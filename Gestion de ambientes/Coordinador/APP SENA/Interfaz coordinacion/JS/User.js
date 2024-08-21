@@ -1,3 +1,4 @@
+// Manejar el cierre del formulario
 const closeFormButton3 = document.querySelector('.close_form3');
 const containerUserSetting = document.querySelector('.container_user_setting');
 
@@ -8,31 +9,34 @@ if (closeFormButton3 && containerUserSetting) {
   });
 }
 
-// Función para seleccionar o deseleccionar todas las filas
-function toggleSelectAll(source) {
-  const checkboxes = document.querySelectorAll('.rowSelect');
-  checkboxes.forEach(checkbox => checkbox.checked = source.checked);
-}
-
-// Función para cargar las notificaciones en la página de ajustes de usuario
-function cargarNotificaciones() {
-  const notificacionesContainer = document.querySelector('.notificaciones-container');
+// Manejar el envío del formulario
+document.getElementById('newUserForm').addEventListener('submit', function(event) {
+  event.preventDefault(); 
   
-  if (notificacionesContainer) {
-    // Supongamos que las notificaciones se obtienen de un API y se almacenan en la variable 'notificaciones'
-    const notificaciones = [
-      { mensaje: "Nueva reserva creada", fecha: "2024-08-20" },
-      { mensaje: "Reserva cancelada", fecha: "2024-08-19" }
-    ];
+  // Recoger los datos del formulario
+  const formData = new FormData(this);
 
-    notificaciones.forEach(notificacion => {
-      const notificacionElement = document.createElement('div');
-      notificacionElement.className = 'notificacion';
-      notificacionElement.innerHTML = `<p>${notificacion.mensaje}</p><span>${notificacion.fecha}</span>`;
-      notificacionesContainer.appendChild(notificacionElement);
-    });
-  }
-}
+  // Convertir los datos a un formato JSON
+  const data = {};
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
 
-// Llama a la función para cargar notificaciones cuando se cargue la página
-window.addEventListener('DOMContentLoaded', cargarNotificaciones);
+  // Enviar los datos al servidor
+  fetch('/crear', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Manejar la respuesta del servidor
+    alert(data.message || 'Usuario creado exitosamente.');
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Hubo un problema con la solicitud.');
+  });
+});

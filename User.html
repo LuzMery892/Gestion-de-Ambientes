@@ -15,7 +15,7 @@
     <div id="navbar"></div>
     <main class="main">
         <div class="form_newUser">
-            <form class="newuser">
+            <form id="newUserForm" class="newuser">
                 <div class="container_tittleform">
                     <div class="icon-wrapper">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAWxJREFUSEvtlv9NwzAQhV8noWwCk1AmASaBTgJMAkwC+ZAfOkU5x3Ei8k9PqqLW8X2+dz/cg3ayw05cXcD/pvyc1DeS7iTxxD4lPQ3f39aesAZ+lPSQAICz3m0ZmAhfg9cXSV8l+mP5/boo0AXPwECBIy0AG1DWeCL3bRd1yFcG/i4OpyR9Hg50KutzNZKeK9v4UaJC4vvRbud+rEZ8zYqlqrRIjZxAMCTmUFhN6m5wLC6gZ0lXQWLAHChrq24wjpe0E0q42tlLHbgAqRMbQfyqN1ccRE4v2zE5J/pxpLVDxtz/FescuLVbNgUTLR9yG2V8LxHHqMdSo5LnQOyKqtQ4IUeez1nUgHHqil/VTrFd7Giczxgd0Nhu3rO4qmOupoaHHcfpNTXdFoFbh8MUfPGFEas6Do3acDA4vk+uUajZIjjK3NpmvkxWgblx+Lfhcdhyet/ZDJXuiFtAm73TKulmQDu6gDeXNHO4m9Q/WDdWH/rl31UAAAAASUVORK5CYII=" class="main_form-img" alt="Ícono de usuario">
@@ -42,43 +42,45 @@
                     <div class="form_userlabel">
                         <label for="correo-tipo" class="form-label">Tipo de Correo</label>
                         <div class="custom-select-container">
-                          <select id="correo-tipo" name="correoTipo" class="custom-select" required>
-                            <option value="INSTITUCIONAL">Correo Institucional</option>
-                            <option value="ALTERNATIVO">Correo Alternativo</option>
-                          </select>
+                            <select id="correo-tipo" name="correoTipo" class="custom-select" required>
+                                <option value="INSTITUCIONAL">Correo Institucional</option>
+                                <option value="ALTERNATIVO">Correo Alternativo</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form_userlabel">
                         <label for="correo" class="form-label">Correo electrónico</label>
                         <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required>
                     </div>
+
                     <div class="form_userlabel">
                         <label for="sede-usuario" class="form-label">Centro de Formación</label>
                         <div class="sede-select-container">
-                        <select id="sede-usuario" name="sedeUsuario" class="form-control" required>
-                            <option value="">Seleccionar</option>
-                            <option value="1">Sede Central</option>
-                            <option value="2">Sede Pomar</option>
-                            <option value="3">Sede Buenos Aires</option>
-                            <option value="4">Sede U. San Buenaventura</option>
-                        </select>
+                            <select id="sede-usuario" name="centroFormacion" class="form-control" required>
+                                <option value="">Seleccionar</option>
+                                <option value="1">Sede Complejo Central</option>
+                                <option value="2">Sede el Pomar</option>
+                                <option value="3">Sede Buenos Aires</option>
+                                <option value="4">Sede U. San Buenaventura</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
                     <div>
                         <legend class="form-label">Rol:</legend>
                         <div class="form-check">
-                            <input type="radio" id="coordinador" name="rol" value="COORDINADOR" class="form-check-input" required>
-                            <label for="coordinador" class="form-check-label">Coordinador</label>
-                        </div>
-                        <div class="form-check">
                             <input type="radio" id="alistamiento" name="rol" value="ALISTAMIENTO" class="form-check-input" required>
                             <label for="alistamiento" class="form-check-label">Alistamiento</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="coordinador" name="rol" value="COORDINADOR" class="form-check-input" required>
+                            <label for="coordinador" class="form-check-label">Coordinador</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" id="instructor" name="rol" value="INSTRUCTOR" class="form-check-input" required>
                             <label for="instructor" class="form-check-label">Instructor</label>
                         </div>
                     </div>
+                    <input type="hidden" id="creadorRol" name="creadorRol" value="coordinador"> <!-- Cambia esto según el rol del creador -->
                     <div class="button-container">
                         <button type="submit" class="btn-primary">Crear</button>
                     </div>
@@ -86,7 +88,7 @@
                 <img src="Gestion de ambientes/Coordinador/APP SENA/app/IMG-ICONS/sena-boys.jpg" class="main_img_end">
             </form>
         </div>
-    </main>   
+    </main>  
     
     <script>
       async function loadHTML(selector, file) {
