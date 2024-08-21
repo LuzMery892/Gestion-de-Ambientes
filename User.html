@@ -36,6 +36,10 @@
                         <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Teléfono" required>
                     </div>
                     <div class="form_userlabel">
+                        <label for="numero-documento" class="form-label">Identificación</label>
+                        <input type="text" id="numero-documento" name="numeroDocumento" class="form-control" placeholder="Número de Documento" required>
+                    </div>
+                    <div class="form_userlabel">
                         <label for="correo-tipo" class="form-label">Tipo de Correo</label>
                         <div class="custom-select-container">
                           <select id="correo-tipo" name="correoTipo" class="custom-select" required>
@@ -45,21 +49,21 @@
                         </div>
                     </div>
                     <div class="form_userlabel">
-                        <label for="numero-documento" class="form-label">Número de Documento</label>
-                        <input type="text" id="numero-documento" name="numeroDocumento" class="form-control" placeholder="Número de Documento" required>
+                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required>
                     </div>
                     <div class="form_userlabel">
-                        <label for="correo" class="form-label">Correo</label>
-                        <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo" required>
-                    </div>
-                    <div class="form_userlabel">
-                        <label for="cede-usuario" class="form-label">Centro de Formación</label>
-                        <select id="cede-usuario" name="cedeUsuario" class="form-control" required>
+                        <label for="sede-usuario" class="form-label">Centro de Formación</label>
+                        <div class="sede-select-container">
+                        <select id="sede-usuario" name="sedeUsuario" class="form-control" required>
                             <option value="">Seleccionar</option>
-                            <option value="1">Cede Central</option>
-                            <option value="2">Cede Buenaventura</option>
+                            <option value="1">Sede Central</option>
+                            <option value="2">Sede Pomar</option>
+                            <option value="3">Sede Buenos Aires</option>
+                            <option value="4">Sede U. San Buenaventura</option>
                         </select>
                     </div>
+                </div>
                     <div>
                         <legend class="form-label">Rol:</legend>
                         <div class="form-check">

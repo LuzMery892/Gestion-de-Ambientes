@@ -7,29 +7,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     margin: 10px;
+    overflow-x: hidden;
   }
   
   .container_sedePomar{
     background-color: white;
-    padding: 30px;
+    padding: 10px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     margin: 10px;
     position: relative;
     border: 4px solid #ccc;
-    border-radius: 20px; 
-    align-items: center;
-  }
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-x: hidden;
+}
+
+.contenedor_reportes, .Buscar_pomar, .filter-container {
+  overflow: hidden;
+}
 
 /* Estilo para el <h1> */
 .sede1 {
     color: #04324D; 
     margin-bottom: 20px;
     font-size: 20px;
-    margin-top: -15px;
+    margin-top: 5px;
+    margin-left: 50px;
+    text-align: left;
 }
 
 
@@ -37,83 +47,74 @@
 .contenedor_reportes {
   display: flex;
   flex-direction: row;
+  width: 100%; 
   margin-bottom: 10px;
   background-color: white;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 /* Estilo para cada pestaña */
 .select_amb {
-  padding: 10px 10px;
-  border: 2px solid #ccc; /* Borde para cada elemento */
-  border-radius: 5px; /* Bordes redondeados */
-  margin-right: 5px; /* Espacio entre las pestañas */
-  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el elemento */
-  transition: border-color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+  padding: 10px 15px;
+  border-radius: 5px; 
+  margin-left: 30px; 
+  cursor: pointer; 
+  background-color:white;
+  transition: border-color 0.3s ease, background-color 0.3s ease; 
+  border-color: 2px solid #ccc; 
 }
-
 
 /* Estilo para la pestaña activa */
 .select_amb.active {
-  border-color: #38de38; /* Color del borde cuando está activo */
-  background-color: #f9f9f9; /* Fondo ligeramente diferente para la pestaña activa */
-  font-weight: bold; /* Poner en negrita el texto de la pestaña activa */
+  border-color: #38de38; 
+  background-color: #ccc; 
+  font-weight: bold; 
 }
 
 .select_amb:hover {
-  background-color: #1fb530; 
-  color: white;
-  border-radius: 10px;
+  background-color: #ade8ad; 
+  color: #04324D;
 }
 
 .tab-content {
   padding: 20px;
-  border-top: 2px solid #ccc; /* Borde en la parte superior para separar el contenido */
-  width: 100%; /* Asegura que el tab-content ocupe el ancho completo de su contenedor */
+  border-top: 2px solid #ccc; 
+  width: 100%; 
   display: flex;
-  justify-content: center; /* Centra horizontalmente el contenido (la tabla) */
-  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  justify-content: center; 
+  box-sizing: border-box; 
+  flex-direction: column;
 }
 
-/* Estilo para las secciones de contenido de pestañas 
-.tab-pane {
-  display: none;
-}
-
-/* Estilo para mostrar la pestaña activa */
-.tab-pane.active {
-  display: block;
-}
 
 /*estado REPORTES*/
 .Buscar_pomar {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  width: 100%;
-  max-width: 1200px; /* Limita el ancho máximo para evitar que se extienda demasiado */
-  margin-bottom: 20px; /* Espacio debajo del contenedor de búsqueda */
-  justify-content: center; /* Centra horizontalmente el contenido */
-  align-items: center; 
+  grid-template-columns: 60% 40%;
+  gap: 20px; 
+  margin-bottom: 20px;
 }
 
 .Buscar{
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px; 
 }
 
 /* Estilo para los títulos dentro de los bloques de búsqueda */
 .Buscar h3 {
   font-size: 12px;
   color: #04324D;
-  margin: 0 0 10px 0;
-  text-align: center; /* Centra el texto */
+  margin: 0 0 15px 0px;
+  text-align: center;
 }
 
 .estado-options{
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
   width: 100%;
 }
@@ -121,151 +122,486 @@
 /* Estilo para cada opción de rol */
 .estado-option {
   background-color: white;
-  border: 3px solid #ccc;
-  padding: 8px 8px;
+  border: 1px solid #04324D;
+  padding:  10px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   text-align: center;
   color: #04324D;
   border-radius: 10px;
   flex: 1;
-  min-width: 80px;
-  font-size: 12px;
+  min-width: 70px;
+  font-size: 14px;
 }
 
-.estado-option:hover {
-  color:  #04324D;
-  border: #f2f2f2;
+.estado-option[data-role="Pendiente"]:hover{
+  color:  #333;
   transform: scale(1.05);
-  border: 3px solid #ccc;
+  background-color: #f7b0b0;
 }
 
-/* Color de fondo para el estado Pendiente */
-.estado-option[data-role="Pendiente"] {
-  background-color: #ffcccc; /* Rojo claro */
+.estado-option[data-role="En revisión"]:hover{
+  color:  #333;
+  transform: scale(1.05);
+ background-color: #f6f863;
 }
 
-/* Color de fondo para el estado En revisión */
-.estado-option[data-role="En revisión"] {
-  background-color: #dfeb75; /* Amarillo claro */
+.estado-option[data-role="Cerrado"]:hover{
+  color:  #333;
+  transform: scale(1.05);
+ background-color: #a5f5a8;
 }
 
-/* Color de fondo para el estado Cerrado */
-.estado-option[data-role="Cerrado"] {
-  background-color: #6fdb6f; /* Verde claro */
-}
-
-/* Estilo para el contenedor del formulario de filtro */
 .filter-container {
   display: flex;
   align-items: center;
-  margin-left: 70px;
-  gap: 20px;
+  margin-left: 50px;
+  gap:5px;
   width: 90%;
+  margin-top: -8px;
 }
 
 /* Estilo para el formulario de filtro */
 .filter-form {
   display: flex;
   align-items: center; 
-  gap: 10px; /* Espacio entre los elementos del formulario */
+  gap: 10px; 
 }
 
 .filter-group {
   display: flex;
   flex-direction: column;
-  gap: 5px; 
 }
 
+.filter-group label {
+  font-size: 14px;
+  color: #333; 
+  margin-bottom: 10px; 
+}
 
 .filter-group input[type="date"] {
-  padding: 5px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
-  font-size: 14px;
-  box-sizing: border-box;
+  padding: 7px; 
+  border: 1px solid #04324D; 
+  border-radius: 10px; 
+  font-size: 14px; 
+  color: #333; 
+  background-color: #fff; 
+  box-sizing: border-box; 
+  transition: border-color 0.3s ease; 
+  margin-left: 30px;
+
 }
+
 
 /* Estilo para el botón de búsqueda */
 .fechapomar-button {
   background-color: #04324D;
   color: white;
   border: none;
-  padding: 8px 20px;
+  padding: 7px 20px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.3s ease;
-  margin-left: 20px;
+  margin-left: 30px;
+  margin-top: 10px;
 }
 
 .fechapomar-button:hover {
   background-color: #1fb530;
 }
 
+.table-containerReportes {
+  width: 100%; 
+  display: flex; 
+  justify-content: center;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
 
-/* Estilo de la tabla */
 /* Estilo para la tabla de reportes */
 #reportTable {
-  width: 100%;
-  max-width: 1200px; /* Limita el ancho máximo de la tabla */
-  border-collapse: collapse;
+  width: 100%; 
+  border-collapse: collapse; 
   table-layout: auto;
-  border: 1px solid #04324D;
-  background-color: #fff;
+  border: 1px solid #04324D; 
 }
 
 /* Estilo del encabezado de la tabla */
 thead th {
-  background-color: #ccc;
-  color: #04324D;
-  font-size: 12px;
-  text-align: center;
-  padding: 20px;
+  background-color: #ccc; 
+  color: #04324D; 
+  font-size: 13px; 
+  text-align: center; 
+  padding: 15px; 
+  border-bottom: 1px solid #04324D; 
 }
 
-/* Estilo para las celdas de la tabla */
+/* Estilo para las celdas del encabezado y el cuerpo de la tabla */
+th, td {
+  box-sizing: border-box; 
+}
+
+/* Estilo para las filas del cuerpo de la tabla */
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para la primera fila del cuerpo de la tabla */
+tbody tr:first-child {
+  border-top: 1px solid #04324D; 
+}
+
+/* Estilo para la última fila del cuerpo de la tabla */
+tbody tr:last-child {
+  border-bottom: 1px solid #04324D; 
+}
+
+/* Estilo para las celdas del cuerpo de la tabla */
 td {
-  padding: 8px;
-  text-align: center;
-  font-size: 12px;
-  border: 1px solid #ccc;
+  padding: 5px; 
+  text-align: center; 
+  font-size: 12px; 
+  border-left: none; 
+  border-right: none; 
 }
 
 /* Estilo para las celdas de acción */
 td.action-buttons {
-  text-align: center;
+  text-align: center; 
 }
 
+/* Estilo para los encabezados */
+th {
+  padding: 10px; 
+}
+/* Estilo para los botones dentro de las celdas */
 button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer; 
+  padding: 5px; 
 }
 
 button img {
-  width: 24px;
-  height: 24px;
-  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
+  width: 24px; 
+  height: 24px; 
+  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%); 
 }
 
-/* Estilo para el botón de eliminar */
-.btn-delete {
-  background-color: #ff4d4d;
+
+/* Estilo base para los botones */
+.pomar_botton {
+  border: none; 
+  background: transparent; 
+  cursor: pointer; 
+  padding: 11px; 
+  display: inline-flex; 
+  align-items: center; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de hover para el botón */
+.pomar_botton:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo para las imágenes dentro del botón */
+.pomar_botton img {
+  width: 15px;
+  height: 15px; 
+  transition: opacity 0.3s ease; 
+}
+
+/* Efecto de hover en la imagen del botón */
+.pomar_botton:hover img {
+  opacity: 0.8; 
+}
+
+/* Efecto de hover en la imagen */
+.pomar_botton:hover img {
+  opacity: 0.8;
+}
+
+.container_buttonReportes{
+  display: flex;
+  justify-content: center; 
+}
+.reportes-button{
+    background-color: #04324D;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 15%;
+}
+  
+  .reportes-button:hover {
+    background-color: #1fb530;
+  }
+  
+
+  .select-status {
+    background-color: #fff;
+    border: 1px solid #04324D;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #04324D;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.select-status:focus {
+    outline: none;
+    border-color: #1fb530;
+    box-shadow: 0 0 4px rgba(0, 255, 0, 0.2);
+}
+
+.option-pending {
+    background-color: #f7b0b0; 
+}
+
+.option-in-review {
+    background-color: #f6f863; 
+}
+
+.option-closed {
+    background-color: #a5f5a8; 
+}
+
+.option-pending:hover, 
+.option-in-review:hover, 
+.option-closed:hover {
+    background-color: #ddd; 
+}
+
+
+.tab-pane {
+  display: none; 
+  width: 100%;
+  height: 100%;
+  flex: 1; /* Permite que el panel ocupe todo el espacio disponible */
+  overflow: auto;
+}
+
+.tab-pane.active {
+  display: block; 
+}
+
+
+
+/* tab-pane 2 - ACTUALIZAR*/
+/* Contenedor principal de la sección de búsqueda */
+.Actualizar_pomar {
+  padding: 20px; 
+  background-color: white; 
+  margin: 10px 0; 
+}
+
+/* Estilo para el título del bloque */
+.Actualizar_pomar h3 {
+  font-size: 12px; 
+  color: #04324D; 
+  margin: 0 0 15px 0;
+  text-align: left; 
+}
+
+/* Contenedor del estado y botón */
+.Select_estadoAmbiente {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+
+/* Estilo para el input de búsqueda y select */
+.search-input {
+  padding: 7px;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 200px; 
+}
+
+/* Estilo para el botón de búsqueda */
+.ActualizarPomar-button {
+  background-color: #04324D;
   color: white;
-  border-radius: 5px;
-  padding: 5px 10px;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.3s ease;
 }
 
-.btn-delete:hover {
-  background-color: #cc0000;
+.ActualizarPomar-button:hover {
+  background-color: #1fb530; 
 }
 
-/* Opcional: mejorar la visibilidad de las filas alternas */
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+/* Estilos generales para el modal */
+.modal_Pomar {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px; 
+  height: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #04324D; 
+}
+
+/* Contenido del modal */
+.modalPomar-content {
+  position: relative;
+}
+
+/* Estilo para el título del modal */
+.modalPomar-content h2 {
+  font-size: 14px; 
+  color: #04324D; 
+  margin: 0 0 10px 0; 
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilo para los botones */
+.modalPomar-content button {
+  background-color: #04324D;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.modalPomar-content button:hover {
+  background-color: #032A44;
+}
+
+/* Estilo para los campos del formulario */
+.modalPomar-content label {
+  font-size: 12px; /* Tamaño de fuente reducido para los labels */
+  color: #333;
+}
+
+.modalPomar-content input[type="date"],
+.modalPomar-content input[type="time"],
+.modalPomar-content textarea {
+  width: calc(100% - 20px); /* Ajusta el ancho para el padding */
+  padding: 5px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.modalPomar-content textarea {
+  resize: vertical;
+}
+
+/* Botón de cerrar */
+.close {
+  position: absolute;
+  top: -10px;
+  right: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Estilos para el contenedor de tarjetas */
+.card-containerPomar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Estilos para cada tarjeta */
+.card {
+  background-color: #fff;
+  border: 1px solid #04324D;
+  border-radius: 7px;
+  padding: 20px;
+  width: 200px; /* Ajusta el tamaño de las tarjetas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 16px; /* Tamaño de fuente reducido */
+  margin: 0 0 10px 0;
+  text-align: center;
+  color: #04324D;
+}
+
+.card-description {
+  font-size: 14px; 
+  text-align: center;
+}
+
+.card-status {
+  padding: 10px;
+  border-radius: 7px; /* Bordes redondeados */
+  font-weight: bold; /* Resalta el texto */
+  color: black; /* Color del texto */
+  display: inline-block; /* Asegura que el padding funcione correctamente */
+}
+
+.card-status.available {
+  background-color: #44f74a; /* Verde para Disponible */
+}
+
+.card-status.closed {
+  background-color: #fc4747; /* Rojo para Clausurado */
+}
+
+.card-status-select {
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+  transition: all 0.3s ease; /* Suaviza la transición para todos los cambios */
+}
+
+
+.card-status-select:focus {
+  outline: none; 
+  border-color: #1fb530; 
+  box-shadow: #ade8ad;
+}
+
+.button_clausurar {
+  background-color: #dc3545; /* Color de fondo rojo */
+  color: #fff; /* Color del texto blanco */
+  border: none; /* Elimina el borde predeterminado */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: bold; /* Fuente en negrita */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Suaviza las transiciones para el color de fondo y la sombra */
+}
+
+.button_clausurar:hover {
+  background-color: #c82333; /* Color de fondo más oscuro al pasar el cursor */
 }

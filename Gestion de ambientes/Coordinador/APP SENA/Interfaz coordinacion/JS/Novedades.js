@@ -8,6 +8,18 @@ if (closeFormButton5 && contenedor_principalNovedad) {
   });
 }
 
+const card_pomar = document.getElementById('card-2');
+
+if (card_pomar) {
+    card_pomar.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'Pomar.html'; 
+    });
+}
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     // Función para actualizar los datos de las tarjetas
     async function updateCardData() {
