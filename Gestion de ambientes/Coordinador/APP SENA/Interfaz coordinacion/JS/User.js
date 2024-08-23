@@ -1,13 +1,15 @@
-// Manejar el cierre del formulario
-const closeFormButton3 = document.querySelector('.close_form3');
-const containerUserSetting = document.querySelector('.container_user_setting');
 
-if (closeFormButton3 && containerUserSetting) {
-  closeFormButton3.addEventListener('click', function() {
-    containerUserSetting.style.display = 'none'; // Oculta el contenedor
-    window.location.href = 'Principal.html'; // Redirige a Principal.html
+const closeFormButton2 = document.querySelector('.close-form2');
+const containerNewUser = document.querySelector('.form_newUser'); 
+
+if (closeFormButton2 && containerNewUser) {
+  closeFormButton2.addEventListener('click', function() {
+  containerNewUser.style.display = 'none'; 
+  window.location.href = 'Principal.html'; 
   });
 }
+
+
 
 // Manejar el envío del formulario
 document.getElementById('newUserForm').addEventListener('submit', function(event) {

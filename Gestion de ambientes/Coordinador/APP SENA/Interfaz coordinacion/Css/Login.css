@@ -14,7 +14,7 @@ body {
     gap: 0;
     width: 100vw; 
     height: 100vh;
-    border: 2px solid #ccc;
+    border: 2px solid white;
     padding: 0;
     box-sizing: border-box;
   }
@@ -27,21 +27,9 @@ body {
     justify-content: space-between; 
     position: relative;
   }
-  
-  .navbar {
-    grid-row: 2 / span 4; 
-    grid-column: 1 / span 4; 
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    box-sizing: border-box; 
-  }
-
   .main {
     grid-row: 2 / span 4; 
-    grid-column: 5 / span 2; 
-    background-color: white;
+    grid-column: 4/ span 3; 
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -49,28 +37,14 @@ body {
     box-sizing: border-box;
   }
   
-  .footer {
-    grid-row: 4; 
-    grid-column: 1 / span 6; 
-    background-color: #1fb530;
-    color: #ffffff;
-    text-align: center;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 10px; 
-    height: 60px; 
-    width: 100%; 
-    box-sizing: border-box; 
-  }
-
+ 
  
   /*header*/
   .img_sena {
     position: relative;
     max-width: 100px;
     height: 70px;
-    margin-left: 30px;
+    margin-left: 70px;
   }
 
   .container {
@@ -86,14 +60,13 @@ body {
   
   .header-info h1 {
     font-size: 30px;
-    margin-bottom: 0px; 
+    margin-bottom: 10px; 
     color: white;
-    
   }
   
   .header-info h2 {
     font-size: 20px;
-    color:white;
+    color: white;
     margin-left: 120px;
   }
    
@@ -151,7 +124,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #f6f1f1a4; 
+    background-color: white; 
     border: 3px solid #38de38;
     padding: 10px;
     border-radius: 20px;
@@ -175,7 +148,7 @@ body {
   .user-wrapper input, .password-wrapper input {
     width: 90%;
     padding: 5px;
-    background-color: #f6f1f1a4;
+    background-color: white;
     border: none; 
     border-bottom: 2px solid #ced4da; 
     border-radius: 0; 
@@ -250,3 +223,74 @@ body {
   .submit-button:hover {
     background-color: #1fb530
   }  
+
+/* Contenedor del slideshow */
+
+.navbar {
+  grid-row: 2 / span 3; 
+  grid-column: 1 / span 3; 
+  background-color:white;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  box-sizing: border-box; 
+  position: relative; 
+  overflow: hidden;
+  margin: 10px;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide-card {
+  display: none; 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slide_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: 20px;
+  border-radius: 0 50px 20px 0;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 0 0 8px 8px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
