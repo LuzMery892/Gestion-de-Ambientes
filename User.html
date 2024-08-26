@@ -32,10 +32,7 @@
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required>
                     </div>
-                    <div class="form_userlabel">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Teléfono" required>
-                    </div>
+                    
                     <div class="form_userlabel">
                         <label for="numero-documento" class="form-label">Identificación</label>
                         <input type="text" id="numero-documento" name="numeroDocumento" class="form-control" placeholder="Número de Documento" required>
@@ -49,6 +46,12 @@
                             </select>
                         </div>
                     </div>
+                
+                    <div class="form_userlabel">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Teléfono" required>
+                    </div>
+                    
                     <div class="form_userlabel">
                         <label for="correo" class="form-label">Correo electrónico</label>
                         <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required>
@@ -60,27 +63,27 @@
                             <select id="sede-usuario" name="centroFormacion" class="form-control" required>
                                 <option value="">Seleccionar</option>
                                 <option value="1">Sede Complejo Central</option>
-                                <option value="4">Sede U. San Buenaventura</option>
+                                <option value="2">Sede U. San Buenaventura</option>
                                 <option value="3">Sede Buenos Aires</option>
-                                <option value="2">Sede el Pomar</option>
+                                <option value="4">Sede el Pomar</option>
                             </select>
                         </div>
                     </div>
                     <div>
                         <legend class="form-label">Rol:</legend>
                         <div class="form-check">
-                            <input type="radio" id="alistamiento" name="rol" value="ALISTAMIENTO" class="form-check-input" required>
+                            <input type="radio" id="alistamiento" name="rol" value="ALISTAMIENTO" data-id="1" class="form-check-input" required>
                             <label for="alistamiento" class="form-check-label">Alistamiento</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" id="coordinador" name="rol" value="COORDINADOR" class="form-check-input" required>
+                            <input type="radio" id="coordinador" name="rol" value="COORDINADOR" data-id="2" class="form-check-input" required>
                             <label for="coordinador" class="form-check-label">Coordinador</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" id="instructor" name="rol" value="INSTRUCTOR" class="form-check-input" required>
+                            <input type="radio" id="instructor" name="rol" value="INSTRUCTOR" data-id="3" class="form-check-input" required>
                             <label for="instructor" class="form-check-label">Instructor</label>
                         </div>
-                    </div>
+                    </div>                    
                     <input type="hidden" id="creadorRol" name="creadorRol" value="coordinador"> <!-- Cambia esto según el rol del creador -->
                     <div class="button-container">
                         <button type="submit" class="btn-primary">Crear</button>
@@ -119,12 +122,12 @@
         // Crear y agregar el script para menu_notificacion.js
         const menuNotificacionScript = document.createElement('script');
         menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
-        document.body.appendChild(menuNotificacionScript);       
-    }
-
-      loadContent(); // Cargar el contenido y scripts
+        document.body.appendChild(menuNotificacionScript);
+      }
+  
+      // Cargar el contenido cuando la página haya cargado
+      window.onload = loadContent;
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </div>
 </body>
 </html>

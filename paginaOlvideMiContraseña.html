@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecimiento de Contraseña</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlazar con archivo de estilos -->
+</head>
+<body>
+    <div class="container">
+        <h2>Restablecer Contraseña</h2>
+        <form action="/restablecer-contraseña/confirmarRestablecerContraseña" method="post">
+            <input type="hidden" name="token" value="${token}"> <!-- Token oculto, lo debería establecer dinámicamente en el backend -->
+
+            <label for="nuevaContraseña">Nueva Contraseña:</label>
+            <input type="password" id="nuevaContraseña" name="nuevaContraseña" required>
+
+            <label for="confirmarContraseña">Confirmar Contraseña:</label>
+            <input type="password" id="confirmarContraseña" name="confirmarContraseña" required>
+
+            <button type="submit">Restablecer Contraseña</button>
+        </form>
+    </div>
+</body>
+</html>
