@@ -1,6 +1,6 @@
 function togglePassword() {
   const passwordInput = document.getElementById('password');
-  const toggleButton = document.querySelector('.toggle-password');
+  const toggleButton = document.querySelector('.togglePassword');
 
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
@@ -10,20 +10,16 @@ function togglePassword() {
   }
 }
 
-let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = 0;
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.querySelectorAll(".slide-card");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+function showSlides() {
+  const slides = document.querySelectorAll('.slide-card');
+  slides.forEach(slide => slide.style.display = 'none');
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
   }
-  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex - 1].style.display = 'block';
+  setTimeout(showSlides, 10000);
 }
+showSlides();
