@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo Gestión de Ambientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
+    <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/menu_notificacion.css">
+    <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Buscar_reserva.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div id="header"></div>
+        <div id="navbar"></div>
+
+        <main class="main">
+            <div class="Container_buscarReserva">
+                <div class="Header_Reserva">
+                <button type="button" class="close_form8">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar_Reserva" class="close_form8">
+                  </button>
+                  <div class="titulo_buscarreserva">
+                    <div class="icon-reserva">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPlJREFUSEvtl90NAiEQhOc60U60E61E7cROtBOvE3UuQFYClyWOwQf2xUvk+Nhf5iZ0sqkTFx7wBsAhHPD6fp4rh/WuW173gHcAbgG2B3CvgL3r/g/MkJ1MeL8pA6aFEbrkKSqF+gGAcKXxAFu7YQ62eVKCuddHfQxwU0s4clHdby3Uaz3rYC5L5GDvlJKDvSkZ4DTnW4orXhQsGuY4Trf80mBRRpOE+uksZeuMBGw9jq3CX85he0fLPbYOj6puViUtVW1D3W1yOQtcP6vlYIaQ0ucXRumT2q6kuc5B7Cnh1OPHNc0V/6Pn7FWF6Ct+BHgEvdLztFc38AuBn3AfCUoQxAAAAABJRU5ErkJggg=="class="main_reservag-img" alt="Ícono reserva">
+                    </div>
+                    <h2>Agendar Reserva</h2>
+                  </div>
+                  <p>Aquí puedes buscar los ambientes disponibles y agendar tus reservas.</p>
+              </div>
+
+              <div class="container_filtroReserva">
+                <form id="reservationForm">
+                    <div class="form-row">
+                        <div class="form-resv">
+                            <label for="fechaInicio">Fecha de Inicio:</label>
+                            <input type="date" id="fechaInicio" class="form-control" required>
+                        </div>
+                        <div class="form-resv">
+                            <label for="horaInicio">Hora de Inicio:</label>
+                            <input type="time" id="horaInicio" class="form-control" required>
+                        </div>
+                        <div class="form-resv">
+                            <label for="horaFin">Hora de Fin:</label>
+                            <input type="time" id="horaFin" class="form-control" required>
+                        </div>
+                        <div class="form-resv">
+                            <label for="frecuencia"></label>
+                            <button type="button" class="btn btn-info" id="openModalBtn">
+                                Personalizar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-resv">
+                    <button type="submit" class="btn btn-success mt-2">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        
+            <!-- Modal -->
+            <div class="modal" id="modalPeriodicidad_reservas">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Personalizar Franja Horaria</h5>
+                        <button type="button" class="btn-close" id="closeModalBtn2">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="repetirCada" class="form-label">Repetir por</label>
+                            <div class="input-group">
+                                <input type="number" id="repetirCada" class="form-control" min="1" required>
+                                <span class="input-group-text">semanas</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Se repite el</label>
+                            <div id="diasSemana" class="dias-semana">
+                                <button type="button" class="dia-btn" data-day="lunes">L</button>
+                                <button type="button" class="dia-btn" data-day="martes">M</button>
+                                <button type="button" class="dia-btn" data-day="miercoles">C</button>
+                                <button type="button" class="dia-btn" data-day="jueves">J</button>
+                                <button type="button" class="dia-btn" data-day="viernes">V</button>
+                                <button type="button" class="dia-btn" data-day="sabado">S</button>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaFin" class="form-label">Termina el</label>
+                            <input type="date" id="fechaFin" class="form-control" required>
+                        </div>                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Hecho</button>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="reservar_busquedas"> 
+                <div class="select_ambienteReserva">  
+                    <div class="select_res" data-role="reservas_central">Sede Complejo Central</div>
+                    <div class="select_res" data-role="reservas_pomar">Sede el Pomar</div>    
+                    <div class="select_res" data-role="reservas_buenosaires">Sede Buenos Aires</div>
+                    <div class="select_res" data-role="reservas_Ubuenaventura">Sede U.San Buenaventura</div>    
+                </div>
+            
+                <div class="tab-reserva">
+                    <div class="tab-sedes" id="reservas_central">         
+                        <div class="titlle_central">     
+                            <h2>Ambientes disponibles en la Sede Complejo Central</h2>   
+                        </div>               
+                        <div class="table-containerReservas">
+                            <table id="table_reservas_central">
+                                <thead>
+                                    <tr>                    
+                                        <th>Sede</th>
+                                        <th>Nombre</th>
+                                        <th>Tipo Ambiente</th>
+                                        <th>Capacidad</th>                               
+                                        <th>Reservar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sede 1</td>
+                                        <td>Nombre Ambiente</td>
+                                        <td>Tipo A</td>
+                                        <td>100</td>                                
+                                        <td><button class="btn btn-reservar">Reservar</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            
+                    <div class="tab-sedes" id="reservas_pomar">         
+                        <div class="titlle_pomar">     
+                            <h2>Ambientes disponibles en la Sede el Pomar</h2>   
+                        </div>               
+                        <div class="table-containerReservas">
+                            <table id="table_reservas_pomar">
+                                <thead>
+                                    <tr>                    
+                                        <th>Sede</th>
+                                        <th>Nombre</th>
+                                        <th>Tipo Ambiente</th>
+                                        <th>Capacidad</th>                               
+                                        <th>Reservar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sede 1</td>
+                                        <td>Nombre Ambiente</td>
+                                        <td>Tipo A</td>
+                                        <td>100</td>                                
+                                        <td><button class="btn btn-reservar">Reservar</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                
+
+          <div class="tab-sedes" id="reservas_buenosaires">         
+                        <div class="titlle_buenosaires">     
+                            <h2>Ambientes disponibles en la Sede Buenos Aires</h2>   
+                        </div>               
+                        <div class="table-containerReservas">
+                            <table id="table_reservas_buenosaires">
+                                <thead>
+                                    <tr>                    
+                                        <th>Sede</th>
+                                        <th>Nombre</th>
+                                        <th>Tipo Ambiente</th>
+                                        <th>Capacidad</th>                               
+                                        <th>Reservar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sede 1</td>
+                                        <td>Nombre Ambiente</td>
+                                        <td>Tipo A</td>
+                                        <td>100</td>                                
+                                        <td><button class="btn btn-reservar">Reservar</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            
+                    <div class="tab-sedes" id="reservas_Ubuenaventura">         
+                        <div class="titlle_USB">     
+                            <h2>Ambientes disponibles en la Sede U.San Buenaventura</h2>   
+                        </div>               
+                        <div class="table-containerReservas">
+                            <table id="table_reservas_Ubuenaventura">
+                                <thead>
+                                    <tr>                    
+                                        <th>Sede</th>
+                                        <th>Nombre</th>
+                                        <th>Tipo Ambiente</th>
+                                        <th>Capacidad</th>                               
+                                        <th>Reservar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sede 1</td>
+                                        <td>Nombre Ambiente</td>
+                                        <td>Tipo A</td>
+                                        <td>100</td>                                
+                                        <td><button class="btn btn-reservar">Reservar</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
+
+        <script>
+            async function loadHTML(selector, file) {
+                const response = await fetch(file);
+                const text = await response.text();
+                document.querySelector(selector).innerHTML = text;
+            }
+
+            async function loadContent() {
+                await loadHTML('#header', 'header.html');
+                await loadHTML('#navbar', 'navbar.html');
+                loadScripts();
+            }
+
+            function loadScripts() {
+                const navbarScript = document.createElement('script');
+                navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+                document.body.appendChild(navbarScript);
+
+                const menuNotificacionScript = document.createElement('script');
+                menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+                document.body.appendChild(menuNotificacionScript);
+
+                const buscarReservaScript = document.createElement('script');
+                buscarReservaScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Buscar_reserva.js';
+                document.body.appendChild(buscarReservaScript);
+            }
+
+            loadContent();
+        </script>
+    </body>
+</html>

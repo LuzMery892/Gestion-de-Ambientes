@@ -5,24 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Inicio Sesión </title>
   <link rel="stylesheet" href="Gestion de ambientes\Coordinador\APP SENA\Interfaz coordinacion\Css\Login.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
 </head>
 
 <body>
 <div class="grid-container">
     
   <header class="header">
-    <div class="container">
-      <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Logo SENA.png" alt="logosena" class="img_sena">
-      <div class="header-info">
-        <h1>Centro de Servicios de Salud</h1>
-        <h2>Regional Antioquia</h2>
-      </div>
-    </div>
-    <div class="header-img">
-      <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-boys.jpg" alt="Logo SENA" class="transicion_img">
-      <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-push.jpg" alt="Logo SENA" class="transicion_img">
-      <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Instructor SENA.jpg" alt="Logo SENA" class="transicion_img">
-    </div>
+        <div class="container">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Logo SENA.png" alt="logosena" class="img_sena">
+          <div class="header-info">
+            <h1>GESTIÓN DE AMBIENTES</h1>
+          </div>
+          </div>
+        <div class="header-img">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-boys.jpg" alt="Logo SENA" class="transicion_img">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-push.jpg" alt="Logo SENA" class="transicion_img">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Instructor SENA.jpg" alt="Logo SENA" class="transicion_img">
+        </div>
+      </header>
+
+
   </header>
 
   <nav class="navbar">
@@ -45,38 +48,40 @@
           <div class="slide-caption">SEDE BUENOS AIRES</div>
         </div>
       </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
   </nav>
   
-
   <main class="main">
     <div class="container_main">
-        <form class="login-form" action="login" method="post">
-        <h2 class="form-title">Inicio de Sesión</h2>
+      <form class="login-form" action="login" method="post">
+        <h2 class="form-title">INICIAR SESIÓN</h2>
         <div class="form-group">
-          <label for="username">Nombre Usuario</label>
+          <label for="username"></label>
           <div class="user-wrapper">
-            <input type="text" id="username" name="username" placeholder="" required>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfBJREFUSEvFVl1OwkAQnt2WxGPADbTxXXi3xiPQkwgnAW9grO/Ud1O9ARzDhHbHTHVhu+xvg6FPhHbm+775Z3Chh10IF6KBr64fxy1vpwhszAB3RBw57pqPtypGRBAwgTVczAHwyeYcAYhENRLJ8vvrpSPkerzAafawcAHqzokAA/bc1K+LQcCdStaugMHUx970ngiMRDKzqTcq/g1tux0CqNq4wI3A6U2+GarUFPq2Lif6/yfASZavGMDcp7bLJcIuhCACrNu6LFSfPeCgECNUzWc5k05CK55xLNSW6wH71JJKU9hCClFXrQNvGcDYFmYGUOzrcm1672s7nfQBOL29n4JgG2duOc5sE2qU5XMEWIXaH4CDDIEtbYMhyF4hHgVsyzGpDGvBI/FjqENHI0KVYlLIiRRSWDL8ao3E5VhJYEwfnxXYN2CMlS+SiYxUr53SLEeXQ7l5gIv+7hV8Coh3vinW1OUBL3yAOFqpP8XMy8U5QEwjs1OpjTtXVMjHnrcbfRClSpjJ3rskQhe7JGPqZ++SIGNre2htpKt22alLRanw08DZwvV3V5FBxQHe6QcdfbbCij4EpHJTrkLbaNDpE7NrzUTsM90ZamP+As5bui5TwddnOW9NJOigl/mlo/7fDvrQvMZ85z3oY5zFfPsDf3JALkjDPoYAAAAASUVORK5CYII="/>
+            <input type="text" id="username" name="username" placeholder="Nombre Usuario" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="password">Contraseña</label>
+          <label for="password"></label>
           <div class="password-wrapper">
-            <input id="password" type="password" name="password" placeholder="" required>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAapJREFUSEvtlt1tgzAUhc81ROoYyQYV6gDJe5E6QpikZZKkG1Sl78kAFe0GoVtUio0rk7oxYAjYSHkpb/yIz+fe43NNuNJFV+JiUvDN7cNcMLGUTBb8/W3fJ8obrGCclWtAPpogCRQkUYQySL4/X4rmIrzA4d39EiXt+pSpBTAgPebZ1vzOGXxSKg5NaKUUmDfVz8pgZSp3BgdRvCFgfQZQyvPXJ3VvLb/Enn9kK/29MziMYllXewbr57MoXktgo+5VJUSeLbzA3b2tw1vtYHKl3e6kuN9UdXgQxQfdcwISbTIncJexbP02WxKWwUIbzAk8ZBsBlJ4Wct7fPM/+eKPBlVoSGxCWY+JWAluRZ4mTuTygNUcr+GDFPlBiMmlm9yCwC/SUYPSsQ2V0Vg+BKoiKRPVzHvIqLr2m0yWoMgyBvrpUOY3FAdCWYca43NrjS9Df7K1tjzFQq6svQyklyKI5X73B7XFX/6UZe2NhvQcBM9RtRxlzpk4Kbs/ZapZ69dO2wJa5bOCpyttZamWsIxM7PT+7Dmo+Je4cEgquXtqOpFMAnabTP9inAj/z7Okfs3J3lAAAAABJRU5ErkJggg=="/>
+            <input id="password" type="password" name="password" placeholder="Contraseña" required>
             <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
           </div>
         </div>
         <div class="link_pass">
           <a href="#">¿Olvidó su contraseña?</a>
         </div>
-        <div class="form-group">
-          <button type="submit" class="submit-button">Ingresar</button>
+        <div class="contenedor_botonlogin">
+          <button type="submit" class="boton_login">Ingresar</button>
         </div>
       </form>
     </div>
   </main>
+  <div class="footer">
+    <p>&copy; Centro de Servicios de Salud - Regional Antioquia</p>
+  </div>
 
 </div>
 

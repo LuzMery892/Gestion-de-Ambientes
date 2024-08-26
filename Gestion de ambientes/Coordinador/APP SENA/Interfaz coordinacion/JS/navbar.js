@@ -84,6 +84,15 @@ if (ReportesAmbienteLink) {
   });
 }
 
+const Buscar_ReservaLink = document.getElementById('buscar_reserva');
+
+if (Buscar_ReservaLink ) {
+  Buscar_ReservaLink .addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'Buscar_reserva.html'; 
+  });
+}
+
 // Cargar notificaciones en la barra de navegación
 function cargarNotificacionesNavbar() {
   const notificacionesNavbar = document.querySelector('.notificaciones-navbar');

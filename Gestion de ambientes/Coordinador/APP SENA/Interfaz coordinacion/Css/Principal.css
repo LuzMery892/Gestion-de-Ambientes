@@ -298,7 +298,7 @@ input {
   }
   
   .navbar__arrow {
-    margin-left: 2px;
+    margin-left: -10px;
     width: 15px;
     height: 15px;
     transition: transform 0.3s;
