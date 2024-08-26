@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Ambientes</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <main class="col-md-9 bg-light p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h3">Reservar Ambiente</h1>
+                    <div>
+                        <button class="btn btn-primary mr-2">Reservar</button>
+                        <button class="btn btn-outline-secondary">
+                            <svg class="bi bi-calendar mr-2" width="24" height="24" fill="currentColor">
+                                <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" />
+                                <path d="M19 10H5V8H19V10Z" />
+                            </svg>
+                            Calendario
+                        </button>
+                    </div>
+                </div>
+                <form class="bg-white shadow-sm rounded p-4">
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" placeholder="Fecha">
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-inicio">Hora de Inicio</label>
+                        <input type="time" class="form-control" id="hora-inicio" placeholder="Hora de Inicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-fin">Hora de Finalización</label>
+                        <input type="time" class="form-control" id="hora-fin" placeholder="Hora de Finalización">
+                    </div>
+                    <div class="form-group">
+                        <label for="ambiente">Ambiente</label>
+                        <select class="form-control" id="ambiente">
+                            <option value="">Seleccionar Ambiente</option>
+                            <option value="aula1">Aula 1</option>
+                            <option value="aula2">Aula 2</option>
+                            <option value="laboratorio">Laboratorio</option>
+                        </select>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Reservas</title>
+    <style>
+        /* Estilos básicos para el calendario */
+        #calendar {
+            padding: 15px;
+        }
+
+        #calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .calendar-day {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .calendar-day:hover {
+            background-color: #f0f0f0;
+        }
+
+        .calendar-day.selected {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .card-header h4 {
+            margin: 0;
+        }
+
+        /* Estilo de la fila del calendario */
+        .row {
+            margin-bottom: 15px;
+        }
+    </style>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+                <nav class="col-md-3 bg-dark text-white p-4">
+                    <!-- Contenido de la barra lateral aquí -->
+                    <h2 class="mb-4">Reserva de Ambientes</h2>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <svg class="bi bi-calendar-event mr-2" width="24" height="24" fill="currentColor">
+                                    <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z" />
+                                </svg>
+                                Reservas extraordinarias
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <svg class="bi bi-calendar-week mr-2" width="24" height="24" fill="currentColor">
+                                    <path d="M19 13H5V11H19V13Z" />
+                                    <path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" />
+                                </svg>
+                                Mis Reservas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <svg class="bi bi-calendar mr-2" width="24" height="24" fill="currentColor">
+                                    <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" />
+                                    <path d="M19 10H5V8H19V10Z" />
+                                </svg>
+                                Calendario
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <svg class="bi bi-gear mr-2" width="24" height="24" fill="currentColor">
+                                    <path d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM11 16V8H13V16H11Z" />
+                                </svg>
+                                Configuración
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </nav>
+            <!-- Contenido principal -->
+            <main class="col-md-9 bg-light p-4">
+                <h1 class="h3">Calendario de Reservas</h1>
+                <div class="row">
+                    <!-- Calendario -->
+                    <div class="col-md-4">
+                        <div id="calendar" class="card">
+                            <div class="card-header text-center">
+                                <h4>Calendario</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="calendar-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Información de reservas -->
+                    <div class="col-md-8">
+                        <div id="reservations-info" class="card">
+                            <div class="card-header">
+                                <h4>Información de Reservas</h4>
+                            </div>
+                            <div class="card-body">
+                                <p id="reservation-details">Seleccione un día para ver las reservas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Incluir Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Código JavaScript embebido -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const calendarGrid = document.getElementById('calendar-grid');
+            const reservationDetails = document.getElementById('reservation-details');
+
+            // Data de ejemplo para reservas
+            const reservations = {
+                '2024-08-05': ['Reserva A - Aula 1', 'Reserva B - Laboratorio'],
+                '2024-08-12': ['Reserva C - Aula 2'],
+                '2024-08-20': ['Reserva D - Aula 1', 'Reserva E - Laboratorio', 'Reserva F - Aula 3']
+            };
+
+            // Renderizar el calendario
+            function renderCalendar() {
+                const today = new Date();
+                const currentMonth = today.getMonth();
+                const currentYear = today.getFullYear();
+
+                // Primer día del mes
+                const firstDay = new Date(currentYear, currentMonth, 1);
+                // Último día del mes
+                const lastDay = new Date(currentYear, currentMonth + 1, 0);
+                const daysInMonth = lastDay.getDate();
+
+                // Limpiar el calendario
+                calendarGrid.innerHTML = '';
+
+                // Rellenar los días del calendario
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const date = new Date(currentYear, currentMonth, day);
+                    const dateString = date.toISOString().split('T')[0];
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    dayElement.textContent = day;
+                    dayElement.dataset.date = dateString;
+
+                    dayElement.addEventListener('click', () => {
+                        const selectedDate = dayElement.dataset.date;
+                        updateReservationsInfo(selectedDate);
+                        document.querySelectorAll('.calendar-day').forEach(day => day.classList.remove('selected'));
+                        dayElement.classList.add('selected');
+                    });
+
+                    calendarGrid.appendChild(dayElement);
+                }
+            }
+
+            // Actualizar la información de reservas
+            function updateReservationsInfo(date) {
+                const reservationsList = reservations[date] || [];
+                if (reservationsList.length === 0) {
+                    reservationDetails.textContent = 'No hay reservas para este día.';
+                } else {
+                    reservationDetails.innerHTML = `<ul>${reservationsList.map(reservation => `<li>${reservation}</li>`).join('')}</ul>`;
+                }
+            }
+
+            renderCalendar();
+        });
+    </script>
+</body>
+
+</html>
+
