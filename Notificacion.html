@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .notification {
+            margin-top: 10px;
+        }
+        .notification-read {
+            background-color: #d4edda; /* Color verde claro para notificaciones leídas */
+        }
+        .notification-unread {
+            background-color: #f8d7da; /* Color rojo claro para notificaciones no leídas */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Notificaciones</h1>
+        <div id="notification-container">
+            <!-- Las notificaciones se cargarán aquí -->
+        </div>
+    </div>
+    <script>//aqui esto se puede adjuntar en otro archivo js lo mismo para el css o dejarlo aqui si no son muchas cosas 
+        document.addEventListener('DOMContentLoaded', function() {
+    fetch('http://localhost:8080/api/notificaciones')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('notification-container');
+            data.forEach(notificacion => {
+                const notificationElement = document.createElement('div');
+                notificationElement.classList.add('notification');
+                notificationElement.classList.add(notificacion.leida ? 'notification-read' : 'notification-unread');
+                notificationElement.innerHTML = `
+                    <h5>${notificacion.tipo}</h5>
+                    <p>${notificacion.mensaje}</p>
+                    <small>${new Date(notificacion.fechaEnvio).toLocaleString()}</small>
+                `;
+                container.appendChild(notificationElement);
+                     });
+                });
+           });
+    </script>
+</body>
+</html>
