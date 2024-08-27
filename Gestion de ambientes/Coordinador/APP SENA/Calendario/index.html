@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Eventos</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/main.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.3.0/main.min.css'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Estilos personalizados para el calendario */
+      #calendar {
+          max-width: 700px; /* Reducir el ancho del calendario */
+          margin: 50px auto; /* Reducir el margen superior */
+      }
+  </style>
+</head>
+<body>
+    <div id='calendar'></div>
+
+    <!-- Modal para añadir evento -->
+    <div class="modal fade edit-form" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="modal-title">Añadir evento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <form id="myForm">
+                    <div class="modal-body">
+                        <div class="alert alert-danger" role="alert" id="danger-alert" style="display: none;">
+                            La fecha de finalización debe ser mayor que la fecha de inicio.
+                        </div>
+                        <div class="form-group">
+                            <label for="event-title">clase a impartir  <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="event-title" placeholder="Ingrese la clase a impartir por el instructor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="start-date">Fecha de inicio <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="start-date" placeholder="Fecha de inicio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">Fecha de finalización - <small class="text-muted">Opcional</small></label>
+                            <input type="date" class="form-control" id="end-date" placeholder="Fecha de finalización">
+                        </div>
+                        <div class="form-group">
+                            <label for="event-color">Color</label>
+                            <input type="color" class="form-control" id="event-color" value="#3788d8">
+                        </div>
+                    </div>
+                    <div class="modal-footer border-top-0 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success" id="submit-button">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para eliminar evento -->
+    <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="delete-modal-title">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body text-center" id="delete-modal-body">
+                    ¿Deseas eliminar este evento?
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary rounded-sm" data-dismiss="modal" id="cancel-button">Cancelar</button>
+                    <button type="button" class="btn btn-danger rounded-lg" id="delete-button">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.2.0/main.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.2.0/main.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/locales/es.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
