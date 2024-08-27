@@ -4,22 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restablecimiento de Contraseña</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlazar con archivo de estilos -->
+    <link rel="stylesheet" href="Gestion de ambientes\Coordinador\APP SENA\Interfaz coordinacion\Css\OlvideContraseña.css"> 
 </head>
 <body>
-    <div class="container">
-        <h2>Restablecer Contraseña</h2>
-        <form action="/restablecer-contraseña/confirmarRestablecerContraseña" method="post">
-            <input type="hidden" name="token" value="${token}"> <!-- Token oculto, lo debería establecer dinámicamente en el backend -->
+    <div class="passlink_grid-container">
+    <header class="header">
+        <div class="container">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Logo SENA.png" alt="logosena" class="img_sena">
+          <div class="header-info">
+            <h1>GESTIÓN DE AMBIENTES</h1>
+          </div>
+          </div>
+        <div class="header-img">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-push.jpg" alt="Logo SENA" class="transicion_img">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-boys.jpg" alt="Logo SENA" class="transicion_img">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-aprendizaje-1-1024x555.jpg" alt="Logo SENA" class="transicion_img">
+        </div>
+      </header>
+      <main class="main">
+        <div class="container_mainpasslink">
+            <h2>Restablecer contraseña</h2>
+            <div class="form_passLink">
+                <form action="/restablecer-contraseña/confirmarRestablecerContraseña" method="post">
+                    <input type="hidden" name="token" value="${token}">
+                    <div class="form-group">
+                        <label for="nuevaContraseña"></label>
+                        <div class="input-container">
+                            <input type="password" id="nuevaContraseña" name="nuevaContraseña" placeholder="Nueva Contraseña" required>
+                            <button type="button" class="eye_linkpass" onclick="togglePasswordVisibility('nuevaContraseña')">👁️</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmarContraseña"></label>
+                        <div class="input-container">
+                            <input type="password" id="confirmarContraseña" name="confirmarContraseña" placeholder="Confirmar Contraseña" required>
+                            <button type="button" class="eye_linkpass" onclick="togglePasswordVisibility('confirmarContraseña')">👁️</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="linkpass-button">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div class="footer">
+        <p>&copy; Centro de Servicios de Salud - Regional Antioquia</p>
+      </div>
 
-            <label for="nuevaContraseña">Nueva Contraseña:</label>
-            <input type="password" id="nuevaContraseña" name="nuevaContraseña" required>
-
-            <label for="confirmarContraseña">Confirmar Contraseña:</label>
-            <input type="password" id="confirmarContraseña" name="confirmarContraseña" required>
-
-            <button type="submit">Restablecer Contraseña</button>
-        </form>
-    </div>
+      <script>
+        function togglePasswordVisibility(id) {
+            // Obtén el campo de entrada de contraseña usando el ID proporcionado
+            const passwordInput = document.getElementById(id);
+            // Obtén el botón asociado con el campo de entrada de contraseña
+            const toggleButton = passwordInput.nextElementSibling;
+    
+            // Alterna la visibilidad de la contraseña
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text'; // Muestra la contraseña
+           
+            } else {
+                passwordInput.type = 'password'; // Oculta la contraseña
+                
+            }
+        }
+    </script>
 </body>
 </html>

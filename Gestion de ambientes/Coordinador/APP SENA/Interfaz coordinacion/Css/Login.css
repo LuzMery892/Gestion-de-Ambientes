@@ -129,6 +129,7 @@ body {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box; 
   z-index: 1000;
+  margin-top: 30px;
 }
 
 .form-group {
@@ -142,7 +143,8 @@ body {
 }
 
 #username::placeholder, #password::placeholder {
-  font-size: 16px; 
+  font-size: 18px; 
+  color: #888888; 
 }
 
 .user-wrapper input, .password-wrapper input {
@@ -207,7 +209,7 @@ body {
 .contenedor_botonlogin {
   display: flex; 
   justify-content: center; 
-  margin-top: 20px; 
+  margin: 30px; 
 }
 
 .boton_login {
@@ -218,7 +220,7 @@ body {
   border-radius: 10px; 
   cursor: pointer; 
   transition: background-color 0.2s ease-in-out; 
-  font-size: 16px; 
+  font-size: 18px; 
 }
 
 .boton_login:hover {
@@ -332,11 +334,11 @@ body {
   grid-column: 4 / span 3; 
   display: flex;
   flex-direction: column; 
-  align-items: center; /* Centra los párrafos horizontalmente */
-  justify-content: center; /* Centra los párrafos verticalmente */
-  text-align: center; /* Alinea el texto al centro */
-  padding: 10px 0; /* Espaciado superior e inferior */
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  padding: 10px 0; 
   color: #04324D; 
-  font-family: Arial, sans-serif; /* Fuente del texto */
+  font-family: 'Montserrat', sans-serif;
 
 }
