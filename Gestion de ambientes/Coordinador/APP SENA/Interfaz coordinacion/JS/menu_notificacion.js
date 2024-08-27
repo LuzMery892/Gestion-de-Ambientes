@@ -40,7 +40,7 @@ const Edit_userkLink = document.getElementById('submenuToggle2');
 if (Edit_userkLink) {
   Edit_userkLink.addEventListener('click', function(event) {
       event.preventDefault(); 
-      window.location.href = 'Editar_user.html'; 
+      window.location.href = 'Editar_micuenta.html'; 
   });
 }
 

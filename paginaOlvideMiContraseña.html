@@ -52,17 +52,13 @@
 
       <script>
         function togglePasswordVisibility(id) {
-            // Obtén el campo de entrada de contraseña usando el ID proporcionado
             const passwordInput = document.getElementById(id);
-            // Obtén el botón asociado con el campo de entrada de contraseña
             const toggleButton = passwordInput.nextElementSibling;
-    
-            // Alterna la visibilidad de la contraseña
+            
             if (passwordInput.type === 'password') {
-                passwordInput.type = 'text'; // Muestra la contraseña
-           
+                passwordInput.type = 'text'; 
             } else {
-                passwordInput.type = 'password'; // Oculta la contraseña
+                passwordInput.type = 'password'; 
                 
             }
         }
