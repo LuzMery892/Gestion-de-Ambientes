@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       // Enviar los datos al servidor
-      fetch('/usuarios/crear', {
+      fetch('http://localhost:8080/usuarios/crear', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const selectedTipo = correoTipoSelect.value;
 
       if (selectedTipo === 'INSTITUCIONAL') {
-        correoInput.placeholder = 'Correo institucional (ejemplo@institucion.edu)';
+        correoInput.placeholder = 'Correo institucional (ejemplo@sena.edu.co)';
       } else if (selectedTipo === 'ALTERNATIVO') {
         correoInput.placeholder = 'Correo personal (ejemplo@gmail.com)';
       }
