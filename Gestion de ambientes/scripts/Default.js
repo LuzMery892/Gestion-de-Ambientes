@@ -24,7 +24,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     .then(data => {
         // Redirige al usuario según su rol
         if (data.role === 'ROL_COORDINADOR') {
-            window.location.href = '/html/coordinador/dashboard.html';
+            window.location.href = '/Principal.html'; //redirigir a la carpeta que quede como dashboard o interfaz inicial de cada rol
         } else if (data.role === 'ROL_ALISTAMIENTO') {
             window.location.href = '/html/alistamiento/dashboard.html';
         } else if (data.role === 'ROL_INSTRUCTOR') {
