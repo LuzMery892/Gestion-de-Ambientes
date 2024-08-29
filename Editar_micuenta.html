@@ -6,8 +6,8 @@
   <title>Aplicativo Gestión de Ambientes</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Editar_micueta.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Index.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Editar_micueta.css">
 </head>
 <body>
   <div class="grid-container">
@@ -116,25 +116,20 @@
     }
 
 function loadScripts() {
-    // Crear y agregar  script para navbar.js
-        const navbarScript = document.createElement('script');
-        navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
-        document.body.appendChild(navbarScript);
+    const navbarScript = document.createElement('script');
+    navbarScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/navbar.js';
+    document.body.appendChild(navbarScript);
 
-        // Crear y agregar el script para menu_notificacion.js
-        const menuNotificacionScript = document.createElement('script');
-        menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
-        document.body.appendChild(menuNotificacionScript);    
+            
+    const New_ambienteScript = document.createElement('script');
+    New_ambienteScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/Editar_micuenta.js';
+    document.body.appendChild(New_ambienteScript);
 
-        const passScript = document.createElement('script');
-        passScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Pass.js';
-        document.body.appendChild(passScript);
-
-        const Editar_user = document.createElement('script');
-        Editar_user.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Editar_micuenta.js';
-        document.body.appendChild(Editar_user);  
+    const menuNotificacionScript = document.createElement('script');
+    menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/menu_notificacion.js';
+    document.body.appendChild(menuNotificacionScript); 
 }
-  loadContent(); // Inicia la carga de contenido
+  loadContent(); 
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>

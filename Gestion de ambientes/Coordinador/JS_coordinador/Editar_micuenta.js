@@ -48,7 +48,7 @@
     if (closeFormButton7 && contenedorEditUser) {
       closeFormButton7.addEventListener('click', () => {
         contenedorEditUser.style.display = 'none';
-        window.location.href = 'Principal.html';
+        window.location.href = 'index.html';
       });
     }
   

@@ -10,6 +10,6 @@
            // Oculta el formulario
            Contenedor_Ambiente.style.display = 'none';
            // Redirige a Principal.html
-           window.location.href = 'Principal.html';
+           window.location.href = 'index.html';
        });
    }

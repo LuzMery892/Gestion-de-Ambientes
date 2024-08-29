@@ -25,15 +25,6 @@ navigationMenu.style.display = 'none';
 toggleButton.addEventListener('click', toggleMenu);
 document.addEventListener('click', clickOutsideMenu);
 
-// js mostrar formulario cambio de contraseña
-const passworkLink = document.getElementById('submenuToggle1');
-
-if (passworkLink) {
-  passworkLink.addEventListener('click', function(event) {
-      event.preventDefault(); 
-      window.location.href = 'pass.html'; 
-  });
-}
 
 const Edit_userkLink = document.getElementById('submenuToggle2');
 

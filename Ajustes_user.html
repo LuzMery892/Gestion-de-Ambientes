@@ -6,8 +6,8 @@
   <title>Aplicativo Gestión de Ambientes</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Ajustes_user.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Ajustes_user.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Index.css">
 </head>
 <body>
   <div class="grid-container">
@@ -93,15 +93,15 @@
   function loadScripts() {
     // Crear y agregar el script para navbar.js
     const navbarScript = document.createElement('script');
-    navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+    navbarScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/navbar.js';
     document.body.appendChild(navbarScript);
     
     const menuNotificacionScript = document.createElement('script');
-    menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
+    menuNotificacionScript.src = 'Gestion de ambientes/Coordinador//JS_coordinador/menu_notificacion.js';
     document.body.appendChild(menuNotificacionScript);   
 
     const Ajustes_userScript = document.createElement('script');
-    Ajustes_userScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Ajustes_user.js';
+    Ajustes_userScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/Ajustes_user.js';
     document.body.appendChild(Ajustes_userScript);
       
 }

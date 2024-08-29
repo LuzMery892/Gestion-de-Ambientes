@@ -6,8 +6,8 @@
   <title>Aplicativo Gestión de Ambientes</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/principal.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Css/Pomar.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Index.css">
+  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Pomar.css">
 </head>
 <body>
   <div class="grid-container">
@@ -150,18 +150,19 @@
           loadScripts();
         }
       
-        function loadScripts() {
+        function loadScripts() {    
           const navbarScript = document.createElement('script');
-          navbarScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/navbar.js';
+          navbarScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/navbar.js';
           document.body.appendChild(navbarScript);
-          
-          const menuNotificacionScript = document.createElement('script');
-          menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/menu_notificacion.js';
-          document.body.appendChild(menuNotificacionScript);   
       
-          const reportes_novedades = document.createElement('script');
-          reportes_novedades.src = 'Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/JS/Pomar.js';
-          document.body.appendChild(reportes_novedades);
+                  
+          const New_ambienteScript = document.createElement('script');
+          New_ambienteScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/Pomar.js';
+          document.body.appendChild(New_ambienteScript);
+      
+          const menuNotificacionScript = document.createElement('script');
+          menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/menu_notificacion.js';
+          document.body.appendChild(menuNotificacionScript); 
       }
         loadContent(); // Inicia la carga de contenido
       </script>
