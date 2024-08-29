@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notificaciones</title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>  
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Gestion de ambientes/Coordinador/APP SENA/Interfaz coordinacion/Notificacion.css">
     <style>
         .notification {
             margin-top: 10px;
@@ -18,12 +22,76 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Notificaciones</h1>
-        <div id="notification-container">
-            <!-- Las notificaciones se cargarán aquí -->
-        </div>
-    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">  <!-- Las notificaciones se cargarán aquí -->
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown notification-ui show">
+                            <a class="nav-link dropdown-toggle notification-ui_icon" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                                <span class="unread-notification"></span>
+                            </a>
+                            <div class="dropdown-menu notification-ui_dd show" aria-labelledby="navbarDropdown">
+                                <div class="notification-ui_dd-header">
+                                    <h3 class="text-center">Notificacion</h3>
+                                </div>
+                                <div class="notification-ui_dd-content">
+                                    <div class="notification-list notification-list--unread">
+                                        <div class="notification-list_img">
+                                            
+                                        </div>
+                                        <div class="notification-list_detail">
+                                            <p><b>John cardenas cifuentes</b> esta solicitando una reserva extraordinaria</p>
+                                            <p><small>hace 10 minutos</small></p>
+                                        </div>
+                                        <div 
+                                        class="notification-list_feature-img">
+                                        </div>
+                                    </div>
+                                    <div class="notification-list notification-list--unread">
+                                    
+                                        <div class="notification-list_detail">
+                                            <p><b>juan carlos rojas</b> cancelo una reserva</p>
+                                            <p><small> ayer</small></p>
+                                        </div>
+                                        <div class="notification-list_feature-img">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="notification-list">
+                                        <div class="notification-list_img">
+                                            
+                                        </div>
+                                        <div>
+                                            <p><b>Brian camilo quiñones</b> añadio una novedad en un ambiente</p>
+                                            <p><small>hace 5 horas </small></p>
+                                        </div>
+                                        <div class="notification-list_feature-img">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="notification-list">
+                                        <div class="notification-list_detail">
+                                            <p><b>Laura marina peñalosa</b> cancelo una reserva</p>
+                                            <p><small>1 hora</small></p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="notification-ui_dd-footer">
+                                    <a href="#!" class="btn btn-success btn-block">ver todas </a>
+                                </div>
+                            </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     <script>//aqui esto se puede adjuntar en otro archivo js lo mismo para el css o dejarlo aqui si no son muchas cosas 
         document.addEventListener('DOMContentLoaded', function() {
     fetch('http://localhost:8080/api/notificaciones')
