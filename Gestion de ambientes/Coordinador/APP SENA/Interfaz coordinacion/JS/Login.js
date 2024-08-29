@@ -1,65 +1,60 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+function togglePassword() {
+  const passwordInput = document.getElementById('password');
+  const toggleButton = document.querySelector('.togglePassword');
+  if (passwordInput.type === 'password') {
+      passwordInput.type = 'text'; 
+  } else {
+      passwordInput.type = 'password';   
+  }
+}
 
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+let slideIndex = 0;
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+function showSlides() {
+  const slides = document.querySelectorAll('.slide-card');
+  slides.forEach(slide => slide.style.display = 'none');
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = 'block';
+  setTimeout(showSlides, 10000);
+}
+showSlides();
+/*--------------------------------------------------------------------------------------------------------------------------------*/ 
+document.getElementById('loginForm').addEventListener('submit', function(event) {/**este recoge el submit de el formulario de login */
+    event.preventDefault(); //si haces un configuracion diferente agregalo para que se comunique con el login
 
-        // Aquí se realiza la llamada a la API de autenticación
-        const response = await fetch('/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password }),
-        });
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-        if (response.ok) {
-            // Redirigir según el rol del usuario
-            const user = await response.json();
-            if (user.rol === 'ROL_COORDINADOR') {
-                navigate('/html/coordinador/dashboard');
-            } else if (user.rol === 'ROL_ALISTAMIENTO') {
-                navigate('/html/alistamiento/dashboard');
-            } else if (user.rol === 'ROL_INSTRUCTOR') {
-                navigate('/html/instructor/dashboard');
-            } else {
-                navigate('/default');
-            }
-        } else {
-            // Manejar el error de autenticación
-            alert('Error de autenticación. Por favor, verifica tus credenciales.');
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la respuesta del servidor');
         }
-    };
-
-    return (
-        <div>
-            <h2>Iniciar Sesión</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">Iniciar Sesión</button>
-            </form>
-        </div>
-    );
-};
-
-export default Login;
+        return response.json(); // Convierte la respuesta a JSON
+    })
+    .then(data => {
+        // Redirige al dashboard basado en el rol del usuario
+        if (data.role === 'ROL_COORDINADOR') {
+            window.location.href = '/html/coordinador/dashboard.html';
+        } else if (data.role === 'ROL_ALISTAMIENTO') {
+            window.location.href = '/html/alistamiento/dashboard.html';
+        } else if (data.role === 'ROL_INSTRUCTOR') {
+            window.location.href = '/html/instructor/dashboard.html';
+        } else {
+            alert('Rol no reconocido');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error al iniciar sesión');
+    });
+});
