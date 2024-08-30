@@ -1,90 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Inicio Sesión </title>
+  <title> Inicia Sesión - Gestion de ambientes </title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
-  <link rel="stylesheet" href="Login.css"> 
+  <link rel="stylesheet" href="Login.css">
 </head>
 
 <body>
-<div class="grid-container">
-    
-  <header class="header">
-        <div class="container">
-          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Logo SENA.png" alt="logosena" class="img_sena">
-          <div class="header-info">
-            <h1>GESTIÓN DE AMBIENTES</h1>
+  <div class="grid-container">
+
+    <header class="header">
+      <div class="container">
+        <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Logo SENA.png" alt="logosena"
+          class="img_sena">
+        <div class="header-info">
+          <h1>GESTIÓN DE AMBIENTES</h1>
+        </div>
+      </div>
+      <div class="header-img">
+        <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-boys.jpg" alt="Logo SENA"
+          class="transicion_img">
+        <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-push.jpg" alt="Logo SENA"
+          class="transicion_img">
+        <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Instructor SENA.jpg" alt="Logo SENA"
+          class="transicion_img">
+      </div>
+    </header>
+
+
+    </header>
+
+    <nav class="navbar">
+      <div class="slideshow-container">
+        <div class="slide-card">
+          <img src="Gestion de ambientes/Coordinador/APP SENA/app/IMG-ICONS/SEDE_EL_POMAR_1.jpeg" alt="slide SENA"
+            class="slide_img">
+          <div class="slide-content">
+            <div class="slide-caption">SEDE EL POMAR</div>
           </div>
+        </div>
+        <div class="slide-card">
+          <img src="Gestion de ambientes/Coordinador/APP SENA/app/IMG-ICONS/SEDE_COMPLEJO_CENTRAL.jpeg" alt="slide SENA"
+            class="slide_img">
+          <div class="slide-content">
+            <div class="slide-caption">SEDE COMPLEJO CENTRAL</div>
           </div>
-        <div class="header-img">
-          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-boys.jpg" alt="Logo SENA" class="transicion_img">
-          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-push.jpg" alt="Logo SENA" class="transicion_img">
-          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Instructor SENA.jpg" alt="Logo SENA" class="transicion_img">
         </div>
-      </header>
-
-
-  </header>
-
-  <nav class="navbar">
-    <div class="slideshow-container">
-      <div class="slide-card">
-        <img src="Gestion de ambientes/Coordinador/APP SENA/app/IMG-ICONS/SEDE_EL_POMAR_1.jpeg" alt="slide SENA" class="slide_img">
-        <div class="slide-content">
-          <div class="slide-caption">SEDE EL POMAR</div>
+        <div class="slide-card">
+          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\SEDE_BUENOS_AIRES - Ajustada.jpeg"
+            alt="slide SENA" class="slide_img">
+          <div class="slide-content">
+            <div class="slide-caption">SEDE BUENOS AIRES</div>
+          </div>
         </div>
       </div>
-      <div class="slide-card">
-        <img src="Gestion de ambientes/Coordinador/APP SENA/app/IMG-ICONS/SEDE_COMPLEJO_CENTRAL.jpeg" alt="slide SENA" class="slide_img">
-        <div class="slide-content">
-          <div class="slide-caption">SEDE COMPLEJO CENTRAL</div>
-        </div>
+    </nav>
+
+    <main class="main">
+      <div class="container_main">
+        <form class="login-form" action="/login" method="post">
+          <h2 class="form-title">INICIAR SESIÓN</h2>
+          <div class="form-group">
+            <label for="username"></label>
+            <div class="user-wrapper">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAcRJREFUSEvFVtFtAyEMxZs0kzTZJNkCvpp++bbIdZKmk/Q2oX0niIAzYNpEQYoiJcbPNs/PJvOkQ0/CNcPAzPxijNkbY/C9hMAX59x1JAkVcAA7EtFbwzmCuHrv351zMaCqeReYmc8dwNL54r3/cM6dWxWoAiNLIrqEso5UMdoigEMtexE4gH7/Ba24UwUXgadp+vxHppvSW2t35Y8b4GmaUN6jIlsQCB8wvHdma+0pNcqAlSW+WmsP0YmW8d77U9pyGbAi20Uqm5KIWdYlMAgFYRBPiHqW/lS0XRb0DZiZ90QEUlVPaA9RoZgZAgN+qO6nwJqLUCVRGB4KDBZLb4wUNS0Y5HQNPM1YK43QYzB01WMlsdbypxwZeuNSlQb6+K7APdHY/P87PHaxUmU7+Y63dfJg/BV26IjXnopZa294agFptVKqYkRUGy51AalIJrLM5K5VleADepAJUVrmjNXRmSCbqsGeZC3pQXtIdNoja6My60ZbZUMl3mstAptyJcsdgvgKTrCp1Ig1tggkmUvg2jYaX31SlmIpGFz2oFBVTW+WWno/RQCxx+e7rLeVIOK6E5f6xyz02kcdsesu9CPORmx/ANLZIC7XnvpwAAAAAElFTkSuQmCC" />
+              <input type="text" id="username" name="username" placeholder="Nombre Usuario" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password"></label>
+            <div class="password-wrapper">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAYRJREFUSEvtltFxwjAMhu1NyiawCWwhPbV9srcgnaRsUjqJi3wyJztxYlu546V6Ai74i379lmTNi8K+iGt2BTvn3owxR2PMHRFva0mpwQw7W2vfC9CdXiCEcEFE+pyFCuycO1prvzfKRfBPRJzkc8NgytRa+7MApexIchkEP8nMh8He++tDynM6nbP6oO8V+W8AcErPa8BBpiTB6XfnHNWeXpDiDgAHFbhW2xJeloPljm4fynjNVCXce08+iDVnh0eTjYJrxopKSrj3/lmSEMIhGWwUvHmNCB4zE/cbAJ68bjDXjQxDHaonJgC4DJlLAc0c3VVjDZRNlfXuJqkHodStvhAxNpUyNsGN0NgS+fB4dVTTqQE6PWT8rWW15rxqxg3QmWF6LL4IboASI7sePdBFV29BuTHQhpHNVzW4HHflgbLt9cLk8zOpZVMvDo6rjJype4OzOcuHq+rZdI/lNEl/2EveqtRsLFre0s60uKhpJK4OCd6XqPPMVtI9gEPT6R+sUeAPSJndH27MrY0AAAAASUVORK5CYII=" />
+              <input id="password" type="password" name="password" placeholder="Contraseña" required>
+              <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+            </div>
+          </div>
+          <div class="link_pass">
+            <a href="#">¿Olvidó su contraseña?</a>
+          </div>
+          <div class="contenedor_botonlogin">
+            <button type="submit" class="boton_login">iniciar sesion</button>
+          </div>
+        </form>
       </div>
-      <div class="slide-card">
-        <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\SEDE_BUENOS_AIRES - Ajustada.jpeg" alt="slide SENA" class="slide_img">
-        <div class="slide-content">
-          <div class="slide-caption">SEDE BUENOS AIRES</div>
-        </div>
-      </div>
+    </main>
+    <div class="footer">
+      <p>&copy; Centro de Servicios de Salud - Regional Antioquia</p>
     </div>
-  </nav>
-  
-  <main class="main">
-    <div class="container_main">
-      <form class="login-form" action="/login" method="post">
-        <h2 class="form-title">INICIAR SESIÓN</h2>
-        <div class="form-group">
-          <label for="username"></label>
-          <div class="user-wrapper">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAcRJREFUSEvFVtFtAyEMxZs0kzTZJNkCvpp++bbIdZKmk/Q2oX0niIAzYNpEQYoiJcbPNs/PJvOkQ0/CNcPAzPxijNkbY/C9hMAX59x1JAkVcAA7EtFbwzmCuHrv351zMaCqeReYmc8dwNL54r3/cM6dWxWoAiNLIrqEso5UMdoigEMtexE4gH7/Ba24UwUXgadp+vxHppvSW2t35Y8b4GmaUN6jIlsQCB8wvHdma+0pNcqAlSW+WmsP0YmW8d77U9pyGbAi20Uqm5KIWdYlMAgFYRBPiHqW/lS0XRb0DZiZ90QEUlVPaA9RoZgZAgN+qO6nwJqLUCVRGB4KDBZLb4wUNS0Y5HQNPM1YK43QYzB01WMlsdbypxwZeuNSlQb6+K7APdHY/P87PHaxUmU7+Y63dfJg/BV26IjXnopZa294agFptVKqYkRUGy51AalIJrLM5K5VleADepAJUVrmjNXRmSCbqsGeZC3pQXtIdNoja6My60ZbZUMl3mstAptyJcsdgvgKTrCp1Ig1tggkmUvg2jYaX31SlmIpGFz2oFBVTW+WWno/RQCxx+e7rLeVIOK6E5f6xyz02kcdsesu9CPORmx/ANLZIC7XnvpwAAAAAElFTkSuQmCC"/>
-            <input type="text" id="username" name="username" placeholder="Nombre Usuario" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="password"></label>
-          <div class="password-wrapper">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAYRJREFUSEvtltFxwjAMhu1NyiawCWwhPbV9srcgnaRsUjqJi3wyJztxYlu546V6Ai74i379lmTNi8K+iGt2BTvn3owxR2PMHRFva0mpwQw7W2vfC9CdXiCEcEFE+pyFCuycO1prvzfKRfBPRJzkc8NgytRa+7MApexIchkEP8nMh8He++tDynM6nbP6oO8V+W8AcErPa8BBpiTB6XfnHNWeXpDiDgAHFbhW2xJeloPljm4fynjNVCXce08+iDVnh0eTjYJrxopKSrj3/lmSEMIhGWwUvHmNCB4zE/cbAJ68bjDXjQxDHaonJgC4DJlLAc0c3VVjDZRNlfXuJqkHodStvhAxNpUyNsGN0NgS+fB4dVTTqQE6PWT8rWW15rxqxg3QmWF6LL4IboASI7sePdBFV29BuTHQhpHNVzW4HHflgbLt9cLk8zOpZVMvDo6rjJype4OzOcuHq+rZdI/lNEl/2EveqtRsLFre0s60uKhpJK4OCd6XqPPMVtI9gEPT6R+sUeAPSJndH27MrY0AAAAASUVORK5CYII="/>
-            <input id="password" type="password" name="password" placeholder="Contraseña" required>
-            <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
-          </div>
-        </div>
-        <div class="link_pass">
-          <a href="#">¿Olvidó su contraseña?</a>
-        </div>
-        <div class="contenedor_botonlogin">
-          <button type="submit" class="boton_login">Acceder</button>
-        </div>
-      </form>
-    </div>
-  </main>
-  <div class="footer">
-    <p>&copy; Centro de Servicios de Salud - Regional Antioquia</p>
+
   </div>
 
-</div>
-
-<script src="Gestion de ambientes/scripts/Login.js"></script>
+  <script src="Gestion de ambientes/scripts/Login.js"></script>
 </body>
+
 </html>

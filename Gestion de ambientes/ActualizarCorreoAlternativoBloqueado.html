@@ -1,0 +1,103 @@
+<!--en esta pagina se maneja el caso de, si un usuario con correo 
+alternativo bloqueado intenta iniciar sesion sera redirigido a esta
+ pagina para el cambio a su correo institucional obligatoriamente-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cambio de Correo Institucional</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        margin-top: 100px;
+      }
+
+      .card {
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-control:focus {
+        box-shadow: none;
+      }
+
+      .btn-block {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .btn-block:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ajustar este codigo para que utilice la infromacion de inicio de este usuario asi poder
+    identificar el usuario con su correo y contraseña en la base de datos y hacer el cambio de correo-->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header text-center">
+              <h3>Cambiar a Correo Institucional</h3>
+            </div>
+            <div class="card-body">
+              <p class="text-center">
+                Tu correo alternativo ha sido bloqueado. Debes cambiar a tu
+                correo institucional para continuar.
+              </p>
+              <form id="correoForm">
+                <div class="form-group">
+                  <label for="correoInstitucional"
+                    >Nuevo Correo Institucional</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="correoInstitucional"
+                    placeholder="ejemplo@sena.edu.co"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">
+                  Actualizar Correo
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      document
+        .getElementById("correoForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var correoInstitucional = document.getElementById(
+            "correoInstitucional"
+          ).value;
+
+          if (correoInstitucional) {
+            alert("Correo actualizado a: " + correoInstitucional);
+            // pendiente: agregar la lógica para redirigir al usuario o actualizar el correo en la base de datos
+          }
+        });
+    </script>
+  </body>
+</html>

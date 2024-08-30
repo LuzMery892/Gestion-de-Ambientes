@@ -1,67 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>  <!--¡importante!!!  esta pagina es la que se da como redireccion con el token que se envia al correo -->
+
+<head> <!--¡importante!!!  esta pagina es la que se da como redireccion con el token que se envia al correo -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restablecimiento de Contraseña</title>
-    <link rel="stylesheet" href="OlvideContraseña.css"> 
+    <link rel="stylesheet" href="OlvideContraseña.css">
 </head>
+
 <body>
     <div class="passlink_grid-container">
-    <header class="header">
-        <div class="container">
-          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Logo SENA.png" alt="logosena" class="img_sena">
-          <div class="header-info">
-            <h1>GESTIÓN DE AMBIENTES</h1>
-          </div>
-          </div>
-        <div class="header-img">
-          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-push.jpg" alt="Logo SENA" class="transicion_img">
-          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-boys.jpg" alt="Logo SENA" class="transicion_img">
-          <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-aprendizaje-1-1024x555.jpg" alt="Logo SENA" class="transicion_img">
-        </div>
-      </header>
-      <main class="main">
-        <div class="container_mainpasslink">
-            <h2>Restablecer contraseña</h2>
-            <div class="form_passLink">
-                <form action="/restablecer-contraseña/confirmarRestablecerContraseña" method="post">
-                    <input type="hidden" name="token" value="${token}">
-                    <div class="form-group">
-                        <label for="nuevaContraseña"></label>
-                        <div class="input-container">
-                            <input type="password" id="nuevaContraseña" name="nuevaContraseña" placeholder="Nueva Contraseña" required>
-                            <button type="button" class="eye_linkpass" onclick="togglePasswordVisibility('nuevaContraseña')">👁️</button>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmarContraseña"></label>
-                        <div class="input-container">
-                            <input type="password" id="confirmarContraseña" name="confirmarContraseña" placeholder="Confirmar Contraseña" required>
-                            <button type="button" class="eye_linkpass" onclick="togglePasswordVisibility('confirmarContraseña')">👁️</button>
-                        </div>
-                    </div>
-                    <button type="submit" class="linkpass-button">Guardar</button>
-                </form>
+        <header class="header">
+            <div class="container">
+                <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\Logo SENA.png" alt="logosena"
+                    class="img_sena">
+                <div class="header-info">
+                    <h1>GESTIÓN DE AMBIENTES</h1>
+                </div>
             </div>
+            <div class="header-img">
+                <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-push.jpg" alt="Logo SENA"
+                    class="transicion_img">
+                <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-boys.jpg" alt="Logo SENA"
+                    class="transicion_img">
+                <img src="Gestion de ambientes\Coordinador\APP SENA\app\IMG-ICONS\sena-aprendizaje-1-1024x555.jpg"
+                    alt="Logo SENA" class="transicion_img">
+            </div>
+        </header>
+        <main class="main">
+            <div class="container_mainpasslink">
+                <h2>Restablecer contraseña</h2>
+                <div class="form_passLink">
+                    <form action="/api/restablecer-contraseña/confirmarRestablecerContraseña" method="post">
+                        <input type="hidden" name="token" value="${token}">
+                        <div class="form-group">
+                            <label for="nuevaContraseña"></label>
+                            <div class="input-container">
+                                <input type="password" id="nuevaContraseña" name="nuevaContraseña"
+                                    placeholder="Nueva Contraseña" required>
+                                <button type="button" class="eye_linkpass"
+                                    onclick="togglePasswordVisibility('nuevaContraseña')">👁️</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmarContraseña"></label>
+                            <div class="input-container">
+                                <input type="password" id="confirmarContraseña" name="confirmarContraseña"
+                                    placeholder="Confirmar Contraseña" required>
+                                <button type="button" class="eye_linkpass"
+                                    onclick="togglePasswordVisibility('confirmarContraseña')">👁️</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="linkpass-button">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <div class="footer">
+            <p>&copy; Centro de Servicios de Salud - Regional Antioquia</p>
         </div>
-    </main>
-    <div class="footer">
-        <p>&copy; Centro de Servicios de Salud - Regional Antioquia</p>
-      </div>
 
-      <script>
-        function togglePasswordVisibility(id) {
-            const passwordInput = document.getElementById(id);
-            const toggleButton = passwordInput.nextElementSibling;
-            
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text'; 
-            } else {
-                passwordInput.type = 'password'; 
-                
+        <script>
+            function togglePasswordVisibility(id) {
+                const passwordInput = document.getElementById(id);
+                const toggleButton = passwordInput.nextElementSibling;
+
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                } else {
+                    passwordInput.type = 'password';
+
+                }
             }
-        }
-    </script>
+        </script>
 </body>
+
 </html>
