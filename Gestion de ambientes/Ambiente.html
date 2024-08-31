@@ -1,185 +1,193 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aplicativo Gestión de Ambientes</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Index.css">
-  <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Ambiente.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo Gestión de Ambientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Index.css">
+    <link rel="stylesheet" href="Gestion de ambientes/Coordinador/CSS_coordinador/Ambiente.css">
 </head>
+
 <body>
-  <div class="grid-container">
+    <div class="grid-container">
 
-    <div id="header"></div>
-    
-    <div id="navbar"> </div>
+        <div id="header"></div>
 
-    <main class="main">
-      <div class="Contenedor_newAmbiente">
-        <button class="ambiente-button"> </button>
-        <form class="newAmbiente">
-            <div class="container_tittleAmbiente">
-                <div class="icon-wrapper">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAUJJREFUSEvtltsNwjAMRd1NGAU2gUmASWATGIVNIBfFlevmYbugCgn/tI3SnPp164FWsmElLi0Bb4hoS0TXyMdHwRci2mfgOV1PXngELKHMc8O9YAl9ZCpCDnPBPWANPaRwA35LeXbDreAS9C48dsMt4BaUcwyPXfAe2AINwVtgD9QNr4EjUBe8BLZAkVMWECgXt5YZrsFaHGq9CalEMcF2STq5wqWAQc2OYmFylgTDA4ClfRKMc9H7b22XYOlFTwojHk+io0ON3HFPahnk0GKd9+Fehxmhh8lQYw11MNZCraqfBf3lNZWN2SOfKcEzjgcsPQYN4YZNPMnFpj1eBJaueXP8B1dnrlJxyVD3lOtrOe5V9u+B0TrcLhbvWnsgMCwq475aH5d0O/oBxZ9IaxDggZ0HuQi4Om/3Rp8IzPTOauAXSv5vH7YvPjAAAAAASUVORK5CYII" class="ambiente_form-img" alt="Ícono de usuario">
-                </div>
-                <h2 class="tittle_newuser">Datos Nuevo Ambiente</h2>
-                <button type="button" class="close_form4">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar formulario">
-                </button>
-            </div>
-            <p>Aquí puedes crear un nuevo Ambiente.</p>
-    
-            <div class="formulario__ambiente">
-                <div class="form__ambiente">
-                    <label for="centro">Sede de formación</label>
-                    <select id="centro" name="centro" required>
-                        <option value="">Seleccione...</option>
-                        <option value="pomar">Sede Pomar</option>
-                        <option value="buenos_aires">Sede Buenos Aires</option>
-                        <option value="central">Sede Central</option>
-                        <option value="san_buenaventura">U.SanBuenaventura</option>
-                    </select>
-                </div>
-    
-                <div class="form__ambiente">
-                    <label for="nombreAmbiente">Nombre del Ambiente</label>
-                    <input type="text" id="nombreAmbiente" name="nombreAmbiente" required>
-                </div>
-    
-                <div class="form__ambiente">
-                    <label for="capacidad">Capacidad</label>
-                    <input type="number" id="capacidad" name="capacidad" min="1" required>
-                </div>
-    
-                <div class="form__ambiente">
-                    <label for="ubicacion">Ubicación</label>
-                    <input type="text" id="ubicacion" name="ubicacion" required>
-                </div>
-    
-                <div class="form__ambiente">
-                    <label for="tipoAmbiente">Tipo de Ambiente</label>
-                    <input type="text" id="tipoAmbiente" name="tipoAmbiente" required>
-                </div>             
-                <div class="form__ambiente">
-                    <label for="horario">Disponiblidad L-V</label>
-                    <div class="time-select-container">
-                        <input type="text" id="start-time-weekdays" name="start-time-weekdays" placeholder="Inicio (L-V)" />
-                        <input type="text" id="end-time-weekdays" name="end-time-weekdays" placeholder="Fin (L-V)" />
+        <div id="navbar"> </div>
+
+        <main class="main">
+            <div class="Contenedor_newAmbiente">
+                <button class="ambiente-button"> </button>
+                <form class="newAmbiente">
+                    <div class="container_tittleAmbiente">
+                        <div class="icon-wrapper">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAUJJREFUSEvtltsNwjAMRd1NGAU2gUmASWATGIVNIBfFlevmYbugCgn/tI3SnPp164FWsmElLi0Bb4hoS0TXyMdHwRci2mfgOV1PXngELKHMc8O9YAl9ZCpCDnPBPWANPaRwA35LeXbDreAS9C48dsMt4BaUcwyPXfAe2AINwVtgD9QNr4EjUBe8BLZAkVMWECgXt5YZrsFaHGq9CalEMcF2STq5wqWAQc2OYmFylgTDA4ClfRKMc9H7b22XYOlFTwojHk+io0ON3HFPahnk0GKd9+Fehxmhh8lQYw11MNZCraqfBf3lNZWN2SOfKcEzjgcsPQYN4YZNPMnFpj1eBJaueXP8B1dnrlJxyVD3lOtrOe5V9u+B0TrcLhbvWnsgMCwq475aH5d0O/oBxZ9IaxDggZ0HuQi4Om/3Rp8IzPTOauAXSv5vH7YvPjAAAAAASUVORK5CYII"
+                                class="ambiente_form-img" alt="Ícono de usuario">
+                        </div>
+                        <h2 class="tittle_newuser">Datos Nuevo Ambiente</h2>
+                        <button type="button" class="close_form4">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC"
+                                alt="Cerrar formulario">
+                        </button>
                     </div>
-                  </div>
-                  <div class="form__ambiente">
-                    <label for="horario">Disponiblidad Sábados</label>
-                    <div class="time-select-container">
-                        <input type="text" id="start-time-saturdays" name="start-time-saturdays" placeholder="Inicio (Sáb)" />
-                        <input type="text" id="end-time-saturdays" name="end-time-saturdays" placeholder="Fin (Sáb)" />
+                    <p>Aquí puedes crear un nuevo Ambiente.</p>
+
+                    <div class="formulario__ambiente">
+                        <div class="form__ambiente">
+                            <label for="centro">Sede de formación</label>
+                            <select id="centro" name="centro" required>
+                                <option value="">Seleccione...</option>
+                                <option value="pomar">Sede Pomar</option>
+                                <option value="buenos_aires">Sede Buenos Aires</option>
+                                <option value="central">Sede Central</option>
+                                <option value="san_buenaventura">U.SanBuenaventura</option>
+                            </select>
+                        </div>
+
+                        <div class="form__ambiente">
+                            <label for="nombreAmbiente">Nombre del Ambiente</label>
+                            <input type="text" id="nombreAmbiente" name="nombreAmbiente" required>
+                        </div>
+
+                        <div class="form__ambiente">
+                            <label for="capacidad">Capacidad</label>
+                            <input type="number" id="capacidad" name="capacidad" min="1" required>
+                        </div>
+
+                        <div class="form__ambiente">
+                            <label for="ubicacion">Ubicación</label>
+                            <input type="text" id="ubicacion" name="ubicacion" required>
+                        </div>
+
+                        <div class="form__ambiente">
+                            <label for="tipoAmbiente">Tipo de Ambiente</label>
+                            <input type="text" id="tipoAmbiente" name="tipoAmbiente" required>
+                        </div>
+                        <div class="form__ambiente">
+                            <label for="horario">Disponiblidad L-V</label>
+                            <div class="time-select-container">
+                                <input type="text" id="start-time-weekdays" name="start-time-weekdays"
+                                    placeholder="Inicio (L-V)" />
+                                <input type="text" id="end-time-weekdays" name="end-time-weekdays"
+                                    placeholder="Fin (L-V)" />
+                            </div>
+                        </div>
+                        <div class="form__ambiente">
+                            <label for="horario">Disponiblidad Sábados</label>
+                            <div class="time-select-container">
+                                <input type="text" id="start-time-saturdays" name="start-time-saturdays"
+                                    placeholder="Inicio (Sáb)" />
+                                <input type="text" id="end-time-saturdays" name="end-time-saturdays"
+                                    placeholder="Fin (Sáb)" />
+                            </div>
+                        </div>
+                        <div class="form__ambiente">
+                            <label for="accesibilidad">Accesibilidad</label>
+                            <input type="text" id="accesibilidad" name="accesibilidad">
+                        </div>
+                        <div class="form__ambiente">
+                            <label for="recursos">Recursos Adicionales</label>
+                            <input type="text" id="recursos" name="recursos">
+                        </div>
+                        <div class="form__ambiente">
+                            <label for="equipamiento">Equipamiento</label>
+                            <textarea id="equipamiento" name="equipamiento"></textarea>
+                        </div>
+                        <div class="form__ambiente">
+                            <label for="condiciones">Condiciones Especiales</label>
+                            <textarea id="condiciones" name="condiciones"></textarea>
+                        </div>
+
+                        <div class="form__ambiente">
+                            <label for="observaciones">Observaciones</label>
+                            <textarea id="observaciones" name="observaciones"></textarea>
+                        </div>
                     </div>
-                </div>    
-                <div class="form__ambiente">
-                    <label for="accesibilidad">Accesibilidad</label>
-                    <input type="text" id="accesibilidad" name="accesibilidad">
-                </div>
-                <div class="form__ambiente">
-                    <label for="recursos">Recursos Adicionales</label>
-                    <input type="text" id="recursos" name="recursos">
-                </div>
-                <div class="form__ambiente">
-                    <label for="equipamiento">Equipamiento</label>
-                    <textarea id="equipamiento" name="equipamiento"></textarea>
-                </div>         
-                <div class="form__ambiente">
-                    <label for="condiciones">Condiciones Especiales</label>
-                    <textarea id="condiciones" name="condiciones"></textarea>
-                </div>
-    
-                <div class="form__ambiente">
-                    <label for="observaciones">Observaciones</label>
-                    <textarea id="observaciones" name="observaciones"></textarea>
-                </div>
+                    <div class="Container_btn_ambiente">
+                        <button type="button" class="btn_ambiente" onclick="saveChanges()">Crear</button>
+                    </div>
+
+                </form>
             </div>
-            <div class="Container_btn_ambiente">
-                <button type="button" class="btn_ambiente" onclick="saveChanges()">Crear</button>
-             </div>
-
-        </form>
-    </div>
-    </main>   
+        </main>
 
 
-    <script>
-      async function loadHTML(selector, file) {
-          const response = await fetch(file);
-          const text = await response.text();
-          document.querySelector(selector).innerHTML = text;
-      }
+        <script>
+            async function loadHTML(selector, file) {
+                const response = await fetch(file);
+                const text = await response.text();
+                document.querySelector(selector).innerHTML = text;
+            }
 
-      async function loadContent() {
-        await loadHTML('#header', 'header.html');
-        await loadHTML('#navbar', 'navbar.html');
-  
-        loadScripts();
-      }
+            async function loadContent() {
+                await loadHTML('#header', 'header.html');
+                await loadHTML('#navbar', 'navbar.html');
 
-      function loadScripts() {
-   
-        const navbarScript = document.createElement('script');
-        navbarScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/navbar.js';
-        document.body.appendChild(navbarScript);
-  
-                
-        const New_ambienteScript = document.createElement('script');
-        New_ambienteScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/Ambiente.js';
-        document.body.appendChild(New_ambienteScript);
+                loadScripts();
+            }
 
-        const menuNotificacionScript = document.createElement('script');
-        menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/menu_notificacion.js';
-        document.body.appendChild(menuNotificacionScript);       
-      }
-      loadContent(); 
+            function loadScripts() {
 
-    </script>
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-    flatpickr("#start-time-weekdays", {
-        enableTime: true,
-        noCalendar: true,
-        dateFormat: "H:i",
-        time_24hr: true,
-        defaultHour: 9,
-        defaultMinute: 0
-    });
+                const navbarScript = document.createElement('script');
+                navbarScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/navbar.js';
+                document.body.appendChild(navbarScript);
 
-    flatpickr("#end-time-weekdays", {
-        enableTime: true,
-        noCalendar: true,
-        dateFormat: "H:i",
-        time_24hr: true,
-        defaultHour: 17,
-        defaultMinute: 0
-    });
 
-    flatpickr("#start-time-saturdays", {
-        enableTime: true,
-        noCalendar: true,
-        dateFormat: "H:i",
-        time_24hr: true,
-        defaultHour: 9,
-        defaultMinute: 0
-    });
+                const New_ambienteScript = document.createElement('script');
+                New_ambienteScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/Ambiente.js';
+                document.body.appendChild(New_ambienteScript);
 
-    flatpickr("#end-time-saturdays", {
-        enableTime: true,
-        noCalendar: true,
-        dateFormat: "H:i",
-        time_24hr: true,
-        defaultHour: 17,
-        defaultMinute: 0
-    });
-</script>
+                const menuNotificacionScript = document.createElement('script');
+                menuNotificacionScript.src = 'Gestion de ambientes/Coordinador/JS_coordinador/menu_notificacion.js';
+                document.body.appendChild(menuNotificacionScript);
+            }
+            loadContent();
+
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            flatpickr("#start-time-weekdays", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i",
+                time_24hr: true,
+                defaultHour: 9,
+                defaultMinute: 0
+            });
+
+            flatpickr("#end-time-weekdays", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i",
+                time_24hr: true,
+                defaultHour: 17,
+                defaultMinute: 0
+            });
+
+            flatpickr("#start-time-saturdays", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i",
+                time_24hr: true,
+                defaultHour: 9,
+                defaultMinute: 0
+            });
+
+            flatpickr("#end-time-saturdays", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i",
+                time_24hr: true,
+                defaultHour: 17,
+                defaultMinute: 0
+            });
+        </script>
 </body>
-</html>
 
+</html>

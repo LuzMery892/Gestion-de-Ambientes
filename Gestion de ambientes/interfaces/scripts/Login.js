@@ -22,33 +22,32 @@ function showSlides() {
 }
 showSlides();
 /*--------------------------------------------------------------------------------------------------------------------------------*/ 
-document.getElementById('loginForm').addEventListener('submit', function(event) {/**este recoge el submit de el formulario de login */
-    event.preventDefault(); //si haces un configuracion diferente agregalo para que se comunique con el login
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    fetch('/login', {
+    fetch('http://localhost:8080/login', {  // URL completa del backend
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Error en la respuesta del servidor');
         }
-        return response.json(); // Convierte la respuesta a JSON
+        return response.json();
     })
     .then(data => {
-        // Redirige al dashboard basado en el rol del usuario
         if (data.role === 'ROL_COORDINADOR') {
-            window.location.href = '/html/coordinador/dashboard.html';
+            window.location.href = '/Gestion-de-Ambientes/Gestion%20de%20ambientes/interfaces/coordinadorDashboard.html';
         } else if (data.role === 'ROL_ALISTAMIENTO') {
-            window.location.href = '/html/alistamiento/dashboard.html';
+            window.location.href = '/Gestion-de-Ambientes/Gestion%20de%20ambientes/interfaces/alistamientoDashboard.html';
         } else if (data.role === 'ROL_INSTRUCTOR') {
-            window.location.href = '/html/instructor/dashboard.html';
+            window.location.href = '/Gestion-de-Ambientes/Gestion%20de%20ambientes/interfaces/instructorDashboard.html';
         } else {
             alert('Rol no reconocido');
         }
@@ -58,3 +57,4 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('Error al iniciar sesión');
     });
 });
+
