@@ -5,7 +5,7 @@ const containerNewUser = document.querySelector('.form_newUser');
 if (closeFormButton2 && containerNewUser) {
   closeFormButton2.addEventListener('click', function() {
     containerNewUser.style.display = 'none'; 
-    window.location.href = 'index.html'; 
+    window.location.href = 'coordinadorDashboard.html'; 
   });
 }
 

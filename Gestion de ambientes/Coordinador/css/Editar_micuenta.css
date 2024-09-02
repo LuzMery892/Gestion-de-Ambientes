@@ -2,67 +2,101 @@
   position: relative;
   grid-column: 2 / span 5;
   grid-row: 2 / span 3;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border: 4px solid #ccc;
-  margin: 20px;
-  border-radius: 20px;
-}
-
-.container_editUser{
-  position: relative;
+  background-color:white;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; 
   justify-content: center;
   align-items: center;
+  padding: 5px;
+  overflow: hidden;
+  margin: 10px;
+
 }
 
-.container_infpersonal{
+.container_editUser {
+  background-color: white;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  position: relative;
+  border: 4px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+.titulo_micuenta {
+  display: flex;
+  align-items: center;
+  margin-bottom:0;
+  gap: 15px;
+}
+
+.titulo_micuenta h1 {
+  font-size: 20px;
+  color: #04324D;
+  margin: 0;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; 
+  height: 50px; 
+  background-color: #04324D; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  margin-left: 10px;
+}
+
+.icon {
+  width: 40px; 
+  height: 40px; 
+}
+
+.close_form7 {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close_form7 img {
+  width: 24px; 
+  height: 24px;
+}
+
+.contenedor_selectinfo{
   display: flex;
   flex-direction: row;
-  width: 100%; 
-  margin-bottom: 10px;
-  background-color: white;
+  width: 90%; 
   align-items: flex-start;
   box-sizing: border-box;
-}
-
-.contenedor_selectinfo {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  border-bottom: 3px solid #ccc; 
-  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  margin-left: 80px;
 }
 
 .select_info {
   padding: 10px 15px;
-  border-radius: 5px; 
-  margin-left: 30px; 
   cursor: pointer; 
-  background-color:white;
   transition: border-color 0.3s ease, background-color 0.3s ease; 
-  border-color: 2px solid #ccc; 
   font-size: 16px;
   color: #04324D;
+  border-bottom: 2px solid #ccc; 
 }
 
-.select_info:hover {
-  background-color: #ade8ad;
-}
 
 .select_info.active {
-  background-color: #ade8ad; 
   color: #333; 
-  border-color: #c50ddd; 
   font-weight: bold; 
+  font-size: 16px;
+  border-bottom: none; 
+  border-left: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
 }
 
 .tab-content {
@@ -90,24 +124,28 @@
   flex-direction: column; 
   justify-content: center; 
   align-items: center; 
-  padding: 10px; 
+  padding: 5px; 
   height: 100%; 
   box-sizing: border-box;
   width: 100%; 
-  margin: 10px;
+  margin: 0;
+  overflow:hidden;
 }
 
+
 .form-editarusuario {
+  flex: 1; 
   display: flex;
   flex-direction: column;
   background-color: white;
   border-radius: 20px;
-  border: 4px solid #ccc;
-  padding: 15px;
-  width: 100%;
-  max-width: 400px; 
+  border: 3px solid #ccc;
+  padding: 5px;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 350px;
   margin: 0 auto; 
+  font-family: 'Montserrat', sans-serif;
 }
 
 .editUser-form {
@@ -115,26 +153,40 @@
   flex-direction: column;
   width: 90%;
   padding: 20px;
-
 }
 
 .titulo_edit {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 0;
   width: 100%;
+  gap: 40px;
 }
 
 .titulo_edit h2 {
-  font-size: 16px;
-  color: #04324D;
+  font-size: 18px;
+  margin-left: 50px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.editUser__img {
-  width: 30px;
-  height: auto;
-  filter: invert(32%) sepia(87%) saturate(516%) hue-rotate(115deg) brightness(95%) contrast(101%);
+.editarinfo {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: none; 
+  border: none; 
+  padding: 0; 
+  cursor: pointer; 
+  outline: none; 
+}
+
+.editarinfo img {
+  margin-top: 10px;
+  width: 25px; 
+  height: auto; 
+  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
 }
 
 
@@ -143,20 +195,20 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 form label,
 label {
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 5px;
-  color: #04324D;
+  color: #333;
 }
 
 form input,
 input {
-  padding: 10px;
-  border: 3px solid #ccc;
+  padding: 8px;
+  border: 2px solid #ccc;
   border-radius: 10px;
   font-size: 14px;
   width: 100%;
@@ -189,29 +241,31 @@ input:focus {
 
 /*PESTAÑA 2 - PASS*/
 
-.tab-passApp {
-  display: flex; 
-  flex-direction: column; 
+.Contenedor_passapp {
+  display: flex;
+  flex-direction: column;
   width: 100%; 
-  height: 100%; 
+  max-width: 100%; 
+  height: auto; 
   box-sizing: border-box; 
   align-items: center;
   justify-content: center;
+
 }
 
-.container_superiorpass {
+.titulo_pass {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: auto;
-  margin: 0 auto;
-  gap: 10px;
+  margin-top: -10px;
+  gap: 5px;
 }
 
-.container_superiorpass p {
-  font-size: 16px;
+.titulo_pass p {
+  font-size: 14px;
   line-height: 1.5;
   color: #333;
   text-align: left;
@@ -224,55 +278,51 @@ input:focus {
   align-items: center; 
   justify-content: center; 
   width: 100%; 
-  height: 100%; 
+  height: auto; 
   box-sizing: border-box; 
-  padding: 20px;
+  padding: 10px;
   background-color: white; 
-  border-radius: 20px; 
-  margin-top: -40px;
 }
 
 
-.form-container {
+.formpass-container {
   position: relative; 
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
   border-radius: 20px;
-  border: 4px solid #ccc;
-  padding: 20px;
-  width: 50%;
-  max-width: 400px; 
+  border: 3px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  max-width: 350px; 
   box-sizing: border-box;
   box-shadow: none;
 }
 
 .titulo_form {
   display: flex;
-  align-items: left;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  margin: 10px;
   position: relative;
-  gap: 20px;
+  gap: 5px;
 }
 
 .titulo_form h2 {
   margin: 0;
-  font-size: 16px;
-  color: #04324D;
+  font-size: 18px;
+  color: #333;
 }
 
 .titulo_form .form-icon {
-  width: 40px;
+  width: 30px;
   height: auto;
-  margin-left: 30px;
 }
 
 .password-form {
-  width: 100%;
+  width: 90%;
 }
 
 .form-group {
@@ -283,26 +333,25 @@ input:focus {
   display: flex;
   align-items: center;
   position: relative;
+  justify-content: left;
 }
 
 .password-wrapper input {
   width: calc(100% - 50px);
-  padding: 20px;
+  padding: 8px;
   border: none;
-  border-bottom: 2px solid #ced4da;
-  border-radius: 0;
+  border: 2px solid #ced4da;
+  border-radius: 10px;
   box-shadow: none;
   font-size: 14px;
+  font-family: Arial, sans-serif;
 }
 
-input::placeholder {
-  font-size: 18px;
-  color: #888888;
-}
+
 
 .password-wrapper button.toggleapp-password {
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
@@ -327,8 +376,8 @@ input[type="text"]:focus {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 90%;
-  margin: 25px;
+  width: 92%;
+  margin: 10px;
 }
 
 .pass-button:hover {
@@ -384,4 +433,16 @@ input[type="text"]:focus {
 .close_form7 img {
   width: 24px; 
   height: 24px;
+}
+
+.edit_datapersonal img{
+  width: 30px;
+  height: auto;
+  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
+}
+p{
+    font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  margin-left: 60px;
 }

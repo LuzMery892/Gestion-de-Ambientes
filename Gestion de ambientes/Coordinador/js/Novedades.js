@@ -4,7 +4,7 @@ const contenedor_principalNovedad = document.querySelector('.contenedor_principa
 if (closeFormButton5 && contenedor_principalNovedad) {
    closeFormButton5.addEventListener('click', function() {
     contenedor_principalNovedad.style.display = 'none'; 
-    window.location.href = 'index.html'; 
+    window.location.href = 'coordinadorDashboard.html'; 
   });
 }
 
