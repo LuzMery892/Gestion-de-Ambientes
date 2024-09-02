@@ -84,7 +84,7 @@
   cursor: pointer; 
   transition: border-color 0.3s ease, background-color 0.3s ease; 
   font-size: 16px;
-  color: #04324D;
+  color: #686565;
   border-bottom: 2px solid #ccc; 
 }
 
@@ -203,6 +203,7 @@ label {
   font-size: 12px;
   margin-bottom: 5px;
   color: #333;
+  font-weight: bold;
 }
 
 form input,
@@ -213,6 +214,7 @@ input {
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
+  color:#04324D;
 }
 
 form input:focus,
@@ -316,8 +318,8 @@ input:focus {
   color: #333;
 }
 
-.titulo_form .form-icon {
-  width: 30px;
+.titulo_form .form-key {
+  width: 35px;
   height: auto;
 }
 
@@ -439,10 +441,4 @@ input[type="text"]:focus {
   width: 30px;
   height: auto;
   filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
-}
-p{
-    font-size: 14px;
-  line-height: 1.5;
-  color: #333;
-  margin-left: 60px;
 }

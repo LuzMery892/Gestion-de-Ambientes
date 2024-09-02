@@ -278,7 +278,7 @@ input {
   
   .navbar__link {
     flex-grow: 1;
-    color: #04324D;
+    color: #333;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
@@ -340,7 +340,7 @@ input {
   }
   
   .navbar__submenu-link {
-    color: #04324D;
+    color: #333;
     text-decoration: none;
     display: block;
     padding: 10px;
