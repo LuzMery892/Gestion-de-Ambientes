@@ -1,43 +1,44 @@
-    const showTab = (tabId) => {
-      // Obtener todas las pestañas y ocultar el contenido de todas
-      const tabs = document.querySelectorAll('.contenedor_selectinfo .select_info');
-      const tabContents = document.querySelectorAll('.tab-content .tab-User');
-  
-      // Remover la clase activa de todas las pestañas
-      tabs.forEach(tab => tab.classList.remove('active'));
-  
-      // Ocultar todos los contenidos de las pestañas
-      tabContents.forEach(content => content.classList.remove('active'));
-  
-      // Añadir la clase activa a la pestaña clickeada
-      const clickedTab = document.querySelector(`.contenedor_selectinfo .select_info[data-role="${tabId}"]`);
-      if (clickedTab) {
-        clickedTab.classList.add('active');
-      }
-  
-      // Mostrar el contenido correspondiente
-      const activeTabContent = document.querySelector(`#${tabId}`);
-      if (activeTabContent) {
-        activeTabContent.classList.add('active');
-      }
-    };
-  
-    // Inicializar la primera pestaña como activa
-    const firstTab = document.querySelector('.contenedor_selectinfo .select_info');
-    if (firstTab) {
-      const firstTabId = firstTab.getAttribute('data-role');
-      if (firstTabId) {
-        showTab(firstTabId);
-      }
-    }
-  
-    // Añadir event listeners a las pestañas
-    const tabs = document.querySelectorAll('.contenedor_selectinfo .select_info');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const tabId = tab.getAttribute('data-role');
-        showTab(tabId);
-      });
+const showTab = (tabId) => {
+  // Obtener todas las pestañas y ocultar el contenido de todas
+  const tabs = document.querySelectorAll('.contenedor_selectinfo .select_info');
+  const tabContents = document.querySelectorAll('.tab-content .tab-User');
+
+  // Remover la clase activa de todas las pestañas
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  // Ocultar todos los contenidos de las pestañas
+  tabContents.forEach(content => content.classList.remove('active'));
+
+  // Añadir la clase activa a la pestaña clickeada
+  const clickedTab = document.querySelector(`.contenedor_selectinfo .select_info[data-role="${tabId}"]`);
+  if (clickedTab) {
+    clickedTab.classList.add('active');
+  }
+
+  // Mostrar el contenido correspondiente
+  const activeTabContent = document.querySelector(`#${tabId}`);
+  if (activeTabContent) {
+    activeTabContent.classList.add('active');
+  }
+};
+
+// Inicializar la primera pestaña como activa
+const firstTab = document.querySelector('.contenedor_selectinfo .select_info');
+if (firstTab) {
+  const firstTabId = firstTab.getAttribute('data-role');
+  if (firstTabId) {
+    showTab(firstTabId);
+  }
+}
+
+// Añadir event listeners a las pestañas
+const tabs = document.querySelectorAll('.contenedor_selectinfo .select_info');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const tabId = tab.getAttribute('data-role');
+    showTab(tabId);
+  });
+});
 
 
       
@@ -88,7 +89,7 @@
         console.error('Error:', error);
       });
     });
-  });
+  
   
   // Función para alternar la visibilidad de la contraseña
   function togglePasswordVisibility(id) {
