@@ -92,9 +92,9 @@
             </div>
         </nav>
     </header>
-    <script>//aqui esto se puede adjuntar en otro archivo js lo mismo para el css o dejarlo aqui si no son muchas cosas 
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-    fetch('http://localhost:8080/api/notificaciones')
+    fetch('http://localhost:8080/notificaciones/usuario/{usuarioId}')
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('notification-container');
