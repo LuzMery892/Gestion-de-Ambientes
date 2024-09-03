@@ -52,34 +52,35 @@
   background-color: white;
   align-items: flex-start;
   box-sizing: border-box;
+  margin-left: 30px;
+
 }
 
 /* Estilo para cada pestaña */
 .select_amb {
-  padding: 10px 15px;
-  border-radius: 5px; 
-  margin-left: 30px; 
+  padding: 10px 50px;
   cursor: pointer; 
-  background-color:white;
   transition: border-color 0.3s ease, background-color 0.3s ease; 
-  border-color: 2px solid #ccc; 
+  font-size: 16px;
+  color: #838181;
+  border-bottom: 2px solid #ccc; 
 }
 
 /* Estilo para la pestaña activa */
 .select_amb.active {
-  border-color: #38de38; 
-  background-color: #ccc; 
+  color: #333; 
   font-weight: bold; 
+  font-size: 16px;
+  border-bottom: none; 
+  border-left: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  padding: 10px 50px;
 }
 
-.select_amb:hover {
-  background-color: #ade8ad; 
-  color: #04324D;
-}
 
 .tab-content {
   padding: 20px;
-  border-top: 2px solid #ccc; 
   width: 100%; 
   display: flex;
   justify-content: center; 
@@ -199,7 +200,7 @@
   color: white;
   border: none;
   padding: 7px 20px;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.3s ease;
@@ -332,11 +333,12 @@ button img {
     background-color: #04324D;
     color: #fff;
     border: none;
-    border-radius: 20px;
+    border-radius: 7px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     width: 15%;
+    margin-top: 20px;
 }
   
   .reportes-button:hover {
@@ -438,7 +440,7 @@ button img {
   color: white;
   border: none;
   padding: 7px 20px;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.3s ease;
@@ -499,7 +501,7 @@ button img {
 
 /* Estilo para los campos del formulario */
 .modalPomar-content label {
-  font-size: 12px; /* Tamaño de fuente reducido para los labels */
+  font-size: 12px; 
   color: #333;
 }
 
@@ -540,12 +542,12 @@ button img {
   border: 1px solid #04324D;
   border-radius: 7px;
   padding: 20px;
-  width: 200px; /* Ajusta el tamaño de las tarjetas */
+  width: 200px; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
-  font-size: 16px; /* Tamaño de fuente reducido */
+  font-size: 16px; 
   margin: 0 0 10px 0;
   text-align: center;
   color: #04324D;
@@ -558,18 +560,18 @@ button img {
 
 .card-status {
   padding: 10px;
-  border-radius: 7px; /* Bordes redondeados */
-  font-weight: bold; /* Resalta el texto */
-  color: black; /* Color del texto */
-  display: inline-block; /* Asegura que el padding funcione correctamente */
+  border-radius: 7px; 
+  font-weight: bold; 
+  color: black; 
+  display: inline-block; 
 }
 
 .card-status.available {
-  background-color: #44f74a; /* Verde para Disponible */
+  background-color: #44f74a; 
 }
 
 .card-status.closed {
-  background-color: #fc4747; /* Rojo para Clausurado */
+  background-color: #fc4747; 
 }
 
 .card-status-select {
@@ -578,9 +580,9 @@ button img {
   padding: 5px;
   font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 4px; /* Bordes redondeados */
-  background-color: #fff; /* Fondo blanco */
-  transition: all 0.3s ease; /* Suaviza la transición para todos los cambios */
+  border-radius: 4px;
+  background-color: #fff; 
+  transition: all 0.3s ease; 
 }
 
 
@@ -591,15 +593,15 @@ button img {
 }
 
 .button_clausurar {
-  background-color: #dc3545; /* Color de fondo rojo */
-  color: #fff; /* Color del texto blanco */
-  border: none; /* Elimina el borde predeterminado */
-  border-radius: 4px; /* Bordes redondeados */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente */
-  font-weight: bold; /* Fuente en negrita */
-  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Suaviza las transiciones para el color de fondo y la sombra */
+  background-color: #dc3545; 
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  padding: 10px 20px;
+  font-size: 16px; 
+  font-weight: bold; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .button_clausurar:hover {

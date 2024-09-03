@@ -220,12 +220,12 @@ td.action-buttons {
     background-color: #04324D; 
     color: #fff; 
     border: none;
-    border-radius: 20px;
+    border-radius: 7px;
     padding: 10px 20px; 
     font-size: 16px; 
     cursor: pointer; 
     margin-top: 20px; 
-    width: 30%;
+    width: 20%;
     text-align: center; 
   }
   

@@ -49,7 +49,6 @@
   gap: 20px;
   padding: 20px;
   width: 100%;
-  border: 4px solid #d41c1c;
 }
 
 /* Estilo para cada columna dentro del contenedor de búsqueda */
@@ -71,7 +70,7 @@
 .role-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
   width: 100%;
 }
@@ -209,7 +208,7 @@ tbody tr:nth-child(even) {
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
-  width: 30%;
+  width: 20%;
   text-align: center;
 }
 
@@ -239,6 +238,7 @@ p {
   color: #333;
   font-size: 16px;
   margin-bottom: 5px;
+  margin-left: 60px;
 }
 
 .close_form3 {

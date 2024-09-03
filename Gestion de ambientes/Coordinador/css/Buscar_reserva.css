@@ -8,30 +8,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    margin: 10px;
-    border: 4px solid #0d9c61;
+     margin: 10px;
   }
   
   /* Contenedor de búsqueda de reservas */
   .Container_buscarReserva {
     background-color: white;
-    padding: 30px;
+    padding: 10px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    overflow: auto;
-    margin: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
     border: 4px solid #ccc;
     border-radius: 20px;
   }
-  
+
+  .Header_Reserva p {
+    font-size: 16px; 
+    color: #333; 
+    text-align: left; 
+    margin-left: 60px; 
+}
+
   /* Título de búsqueda de reservas */
   .titulo_buscarreserva {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
   }
   
   .titulo_buscarreserva h2 {
@@ -49,7 +53,6 @@
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-    margin-top: -20px;
   }
   
   .main_reservag-img {
@@ -60,9 +63,7 @@
   
   /* Contenedor de filtro de reservas */
   .container_filtroReserva {
-    padding: 10px;
-    margin-top: 0px;
-    border: 2px solid red;
+    padding:10px;
   }
   
    
@@ -71,19 +72,26 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    align-items: center;
+    justify-content: center;
   }
   
-  .form-resv {
-    flex-shrink: 1;
-    min-width: 200px; 
+  .form-reservar {
+    flex: 1 1 100px; 
+    display: flex;
+    flex-direction: row; 
+    gap: 5px; 
+ 
   }
   
-  .form-resv label {
-    font-size:14px; 
+  .form-reservar label {
+    font-size:12px; 
 }
-.form-resv input,
-.form-resv button {
-    font-size: 14px; 
+.form-reservar input,
+.form-reservar button {
+    font-size: 12px; 
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -133,16 +141,17 @@
 
 /* Botones */
 .btn {
-    padding: 10px 20px;
+    display: inline-block;
+    padding: 10px 8px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
 }
 
-.btn-info {
-    background-color: #17a2b8;
-    color: #fff;
+.btn-personalizar {
+     color: #04324D;
+     font-weight: 500;
+     background-color: #ccc;
 }
 
 .btn-success {
@@ -150,16 +159,7 @@
     color: #fff;
 }
 
-.btn-secondary {
-    background-color: #6c757d;
-    color: #fff;
-}
 
-.btn-primary {
-    background-color: #007bff;
-    color: #fff;
-}
-  
   /* Estilo para el botón de cerrar */
   .close_form8 {
     position: absolute;
@@ -179,7 +179,6 @@
   /* Estilo para mensajes de error */
   .error-container {
     color: red;
-    border: 1px solid red;
     padding: 10px;
     margin-top: 10px;
     background-color: #fdd;
@@ -206,8 +205,8 @@
 /* Contenedor para los botones de los días */
 .dias-semana {
     display: flex;
-    gap: 10px; /* Espacio entre los botones */
-    flex-wrap: wrap; /* Permite que los botones se envuelvan en múltiples líneas si es necesario */
+    gap: 10px; 
+    flex-wrap: wrap; 
 }
 
 /* Estilo para los botones de los días */
@@ -258,10 +257,10 @@
 
 /* Estilo para el campo de entrada */
 .form-control {
-    width: 100px; /* Ajusta el ancho del campo de entrada según sea necesario */
-    margin-right: .5rem; /* Espacio entre el input y el texto */
-    padding: .375rem .75rem; /* Ajusta el padding para el input */
-    font-size: .875rem; /* Tamaño de fuente más pequeño */
+    width: 100px; 
+    margin-right: .5rem; 
+    padding: .375rem .75rem;
+    font-size: .875rem;
 }
 
 /* Estilo para el texto de grupo de entrada */
@@ -278,7 +277,6 @@
 /* Contenedor de las pestañas */
 
 /* Estilos generales para el contenedor principal */
-/* Estilos generales para el contenedor principal */
 .reservar_busquedas {
     width: 100%;
     margin: 0 auto;
@@ -288,20 +286,18 @@
 /* Estilos para la sección de selección de ambiente */
 .select_ambienteReserva {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Estilos para las pestañas */
 .select_res {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    display: inline-block;
-    margin-right: 5px;
+   padding: 10px 20px;
+  cursor: pointer; 
+  transition: border-color 0.3s ease, background-color 0.3s ease; 
+  font-size: 16px;
+  color: #838181;
+  border-bottom: 2px solid #ccc; 
 }
-
-
 
 /* Ocultar las pestañas no activas */
 .tab-sedes {
@@ -314,24 +310,48 @@
 }
 
 .select_res.active {
-    border-color: #38de38;
-    background-color: #ccc;
-    font-weight: bold;
-  }
-  
-  .select_res:hover {
-    background-color: #ade8ad;
-    color: #04324D;
+  color: #333; 
+  font-weight: bold; 
+  font-size: 16px;
+  border-bottom: none; 
+  border-left: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
   }
   
   /* Estilo para los tab-sedes */
   .tab-sedes {
     display: none;
-    padding: 20px;
-    border-top: 2px solid #ccc;
+    padding: 10px;
     width: 100%;
   }
   
+  
+  .tab-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    padding: 10px; 
+    width: 95%;
+    height: auto;
+}
+
+/* Estilo del título de cada pestaña */
+.titlle_central,
+.titlle_pomar,
+.titlle_buenosaires,
+.titlle_USB {
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.titlle_central h2,
+.titlle_pomar h2,
+.titlle_buenosaires h2,
+.titlle_USB h2 {
+    font-size: 14px; 
+    color: #333; 
+    margin: 0; 
+}
 
   /* Estilo para el contenedor de tablas */
   .table-containerReservas {
@@ -347,6 +367,8 @@
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #04324D;
+    table-layout:auto;
+    overflow: hidden;
   }
   
   /* Estilo del encabezado de la tabla */

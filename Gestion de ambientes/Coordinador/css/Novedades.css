@@ -74,10 +74,10 @@ p {
     flex-wrap: nowrap; 
     gap: 10px; 
     justify-content: center; 
-    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
-    width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
-    padding: 10px; /* Espacio interno para las tarjetas */
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    overflow-x: auto; 
+    width: 100%;
+    padding: 10px; 
+    box-sizing: border-box; 
 }
 
 /* Estilo de cada tarjeta */
@@ -111,14 +111,14 @@ p {
 
 /* Estilo del título de la tarjeta */
 .card h3 {
-    font-size: 14px; /* Tamaño de fuente relativo */
+    font-size: 16px; 
     color: #04324D;
     margin: 10px 0;
 }
 
 /* Estilo del texto en la tarjeta */
 .card p {
-    font-size: 12px; /* Tamaño de fuente relativo */
+    font-size: 14px; 
     color: #333;
     margin: 5px 0;
 }
