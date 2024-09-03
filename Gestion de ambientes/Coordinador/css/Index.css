@@ -368,6 +368,7 @@ input {
     display: flex;
     align-items: center; 
     position: relative; 
+ 
   }
   
   /* Estilo para el botón de menú */
@@ -377,7 +378,8 @@ input {
     cursor: pointer; 
     padding: 0; 
     margin-right: 30px; 
-  
+ 
+ 
   }
   
   /* Estilo para la imagen dentro del botón */
@@ -396,14 +398,13 @@ input {
     margin: 0; 
     position: absolute; 
     top: 80%; 
-    right: 50%; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
-    padding: 20px; 
+    right: 55%; 
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2); 
+    padding: 10px; 
     z-index: 1000; 
     display: flex;
     flex-direction: column; 
     gap: 5px;
-    border-color: #38de38;
     border-radius: 5px;
   }
   /* Estilo para los ítems del menú */
@@ -412,6 +413,7 @@ input {
     align-items: center; 
     padding: 10px;
     transition: background-color 0.3s ease; 
+    
 }
 
 .navigation-item:hover {

@@ -15,16 +15,18 @@
     <div id="navbar"></div>
     
     <main class="main">
-      <div class="container_user_setting">
-        <button type="button" class="close_form3">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar_ajustesUser" class="close_form3">
-        </button>
+      <div class="contenedor_user_setting">
         <div class="titulo_setting">
+        
           <div class="icon-setting">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAdxJREFUSEvFltFRxDAMRH2dQCdQCVAJUAlQydEJdAJ5N9mbjSI5zjHM+ScTx9FKq5XkQ7vSOlwJt10K/GIOf7fW3vcGcAnwTwIC+FNr7XPUgb3Ab621x8I4UQM+tPYCf0203syR3c8Ix+n9LuxtgveAFZnoI1oAWB6dgNkX5Tz97MqRDJiIHAQj7GnFfOIg56vFedjheV4ZsEcQjb1OG65ofccxHHgu0GFNqTkdicDQA7DoBIhoMDyiWrGl8w8mRoDPqo/ArtrbSM/sEM4RGU/ow9hHUUo4gCBZi6gjsGjGIMYirb18Zmngf9G/KLce1XjpxjwNUjBReF07nbHmu1Rj0OlxL92QG6nodJEuQDNxSZRqFA6c7em8pwhtsEQzadNet5z4KBCnOutaEdiDEUPDwJ5LV2JF3VZq0gGyJS6nOopLo7ASl1fACrxXx1vlEZsUDcbncuxmw3W86q8zEgbVQFRWOFnNYs3v4TrmIAYFMtoyOY9z/i8ObtZxb0jImcWkmYF6Q2J1SajGIuA+Cj2fgBKN8hlFF3M/XE7qXhrk2UWgKrM/XQSix3r3C0IGnEZWGdt75/JpE23+62XPu1TMe1V+adB7I/b8u/iy61DF8mn/EuCuwdGPVwP+BYcbkx/LXuokAAAAAElFTkSuQmCC" class="main_setting-img" alt="Ícono setting">
           </div>
           <h2>Ajustes de usuario</h2>
+          <button type="button" class="close_form3">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARpJREFUSEvtldENgjAURd9DTBwDN1DiAPAviRsokzgKOgP+4wAGR9A9BGpKqCEIfaUQ8aP8Fu7h3r7bIkz04ERcMOCfJW+i/p+oF6ud87LyI1rsnN0uV9mf2ZutxwqM8jReUg7IPbbXQQIIHgN4osXCLjiHQoEJB/J3KTgJnrvBgQFEQrANXoeWTi3mU+mQYK4jg+tAuaYSuAteuqviVXUq9l4Z3AoHcD5DpBBvfeB6gZtwXWivqAWkuafUtHfVqpfjr0GqVHXgyuC26cUCHapqgxzLKqPS8zY46VilpzpwEjxzgweK2kgq04Cf8jQOZec1Ca4uiUR2TgtACWewz+6xP/iSoAR010nHusLUdwZMJTTauol6tCgpoTe6GbMf8SyMtAAAAABJRU5ErkJggg=="/>
+          </button>
         </div>
+
         <p>Aquí puedes consultar, eliminar y actualizar la información de los usuarios.</p>
     
         <div class="container_busqueda">
@@ -46,14 +48,15 @@
             </div>
           </div>
         </div>
+        
       <div class="table-container">
           <table>
               <thead>
                   <tr>
                       <th></th>
-                      <th>Nombre</th>         
-                      <th>Correo SENA</th> 
-                      <th>Correo personal</th>
+                      <th>Nombre Completo</th>         
+                      <th>Correo electrónico SENA </th>        
+                      <th>Correo electrónico alternativo </th>          
                       <th>Teléfono</th>
                       <th>Identificación</th>
                       <th>Rol</th>
@@ -61,15 +64,11 @@
                   </tr>
               </thead>
               <tbody id="userTableBody">
-                <!-- Las filas se llenarán dinámicamente con JavaScript -->
+                  
               </tbody>
             </table>
             <div class="save-button-container">
               <button type="button" class="save-button" onclick="saveChanges()">Guardar</button>
-            </div>
-      
-            <div id="errorContainer" class="error-container" style="display:none;">
-              <p id="errorMessage"></p>
             </div>
           </div>
         </div>
