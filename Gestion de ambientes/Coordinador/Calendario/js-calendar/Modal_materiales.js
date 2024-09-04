@@ -1,55 +1,44 @@
-const modal = document.getElementById('materialModal');
-const btn = document.querySelector('.añadir_materiales');
-const span = document.querySelector('.close');
-const llavesCheckbox = document.querySelectorAll('input[type="checkbox"]');
-const cantidadContainer = document.getElementById('cantidad-container');
-
-// Abre el modal
-btn.onclick = function() {
-    modal.style.display = 'flex';
-}
-
-// Cierra el modal al hacer clic en la X
-span.onclick = function() {
-    modal.style.display = 'none';
-}
-
-// Cierra el modal al hacer clic fuera del contenido del modal
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-}
-
-// Mostrar el campo de cantidad si se selecciona 'Sí'
-llavesCheckbox.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        if (document.getElementById('llaves-lockers').checked) {
+document.addEventListener('DOMContentLoaded', () => {
+    // Selecciona el botón "Guardar" y otros elementos necesarios
+    const guardarButton = document.getElementById('guardarButton');
+    const llavesLockers = document.getElementById('llaves-lockers');
+    const cantidadContainer = document.getElementById('cantidad-container');
+  
+    // Función para mostrar u ocultar el campo de cantidad basado en el checkbox de llaves de lockers
+    llavesLockers.addEventListener('change', () => {
+        if (llavesLockers.checked) {
             cantidadContainer.style.display = 'block';
         } else {
             cantidadContainer.style.display = 'none';
         }
     });
-});
-
-// Manejar el botón de guardar (aquí solo se cierra el modal, puedes agregar lógica adicional)
-document.getElementById('guardarButton').onclick = function() {
-    alert('Información guardada');
-    modal.style.display = 'none';
-}
-
-const materialsModal = document.getElementById('materialsModal');
-const lockersYes = document.getElementById('lockers-yes');
-const lockersNo = document.getElementById('lockers-no');
-const quantityContainer = document.getElementById('quantity-container');
-
-if (materialsModal) {
-    materialsModal.addEventListener('shown.bs.modal', function () {
-        lockersYes.addEventListener('change', function() {
-            quantityContainer.style.display = 'block';
-        });
-        lockersNo.addEventListener('change', function() {
-            quantityContainer.style.display = 'none';
-        });
+  
+    // Manejo del clic en el botón "Guardar"
+    guardarButton.addEventListener('click', () => {
+        // Aquí puedes agregar la lógica para guardar los datos del formulario
+        // Por ejemplo, hacer una solicitud al servidor con los datos del formulario
+        const materialForm = document.getElementById('materialForm');
+        const formData = new FormData(materialForm);
+  
+        // Muestra los datos en consola (para depuración)
+        for (const [key, value] of formData.entries()) {
+            console.log(`${key}: ${value}`);
+        }
+  
+        // Puedes usar el objeto `formData` para enviar los datos del formulario al servidor
+        // Ejemplo con fetch (necesita una URL de API válida)
+        /*
+        fetch('/ruta/a/tu/api', {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Error:', error));
+        */
+  
+        // Cierra el modal después de guardar
+        const modal = bootstrap.Modal.getInstance(document.getElementById('materialModal'));
+        modal.hide();
     });
-}
+  });
+  

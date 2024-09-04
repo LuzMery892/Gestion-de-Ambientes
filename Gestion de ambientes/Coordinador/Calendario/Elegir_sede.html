@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleccionar Sede</title>
+  <link rel="stylesheet" href="Style_Calendario/Elegir_sede.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Calendario de Reservas</h1>
+    </header>
+
+    <main id="main-content">
+      <section id="sedes-container">
+        <h2>Selecciona una Sede</h2>
+        <div class="sede-cards">
+          <div class="sede-card" data-sede="sede1">
+            <img src="sede1.jpg" alt="Sede 1">
+            <h3>Sede 1</h3>
+            <p>Descripción breve de la sede 1.</p>
+          </div>
+          <div class="sede-card" data-sede="sede2">
+            <img src="sede2.jpg" alt="Sede 2">
+            <h3>Sede 2</h3>
+            <p>Descripción breve de la sede 2.</p>
+          </div>
+          <div class="sede-card" data-sede="sede3">
+            <img src="sede3.jpg" alt="Sede 3">
+            <h3>Sede 3</h3>
+            <p>Descripción breve de la sede 3.</p>
+          </div>
+          <div class="sede-card" data-sede="sede4">
+            <img src="sede4.jpg" alt="Sede 4">
+            <h3>Sede 4</h3>
+            <p>Descripción breve de la sede 4.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="calendario-container" style="display:none;">
+        <button id="back-button" class="btn">Volver a Seleccionar Sede</button>
+        <div id="calendario">
+          <!-- Aquí se cargará el calendario -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Calendario de Reservas</p>
+    </footer>
+  </div>
+
+  <script src="js-calendar/Elegir_Sede.js"></script>
+</body>
+</html>

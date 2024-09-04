@@ -1,27 +1,31 @@
-const modal = document.getElementById('reportarModal');
-        const btn = document.querySelector('.reportar_novedad');
-        const span = document.querySelector('.close');
-
-        // Abre el modal
-        btn.onclick = function() {
-            modal.style.display = 'flex';
+document.addEventListener('DOMContentLoaded', () => {
+    // Selecciona el botón "Reportar" y otros elementos necesarios
+    const reportarButton = document.getElementById('reportarButton');
+  
+    // Manejo del clic en el botón "Reportar"
+    reportarButton.addEventListener('click', () => {
+        // Aquí puedes agregar la lógica para enviar los datos del formulario
+        const reportarForm = document.getElementById('reportarForm');
+        const formData = new FormData(reportarForm);
+  
+        // Muestra los datos en consola (para depuración)
+        for (const [key, value] of formData.entries()) {
+            console.log(`${key}: ${value}`);
         }
-
-        // Cierra el modal al hacer clic en la X
-        span.onclick = function() {
-            modal.style.display = 'none';
-        }
-
-        // Cierra el modal al hacer clic fuera del contenido del modal
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // Manejar el botón de reportar (aquí solo se cierra el modal, puedes agregar lógica adicional)
-        document.getElementById('reportarButton').onclick = function() {
-            alert('Novedad reportada');
-            modal.style.display = 'none';
-        }
-
+  
+        // Puedes usar el objeto `formData` para enviar los datos del formulario al servidor
+        // Ejemplo con fetch (necesita una URL de API válida)
+        /*
+        fetch('/ruta/a/tu/api', {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Error:', error));
+        */
+  
+        // Cierra el modal después de reportar
+        const modal = bootstrap.Modal.getInstance(document.getElementById('reportarModal'));
+        modal.hide();
+    });
+  });
