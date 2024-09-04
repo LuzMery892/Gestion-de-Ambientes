@@ -93,6 +93,17 @@ if (Buscar_ReservaLink ) {
   });
 }
 
+
+const calendario_sedeCentralLink = document.getElementById('ver_calendario');
+
+if (calendario_sedeCentralLink  ) {
+  calendario_sedeCentralLink  .addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'Calendario/Calendario_sedeCentral.html'; 
+  });
+}
+
+
 // Cargar notificaciones en la barra de navegación
 function cargarNotificacionesNavbar() {
   const notificacionesNavbar = document.querySelector('.notificaciones-navbar');

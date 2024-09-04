@@ -76,14 +76,14 @@ p {
 
 /* Estilo cuando el campo está en hover */
 .form-control:hover {
-    border-color: #1fb530; 
+    border-color: #228b22; 
 }
 
 /* Títulos y etiquetas */
 .tittle_newuser {
     font-size: 20px; 
     margin-bottom: 10px;
-    color: #04324D; 
+    color: #003366; 
     font-weight: 600; 
 }
 
@@ -148,7 +148,7 @@ p {
 
 /* Botón de crear usuario */
 .btn-primary {
-    background-color: #04324D; 
+    background-color: #003366; 
     color: #ffffff; 
     padding: 10px 70px; 
     border: none;
@@ -196,7 +196,7 @@ p {
 .icon-wrapper {
     width: 45px;
     height: 45px;
-    background-color: #04324D; 
+    background-color: #003366; 
     border-radius: 50%;
     display: flex;
     align-items: center;
