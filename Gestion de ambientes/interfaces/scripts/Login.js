@@ -45,11 +45,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     .then(response => response.json())
     .then(data => {
         if (data.role === 'ROL_COORDINADOR') {
-            window.location.href = '/Gestion-de-Ambientes/Gestion%20de%20ambientes/Coordinador/coordinadorDashboard.html';
+            window.location.href = '/Gestion de ambientes/Coordinador/coordinadorDashboard.html';
         } else if (data.role === 'ROL_ALISTAMIENTO') {
-            window.location.href = '/Gestion-de-Ambientes/Gestion%20de%20ambientes/Alistamiento/alistamientoDashboard.html';
+            window.location.href = '/Gestion de ambientes/Alistamiento/alistamientoDashboard.html';
         } else if (data.role === 'ROL_INSTRUCTOR') {
-            window.location.href = '/Gestion-de-Ambientes/Gestion%20de%20ambientes/Instructor/instructorDashboard.html';
+            window.location.href = '/Gestion de ambientes/Instructor/instructorDashboard.html';
         } else {
             alert('Rol no reconocido');
         }

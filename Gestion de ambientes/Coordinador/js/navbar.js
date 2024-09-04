@@ -94,12 +94,12 @@ if (Buscar_ReservaLink ) {
 }
 
 
-const calendario_sedeCentralLink = document.getElementById('ver_calendario');
+const ver_calendarios = document.getElementById('ver_calendario');
 
-if (calendario_sedeCentralLink  ) {
-  calendario_sedeCentralLink  .addEventListener('click', function(event) {
+if (ver_calendarios  ) {
+  ver_calendarios  .addEventListener('click', function(event) {
     event.preventDefault(); 
-    window.location.href = 'Calendario/Calendario_sedeCentral.html'; 
+    window.location.href = 'Elegirsede_Reservas.html'; 
   });
 }
 

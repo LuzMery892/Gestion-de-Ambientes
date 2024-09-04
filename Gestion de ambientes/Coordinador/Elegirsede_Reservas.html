@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleccionar Sede</title>
+  <link rel="stylesheet" href="css/Index.css">
+  <link rel="stylesheet" href="Css/Elegir_sede.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="grid-container">
+      <div id="header"></div>
+      <div id="navbar"></div>
+
+      <main class="main">
+        <div class="contenedor_principalSede">
+      <div class = "titulo_calendarioSedes">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASxJREFUSEvtV+0NwiAQfRD3kG7ACPrTGHfQSaqbuIMx/akjdAPROQwYqiTY0nKRGj9Sfl7veHD3jntl+NBiH8JFFFgUUkBjWR2QY6tmpQodlurnYuPAOzkxHAcbwDSmalEeg8BEv+8DtinTGjnDI71pJFAGOHKOTb1EjVSP9/IEQKThNaLVeV5mvvUJWHh16hm4wY8BmNQ61DL4pau3Ymuqu3r2/4FtyqpbjqBcP1JsSakOBafYgk9myobUWDqwnU7X+0vmBkQ1iSi2jsHx3aymEMlmpO43kMsXEdEak4kUItzPkov6Ntf9ksj1KqhjeZtQfK5xIYXRsNKn98U4Ml93NTSX2Mu1AfI+kQ2wvczLVavmch8e4txOpHTR1/ITEBX0fd48euN3gfn73gCKv8IuZl8XLQAAAABJRU5ErkJggg==" class="CalendarIcon-img">
+      <h2 class="tittle_sedeReserva"> Calendario de Reservas</h2>
+      </div>
+
+      <button type="button" class="close_form8">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar_novedades" class="close_form8">
+      </button>
+      <p>Seleccione la sede para visualizar el calendario de reservas.</p>
+    
+      <div class="Contenedor_elegirSede">
+          <!-- Sede 1 -->
+          <div class="card_calendar" id="card-central">
+              <img src="IMG-ICONS/SEDE_COMPLEJO_CENTRAL.jpeg" alt="Sede Central" class="card-res">
+              <h3 id="title-1">Sede Complejo Central</h3>
+          </div>
+          <!-- Sede 2 -->
+          <div class="card_Calendar" id="card-2">
+              <img src="IMG-ICONS/SEDE_EL_POMAR_1.jpeg" alt="Sede Pomar" class="card-res">
+              <h3 id="title-2">Sede el Pomar</h3>
+          </div>
+          <!-- Sede 3 -->
+          <div class="card_calendar" id="card-3">
+              <img src="IMG-ICONS/SEDE_BUENOS_AIRES - Ajustada.jpeg" alt="Sede Buenos Aires" class="card-res">
+              <h3 id="title-3">Sede Buenos Aires</h3>
+          </div>
+          <!-- Sede 4 -->
+          <div class="card_Calendar" id="card-4">
+              <img src="IMG-ICONS/u.s.b.jpg" alt="Sede U. San Buenaventura" class="card-res">
+              <h3 id="title-4">Sede San Buenaventura</h3>
+          </div>
+      </div>
+         
+      </div>
+      </main>
+
+      <script>
+        async function loadHTML(selector, file) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${file}: ${response.statusText}`);
+                }
+                const text = await response.text();
+                document.querySelector(selector).innerHTML = text;
+            } catch (error) {
+                console.error(error);
+                // Añadir mensaje de error para el usuario.
+            }
+        }
+    
+        async function loadContent() {
+            await loadHTML('#header', 'header.html');
+            await loadHTML('#navbar', 'navbar.html');
+            loadScripts();
+        }
+    
+        function loadScripts() {
+            // Carga de scripts
+            const scripts = [
+                { src: 'js/navbar.js' },
+                { src: 'js/menu_notificacion.js' },
+                { src: 'js/Elegir_Sede.js' }
+            ];
+    
+            scripts.forEach(script => {
+                const scriptElement = document.createElement('script');
+                scriptElement.src = script.src;
+                document.body.appendChild(scriptElement);
+            });
+        }
+    
+        loadContent();
+    </script>
+              
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  </div>
+
+</body>
+</html>
