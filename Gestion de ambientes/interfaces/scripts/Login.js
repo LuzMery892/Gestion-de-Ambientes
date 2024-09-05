@@ -25,29 +25,30 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = formData.get('username');
         const password = formData.get('password');
 
-        fetch('/login', {
+        fetch('http://127.0.0.1:8080/api/login', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json'
             },
-            body: new URLSearchParams({
-                'username': username,
-                'password': password
-            })
+            body: JSON.stringify({
+                username: username,
+                password: password
+            }),
+            credentials: 'include' // Incluir cookies para enviar credenciales
         })
         .then(response => response.json())
         .then(data => {
             if (data.bloqueado) {
                 window.location.href = 'ActualizarCorreoAlternativoBloqueado.html';
             } else {
-                switch (data.role) {
-                    case 'ROL_COORDINADOR':
+                switch (data.rolNombre) {
+                    case 'COORDINADOR':
                         window.location.href = '/Gestion-de-Ambientes/Gestion de ambientes/Coordinador/coordinadorDashboard.html';
                         break;
-                    case 'ROL_ALISTAMIENTO':
+                    case 'ALISTAMIENTO':
                         window.location.href = '/Gestion-de-Ambientes/Gestion de ambientes/Alistamiento/alistamientoDashboard.html';
                         break;
-                    case 'ROL_INSTRUCTOR':
+                    case 'INSTRUCTOR':
                         window.location.href = '/Gestion-de-Ambientes/Gestion de ambientes/Instructor/instructorDashboard.html';
                         break;
                 }
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error:', error));
     });
 });
+
 
 function togglePassword() {
     const passwordField = document.getElementById('password');
