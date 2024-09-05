@@ -241,7 +241,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: left;
-    width: 110%;
+    width: 100%;
     background-color: #f6f1f1a4;
     border: 1px solid #ccc;
     border-radius: 20px;
@@ -297,7 +297,7 @@ input {
   }
   
   .navbar__arrow {
-    margin-left: -10px;
+    margin-left: 10px;
     width: 15px;
     height: 15px;
     transition: transform 0.3s;
