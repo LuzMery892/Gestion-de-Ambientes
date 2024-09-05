@@ -80,7 +80,7 @@ const ReportesAmbienteLink = document.getElementById('ReportesAmbienteLink');
 if (ReportesAmbienteLink) {
   ReportesAmbienteLink.addEventListener('click', function(event) {
     event.preventDefault(); 
-    window.location.href = 'Novedades.html'; 
+    window.location.href = 'Novedades-Estado.html'; 
   });
 }
 
@@ -89,7 +89,7 @@ const Buscar_ReservaLink = document.getElementById('buscar_reserva');
 if (Buscar_ReservaLink ) {
   Buscar_ReservaLink .addEventListener('click', function(event) {
     event.preventDefault(); 
-    window.location.href = 'Buscar_reserva.html'; 
+    window.location.href = 'BuscarAmbiente_reserva.html'; 
   });
 }
 

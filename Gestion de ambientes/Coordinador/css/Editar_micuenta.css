@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   margin-bottom:0;
-  gap: 15px;
+  gap: 5px;
 }
 
 .titulo_micuenta h1 {
@@ -59,16 +59,18 @@
   height: 40px; 
 }
 
-.close_form7 {
-  position: relative;
+.close-form1{
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 500;
-  background-color: #04324D;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px; 
+  height: 24px;
 }
 
-.close_form7 img {
+.close-form1 img {
   width: 24px; 
   height: 24px;
 }

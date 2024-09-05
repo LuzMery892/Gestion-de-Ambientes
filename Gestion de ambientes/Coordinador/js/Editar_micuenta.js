@@ -1,3 +1,15 @@
+    // Obtener el botón de cerrar el formulario y el contenedor
+    const closeFormButton1 = document.querySelector('.close-form1');
+    const contenedorEditUser = document.querySelector('.container_editUser');
+    
+    if (closeFormButton1 && contenedorEditUser) {
+      closeFormButton1.addEventListener('click', () => {
+        contenedorEditUser.style.display = 'none';
+        window.location.href = 'coordinadorDashboard.html';
+      });
+    }
+
+
 const showTab = (tabId) => {
   // Obtener todas las pestañas y ocultar el contenido de todas
   const tabs = document.querySelectorAll('.contenedor_selectinfo .select_info');
@@ -42,17 +54,7 @@ tabs.forEach(tab => {
 
 
       
-    // Obtener el botón de cerrar el formulario y el contenedor
-    const closeFormButton7 = document.querySelector('.close_form7');
-    const contenedorEditUser = document.querySelector('.container_editUser');
-  
-    if (closeFormButton7 && contenedorEditUser) {
-      closeFormButton7.addEventListener('click', () => {
-        contenedorEditUser.style.display = 'none';
-        window.location.href = 'coordinadorDashboard.html';
-      });
-    }
-  
+
     // Manejar el envío del formulario de cambio de contraseña
     document.querySelector('.password-form')?.addEventListener('submit', function(event) {
       event.preventDefault(); // Previene el envío del formulario por defecto

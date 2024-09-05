@@ -89,3 +89,14 @@ const tabs = document.querySelectorAll('.select_amb');
         selectElement.classList.add('option-closed');
     }
 }
+
+
+const closeFormButtonpomar = document.querySelector('.close-form9');
+const estadoPomar = document.querySelector('.container_sedePomar'); 
+
+if (closeFormButtonpomar  && estadoPomar) {
+    closeFormButtonpomar .addEventListener('click', function() {
+        estadoPomar.style.display = 'none'; 
+    window.location.href = 'Novedades-Estado.html'; 
+  });
+}

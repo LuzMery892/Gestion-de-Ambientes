@@ -1,4 +1,4 @@
-const closeFormButton5 = document.querySelector('.close_form5');
+const closeFormButton5 = document.querySelector('.close_form6');
 const contenedor_principalNovedad = document.querySelector('.contenedor_principalNov');
 
 if (closeFormButton5 && contenedor_principalNovedad) {
