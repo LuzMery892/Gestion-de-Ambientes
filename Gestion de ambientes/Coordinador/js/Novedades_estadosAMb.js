@@ -13,11 +13,36 @@ const card_pomar = document.getElementById('card-2');
 if (card_pomar) {
     card_pomar.addEventListener('click', function(event) {
         event.preventDefault(); 
-        window.location.href = 'Pomar.html'; 
+        window.location.href = 'Novedades_sedePomar.html'; 
     });
 }
 
+const card_central = document.getElementById('card-1');
 
+if (card_central) {
+    card_central.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'Novedades_sedeCentral.html'; 
+    });
+}
+
+const card_usb = document.getElementById('card-4');
+
+if (card_usb) {
+    card_usb.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'Novedades_usb.html'; 
+    });
+}
+
+const card_buenosaires = document.getElementById('card-3');
+
+if (card_buenosaires ) {
+    card_buenosaires .addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'Novedades_sedeBuenosaires.html'; 
+    });
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {

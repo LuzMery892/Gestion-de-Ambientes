@@ -9,8 +9,8 @@ const tabs = document.querySelectorAll('.select_amb');
         tab.classList.add('active');
         
         panes.forEach(pane => {
-          if ((pane.id === 'reportes' && role === 'Reportes - Novedades') ||
-              (pane.id === 'actualizar' && role === 'estado ambiente')) {
+          if ((pane.id === 'reportes_Central' && role === 'ReportesCentral') ||
+              (pane.id === 'actualizarCentral' && role === 'estadoCentral')) {
             pane.classList.add('active');
           } else {
             pane.classList.remove('active');
@@ -92,7 +92,7 @@ const tabs = document.querySelectorAll('.select_amb');
 
 
 const closeFormButtonpomar = document.querySelector('.close-form9');
-const estadoPomar = document.querySelector('.container_sedePomar'); 
+const estadoPomar = document.querySelector('.container_sedes'); 
 
 if (closeFormButtonpomar  && estadoPomar) {
     closeFormButtonpomar .addEventListener('click', function() {

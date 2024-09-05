@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aplicativo Gestión de Ambientes</title>
+  <title>Aplicativo Gestión de Ambientes - Sede Buenaventura</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="css/Index.css">
-  <link rel="stylesheet" href="css/Pomar.css">
+  <link rel="stylesheet" href="css/Novedades_cuatrosedes.css">
 </head>
 <body>
   <div class="grid-container">
     <div id="header"></div>
     <div id="navbar"></div>
-    
+
     <main class="main">
-        <div class="container_sedePomar"> 
-            <h1 class="sede1">Sede Pomar</h1>   
+        <div class="container_sedes"> 
+            <h1 class="sede-title">Sede Buenaventura</h1>   
             <button type="button" class="close-form9">
-             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtldENgjAQhu8QE8fQDTRxAHnXxBWcRJ0E3cCI7zCAQTcQtzCxBVNCDcHKtcXIC7y2d9/9f+8OhJY+bIkLHfhvzndWK60ejJfDx/WQ/PIdSKsF9OnwNQLeWXzc1MHd6XyWpej3055HFUqC3ckiBIRZBpAg4P4bXEAhxVAUJu7yOBjVFUmChWLm8JtMqIKXoTnMyTx2PkWNwCK4Dm4DFTlJxbJqFRycNJL26iqV+bTBauUwfNupYW/ZeiNwFW4LNbJaQqpvSnX7twYzUvzRSEVWG7g2WNW9LnMTatQaKa4bGZ05V8FJxTpzagOnwcXKpOa0At/xOFg12lx5QuQ+9LIttQblXXYJPOpPRiqmEtied2Bb54zjOquNLbMNaM3qF9Ixux8YvsW4AAAAAElFTkSuQmCC" alt="CerrarPomar" class="close-form9">
+             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtldENgjAQhu8QE8fQDTRxAHnXxBWcRJ0E3cCI7zCAQTcQtzCxBVNCDcHKtcXIC7y2d9/9f+8OhJY+bIkLHfhvzndWK60ejJfDx/WQ/PIdSKsF9OnwNQLeWXzc1MHd6XyWpej3055HFUqC3ckiBIRZBpAg4P4bXEAhxVAUJu7yOBjVFUmChWLm8JtMqIKXoTnMyTx2PkWNwCK4Dm4DFTlJxbJqFRycNJL26iqV+bTBauUwfNupYW/ZeiNwFW4LNbJaQqpvSnX7twYzUvzRSEVWG7g2WNW9LnMTatQaKa4bGZ05V8FJxTpzagOnwcXKpOa0At/xOFg12lx5QuQ+9LIttQblXXYJPOpPRiqmEtied2Bb54zjOquNLbMNaM3qF9Ixux8YvsW4AAAAAElFTkSuQmCC" alt="CerrarBuenaventura" class="close-form9">
             </button>
             <div class="contenedor_reportes">  
-                <div class="select_amb" data-role="Reportes - Novedades">Revisar Reportes</div>
-                <div class="select_amb" data-role="estado ambiente">Cerrar Ambiente</div>     
+                <div class="select_amb" data-role="ReportesBuenaventura" data-id="2">Revisar Reportes</div>
+                <div class="select_amb" data-role="estadoBuenaventura" data-id="2">Cerrar Ambiente</div>     
             </div>
           
             <div class="tab-content">
-                <div class="tab-pane" id="reportes">
-                    <div class="Buscar_pomar">
+                <div class="tab-pane" id="reportes_Buenaventura">
+                    <div class="Buscar_sedes">
                         <div class="Buscar">
                             <h3>Consultar reporte por estado</h3>
                             <div class="estado-options">              
@@ -45,12 +45,12 @@
                                         <input type="date" id="reportDate" name="reportDate" required>
                                     </div>
                                 </form>
-                                <button type="submit" class="fechapomar-button">Buscar</button>
+                                <button type="submit" class="fechacentral-button">Buscar</button>
                             </div>
                         </div>
                     </div>
                  
-                    <div class="table-containerReportes">
+                    <div class="table-containerReportesBuenaventura">
                         <table id="reportTable">                
                             <thead>
                                 <tr>
@@ -67,7 +67,7 @@
                             <tbody>
                                 <tr>
                                     <td><input type="checkbox" class="rowSelect"></td>
-                                    <td>Pomar</td>
+                                    <td>Buenaventura</td>
                                     <td>Oficina</td>
                                     <td>Fugas en la tubería</td>
                                     <td>Juan Pérez</td>
@@ -81,11 +81,11 @@
                                         </select>
                                     </td>
                                     <td class="action-buttons">
-                                        <button type="button" class="pomar_botton" onclick="editRow(this)">
-                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="pomar_setting">
+                                        <button type="button" class="central_botton" onclick="editRow(this)">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="central_setting">
                                         </button>
-                                        <button type="button" class="pomar_botton" onclick="deleteRow(this)">
-                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ouLDrkuLHrHzTqX/Pe9AKs3kJ8Su2QpHKeOY+pDqYF8M13GHNnhUA17JOdUogb5nNr3jBUDFPESm4uxzYgf6SOGH0AL/E4AAAAASUVORK5CYII=" alt="eliminar" class="pomar_setting">
+                                        <button type="button" class="central_botton" onclick="deleteRow(this)">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ouLDrkuLHrHzTqX/Pe9AKs3kJ8Su2QpHKeOY+pDqYF8M13GHNnhUA17JOdUogb5nNr3jBUDFPESm4uxzYgf6SOGH0AL/E4AAAAASUVORK5CYII=" alt="eliminar" class="central_setting">
                                         </button>
                                     </td>
                                 </tr>
@@ -94,11 +94,11 @@
                     </div>
     
                     <div class="container_buttonReportes">
-                        <button type="button" class="reportes-button">Guardar</button>          
+                        <button type="button" class="reportesBuenaventura-button">Guardar</button>          
                     </div>
                 </div>
 
-                <div class="tab-pane" id="actualizar">
+                <div class="tab-pane" id="actualizarBuenaventura">
                     <div class="Actualizar_pomar">
                         <h3>Buscar Ambiente por Estado</h3>
                         <div class="Select_estadoAmbiente">
@@ -107,12 +107,12 @@
                             <option value="disponible">Disponible</option>
                             <option value="cerrado">Clausurado</option>
                           </select>
-                          <button type="button" class="ActualizarPomar-button" onclick="searchAmbiente()">Buscar</button>
+                          <button type="button" class="ActualizarBuenaventura-button" onclick="searchAmbiente()">Buscar</button>
                         </div>
                       </div>
 
-                    <div id="card-containerPomar" class="card-containerPomar">
-                        <div class="card" data-id="1">
+                    <div id="card-containerBuenaventura" class="card-containerBuenaventura">
+                        <div class="card" data-id="2">
                             <h4 class="card-title">Oficina</h4>
                             <p class="card-description">Estado actual: <span class="card-status available">Disponible</span></p>
                             <p class="card-description">Estado actual: <span class="card-status closed">Clausurado</span></p>
@@ -123,22 +123,23 @@
                         </div>
                                               
                         <div id="statusModal" class="modal_Pomar">
-                            <div class="modalPomar-content">
+                            <div class="modalBuenaventura-content">
                                 <span class="close" onclick="closeModal()">&times;</span>
                                 <h2>Clausurar</h2>
                                 <form id="statusForm">
                                     <label for="observaciones">Observaciones:</label><br>
                                     <textarea id="observaciones" name="observaciones" rows="3" cols="30"></textarea>
                         
-                                    <button type="button" class="button_clausurar" onclick="saveDetails()">Guardar</button>
+                                    <button type="button" class="button_clausurarBuenaventura" onclick="saveDetails()">Guardar</button>
                                 </form>
                             </div>
                         </div>
-    </div>
-</div>
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
     <script>
         async function loadHTML(selector, file) {
             const response = await fetch(file);
@@ -149,7 +150,6 @@
         async function loadContent() {
           await loadHTML('#header', 'header.html');
           await loadHTML('#navbar', 'navbar.html');
-         
           loadScripts();
         }
       
@@ -158,22 +158,20 @@
           navbarScript.src = 'js/navbar.js';
           document.body.appendChild(navbarScript);
       
-                  
           const PomarScript = document.createElement('script');
-          PomarScript.src = 'js/Pomar.js';
+          PomarScript.src = 'js/Novedades_usb.js';
           document.body.appendChild(PomarScript);
       
           const menuNotificacionScript = document.createElement('script');
           menuNotificacionScript.src = 'js/menu_notificacion.js';
           document.body.appendChild(menuNotificacionScript); 
-      }
+        }
+      
         loadContent(); // Inicia la carga de contenido
-      </script>
-      
-          
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-      <script src=""></script>
-      
-      </div>
-      </body>
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
