@@ -61,7 +61,7 @@
 
     <main class="main">
       <div class="container_main">
-        <form id="loginForm" class="login-form" action="/login" method="post">
+        <form class="login-form"  id="loginForm" method="POST" action="/login"> 
           <h2 class="form-title">INICIAR SESIÓN</h2>
           <div class="form-group">
             <label for="username"></label>
@@ -84,7 +84,7 @@
             <a href="#">¿Olvidó su contraseña?</a>
           </div>
           <div class="contenedor_botonlogin">
-            <button type="submit" class="boton_login">iniciar sesion</button>
+            <button id="loginButton" type="submit" class="boton_login">iniciar sesion</button>
           </div>
         </form>
       </div>
