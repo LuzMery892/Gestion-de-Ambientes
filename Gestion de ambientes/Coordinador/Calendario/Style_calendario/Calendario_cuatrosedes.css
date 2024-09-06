@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: white;
+  background-color:#F5F5F5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 0.75fr repeat(5, 1fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 50px 1fr auto;
   gap: 0px;
   width: 100vw;
   height: 100vh;
@@ -22,19 +22,21 @@ body {
 }
 
 .header {
-  grid-column: 1/ span 6;
+  grid-column: 2/ span 5;
   grid-row: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
+  background-color: #F5F5F5;
+  border: 2px solid red;
 }
 
 .titulo_sedes{
   display: flex;
   align-items: center;
-  margin: 5px;
+  margin-top: 5px;
   margin-left: 50px;
 }
 
@@ -48,7 +50,7 @@ body {
 .titulo_sedes h2 {
   margin: 0;
   color: #333;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -62,7 +64,7 @@ body {
 
 .select_ambientesSedes h2 {
   color: #333;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -88,113 +90,133 @@ body {
   position: relative;
   grid-column: 2 / span 5;
   grid-row: 2 / span 4;
-  background-color: white;
+  background-color: #F5F5F5;
   display: grid;
-  gap: 10px;
-  padding: 10px;
   box-sizing: border-box;
-
-}
-
-/* Calendar Container */
-.calendar-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-sizing: border-box;
-  display: grid;
-  gap: 10px;
+  margin:0;
   overflow: auto;
+  border-radius: 10px;
+  border: 2px solid rgb(182, 25, 221);
 }
 
-.sidebar {
-  grid-column: 1;
-  grid-row: 1 / span 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:center;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  gap: 30px;
-  border-color: 1px solid red;
+
+#calendar {
+  box-sizing: border-box;
+  display: grid;
+  overflow: auto;
+  height: 95%;
+  width: 97%;
+  background-color: #F5F5F5; 
+  padding: 0; 
+  margin: 10px; 
 }
 
-.sidebar button {
+/* Ajusta el tamaño de los días en la vista mensual */
+.fc-daygrid-day {
+  font-size: 10px; /* Reduce el tamaño de la fuente para los días */
+  padding: 2px; /* Reduce el espacio dentro de cada celda de día */
+}
+
+/* Ajusta el tamaño del encabezado de los días de la semana */
+.fc-daygrid-day-top {
+  font-size: 0.8em; /* Ajusta el tamaño de la fuente para el encabezado de los días de la semana */
+}
+
+/* Ajusta el tamaño del título del mes */
+.fc-month-view .fc-header-title {
+  font-size: 1em; /* Ajusta el tamaño de la fuente del título del mes */
+}
+
+/*encabezados del calendario*/
+
+.fc-header-toolbar {
+  background-color: #F5F5F5;
+  font-size: 18px;
+  border-bottom: 2px solid #ccc;
+}
+
+.fc-button {
+  background-color: #d7e2ca; 
+  color: #333; 
+  border: none; 
+  padding: 10px 15px; 
+  border-radius: 4px;
+}
+
+.fc-button:hover {
+  background-color: #666; /* Color de fondo al pasar el ratón */
+}
+
+/*Para mejorar la visualización de los días y los eventos*/
+
+.fc-daygrid-day {
+  border: 1px solid #ddd; /* Borde fino alrededor de los días */
+}
+
+.fc-daygrid-day-number {
+  font-size: 1.2em; /* Tamaño de fuente más grande para los números de los días */
+  color: #333; /* Color de texto para los números de los días */
+}
+
+.fc-daygrid-day-event {
+  border-radius: 4px; /* Bordes redondeados para los eventos */
+  background-color: #2196F3; /* Color de fondo para los eventos */
+  color: #fff; /* Color de texto blanco para los eventos */
+  padding: 5px; /* Relleno interno de los eventos */
+}
+
+.fc-daygrid-day.fc-day-today {
+  background-color: #e3f2fd; /* Color de fondo para el día actual */
+  border: 1px solid #90caf9; /* Borde resaltado para el día actual */
+}
+
+/*Ajustar la Vista Semanal*/
+.fc-timegrid-daygrid-day {
+  border: none; /* Elimina el borde */
+}
+
+.fc-timegrid-hour {
+  border-bottom: 1px solid #ddd; /* Línea divisoria para las horas */
+}
+
+.fc-timegrid-event {
+  border-radius: 4px; /* Bordes redondeados para los eventos */
+  background-color: #4caf50; /* Color de fondo para los eventos */
+  color: #fff; /* Color de texto blanco para los eventos */
+}
+
+#sidebar {
+    grid-column: 1; 
+    grid-row: 1 / span 4; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    border-bottom-right-radius: 70px;
+    border: 1px solid green;
+    gap: 30px;
+  }
+
+
+  
+.btnadd_reserva, .btnañadir_materiales, .btneliminar_reserva, .btnreportar_novedad{
+  background-color: #e0e0e0;
   border: none;
-  background: none;
-  color: #333;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 10px 15px;
 }
+
 
 /* Hover verde en los botones */
 .sidebar button:hover {
-  background-color: #d4edda; /* Verde claro para hover */
-  color: #005f73; /* Cambia el texto a color base */
-  border-radius: 15px;
-  padding: 10px;
+  background-color: #F5F5F5; 
+  color: #005f73; 
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px; 
+  padding: 10px 90px;
+  margin: 0;
 }
-
-/* Estilo para los botones de los modales */
-.modal-content .btn {
-  background-color: #005f73;
-  border: none;
-  color: #fff;
-  transition: background-color 0.3s;
-}
-
-.modal-content .btn:hover {
-  background-color: #004d60; /* Un tono más oscuro del color base para hover */
-}
-
-/* Estilo específico para botones de modal en el footer */
-.modal-footer .btn {
-  background-color: #005f73;
-  border: none;
-  color: #fff;
-  transition: background-color 0.3s;
-}
-
-.modal-footer .btn:hover {
-  background-color: #004d60;
-}
-
-/* Botones de los modales que son diferentes */
-.modal-footer .btn-secondary {
-  background-color: #6c757d;
-}
-
-.modal-footer .btn-secondary:hover {
-  background-color: #5a6268;
-}
-
-.modal-footer .btn-danger {
-  background-color: #dc3545;
-}
-
-.modal-footer .btn-danger:hover {
-  background-color: #c82333;
-}
-
-.modal-footer .btn-success {
-  background-color: #28a745;
-}
-
-.modal-footer .btn-success:hover {
-  background-color: #218838;
-}
-
-.modal-footer .btn-primary {
-  background-color: #007bff;
-}
-
-.modal-footer .btn-primary:hover {
-  background-color: #0069d9;
-}
-
 
 
 /* Estilos para el modal */

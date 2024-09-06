@@ -1,41 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.querySelector('.calendar-container');
+  var calendarEl = document.getElementById('calendar');
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'dayGrid', 'timeGrid', 'interaction' ],
-    locale: 'es', // Configura el idioma en español
+    locale: 'es',
     header: {
       left: 'prev,next today',
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay'
     },
-    defaultView: 'dayGridMonth', // Vista inicial por defecto
+    initialView: 'dayGridMonth', 
     editable: true,
     selectable: true,
-    minTime: '06:00:00',  // Hora mínima en vista semanal
-    maxTime: '22:00:00',  // Hora máxima en vista semanal
+    height: 'auto', // Esto ajusta automáticamente la altura según el contenido
+    aspectRatio: 2.4, // Reduce la relación de aspecto para hacer la vista mensual más compacta
     views: {
+      dayGridMonth: {
+        titleFormat: { year: 'numeric', month: 'long' },
+        // Puedes agregar otros ajustes específicos para la vista mensual aquí si es necesario
+      },
       timeGridWeek: {
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00',
         slotMinTime: '06:00:00',
         slotMaxTime: '22:00:00'
       },
       timeGridDay: {
+        slotDuration: '01:00:00',
+        slotLabelInterval: '01:00',
         slotMinTime: '06:00:00',
         slotMaxTime: '22:00:00'
       }
     },
     select: function(info) {
       console.log('selected ' + info.startStr + ' to ' + info.endStr);
-      // Aquí puedes agregar la lógica para manejar la selección de fechas
     },
     eventClick: function(info) {
       console.log('Event: ' + info.event.title);
-      // Aquí puedes agregar la lógica para manejar clic en eventos
     }
   });
 
   calendar.render();
 });
+
+
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/ 
 // Abre el modal
