@@ -50,7 +50,7 @@
     display: block;
     margin-bottom: 7px;
     font-weight: bold;
-    color: #04324D;
+    color: #333;
     border: #1fb530;
     margin-left: 10px;
 }
@@ -64,7 +64,7 @@
     border-radius: 10px;
     box-sizing: border-box;
     background-color: white;
-    color: #1f1d1d;
+    color: #333;
     font-size: 1rem; 
 }
 
@@ -109,7 +109,7 @@
 .icon-wrapper {
     width: 50px;
     height: 50px;
-    background-color: #04324D;
+    background-color: #005f73;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -126,7 +126,7 @@
 
 .tittle_newuser {
     font-size: 20px;
-    color: #04324D;
+    color: #333;
     margin-top: -15px;
 }
 
@@ -149,7 +149,7 @@
 }
   /* Estilo del botón de ambiente */
   .btn_ambiente {
-    background-color: #04324D; 
+    background-color: #005f73; 
     color: #fff; 
     border: none;
     border-radius: 7px;

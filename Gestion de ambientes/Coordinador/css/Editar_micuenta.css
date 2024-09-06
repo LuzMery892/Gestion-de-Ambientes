@@ -38,7 +38,8 @@
 
 .titulo_micuenta h1 {
   font-size: 20px;
-  color: #04324D;
+  color: #333;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -48,7 +49,7 @@
   justify-content: center;
   width: 50px; 
   height: 50px; 
-  background-color: #04324D; 
+  background-color: #005f73; 
   border-radius: 50%; 
   overflow: hidden; 
   margin-left: 10px;
@@ -84,7 +85,7 @@
   border: none;
   cursor: pointer;
   margin-left: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .select_info {
@@ -99,7 +100,7 @@
 
 .select_info.active {
   color: #333; 
-  font-weight: bold; 
+  font-weight:600; 
   font-size: 16px;
   border-bottom: none; 
   border-left: 2px solid #ccc;
@@ -159,7 +160,7 @@
 .editUser-form {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   padding: 10px;
 }
 
@@ -221,7 +222,7 @@ input {
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
-  color:#04324D;
+  color:#333;
 }
 
 form input:focus,
@@ -231,7 +232,7 @@ input:focus {
 }
 
 .editUser-button {
-  background-color: #04324D;
+  background-color: #005f73;
   color: white;
   border-radius: 7px;
   padding: 10px 20px;
@@ -269,7 +270,6 @@ input:focus {
   justify-content: center;
   width: 100%;
   height: auto;
-  margin-top: -10px;
   gap: 5px;
 }
 
@@ -278,7 +278,7 @@ input:focus {
   line-height: 1.5;
   color: #333;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -378,7 +378,7 @@ input[type="text"]:focus {
 }
 
 .pass-button {
-  background-color: #04324D;
+  background-color: #005f73;
   color: #ffffff;
   border: none;
   border-radius: 7px;

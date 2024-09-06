@@ -1,0 +1,278 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.75fr repeat(5, 1fr);
+  grid-template-rows: auto 1fr auto;
+  gap: 0px;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.header {
+  grid-column: 1/ span 6;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.titulo_sedes{
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  margin-left: 50px;
+}
+
+.titulo_sedes img {
+  max-width: 100px;
+  width: 40px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.titulo_sedes h2 {
+  margin: 0;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.select_ambientesSedes{
+  display: flex;
+  align-items: center; 
+  margin-right:200px;
+  padding:10px;
+  gap:10px;
+}
+
+.select_ambientesSedes h2 {
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#ambientesSelect {
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #ddd; 
+  border-radius: 8px; 
+  background-color: #ffffff; 
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#ambientesSelect:focus {
+  border-color: #1fb530; 
+  outline: none; 
+  box-shadow: 0 0 0 2px rgba(118, 247, 67, 0.25); 
+}
+
+
+.main {
+  position: relative;
+  grid-column: 2 / span 5;
+  grid-row: 2 / span 4;
+  background-color: white;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+
+/* Calendar Container */
+.calendar-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: grid;
+  gap: 10px;
+  overflow: auto;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  gap: 30px;
+  border-color: 1px solid red;
+}
+
+.sidebar button {
+  border: none;
+  background: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover verde en los botones */
+.sidebar button:hover {
+  background-color: #d4edda; /* Verde claro para hover */
+  color: #005f73; /* Cambia el texto a color base */
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/* Estilo para los botones de los modales */
+.modal-content .btn {
+  background-color: #005f73;
+  border: none;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.modal-content .btn:hover {
+  background-color: #004d60; /* Un tono más oscuro del color base para hover */
+}
+
+/* Estilo específico para botones de modal en el footer */
+.modal-footer .btn {
+  background-color: #005f73;
+  border: none;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.modal-footer .btn:hover {
+  background-color: #004d60;
+}
+
+/* Botones de los modales que son diferentes */
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.modal-footer .btn-danger {
+  background-color: #dc3545;
+}
+
+.modal-footer .btn-danger:hover {
+  background-color: #c82333;
+}
+
+.modal-footer .btn-success {
+  background-color: #28a745;
+}
+
+.modal-footer .btn-success:hover {
+  background-color: #218838;
+}
+
+.modal-footer .btn-primary {
+  background-color: #007bff;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #0069d9;
+}
+
+
+
+/* Estilos para el modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1050 !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-backdrop {
+  z-index: 1040 !important; /* Valor por defecto de Bootstrap 5 */
+}
+
+
+.modal-header,
+.modal-footer {
+  padding: 10px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-body {
+  padding: 20px 0;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="date"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Estilos para los botones de día de la semana*/
+.btn-day {
+  background-color: red;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-day.inactive {
+  opacity: 0.5;
+}
+
+.btn-day.active {
+  opacity: 1;
+}
+
+/* Estilos de flexbox */
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+

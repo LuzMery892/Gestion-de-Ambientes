@@ -1,3 +1,4 @@
+/* TAB 2 pestañas*/
 const tabs = document.querySelectorAll('.select_amb');
     const panes = document.querySelectorAll('.tab-pane');
 
@@ -26,7 +27,7 @@ const tabs = document.querySelectorAll('.select_amb');
     }
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
-
+/* Cerrar ventana y vuelve a html de 4 sedes*/
 const closeFormButtonpomar = document.querySelector('.close-form9');
 const estadoPomar = document.querySelector('.container_sedes'); 
 
