@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initialView: 'dayGridMonth', 
     editable: true,
     selectable: true,
-    height: 'auto', // Esto ajusta automáticamente la altura según el contenido
-    aspectRatio: 2.4, // Reduce la relación de aspecto para hacer la vista mensual más compacta
+    height: 'auto', // Ajusta automáticamente la altura según el contenido
+    aspectRatio: 2.5, // Reduce la relación de aspecto para hacer la vista mensual más compacta
     views: {
       dayGridMonth: {
         titleFormat: { year: 'numeric', month: 'long' },
@@ -23,13 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
         slotDuration: '01:00:00',
         slotLabelInterval: '01:00',
         slotMinTime: '06:00:00',
-        slotMaxTime: '22:00:00'
+        slotMaxTime: '22:00:00',
+        slotLabelFormat: [
+          { hour: 'numeric', minute: '2-digit', hour12: true }
+        ]
       },
       timeGridDay: {
         slotDuration: '01:00:00',
         slotLabelInterval: '01:00',
         slotMinTime: '06:00:00',
-        slotMaxTime: '22:00:00'
+        slotMaxTime: '22:00:00',
+        slotLabelFormat: [
+          { hour: 'numeric', minute: '2-digit', hour12: true }
+        ]
       }
     },
     select: function(info) {
@@ -42,8 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   calendar.render();
 });
-
-
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/ 
 // Abre el modal
@@ -68,7 +72,6 @@ window.addEventListener('click', (event) => {
     }
 });
 
-
 /*--------------------------------------------------------------------------------------------------------------------------------*/ 
 // Selecciona los elementos del DOM
 const deleteButton = document.getElementById('delete-button');
@@ -92,6 +95,4 @@ cancelButton.addEventListener('click', () => {
     modal.hide();
 });
 
-
-/*--------------------------------------------------------------------------------------------------------------------------------*/ 
-
+/*--------------------------------------------------------------------------------------------------------------------------------*/

@@ -1,8 +1,13 @@
 <nav class="sidebar">
+
+  <div class="sidebar-content">
+
   <!-- Botón para abrir el modal de añadir Reserva -->
-  <button class="btnadd_reserva" data-bs-toggle="modal" data-bs-target="#addReserva" data-sede-id="1">
-    Reserva
+  <button class="btn btn-primary sidebar-btn" data-bs-toggle="modal" data-bs-target="#addReserva">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARZJREFUSEvtV9EVgjAMzG0im8gmOom6iZvoJrJJ9N6jvICURgwPfY/8kvZ6uWsaICsFVsKVIrCq7kTk0B7wCqAZO6w3L631AO9F5NYuqAHcM8CuvN8Dbkt2MuX9xgaUhRW6DCV6K7WqPkSEukZGA6CyG/aAVdXqFAnMvXr+2IA/uhIlLQbSuUudvbMlwPQ9HNjbpZYAdkmyAds+P3WPe+ZS1fRQ0DvsbKm79R4NAHWouVRVPW4G0JEJ0XjAmGegwRh8CLo3OpyxZTvFxJvn1ti7oTfv74C9c1i20cxi7HE3c0Jc7QWbqzFLyNFniajs3DU2c51fVeKwFxmcx4/Zmcu0OjKnMSKGvtGfgOJAH0m7yHgpMLvvE2XwFS6VWHI7AAAAAElFTkSuQmCC" alt="Reserva" class="btn-icon"/>
+    <span class="btn-text">Reserva</span>
   </button>
+
 
   <!-- Modal añadir reserva -->
   <div class="modal fade" id="addReserva" tabindex="-1" aria-labelledby="formLabel" aria-hidden="true">
@@ -90,10 +95,12 @@
     </div>
   </div>
 
-  <!-- Botón para abrir el modal de eliminar Reserva -->
-  <button class="btneliminar_reserva" data-bs-toggle="modal" data-bs-target="#delete-modal" data-sede-id="1">
-    Eliminar
-  </button>
+          <!-- Botón de Eliminar -->
+          <button class="btn btn-danger sidebar-btn" data-bs-toggle="modal" data-bs-target="#delete-modal">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAUhJREFUSEvtV8FxwkAM1HYSKgl0ApUkqSSkEkgl0MnCMncecT7jcxDjMIN+DGftaVcry7CZAjPh2igwyTczW6cLbgEca5dtPZefbQFemtkuPbACsB8Abjr3/4ATZR+O3nvaQLKIoa9Soh7VJA9mJl0j4whg4RNeAZP0OkUCK9dVf7yAJ1liTItCumaqBz07Bpj/f35gkt9nXy5La5DUZPsF8OnZCKmYpJJqsCg6XyZQ9YZiA2AbSnWaaJeKM7gu4H7vAazCK1bCCnjG6YGm84MuuTVAql2dwKVpN1ZxFnfqG+svwALNdGe83iwOrbhopPxe7jSvdPv9VJPUFqLmUlw0rWge39WJOlnq3XevA//xVgqlunVUhvp4KujTVCxvavV5RCz83lXbufxMjrqA9vGNTzY0cVS5PBix9FU/AkYX+qiSyzyzAZ8A7mQfLnuuaxQAAAAASUVORK5CYII=" alt="Eliminar" class="btn-icon"/>
+            <span class="btn-text">Eliminar</span>
+        </button>
+
 
   <!-- Modal eliminar reserva -->
   <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modal-title" aria-hidden="true">
@@ -113,10 +120,11 @@
     </div>
   </div>
 
-  <!-- Botón para abrir el modal de añadir Materiales -->
-  <button class="btnañadir_materiales" data-bs-toggle="modal" data-bs-target="#materialModal" data-sede-id="1">
-    Llaves - Material
-  </button>
+  <button class="btn btn-secondary sidebar-btn" data-bs-toggle="modal" data-bs-target="#materialModal">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAWpJREFUSEvtluFxwyAMhaVN4k2aTZJJ0kzSdJJ6k6aTqHkc+AALGxB3/hP9ycXH8SG9hwTTQcEHcWkoWERORPRBRE9mnreSMoM97EJEtwz0xAGI6MrM+E3CBBYRZPezIxegd2Z+xOu6wT7TXwUKEEoeB76d48wt4K9XKVHiEMjqE38K5Z+Z+RwWW8CSZbWAw3cRwcFwQAQMN5nAG9omcEUOlNu5vSvjHVPlcPggaA6HO5P1grGRZixN71iSKRisF1xzje7+FMv95pf7ujX2usEwgLfEg5mvXWADNHF0k8YWqG+bSe+u0rgTim71HZpKrskuuBLqWqLf3F0d03SqgOJO/pWy2nJeMeMK6MowLRZXwRVQMJLr0QJVXV0BRWNAtsl8HQHOx12+59L2WmHx+lWpRSRu6vFa95SJZ+pocD5nzXpqB9Qy1sBDylsstTcWHm9hfqoPNUuJi0PCw9F5Vk/SEcCu6fQGWyrwDz/koR8U5JuxAAAAAElFTkSuQmCC" alt="Materiales" class="btn-icon"/>
+    <span class="btn-text">Material y llaves</span>
+</button>
+
 
   <!-- Modal añadir materiales -->
   <div class="modal fade" id="materialModal" tabindex="-1" aria-labelledby="materialModalLabel" aria-hidden="true">
@@ -159,10 +167,12 @@
     </div>
   </div>
 
-<!-- Botón para abrir el modal de reportar Novedad -->
-<button class="btnreportar_novedad" data-bs-toggle="modal" data-bs-target="#reportarModal" data-sede-id="1">
-  Reportar Novedad
+  <button class="btn btn-warning sidebar-btn" data-bs-toggle="modal" data-bs-target="#reportarModal">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATdJREFUSEvtlusNwjAMhO1NYBJgE5gEmASYBDaBTQ6uSioT0hZShwqJ/Evb+Mv5VatMtHQirryAAcxEZO18oZuqHq3NJzCAs4gsnaHRHOHzuGnBAKjyUAkaza5U9cKNBe9EZNs8VHWNPQAE8v5hmpw/eJyrATAxmUQ3mytVXR2grAomz8bCq4ENNAqdu4FDY2HGp26ke6n0pWTig2LFAXpN3ZhR2tapS4wBEMpWytXEMOx7lY5WTAMZuG2tWaUu4Ay8M6Zp2y2OcRIv6/ZepW6KjSHCWatNwx9aLoqHILn3vwOu8I8e/h8D4FDgOQJ1TiDtIBCaRKxTtshTSWzNme6Z6zEkWHA8c1HV1Uho9nh29AlftmPKt8B07ds1WnqpVPGilmvTC1rw8t1OVKrSnnMdYz+50GTgO5dSCC6UYfWqAAAAAElFTkSuQmCC" alt="Buscar Disponibilidad" class="btn-icon"/>
+
+    <span class="btn-text">Reportar Novedad</span>
 </button>
+
 
 <!-- Modal reportar novedad -->
 <div class="modal fade" id="reportarModal" tabindex="-1" aria-labelledby="reportarModalLabel" aria-hidden="true">
@@ -194,6 +204,14 @@
     </div>
   </div>
 </div>
+
+<button class="btn btn-info sidebar-btn" onclick="window.location.href='pagina_disponibilidad.html'">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAbNJREFUSEvtluFNw0AMhe1JoJOUTgKdBJiEdhLKJJRJTF91jhzH8TlUUf9wUn9Uudx39nu2w3SnxXfiUhksIo9EpL8zM59uuXQKbrAXInqdgZyJ6MjMb0svMQsWkSci+iweuPgCIVhEEIGN8kBEP0SE9AKChYttL/+REV3v1egnYBcpIPtMTxFRKaA/1q6ifwT+biYivlxfQ8nM1Z5BFsBhvE1PohFYRD5M6oabt6jwzK6Rrm7PgZn3GdyDNdoTM+9MtF5zeyakgAdIRBA1tO9G7cHSThwOc3D8BQSHw3yj1DpTbphZjTgJ3moIk2g605dadHb/VRZnzNRkFjyk05pqTifTXLAF0gCMDEAurLS0LNg2jFJJ+Eu5iCdy2f2+XEq3TbJQlqvk6l5NGgOqq0c9IHo/q+M0VZ00L65jmGPoQK39zZaE62oqUzdavFfp1enYC6ZYN9oQ3Go0mk5frSNp2cBID2464fXSiOzNYzQUnTqZxwDDyNQR2YVXv0CekwsMjcINihT+12+ua0qjuVuFl8HVWg76eBj5KuAAPunbq4ENfBt9FKwKzuT5By8x7017fwEqWfUfubs6UgAAAABJRU5ErkJggg==" alt="Reportar Novedad" class="btn-icon"/>
+
+  <span class="btn-text">Disponibilidad</span>
+</button>
+
+  </div>
 
 </nav>
 
