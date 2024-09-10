@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Inicia Sesión - Gestion de ambientes </title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles/Login.css">
 </head>
 
@@ -16,17 +17,6 @@
       <div class="container">
         <img src="IMG/Logo SENA.png" alt="logosena"
           class="img_sena">
-        <div class="header-info">
-          <h1>GESTIÓN DE AMBIENTES</h1>
-        </div>
-      </div>
-      <div class="header-img">
-        <img src="IMG/sena-boys.jpg" alt="Logo SENA"
-          class="transicion_img">
-        <img src="IMG/Instructor SENA.jpg" alt="Logo SENA"
-          class="transicion_img">
-        <img src="IMG/sena-push.jpg" alt="Logo SENA"
-          class="transicion_img">
       </div>
     </header>
 
@@ -62,13 +52,13 @@
     <main class="main">
       <div class="container_main">
         <form class="login-form"  id="loginForm" method="POST" action="/api/login"> 
-          <h2 class="form-title">INICIAR SESIÓN</h2>
+          <h2 class="form-title">Gestión de Ambientes</h2>
           <div class="form-group">
             <label for="username"></label>
             <div class="user-wrapper">
               <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAcRJREFUSEvFVtFtAyEMxZs0kzTZJNkCvpp++bbIdZKmk/Q2oX0niIAzYNpEQYoiJcbPNs/PJvOkQ0/CNcPAzPxijNkbY/C9hMAX59x1JAkVcAA7EtFbwzmCuHrv351zMaCqeReYmc8dwNL54r3/cM6dWxWoAiNLIrqEso5UMdoigEMtexE4gH7/Ba24UwUXgadp+vxHppvSW2t35Y8b4GmaUN6jIlsQCB8wvHdma+0pNcqAlSW+WmsP0YmW8d77U9pyGbAi20Uqm5KIWdYlMAgFYRBPiHqW/lS0XRb0DZiZ90QEUlVPaA9RoZgZAgN+qO6nwJqLUCVRGB4KDBZLb4wUNS0Y5HQNPM1YK43QYzB01WMlsdbypxwZeuNSlQb6+K7APdHY/P87PHaxUmU7+Y63dfJg/BV26IjXnopZa294agFptVKqYkRUGy51AalIJrLM5K5VleADepAJUVrmjNXRmSCbqsGeZC3pQXtIdNoja6My60ZbZUMl3mstAptyJcsdgvgKTrCp1Ig1tggkmUvg2jYaX31SlmIpGFz2oFBVTW+WWno/RQCxx+e7rLeVIOK6E5f6xyz02kcdsesu9CPORmx/ANLZIC7XnvpwAAAAAElFTkSuQmCC" />
-              <input type="text" id="username" name="username" placeholder="Nombre Usuario" required>
+             <input type="text" id="username" name="username" placeholder="Nombre Usuario" required autocomplete="username">
             </div>
           </div>
           <div class="form-group">
@@ -81,10 +71,10 @@
             </div>
           </div>
           <div class="link_pass">
-            <a href="#">¿Olvidó su contraseña?</a>
+            <a href="OlvideMiContraseñaInicioSesion.html">¿Olvidó su contraseña?</a>
           </div>
           <div class="contenedor_botonlogin">
-            <button id="loginButton" type="submit" class="boton_login">iniciar sesion</button>
+            <button id="loginButton" type="submit" class="boton_login">Iniciar sesión</button>
           </div>
         </form>
       </div>
@@ -96,6 +86,8 @@
   </div>
 
   <script src="scripts/Login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
