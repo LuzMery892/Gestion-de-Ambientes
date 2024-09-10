@@ -166,7 +166,7 @@ border: 1px solid red;
 }
 
 
-.btn {
+.sidebar-btn{
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -196,15 +196,15 @@ border: 1px solid red;
 }
 
 /* Cambios en el hover sobre los botones cuando el sidebar está expandido */
-#sidebar.expanded .btn:hover .btn-text,
-#sidebar:hover .btn:hover .btn-text {
+#sidebar.expanded .sidebar-btn:hover .btn-text,
+#sidebar:hover .sidebar-btn:hover .btn-text {
     color: #333; 
 }
 
 
 /* Cambios en el hover sobre los botones cuando el sidebar está expandido */
-#sidebar.expanded .btn:hover,
-#sidebar:hover .btn:hover {
+#sidebar.expanded .sidebar-btn:hover,
+#sidebar:hover .sidebar-btn:hover {
     background-color: #F5F5F5;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -226,8 +226,8 @@ border: 1px solid red;
   height: 30px;
 }
 
-.btn:hover .btn-icon,
-#sidebar:hover .btn:hover .btn-icon {
+.sidebar-btn:hover .btn-icon,
+#sidebar:hover .sidebar-btn:hover .btn-icon {
   filter: invert(50%) sepia(100%) saturate(3000%) hue-rotate(90deg) brightness(95%) contrast(100%);
 }
 
@@ -248,9 +248,8 @@ border: 1px solid red;
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 
-/* Modal */
 .modal {
-  display: none; /* Oculto por defecto */
+  display: none; 
   position: fixed;
   z-index: 1050 !important;
   left: 0;
@@ -258,72 +257,244 @@ border: 1px solid red;
   width: 100%;
   height: 100%;
   overflow: auto;
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Fondo del modal */
 .modal-backdrop {
-  z-index: 1040 !important; /* Valor por defecto de Bootstrap 5 */
+  z-index: 1040 !important; 
+  background-color: rgba(0, 0, 0, 0.5); 
 }
 
-.modal-header,
-.modal-footer {
-  padding: 10px;
+/* Contenido del modal */
+.modal-content {
+  position: relative;
+  margin: 10px; 
+  width: 80%; 
+  max-width: 490px;
+  background-color: white;
+  border-radius: 12px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+  overflow: hidden; 
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  color:#333;
 }
 
+/* Encabezado del modal */
 .modal-header {
+  padding: 10px;
+  background-color: #1fb530; 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  color: #ffffff; 
 }
 
+/* Cuerpo del modal */
 .modal-body {
-  padding: 20px 0;
+  padding: 15px; 
+  color: #333; 
 }
 
-/* Estilos para formularios */
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="date"],
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-textarea {
-  resize: vertical;
-}
-
-/* Estilos para los botones de día de la semana */
-.btn-day {
-  background-color: red;
-  color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.btn-day.inactive {
-  opacity: 0.5;
-}
-
-.btn-day.active {
-  opacity: 1;
-}
-
-/* Estilos de flexbox */
-.d-flex {
+/* Pie de página del modal */
+.modal-footer {
+  padding: 10px; 
+  background-color: #F5F5F5;
+  border-top: 1px solid #ccc; 
   display: flex;
+  justify-content: flex-end; 
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+/* Contenedor de las pestañas */
+.tabs-container {
+  margin: 20px;
 }
 
+/* Estilo para cada elemento de la pestaña */
+.nav-item {
+  margin-right: 10px;
+}
+
+/* Estilo para los enlaces de las pestañas */
+.nav-link {
+  display: inline-block;
+  margin-bottom: -1px; 
+  color: #838181;
+}
+
+/* Estilo para la pestaña activa */
+.nav-link.active {
+  color: #333; 
+  font-weight:600;
+}
+
+.nav-link:hover {
+  background-color: #F5F5F5; 
+  color: #005f73; 
+}
+
+/* Estilo para los formularios */
+.form-group {
+  margin-bottom: 5px; 
+}
+
+
+.form-group label {
+  display: block; 
+  font-size: 12px; 
+  font-weight: 600; 
+  color: #495057; 
+  margin-bottom: 0.5rem; 
+}
+
+/* Estilo para el select */
+.form-control {
+  display: block; 
+  width: 100%; 
+  padding: 0.75rem 1.25rem; 
+  border: 2px solid #ccc; 
+  border-radius: 7px; 
+  background-color: #ffffff; 
+  color: #333; 
+  font-size: 14px; 
+  line-height: 1.5; 
+  transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+/* Estilo adicional para el select cuando está enfocado */
+.form-control:focus {
+  border-color: #1fb530; 
+  outline: none; 
+  box-shadow: none;
+}
+
+/* Opcional: Añadir estilo para las opciones dentro del select*/
+.form-control option {
+  background-color: #fff; 
+  color: #333; 
+}
+
+/* Agrupación horizontal de fechas y horas */
+.date-time-group {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  margin: 0 -5px; 
+}
+
+/* Estilos para los grupos de formulario dentro de .date-time-group */
+.date-time-group .form-group {
+  flex: 1;
+  min-width: calc(50% - 10px); 
+  padding: 0 5px; 
+}
+
+/* Ajustes específicos para los campos de fecha y hora */
+.date-time-group input[type="date"],
+.date-time-group input[type="time"] {
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+/* Estilos opcionales para ajustar el tamaño de los campos en pantallas pequeñas */
+@media (max-width: 768px) {
+  .date-time-group .form-group {
+    min-width: 100%; 
+  }
+}
+
+
+/* Campos de entrada */
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%; 
+  padding: 12px;
+  border: 2px solid #ccc; 
+  border-radius: 8px; 
+  transition: border-color 0.3s ease; 
+}
+
+.form-group input[type="date"]:focus,
+.form-group input[type="time"]:focus,
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  border-color: #1fb530; 
+  outline: none; 
+}
+
+
+
+/* Estilo opcional para los campos de color */
+.form-group input[type="color"] {
+  width: 70%; 
+  padding: 0; 
+  border: none; 
+}
+
+.btn-day {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  border: 1px solid #7e0707;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo para los botones inactivos */
+.btn-day.inactive {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+/* Estilo para los botones activos */
+.btn-day.active {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-day:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilos para los botones de acción */
+.btn {
+  background-color: #1fb530; 
+  color: #fff;
+  border: none;
+  border-radius: 7px; 
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #005f73; 
+  outline: none;
+  transform: scale(1.02); 
+  color: #ffffff;
+}
+
+/* Botón de cerrar */
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #ff6f6f; /* Rojo claro para el botón de cerrar */
+}
 

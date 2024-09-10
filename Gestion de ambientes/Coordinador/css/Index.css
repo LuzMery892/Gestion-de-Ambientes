@@ -391,7 +391,7 @@ input {
   
   /* Estilo para el menú de navegación */
   .navigation-menu {
-    width: 120px;
+    width: 150px;
     background-color: white;
     display: none; 
     list-style: none; 

@@ -4,91 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aplicativo Gestión de Ambientes</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/Index.css">
-  <style>
-
-    #calendar {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
 </head>
 <body>
   <div class="grid-container">
     <div id="header"></div>
     <div id="navbar"></div>
 
+
+
     <main class="main">
-      <div class="contenedor_pagprincipal">
-      <div class="column column-1">
-        <div class="section section-1">
-          <p>Sección 1</p>
-        </div>
-        <div class="section section-2">
-          <img src="image2.jpg" alt="Imagen 2">
-          <p>Sección 2</p>
-        </div>
-      </div>
-
-      <div class="column column-2">
-        <div class="contenedor_calendar">
-          <div id="calendar"></div>
-        </div>
-        <div class="section section-row2">Fila 2 (30%)</div>
-      </div>
-    </div>
+      <!-- Contenido principal aquí -->
     </main>
-    
-    <script>
-      async function loadHTML(selector, file) {
-        const response = await fetch(file);
-        const text = await response.text();
-        document.querySelector(selector).innerHTML = text;
-      }
-
-      async function loadContent() {
-        await loadHTML('#header', 'header.html');
-        await loadHTML('#navbar', 'navbar.html');
-        
-        // Cargar los scripts después de cargar el contenido HTML
-        loadScripts();
-      }
-
-      function loadScripts() {
-        // Crear y agregar el script para navbar.js
-        const navbarScript = document.createElement('script');
-        navbarScript.src = 'js/navbar.js'
-        document.body.appendChild(navbarScript);
-  
-        // Crear y agregar el script para menu_notificacion.js
-        const menuNotificacionScript = document.createElement('script');
-        menuNotificacionScript.src = 'js/menu_notificacion.js';
-        document.body.appendChild(menuNotificacionScript);
-
-      }
-      loadContent(); // Inicia la carga de contenido
-    </script>
-
-    <!-- Flatpickr JS -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        flatpickr("#calendar", {
-          inline: true, // Muestra el calendario en línea
-          dateFormat: "d/m/Y", // Formato de la fecha
-          locale: "es" // Configura el idioma a español
-        });
-      });
-    </script>
-
-    <!-- Otros scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
   </div>
+
+  <script>
+    async function loadHTML(selector, file) {
+      const response = await fetch(file);
+      const text = await response.text();
+      document.querySelector(selector).innerHTML = text;
+    }
+
+    async function loadContent() {
+      await loadHTML('#header', 'header.html');
+      await loadHTML('#navbar', 'navbar.html');
+  
+      loadScripts();
+    }
+
+    function loadScripts() {
+      // Crear y agregar el script para navbar.js
+      const navbarScript = document.createElement('script');
+      navbarScript.src = 'js/navbar.js';
+      document.body.appendChild(navbarScript);
+
+      // Crear y agregar el script para menu_notificacion.js
+      const menuNotificacionScript = document.createElement('script');
+      menuNotificacionScript.src = 'js/menu_notificacion.js';
+      document.body.appendChild(menuNotificacionScript);
+    }
+    
+    // Inicia la carga de contenido cuando el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', loadContent);
+  </script>
+
+ 
+
+  <!-- Otros scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

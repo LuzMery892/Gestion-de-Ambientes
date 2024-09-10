@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     views: {
       dayGridMonth: {
         titleFormat: { year: 'numeric', month: 'long' },
-        // Puedes agregar otros ajustes específicos para la vista mensual aquí si es necesario
+        // Ajustes específicos para la vista mensual si es necesario
       },
       timeGridWeek: {
         slotDuration: '01:00:00',
@@ -94,5 +94,26 @@ cancelButton.addEventListener('click', () => {
     const modal = new bootstrap.Modal(document.getElementById('delete-modal'));
     modal.hide();
 });
+
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+// Seleccionar dias de la semana para reservar
+const dayButtons = document.querySelectorAll('.btn-day');
+
+// Añade un event listener a cada botón
+dayButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    // Alterna la clase 'active' para el botón clicado
+    this.classList.toggle('active');
+    this.classList.toggle('inactive');
+    
+    // Aquí puedes recoger los días seleccionados si es necesario
+    const selectedDays = Array.from(dayButtons)
+      .filter(btn => btn.classList.contains('active'))
+      .map(btn => btn.getAttribute('data-day'));
+
+    console.log('Días seleccionados:', selectedDays); // Muestra los días seleccionados en la consola
+  });
+});
+
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
