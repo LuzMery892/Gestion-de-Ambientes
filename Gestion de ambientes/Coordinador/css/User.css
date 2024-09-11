@@ -25,7 +25,7 @@ p {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    overflow:auto;
+    overflow:hidden;
     margin: 20px;
     position: relative;
     border: 4px solid #ccc;
@@ -96,54 +96,48 @@ p {
 }
 
 .form-label {
-    font-size: 12px; 
+    font-size: 14px; 
     margin-top: 10px;
     margin-bottom: 10px; 
     font-weight: 600; 
     color: #333; 
 }
 
-/* Contenedor de cada opción de radio */
-.form-check {
-    display: flex; 
-    align-items: center; 
-    margin-bottom: 10px; 
+.form-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Estilo del input de radio */
-.form-check-input {
-    margin-right: 12px; 
-    width: 12px; 
-    height: 12px; 
-    accent-color: #005f73;
-    cursor: pointer; 
-    transition: background-color 0.2s ease; 
+.form-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Estilo del label */
-.form-check-label {
-    font-size: 12px;
-    color: #333;
-    cursor: pointer; 
-    transition: color 0.2s ease; 
-    font-weight: 600;
+.form-radio-label {
+    font-size: 14px;
+    color: #525252;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-/* Estilo cuando el input está en foco */
-.form-check-input:focus {
-    outline: none; 
-    box-shadow: 0 0 4px rgba(0, 150, 136, 0.2); /
-}
 
-/* Estilo cuando el label está en hover */
-.form-check-label:hover {
-    color: #1fb530; 
-}
 /* Contenedor del botón */
 .button-container {
     display: flex;
     width: 100%;
     justify-content: center;
+}
+
+/* Estilo del input de radio */
+.form-radio-input {
+    margin: 0;
+    width: 10px;  /* Tamaño del radio button */
+    height: 10px; /* Tamaño del radio button */
+    accent-color: #005f73; /* Color personalizado del radio button */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 /* Botón de crear usuario */
@@ -157,6 +151,7 @@ p {
     transition: background-color 0.2s ease-in-out;
     font-size: 16px; 
     margin-top: -40px;
+    z-index: 1;
 }
 
 .btn-primary:hover {

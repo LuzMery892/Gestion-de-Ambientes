@@ -69,25 +69,27 @@
                     </div>
                     <div>
                         <legend class="form-label">Rol:</legend>
-                        <div class="form-check">
-                            <input type="radio" id="alistamiento" name="rol" value="ALISTAMIENTO" data-id="1" class="form-check-input" required>
-                            <label for="alistamiento" class="form-check-label">Alistamiento</label>
+                        <div class="form-radio-group">
+                            <div class="form-radio">
+                                <input type="radio" id="alistamiento" name="rol" value="ALISTAMIENTO" class="form-radio-input" required>
+                                <label for="alistamiento" class="form-radio-label">Alistamiento</label>
+                            </div>
+                            <div class="form-radio">
+                                <input type="radio" id="coordinador" name="rol" value="COORDINADOR" class="form-radio-input" required>
+                                <label for="coordinador" class="form-radio-label">Coordinador</label>
+                            </div>
+                            <div class="form-radio">
+                                <input type="radio" id="instructor" name="rol" value="INSTRUCTOR" class="form-radio-input" required>
+                                <label for="instructor" class="form-radio-label">Instructor</label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input type="radio" id="coordinador" name="rol" value="COORDINADOR" data-id="2" class="form-check-input" required>
-                            <label for="coordinador" class="form-check-label">Coordinador</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" id="instructor" name="rol" value="INSTRUCTOR" data-id="3" class="form-check-input" required>
-                            <label for="instructor" class="form-check-label">Instructor</label>
-                        </div>
-                    </div>                  
+                    </div>                      
                     <input type="hidden" id="creadorRol" name="creadorRol" value="coordinador"> <!-- Cambia esto según el rol del creador -->
                     <div class="button-container">
                         <button type="submit" class="btn-primary">Crear</button>
                     </div>
                 </div>
-                <img src="IMG-ICONS/sena-aprendizaje-1-1024x555.jpg" class="main_img_end">
+                <img src="IMG-ICONS/sena-boys.jpg" class="main_img_end">
             </form>
         </div>
     </main>  
