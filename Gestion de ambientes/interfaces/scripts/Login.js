@@ -1,4 +1,3 @@
-
 let slideIndex = 0;
 
 function showSlides() {
@@ -12,7 +11,7 @@ function showSlides() {
     setTimeout(showSlides, 10000);
 }
 showSlides();
-/*--------------------------------------------------------------------------------------------------------------------------------*/
+
 // Función para manejar el inicio de sesión y redirección basada en roles
 document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = formData.get('username');
         const password = formData.get('password');
 
-        fetch('http://127.0.0.1:8080/api/login', {
+        fetch('http://127.0.0.1:8080/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,15 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.bloqueado) {
                 window.location.href = 'ActualizarCorreoAlternativoBloqueado.html';
             } else {
-                switch (data.rolNombre) {
-                    case 'COORDINADOR':
-                        window.location.href = '/Gestion-de-Ambientes/Gestion de ambientes/Coordinador/coordinadorDashboard.html';
+                switch (data.rol) {
+                    case 'ROL_COORDINADOR':
+                        window.location.href = 'http://localhost:5500/Gestion-de-Ambientes/Gestion20%de20%ambientes/Coordinador/coordinadorDashboard.html';
                         break;
-                    case 'ALISTAMIENTO':
-                        window.location.href = '/Gestion-de-Ambientes/Gestion de ambientes/Alistamiento/alistamientoDashboard.html';
+                    case 'ROL_ALISTAMIENTO':
+                        window.location.href = 'http://localhost:5500/Gestion-de-Ambientes/Gestion20%de20%ambientes/Alistamiento/alistamientoDashboard.html';
                         break;
-                    case 'INSTRUCTOR':
-                        window.location.href = '/Gestion-de-Ambientes/Gestion de ambientes/Instructor/instructorDashboard.html';
+                    case 'ROL_INSTRUCTOR':
+                        window.location.href = 'http://localhost:5500/Gestion-de-Ambientes/Gestion20%de20%ambientes/Instructor/instructorDashboard.html';
                         break;
                 }
             }
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error:', error));
     });
 });
-
 
 function togglePassword() {
     const passwordField = document.getElementById('password');
@@ -71,5 +69,3 @@ function togglePassword() {
         toggleButton.textContent = '👁️';
     }
 }
-
-

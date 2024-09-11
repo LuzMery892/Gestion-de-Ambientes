@@ -84,18 +84,26 @@ alternativo bloqueado intenta iniciar sesion sera redirigido a esta
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-      document
-        .getElementById("correoForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          var correoInstitucional = document.getElementById(
-            "correoInstitucional"
-          ).value;
+       document.getElementById('correoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const nuevoCorreoInstitucional = document.getElementById('nuevoCorreoInstitucional').value;
 
-          if (correoInstitucional) {
-            alert("Correo actualizado a: " + correoInstitucional);
-            // pendiente: agregar la lógica para redirigir al usuario o actualizar el correo en la base de datos
-          }
+            fetch('/usuarios/cambiar-correo', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nuevoCorreoInstitucional })
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('mensaje').innerText = data;
+                if (data.includes("actualizado y usuario desbloqueado")) {
+                    // Si el correo fue actualizado y el usuario fue desbloqueado, redirigir al login
+                    setTimeout(() => {
+                        window.location.href = "/Gestion-de-Ambientes/Gestion de ambientes/interfaces/login.html";
+                    }, 2000);
+                }
+            });
         });
     </script>
   </body>
