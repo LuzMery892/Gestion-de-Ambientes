@@ -126,8 +126,16 @@
 
 .tittle_newuser {
     font-size: 20px;
-    color: #333;
+    color: #04324D;
     margin-top: -15px;
+}
+
+p {
+    color: rgb(119, 115, 115);
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-top: 10px;
 }
 
 .close_form4 {

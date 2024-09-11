@@ -1,14 +1,13 @@
+/* Contenedor principal de la aplicación */
 .main {
   position: relative;
-  grid-column: 2 / span 5; 
-  grid-row: 2 / span 3;   
+  grid-column: 2 / span 5;
+  grid-row: 2 / span 3;
   background-color: white;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  overflow: hidden; 
-  width: auto;
-  height: auto;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   margin: 10px;
 }
 
@@ -16,15 +15,15 @@
 .contenedor_user_setting {
   background-color: white;
   padding: 10px;
-  width:100%;
+  width: 100%;
   height: 100%;
   box-sizing: border-box;
   overflow: auto;
+  margin: 10px;
   position: relative;
   border: 4px solid #ccc;
   border-radius: 10px;
 }
-
 
 /* Estilo del título y su contenedor */
 .titulo_setting {
@@ -36,30 +35,33 @@
 
 .titulo_setting h2 {
   font-size: 20px;
-  color: #333;
+  color: #04324D;
   margin-top: -10px;
 }
 
-/* Contenedor principal para la búsqueda, dividido en dos columnas */
+/* Contenedor principal para la búsqueda */
 .container_busqueda {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Estilo para cada columna dentro del contenedor de búsqueda */
 .column {
+  flex: 1 1 calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 280px;
 }
 
 /* Estilo para los títulos dentro de cada columna */
 .column h3 {
   font-size: 12px;
-  color: #333;
+  color: #04324D;
   margin: 0 0 10px 0;
   text-align: center;
 }
@@ -68,53 +70,73 @@
 .role-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 7px;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
 /* Estilo para cada opción de rol */
 .role-option {
-  background-color: white;
+  background-color: #fff;
   border: 2px solid #ccc;
-  padding: 8px 20px;
+  padding: 8px 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   text-align: center;
   color: #333;
   border-radius: 10px;
   flex: 1;
-  min-width: 90px;
-  font-size: 14px;
+  min-width: 93px;
+  font-size: 11px;
 }
 
 .role-option:hover {
   background-color: #ade8ad;
   color: #04324D;
-  border: #f2f2f2;
+  border-color: #f2f2f2;
   transform: scale(1.05);
+}
+
+/* Estilo para el select de sede */
+#sede-usuario {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 11px;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Estilo del select cuando está en foco */
+#sede-usuario:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 5px rgba(22, 163, 74, 0.3);
+  outline: none;
 }
 
 /* Estilo para la barra de búsqueda */
 .search-container {
   display: flex;
   align-items: center;
-  gap: 20px;
-  width: 100%; 
+  gap: 10px;
+  width: 100%;
 }
 
-.search-bar {
-  flex: 1;
-}
-
+/* Estilo para la barra de búsqueda */
 .search-bar input[type="text"] {
-  height: 40px;
+  height: 35px;
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 10px;
   font-size: 12px;
   transition: border-color 0.3s ease;
-  width: 100%; /* Usa el 100% del ancho disponible */
+  width: 100%;
 }
 
 .search-bar input[type="text"]:focus {
@@ -125,12 +147,12 @@
 /* Estilo para el botón de búsqueda */
 .search-button {
   background-color: #005f73;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-radius: 7px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 11px;
   transition: background-color 0.3s ease;
 }
 
@@ -141,7 +163,7 @@
 /* Contenedor de la tabla */
 .table-container {
   width: 100%;
-  margin: 10px 0; 
+  margin: 10px 0;
   overflow-x: auto;
   box-sizing: border-box;
 }
@@ -150,20 +172,21 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  table-layout:auto;
+  table-layout: auto;
   border: 1px solid #333;
   overflow: hidden;
-
+  font-family: 'Montserrat', sans-serif;
 }
+
 /* Color de fondo para el encabezado */
 thead th {
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 1px solid #333;
 }
 
 th {
   color: #333;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
   padding: 10px;
 }
@@ -233,8 +256,8 @@ tbody tr:nth-child(even) {
 }
 
 p {
-  color: #333;
-  font-size: 16px;
+  color:  rgb(119, 115, 115);;
+  font-size: 15px;
   margin-bottom: 5px;
   margin-left: 60px;
 }
@@ -251,7 +274,7 @@ p {
 
 .close_form3 img {
   width: 20px;
-  height: auto; 
+  height: auto;
 }
 
 /* Estilo base para los botones */
@@ -283,11 +306,89 @@ p {
   opacity: 0.8;
 }
 
-
+/* Contenedor de errores */
 .error-container {
   color: red;
   border: 1px solid red;
   padding: 10px;
   margin-top: 10px;
   background-color: #fdd;
+}
+
+/* Media Queries para Responsividad */
+
+/* Estilos para pantallas de 768px o más (tabletas y PCs) */
+@media (min-width: 768px) {
+  .container_busqueda {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .column {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+
+  .save-button {
+    width: 20%;
+  }
+}
+
+/* Estilos para pantallas de 480px a 767px (tabletas en orientación vertical) */
+@media (max-width: 767px) {
+  .container_busqueda {
+    flex-direction: column; /* Disposición en columna para pantallas más pequeñas */
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .column {
+    flex: 1 1 100%; /* Cada columna ocupa el 100% del ancho */
+    min-width: auto; /* Elimina el ancho mínimo para adaptarse mejor */
+  }
+
+  .save-button {
+    width: auto; /* Ajusta el ancho del botón */
+  }
+}
+
+/* Estilos para pantallas menores a 480px (teléfonos móviles) */
+@media (max-width: 479px) {
+  .titulo_setting h2 {
+    font-size: 18px;
+  }
+
+  .column h3 {
+    font-size: 12px;
+  }
+
+  .role-option {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .search-bar input[type="text"] {
+    height: 30px;
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  .search-button {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .save-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .icon-setting {
+    width: 40px;
+    height: 40px;
+  }
+
+  .main_setting-img {
+    width: 25px;
+    height: 25px;
+  }
 }

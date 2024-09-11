@@ -27,16 +27,18 @@
   align-items: flex-start;
   justify-content: flex-start;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Estilo para el <h1> */
 .sede-title {
   color: #04324D;
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 22px;
   margin-top: 5px;
   margin-left: 50px;
   text-align: left;
+  font-weight: bold;
 }
 
 /* Estilo para el contenedor de reportes */
@@ -75,7 +77,7 @@
 
 /* Contenido de la pestaña */
 .tab-content {
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -100,7 +102,7 @@
 
 .Buscar h3 {
   font-size: 12px;
-  color: #04324D;
+  color: #333;
   margin: 0 0 15px 0;
   text-align: center;
 }
@@ -121,11 +123,11 @@
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   text-align: center;
-  color: #04324D;
+  color: #333;
   border-radius: 10px;
   flex: 1;
   min-width: 70px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* Estilo para cada estado de opción */
@@ -165,29 +167,32 @@
 .filter-group {
   display: flex;
   flex-direction: column;
+  
 }
 
 .filter-group label {
   font-size: 14px;
   color: #333;
   margin-bottom: 10px;
+  
 }
 
 .filter-group input[type="date"] {
-  padding: 7px;
+  padding: 10px;
   border: 1px solid #04324D;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 12px;
   color: #333;
   background-color: white;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
   margin-left: 30px;
+
 }
 
 /* Estilo para el botón de búsqueda */
-.fechapomar-button {
-  background-color: #04324D;
+.fecha-button {
+  background-color: #005f73; 
   color: white;
   border: none;
   padding: 7px 20px;
@@ -199,7 +204,7 @@
   margin-top: 10px;
 }
 
-.fechapomar-button:hover {
+.fecha-button:hover {
   background-color: #1fb530;
 }
 
@@ -217,7 +222,9 @@
   border-collapse: collapse;
   table-layout: auto;
   border: 1px solid #04324D;
+  font-family: 'Montserrat', sans-serif;
 }
+
 
 /* Estilo del encabezado de la tabla */
 thead th {
@@ -283,7 +290,7 @@ button img {
 }
 
 /* Estilo base para los botones */
-.pomar_botton {
+.acciones_botton {
   border: none;
   background: transparent;
   cursor: pointer;
@@ -294,20 +301,20 @@ button img {
 }
 
 /* Efecto de hover para el botón */
-.pomar_botton:hover {
+.acciones_botton:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo para las imágenes dentro del botón */
-.pomar_botton img {
+.acciones_botton img {
   width: 15px;
   height: 15px;
   transition: opacity 0.3s ease;
 }
 
 /* Efecto de hover en la imagen del botón */
-.pomar_botton:hover img {
+.acciones_botton:hover img {
   opacity: 0.8;
 }
 
@@ -317,8 +324,8 @@ button img {
   justify-content: center;
 }
 
-.reportesPomar-button {
-  background-color: #04324D;
+.reportes-button {
+  background-color: #005f73;
   color: white;
   border: none;
   border-radius: 7px;
@@ -329,7 +336,7 @@ button img {
   margin-top: 20px;
 }
 
-.reportesPomar-button:hover {
+.reportes-button:hover {
   background-color: #1fb530;
 }
 
@@ -340,7 +347,7 @@ button img {
   border-radius: 10px;
   padding: 8px 12px;
   font-size: 14px;
-  color: #04324D;
+  color: #333;
   cursor: pointer;
   width: 100%;
   max-width: 200px;
@@ -379,7 +386,7 @@ button img {
   width: 100%;
   height: 100%;
   flex: 1;
-  overflow: auto;
+  overflow:hidden;
 }
 
 .tab-pane.active {
@@ -387,17 +394,17 @@ button img {
 }
 
 /* Sección ACTUALIZAR */
-.Actualizar_pomar {
-  padding: 20px;
+.Actualizar {
+  padding: 10px;
   background-color: white;
-  margin: 10px 0;
 }
 
-.Actualizar_pomar h3 {
+.Actualizar  h3 {
   font-size: 12px;
-  color: #04324D;
+  color: #333;
   margin: 0 0 15px 0;
   text-align: left;
+  font-weight: bold;
 }
 
 .Select_estadoAmbiente {
@@ -406,19 +413,28 @@ button img {
   gap: 10px;
 }
 
+.Select_estadoAmbiente select:focus {
+  outline: none; 
+  border: 1px solid #1fb530; 
+  box-shadow: 0 0 5px rgba(24, 236, 130, 0.5); 
+  background-color: #f5f5f5; 
+  transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+
 .search-input {
-  padding: 7px;
+  padding: 10px;
   border: 3px solid #ccc;
-  border-radius: 10px;
-  font-size: 14px;
+  border-radius: 7px;
+  font-size: 12px;
   color: #333;
   background-color: white;
   box-sizing: border-box;
   width: 200px;
 }
 
-.ActualizarPomar-button {
-  background-color: #04324D;
+.Actualizar-button {
+  background-color: #005f73; 
   color: white;
   border: none;
   padding: 7px 20px;
@@ -428,80 +444,105 @@ button img {
   transition: background-color 0.3s ease;
 }
 
-.ActualizarPomar-button:hover {
+.Actualizar-button:hover {
   background-color: #1fb530;
 }
 
-/* Estilos generales para el modal */
-.modal_Pomar {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 60%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 250px;
-  height: auto;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  box-sizing: border-box;
-  border: 1px solid #04324D;
+
+.modal_estadoAmbientes {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden; 
+  background-color: rgba(0, 0, 0, 0.5); 
 }
 
 /* Contenido del modal */
-.modalPomar-content {
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%; 
+  max-width: 350px; 
+  border-radius: 8px;
+  position: relative; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo del header del modal */
+.modal-header {
+  padding: 10px 20px;
+  border-bottom: 2px solid #ccc;
   position: relative;
+  
 }
 
-.modalPomar-content h2 {
-  font-size: 14px;
-  color: #04324D;
-  margin: 0 0 10px 0;
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color:#333;
   font-weight: bold;
-  text-align: center;
 }
 
-.modalPomar-content button {
-  background-color: #04324D;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+/* Estilo del botón de cierre */
+.close {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
   cursor: pointer;
-  font-size: 12px;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
 }
 
-.modalPomar-content button:hover {
-  background-color: #032A44;
+/* Estilo cuando el botón de cierre está en hover */
+.close:hover {
+  color: black;
 }
 
-/* Estilo para los campos del formulario */
-.modalPomar-content label {
-  font-size: 12px;
-  color: #333;
+/* Estilo del cuerpo del modal */
+.modal-body {
+  background-color: #fff; 
+  border-radius: 7px; 
+  padding: 20px; 
+  max-width: 600px; 
+  margin: auto; 
+  position: relative; 
+  z-index: 1000; 
 }
-
-.modalPomar-content input[type="date"],
-.modalPomar-content input[type="time"],
-.modalPomar-content textarea {
-  width: calc(100% - 20px);
-  padding: 5px;
-  font-size: 12px;
-  border: 1px solid #ccc;
+#statusForm textarea {
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
   border-radius: 4px;
-  box-sizing: border-box;
+  font-size: 14px; 
+  line-height: 1.5; 
+  resize: vertical; 
+  transition: border-color 0.3s, box-shadow 0.3s; 
 }
 
-.modalPomar-content textarea {
-  resize: vertical;
+/* Estilos de enfoque para el área de texto */
+#statusForm textarea:focus {
+  outline: none; 
+  border-color: #1fb530;
+  box-shadow: 0 0 5px rgba(82, 212, 88, 0.5); 
 }
+/* Estilo del footer del modal */
+.modal-footer {
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+  text-align: center; 
+
+}
+
 
 /* Estilos para el contenedor de tarjetas */
-.card-containerPomar {
+.card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -509,8 +550,8 @@ button img {
 
 /* Estilos para cada tarjeta */
 .card {
-  background-color: white;
-  border: 1px solid #04324D;
+  background-color: #f5f5f5;
+  border: 3px solid #ccc;
   border-radius: 7px;
   padding: 20px;
   width: 200px;
@@ -525,7 +566,7 @@ button img {
 }
 
 .card-description {
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
 }
 
@@ -550,7 +591,7 @@ button img {
   width: 100%;
   padding: 5px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   border-radius: 4px;
   background-color: white;
   transition: all 0.3s ease;
@@ -564,10 +605,10 @@ button img {
 
 /* Botón para cerrar el formulario */
 .button_clausurar {
-  background-color: #dc3545;
+  background-color: #005f73;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 7px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -576,7 +617,7 @@ button img {
 }
 
 .button_clausurar:hover {
-  background-color: #c82333;
+  background-color: #1fb530;
 }
 
 .close-form9 {
@@ -591,8 +632,8 @@ button img {
 }
 
 /* Estilo para el botón de búsqueda en la sede central */
-.fechacentral-button {
-  background-color: #04324D;
+.fecha-button {
+  background-color: #005f73; 
   color: white;
   border: none;
   padding: 7px 20px;

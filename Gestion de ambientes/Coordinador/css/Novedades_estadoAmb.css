@@ -34,20 +34,20 @@
     display: flex; 
     align-items: left; 
     justify-content: left; 
-    padding: 10px; 
+    padding: 5px; 
 }
 
 .tittle_novedad {
     font-size: 20px; 
-    color:#333;   
-    margin-top: 0;
+    color:#04324D;   
+    margin-top: -5px;
 }
 p {
-    color: #333;
-    font-size: 16px;
+    color: rgb(119, 115, 115);
+    font-size: 15px;
     margin-bottom: 20px;
     margin-top: -5px;
-    margin-left: 20px;
+    margin-left: 70px;
 }
 
 .icono_novedad {
@@ -111,14 +111,14 @@ p {
 
 /* Estilo del título de la tarjeta */
 .card h3 {
-    font-size: 16px; 
+    font-size: 15px; 
     color: #005f73;
     margin: 10px 0;
 }
 
 /* Estilo del texto en la tarjeta */
 .card p {
-    font-size: 14px; 
+    font-size: 13px; 
     color: #333;
     margin: 5px 0;
 }

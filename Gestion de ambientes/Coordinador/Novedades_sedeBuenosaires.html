@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aplicativo Gestión de Ambientes - Sede Buenos Aires</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
   <link rel="stylesheet" href="css/Index.css">
   <link rel="stylesheet" href="css/Novedades_cuatrosedes.css">
 </head>
@@ -21,7 +22,7 @@
             </button>
             <div class="contenedor_reportes">  
                 <div class="select_amb" data-role="ReportesBuenosAires" data-id="3">Revisar Reportes</div>
-                <div class="select_amb" data-role="estadoCentral" data-id="3">Cerrar Ambiente</div>     
+                <div class="select_amb" data-role="estadoBuenosAires" data-id="3">Cerrar Ambiente</div>     
             </div>
           
             <div class="tab-content">
@@ -44,7 +45,7 @@
                                         <input type="date" id="reportDate" name="reportDate" required>
                                     </div>
                                 </form>
-                                <button type="submit" class="fechacentral-button">Buscar</button>
+                                <button type="submit" class="fecha-button">Buscar</button>
                             </div>
                         </div>
                     </div>
@@ -80,11 +81,11 @@
                                         </select>
                                     </td>
                                     <td class="action-buttons">
-                                        <button type="button" class="central_botton" onclick="editRow(this)">
-                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="central_setting">
+                                        <button type="button" class="buenosAires_botton" onclick="editRow(this)">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="sedes_setting">
                                         </button>
-                                        <button type="button" class="central_botton" onclick="deleteRow(this)">
-                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ouLDrkuLHrHzTqX/Pe9AKs3kJ8Su2QpHKeOY+pDqYF8M13GHNnhUA17JOdUogb5nNr3jBUDFPESm4uxzYgf6SOGH0AL/E4AAAAASUVORK5CYII=" alt="eliminar" class="central_setting">
+                                        <button type="button" class="BuenosAires_botton" onclick="deleteRow(this)">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ouLDrkuLHrHzTqX/Pe9AKs3kJ8Su2QpHKeOY+pDqYF8M13GHNnhUA17JOdUogb5nNr3jBUDFPESm4uxzYgf6SOGH0AL/E4AAAAASUVORK5CYII=" alt="eliminar" class="sedes_setting">
                                         </button>
                                     </td>
                                 </tr>
@@ -93,12 +94,12 @@
                     </div>
     
                     <div class="container_buttonReportes">
-                        <button type="button" class="reportesBuenosAires-button">Guardar</button>          
+                        <button type="button" class="reportes-button">Guardar</button>          
                     </div>
                 </div>
 
                 <div class="tab-pane" id="actualizarBuenosAires">
-                    <div class="Actualizar_pomar">
+                    <div class="Actualizar">
                         <h3>Buscar Ambiente por Estado</h3>
                         <div class="Select_estadoAmbiente">
                           <select id="ambienteStatus" class="search-input">
@@ -106,7 +107,7 @@
                             <option value="disponible">Disponible</option>
                             <option value="cerrado">Clausurado</option>
                           </select>
-                          <button type="button" class="ActualizarBuenosAires-button" onclick="searchAmbiente()">Buscar</button>
+                          <button type="button" class="Actualizar-button" onclick="searchAmbiente()">Buscar</button>
                         </div>
                       </div>
 
@@ -121,18 +122,29 @@
                             </select>
                         </div>
                                               
-                        <div id="statusModal" class="modal_Pomar">
-                            <div class="modalBuenosAires-content">
-                                <span class="close" onclick="closeModal()">&times;</span>
-                                <h2>Clausurar</h2>
-                                <form id="statusForm">
-                                    <label for="observaciones">Observaciones:</label><br>
-                                    <textarea id="observaciones" name="observaciones" rows="3" cols="30"></textarea>
-                        
-                                    <button type="button" class="button_clausurarBuenosAires" onclick="saveDetails()">Guardar</button>
-                                </form>
+                    
+
+                        <div id="statusModal" class="modal_estadoAmbientes">
+                            <div class="modal-content">                        
+                                <div class="modal-header">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <h2>Clausurar</h2>
+                                </div>
+                                
+                   
+                                <div class="modal-body">
+                                    <form id="statusForm">
+                                        <label for="observaciones">Observaciones:</label><br>
+                                        <textarea id="observaciones" name="observaciones" rows="3" cols="30"></textarea>
+                                    </form>
+                                </div>
+                                
+                                <div class="modal-footer">
+                                    <button type="button" class="button_clausurar" onclick="saveDetails()">Guardar</button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

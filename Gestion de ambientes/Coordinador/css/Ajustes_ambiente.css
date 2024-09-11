@@ -1,3 +1,4 @@
+/* Estilos generales */
 .main {
   position: relative;
   grid-column: 2 / span 5; 
@@ -10,36 +11,34 @@
   margin: 10px;
 }
 
-
 .container_ambiente_setting {
-      background-color: white;
-      padding: 10px;
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      overflow: auto;
-      margin: 10px;
-      position: relative;
-      border: 4px solid #ccc;
-      border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  margin: 10px;
+  position: relative;
+  border: 4px solid #ccc;
+  border-radius: 10px;
 }
 
 .titulo_settingAmb {
-  display: flex; /* Usa flexbox para alinear el contenido en una fila */
-  align-items: center; /* Alinea verticalmente los elementos en el centro */
-  gap: 10px; /* Espacio entre el ícono y el título */
-  margin: 10px; /* Espacio inferior para separar de otros contenidos */
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+  margin: 10px;
 }
 
 /* Estilo del título */
 .titulo_settingAmb h2 {
-  font-size: 24px; /* Tamaño de la fuente del título */
-  font-weight: bold; /* Negrita para el título */
-  color: #333; /* Color del texto */
-  margin: 0; /* Elimina el margen por defecto del h2 */
-  line-height: 1.2; /* Altura de línea para mejorar la legibilidad */
+  font-size: 20px; 
+  font-weight: bold; 
+  color: #04324D; 
+  margin: 0; 
+  line-height: 1.2;
 }
-
 
 .icon-setting {
   width: 50px;
@@ -51,94 +50,97 @@
   justify-content: center;
   margin-right: 20px;
   margin-top: -10px;
-  }
+}
 
-  .main_setting-img {
+.main_setting-img {
   width: 30px;
   height: 30px;
   filter: brightness(0) invert(1);
-  }
+}
 
-  p {
-  color: #333;
-  font-size: 16px;
-  margin-left: 20px;
+p {
+  color: rgb(119, 115, 115);
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
 
-  }
-  
-        /* Contenedor principal para la búsqueda, dividido en dos columnas */
-  .container_busquedaAmb {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    padding: 10px; 
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo para cada columna dentro del contenedor de búsqueda */
-  .column_Amb {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-  }
-  
-  /* Estilo para los títulos dentro de cada columna */
-  .column_Amb h3 {
-    font-size: 12px; 
-    color: #333; 
-    margin: 0 0 10px 0; 
-    text-align: center; 
-  }
-  
-    /* Estilo para la barra de búsqueda */
-  .search-containerAmb {
-    display: flex; 
-    align-items: center; 
-    margin-left: 70px;
-    gap: 20px; 
-    width: 60%; 
-  }
-  
-  .search-barAmb {
-    flex: 1; 
-  }
-  
-  .search-barAmb input[type="text"] {
-    height: 20px; 
-    padding: 5px; 
-    border: 2px solid #ccc; 
-    border-radius: 10px; 
-    font-size: 12px; 
-    transition: border-color 0.3s ease; 
-    width: 100%; 
-  }
-  
-  .search-barAmb input[type="text"]:focus {
-    border-color: #16a34a; 
-    outline: none; 
-  }
-  
-  /* Estilo para el botón de búsqueda */
-  .search-buttonAmb {
-    background-color: #005f73; 
-    color: white; 
-    border: none;
-    padding: 8px 15px; 
-    border-radius: 10px; 
-    cursor: pointer; 
-    font-size: 12px; 
-    transition: background-color 0.3s ease; 
-  }
-  
-  .search-buttonAmb:hover {
-    background-color: #1fb530;
-  }
-  
-  /* Contenedor de la tabla */
+/* Contenedor principal para la búsqueda, dividido en dos columnas */
+.container_busquedaAmb {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  padding: 10px; 
+  margin-bottom: 20px;
+}
+
+/* Estilo para cada columna dentro del contenedor de búsqueda */
+.column_Amb {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+/* Estilo para los títulos dentro de cada columna */
+.column_Amb h3 {
+  font-size: 12px; 
+  color: #333; 
+  margin: 0 0 10px 0; 
+  text-align: center; 
+}
+
+/* Estilo para la barra de búsqueda */
+.search-containerAmb {
+  display: flex; 
+  align-items: center; 
+  margin-left: 70px;
+  gap: 20px; 
+  width: 60%; 
+}
+
+.search-barAmb {
+  flex: 1; 
+}
+
+.search-barAmb input[type="text"] {
+  height: 40px; 
+  padding: 5px; 
+  border: 2px solid #ccc; 
+  border-radius: 10px; 
+  font-size: 12px; 
+  transition: border-color 0.3s ease; 
+  width: 100%; 
+}
+
+.search-barAmb input[type="text"]:focus {
+  border-color: #16a34a; 
+  outline: none; 
+  box-shadow: none;
+}
+
+/* Estilo para el botón de búsqueda */
+.search-buttonAmb {
+  background-color: #005f73; 
+  color: white; 
+  border: none;
+  padding: 8px 15px; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  font-size: 12px; 
+  transition: background-color 0.3s ease; 
+}
+
+.search-buttonAmb:hover {
+  background-color: #1fb530;
+}
+
+/* Contenedor de la tabla */
 .table-containerAmb {
   width: calc(100% - 20px);
   margin: 10px;
   overflow-x: auto; 
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Estilo de la tabla */
@@ -150,7 +152,6 @@
 }
 
 /* Color de fondo para el encabezado */
-
 th, td {
   box-sizing: border-box; /* Asegura que el relleno y el borde se incluyan en el ancho total de la celda */
 }
@@ -167,11 +168,11 @@ tbody tr:last-child {
   border-bottom: 1px solid #333; 
 }
 
-
 thead th {
   background-color: #ccc; 
   border: 1px solid #333;
 }
+
 th {
   color: #333; 
   font-size: 12px;
@@ -203,84 +204,81 @@ td.action-buttons {
   padding: 0;
 }
 
-  button img {
-    width: 30px; 
-    height: 30px;
-  }
-  
-  .save-button-container {
-    display: flex;
-    justify-content: center; 
-    margin-top: 20px; 
-  }
-  
-  /* Estilo del botón de guardar */
-  .save-button {
-    background-color: #005f73; 
-    color: #fff; 
-    border: none;
-    border-radius: 7px;
-    padding: 10px 20px; 
-    font-size: 16px; 
-    cursor: pointer; 
-    margin-top: 20px; 
-    width: 20%;
-    text-align: center; 
-  }
-  
-  .save-button:hover {
-    background-color: #1fb530; 
-  }
-  
-  
-  
-    .close_form5 {
-      position: absolute; 
-      top: 10px; 
-      right: 10px; 
-      background: none; 
-      border: none;
-      cursor: pointer; 
-      padding: 0; 
-  }
-  
-  .close_form5 img {
-      width: 20px; 
-      height: auto; 
-  }
-  
-    /* Estilo base para los botones */
-  .action-buttonAmb {
-    border: none;
-    background: transparent; 
-    cursor: pointer; 
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  }
-  
-  /* Efecto de hover para el botón */
-  .action-buttonAmb:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  }
-  
-  
-  /* Estilo para las imágenes dentro del botón */
-  .action-buttonAmb img {
-    width: 15px; 
-    height: 15px;
-    transition: opacity 0.3s ease; 
-  }
-  
-  /* Efecto de hover en la imagen */
-  .action-buttonAmb:hover img {
-    opacity: 0.8; 
-  }
-  
+button img {
+  width: 30px; 
+  height: 30px;
+}
 
-  /* Estilo general para el select */
+.save-button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; 
+}
+
+/* Estilo del botón de guardar */
+.save-button {
+  background-color: #005f73; 
+  color: #fff; 
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  margin-top: 20px; 
+  width: 20%;
+  text-align: center; 
+}
+
+.save-button:hover {
+  background-color: #1fb530; 
+}
+
+/* Botón de cerrar formulario */
+.close_form5 {
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
+  background: none; 
+  border: none;
+  cursor: pointer; 
+  padding: 0; 
+}
+
+.close_form5 img {
+  width: 20px; 
+  height: auto; 
+}
+
+/* Estilo base para los botones */
+.action-buttonAmb {
+  border: none;
+  background: transparent; 
+  cursor: pointer; 
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Efecto de hover para el botón */
+.action-buttonAmb:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo para las imágenes dentro del botón */
+.action-buttonAmb img {
+  width: 15px; 
+  height: 15px;
+  transition: opacity 0.3s ease; 
+}
+
+/* Efecto de hover en la imagen */
+.action-buttonAmb:hover img {
+  opacity: 0.8; 
+}
+
+/* Estilo general para el select */
 select {
   font-size: 14px; 
   padding: 7px; 
@@ -295,11 +293,97 @@ select {
   outline: none; 
 }
 
-
 /* Estilo para el contenedor del select en el estado de focus */
 select:focus {
   border-color: #38de38; 
   box-shadow: 0 0 5px rgba(0, 255, 0, 0.2); 
 }
 
+/* Media Queries para tabletas y PCs */
 
+/* Pantallas de tabletas y PCs (min-width: 600px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .main {
+    grid-column: 1 / span 12;
+    grid-row: auto;
+    margin: 5px;
+  }
+
+  .container_ambiente_setting {
+    padding: 20px;
+    margin: 5px;
+  }
+
+  .titulo_settingAmb {
+    gap: 10px; 
+  }
+
+  .search-containerAmb {
+    margin-left: 10px; /* Ajustar el margen para pantallas más pequeñas */
+    width: 100%; 
+  }
+
+  .search-buttonAmb {
+    padding: 8px 15px; 
+    font-size: 14px;
+  }
+
+  .table_amb th,
+  .table_amb td {
+    font-size: 12px; /* Aumentar el tamaño de fuente para mejor legibilidad */
+  }
+
+  .save-button {
+    padding: 8px 15px; 
+    font-size: 14px;
+    width: auto; /* Ajustar el tamaño del botón */
+  }
+}
+
+/* Pantallas móviles (max-width: 600px) */
+@media (max-width: 600px) {
+  .main {
+    grid-column: 1 / span 12;
+    grid-row: auto;
+    margin: 5px;
+  }
+
+  .container_ambiente_setting {
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .titulo_settingAmb {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-containerAmb {
+    margin-left: 0; 
+    width: 100%; 
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-barAmb input[type="text"] {
+    width: 100%; 
+    font-size: 14px;
+  }
+
+  .search-buttonAmb {
+    width: 100%; 
+    padding: 10px; 
+    font-size: 14px;
+  }
+
+  .table_amb th,
+  .table_amb td {
+    font-size: 10px; /* Reducir el tamaño de fuente para pantallas más pequeñas */
+  }
+
+  .save-button {
+    width: 100%; 
+    padding: 10px; 
+    font-size: 14px;
+  }
+}

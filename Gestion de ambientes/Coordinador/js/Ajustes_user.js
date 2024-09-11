@@ -1,5 +1,5 @@
 const closeFormButton3 = document.querySelector('.close_form3');
-const containerUserSetting = document.querySelector('.container_user_setting');
+const containerUserSetting = document.querySelector('.contenedor_user_setting');
 
 if (closeFormButton3 && containerUserSetting) {
   closeFormButton3.addEventListener('click', function() {
@@ -8,7 +8,7 @@ if (closeFormButton3 && containerUserSetting) {
   });
 }
 
-
+  /*--------------------------------------------------------------------------------------------------------------------------------*/ 
 
 // Función para seleccionar o deseleccionar todas las filas
 function toggleSelectAll(source) {

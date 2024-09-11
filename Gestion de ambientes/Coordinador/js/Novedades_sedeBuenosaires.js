@@ -11,7 +11,7 @@ const tabs = document.querySelectorAll('.select_amb');
         
         panes.forEach(pane => {
           if ((pane.id === 'reportes_BuenosAires' && role === 'ReportesBuenosAires') ||
-              (pane.id === 'actualizarBuenosAires' && role === 'estadoCentral')) {
+              (pane.id === 'actualizarBuenosAires' && role === 'estadoBuenosAires')) {
             pane.classList.add('active');
           } else {
             pane.classList.remove('active');
