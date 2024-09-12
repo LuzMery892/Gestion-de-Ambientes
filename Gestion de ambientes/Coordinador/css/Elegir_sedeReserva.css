@@ -141,6 +141,23 @@ p {
   margin: 5px 0;
 }
 
+/* Responsividad para pantallas grandes*/
+@media (min-width: 1440px) {
+  .Contenedor_elegirSede {
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 40px; 
+    gap:40px;
+  }
+  
+  .card_calendar, .card_Calendar {
+    max-width: 500px;
+  }
+  
+  .card-res {
+    height: 240px; 
+  }
+}
+
 /* Responsividad para tabletas */
 @media (max-width: 768px) {
   .Contenedor_elegirSede {

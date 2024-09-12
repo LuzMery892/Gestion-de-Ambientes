@@ -75,7 +75,7 @@ p {
     flex-wrap: nowrap; 
     gap: 10px; 
     justify-content: center; 
-    overflow-x: auto; 
+    overflow: hidden ; 
     width: 100%;
     padding: 10px; 
     box-sizing: border-box; 
@@ -101,7 +101,7 @@ p {
 /* Estilo para la imagen dentro de la tarjeta */
 .card img {
     width: 100%;
-    max-width: 200px; 
+    max-width: 350px; 
     height: auto; 
     max-height: 300px; 
     min-height: 150px;
@@ -136,4 +136,41 @@ p {
 .close_form6 img {
     width: 20px;
     height: auto; 
+}
+
+@media (min-width: 1440px) {
+    
+    .card {
+        max-width: 400px; 
+    }
+
+    .card img {
+        height: 250px; 
+    }
+}
+
+/* Media Query para tabletas */
+@media (max-width: 1024px) {
+    .contenedor_principalNov {
+        padding: 15px; 
+    }
+
+    .card {
+        max-width: 300px; 
+  
+    }
+
+    .card img {
+        height: 200px; 
+    }
+
+    .card h3 {
+        font-size: 10px; 
+        margin: 5px 0;
+    }
+    
+    .card p {
+        font-size: 9px; 
+       
+    }
 }
