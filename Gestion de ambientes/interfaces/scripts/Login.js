@@ -58,14 +58,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function togglePassword() {
-    const passwordField = document.getElementById('password');
-    const toggleButton = document.querySelector('.toggle-password');
-    
-    if (passwordField.type === 'password') {
-        passwordField.type = 'text';
-        toggleButton.textContent = '🔒';
-    } else {
-        passwordField.type = 'password';
-        toggleButton.textContent = '👁️';
-    }
+  const passwordField = document.getElementById('password');
+  const toggleButton = document.querySelector('.toggle-password span');
+
+  if (passwordField.type === 'password') {
+    passwordField.type = 'text';
+    toggleButton.textContent = 'visibility_off';
+  } else {
+    passwordField.type = 'password';
+    toggleButton.textContent = 'visibility';
+  }
 }
+
+document.querySelector('.toggle-password').addEventListener('click', togglePassword);
+
+
