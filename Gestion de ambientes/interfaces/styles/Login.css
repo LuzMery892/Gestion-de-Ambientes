@@ -43,7 +43,7 @@ body {
   .img_sena {
       position: relative;
       max-width: 100px;
-      height: 60px;
+      height: 70px;
       margin-top: 10px;
   }
   
@@ -76,7 +76,7 @@ body {
 .form-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 24px; 
-  color: #38de38;
+  color: #1fb530;
   margin-bottom: 5px; 
   border-bottom: 3px solid #ccc;
   padding-bottom: 10px;

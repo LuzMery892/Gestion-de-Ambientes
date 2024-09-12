@@ -48,11 +48,11 @@
                         <div class="form-reservar">
                             <label for="frecuencia"></label>
                             <button type="button" class="btn btn-personalizar" id="openModalBtn">
-                                Personalizar
+                                Franja Horaria
                             </button>
                         </div>
                         <div class="form-reservar">
-                            <button type="submit" class="btn btn-success mt-2">Buscar</button>
+                            <button type="submit" class="btn btn-buscar">Buscar</button>
                             </div>
                     </div>
                 </form>
@@ -63,25 +63,25 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Personalizar Franja Horaria</h5>
-                        <button type="button" class="btn-close" id="closeModalBtn2">&times;</button>
+                        <button type="button" class="btn-closeModal" id="closeModalBtn2">&times;</button>
                     </div>
                     <div class="modal-body">                       
                         <div class="mb-3">
-                            <label class="form-label">Se repite el</label>
+                            <span class="form-label">Se repite:</span>
                             <div id="diasSemana" class="dias-semana">
-                                <button type="button" class="dia-btn" data-day="lunes">L</button>
-                                <button type="button" class="dia-btn" data-day="martes">M</button>
-                                <button type="button" class="dia-btn" data-day="miercoles">C</button>
-                                <button type="button" class="dia-btn" data-day="jueves">J</button>
-                                <button type="button" class="dia-btn" data-day="viernes">V</button>
-                                <button type="button" class="dia-btn" data-day="sabado">S</button>
+                                <label><input type="checkbox" name="diasSemana[]" value="lunes"> Lunes</label>
+                                <label><input type="checkbox" name="diasSemana[]" value="martes"> Martes</label>
+                                <label><input type="checkbox" name="diasSemana[]" value="miercoles"> Miércoles</label>
+                                <label><input type="checkbox" name="diasSemana[]" value="jueves"> Jueves</label>
+                                <label><input type="checkbox" name="diasSemana[]" value="viernes"> Viernes</label>
+                                <label><input type="checkbox" name="diasSemana[]" value="sabado"> Sábado</label>
                             </div>
-                        </div>
-                        </div>
+                        </div>               
                         <div class="mb-3">
-                            <label for="fechaFin" class="form-label">Termina el</label>
+                            <label for="fechaFin" class="form-label">Termina:</label>
                             <input type="date" id="fechaFin" class="form-control" required>
-                        </div>                    
+                        </div>   
+                    </div>                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary">Hecho</button>
                     </div>

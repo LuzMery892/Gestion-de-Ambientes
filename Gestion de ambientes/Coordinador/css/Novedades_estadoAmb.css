@@ -26,6 +26,7 @@
     box-sizing: border-box; 
     overflow: auto;
     margin: 10px;
+    background-color: #f5f5f5;
 }
 
 

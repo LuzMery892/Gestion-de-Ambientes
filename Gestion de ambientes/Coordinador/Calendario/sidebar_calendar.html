@@ -60,16 +60,17 @@
                     </div>
                   </div>
 
-                  <div class="form-group mt-3">
-                    <label>Repetir</label>
-                    <div class="d-flex flex-wrap">
-                      <button type="button" class=" btn-day inactive" id="monday" data-day="M">L</button>
-                      <button type="button" class=" btn-day inactive" id="tuesday" data-day="T">M</button>
-                      <button type="button" class=" btn-day inactive" id="thursday" data-day="T">J</button>
-                      <button type="button" class=" btn-day inactive" id="friday" data-day="F">V</button>
-                      <button type="button" class=" btn-day inactive" id="saturday" data-day="S">S</button>
+                  <div class="form-group">
+                    <span class="form-label">Se repite el</span>
+                    <div id="diasSemana" class="dias-semana">
+                        <label><input type="checkbox" name="diasSemana[]" value="lunes"> Lunes</label>
+                        <label><input type="checkbox" name="diasSemana[]" value="martes"> Martes</label>
+                        <label><input type="checkbox" name="diasSemana[]" value="miercoles"> Miércoles</label>
+                        <label><input type="checkbox" name="diasSemana[]" value="jueves"> Jueves</label>
+                        <label><input type="checkbox" name="diasSemana[]" value="viernes"> Viernes</label>
+                        <label><input type="checkbox" name="diasSemana[]" value="sabado"> Sábado</label>
                     </div>
-                  </div>
+                </div>  
 
                   <div class="form-group mt-3">
                     <label for="event-color">Color</label>
