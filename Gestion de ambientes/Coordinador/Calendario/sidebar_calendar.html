@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
 <nav class="sidebar">
 
   <div class="sidebar-content">
@@ -15,7 +16,7 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="formLabel_central">Añadir Reserva</h5>
+            <h5 class="modal-title" id="formLabel_central">Nueva Reserva</h5>
           </div>
           <div class="modal-body">
             <!-- Pestañas -->
@@ -37,7 +38,7 @@
               <div class="tab-pane fade show active" id="horario" role="tabpanel" aria-labelledby="horario-tab">
                 <form id="horarioForm">
                   <div class="form-group">
-                  
+         
                     <div class="date-time-group">
                       <div class="form-group">
                         <label for="start-date">Fecha de inicio <span class="text-danger">*</span></label>
@@ -54,14 +55,14 @@
                         <input type="time" class="form-control" id="start-time" placeholder="Hora de inicio" required>
                       </div>
                       <div class="form-group">
-                        <label for="end-time">Hora de finalización - <small class="text-muted">Opcional</small></label>
+                        <label for="end-time">Hora de finalización <span class="text-danger">*</span></label>
                         <input type="time" class="form-control" id="end-time" placeholder="Hora de finalización">
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <span class="form-label">Se repite el</span>
+                    <span class="form-label">Repetir:</span>
                     <div id="diasSemana" class="dias-semana">
                         <label><input type="checkbox" name="diasSemana[]" value="lunes"> Lunes</label>
                         <label><input type="checkbox" name="diasSemana[]" value="martes"> Martes</label>
@@ -133,8 +134,8 @@
   </div>
 
   <button class="sidebar-btn" data-bs-toggle="modal" data-bs-target="#materialModal">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAWpJREFUSEvtluFxwyAMhaVN4k2aTZJJ0kzSdJJ6k6aTqHkc+AALGxB3/hP9ycXH8SG9hwTTQcEHcWkoWERORPRBRE9mnreSMoM97EJEtwz0xAGI6MrM+E3CBBYRZPezIxegd2Z+xOu6wT7TXwUKEEoeB76d48wt4K9XKVHiEMjqE38K5Z+Z+RwWW8CSZbWAw3cRwcFwQAQMN5nAG9omcEUOlNu5vSvjHVPlcPggaA6HO5P1grGRZixN71iSKRisF1xzje7+FMv95pf7ujX2usEwgLfEg5mvXWADNHF0k8YWqG+bSe+u0rgTim71HZpKrskuuBLqWqLf3F0d03SqgOJO/pWy2nJeMeMK6MowLRZXwRVQMJLr0QJVXV0BRWNAtsl8HQHOx12+59L2WmHx+lWpRSRu6vFa95SJZ+pocD5nzXpqB9Qy1sBDylsstTcWHm9hfqoPNUuJi0PCw9F5Vk/SEcCu6fQGWyrwDz/koR8U5JuxAAAAAElFTkSuQmCC" alt="Materiales" class="btn-icon"/>
-    <span class="btn-text">Material y llaves</span>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASpJREFUSEvtlt0RwiAQhNlKNJ1oJZpKNJVoJ6YTYyVrzgEGCBnIBCY+hKf8MPcde8Ae1EYDG3HVf4FJngorMQAY3Jjeikk+lFLXwlATrgNwNy8WTPKolHpXgpqwjVm5C5ZsbnrGuXACLx2vBfCU5ygYoyYlwSSp41m5d/CvxrvUazfavrmS53g8fu6lEr36csqwWOqtwZNFuZd9lRXnBM2Zs1jqnKA5c1Jg8WHx45pj6k5CIyl+LL5cY0gX0kwaAfNBtz1h63MIOpMuyOziJCx++wn+9wB691uW75IUIzfJWLmcZN3zLmDxXa/HCiVMgoOz/ATQxuoQzPP6q9j8HLCpu1ejGbjdIylrzQHLZhOpRWKvTiFcN4zi6eulrrG9PZOoBZiLm5S6VkJfuHvSH8Hz5QQAAAAASUVORK5CYII="alt="llaves y materiales" class="btn-icon"/>
+    <span class="btn-text">Materiales</span>
 </button>
 
 
@@ -182,7 +183,7 @@
   <button class="sidebar-btn" data-bs-toggle="modal" data-bs-target="#reportarModal">
     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATdJREFUSEvtlusNwjAMhO1NYBJgE5gEmASYBDaBTQ6uSioT0hZShwqJ/Evb+Mv5VatMtHQirryAAcxEZO18oZuqHq3NJzCAs4gsnaHRHOHzuGnBAKjyUAkaza5U9cKNBe9EZNs8VHWNPQAE8v5hmpw/eJyrATAxmUQ3mytVXR2grAomz8bCq4ENNAqdu4FDY2HGp26ke6n0pWTig2LFAXpN3ZhR2tapS4wBEMpWytXEMOx7lY5WTAMZuG2tWaUu4Ay8M6Zp2y2OcRIv6/ZepW6KjSHCWatNwx9aLoqHILn3vwOu8I8e/h8D4FDgOQJ1TiDtIBCaRKxTtshTSWzNme6Z6zEkWHA8c1HV1Uho9nh29AlftmPKt8B07ds1WnqpVPGilmvTC1rw8t1OVKrSnnMdYz+50GTgO5dSCC6UYfWqAAAAAElFTkSuQmCC" alt="Buscar Disponibilidad" class="btn-icon"/>
 
-    <span class="btn-text">Reportar Novedad</span>
+    <span class="btn-text">Novedades</span>
 </button>
 
 

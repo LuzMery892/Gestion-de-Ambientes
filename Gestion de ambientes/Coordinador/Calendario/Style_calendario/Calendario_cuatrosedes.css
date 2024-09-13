@@ -7,11 +7,12 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden; 
+  font-family: 'Montserrat', sans-serif;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: 0.75fr repeat(5, 1fr);
+  grid-template-columns: 0.50fr repeat(5, 1fr);
   grid-template-rows: 50px 1fr auto;
   gap: 0px;
   width: 100vw;
@@ -30,7 +31,6 @@ body {
   padding: 10px;
   box-sizing: border-box;
   background-color: #F5F5F5;
-border: 1px solid red;
 }
 
 .titulo_sedes{
@@ -47,11 +47,10 @@ border: 1px solid red;
   margin-right: 20px;
 }
 
-.titulo_sedes h2 {
+.titulo_sedes h2, .select_ambientesSedes h2 {
   margin: 0;
-  color: #333;
+  color: #04324D;
   font-size: 16px;
-  font-weight: 600;
 }
 
 .select_ambientesSedes{
@@ -62,11 +61,6 @@ border: 1px solid red;
   gap:10px;
 }
 
-.select_ambientesSedes h2 {
-  color: #333;
-  font-size: 16px;
-  font-weight: 600;
-}
 
 #ambientesSelect {
   padding: 8px;
@@ -108,6 +102,7 @@ border: 1px solid red;
   background-color: #F5F5F5; 
   padding: 0; 
   margin: 10px; 
+  color:#626b74;
 }
 
 /* Ajusta el tamaño de los días en la vista mensual */
@@ -120,7 +115,7 @@ border: 1px solid red;
 
 .fc-header-toolbar {
   background-color: #F5F5F5;
-  font-size: 18px;
+  font-size: 16px;
   border-bottom: 2px solid #ccc;
 }
 
@@ -148,7 +143,6 @@ border: 1px solid red;
   border-bottom-right-radius: 30px;
 }
 
-
 .sidebar-content {
   display: flex;
   flex-direction: column;
@@ -158,26 +152,22 @@ border: 1px solid red;
   margin: 0;
 }
 
-
 #sidebar:hover,
 #sidebar.expanded {
   width: 190px; 
   max-width: 250px;
 }
 
-
 .sidebar-btn{
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: flex-start;
-  padding: 5px 17.5px;
-  font-size: 14px;
+  padding: 5px 18px;
+  font-size: 15px;
   background-color: transparent; 
   border: none;
   color: inherit; 
-
 }
-
 
 .btn-text {
   opacity: 0; 
@@ -214,7 +204,6 @@ border: 1px solid red;
     color:#333
 }
 
-
 .btn-icon {
   width: 30px;
   height: 30px;
@@ -222,8 +211,8 @@ border: 1px solid red;
 }
 
 #sidebar.expanded .btn-icon {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
 }
 
 .sidebar-btn:hover .btn-icon,
@@ -247,7 +236,6 @@ border: 1px solid red;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
-
 .modal {
   display: none; 
   position: fixed;
@@ -271,26 +259,34 @@ border: 1px solid red;
 /* Contenido del modal */
 .modal-content {
   position: relative;
-  margin: 10px; 
-  width: 80%; 
-  max-width: 490px;
+  margin: 10px auto; 
+  width: 100%; 
+  max-width: 500px; 
   background-color: white;
   border-radius: 12px; 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
   overflow: hidden; 
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-  color:#333;
+  color: #333;
 }
 
 /* Encabezado del modal */
 .modal-header {
   padding: 10px;
-  background-color: #1fb530; 
+  background-color: #F8F9FA; 
+  border-bottom: 2px solid #ccc; 
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
-  color: #ffffff; 
+  color: #04324D; 
 }
+
+/* Título del modal */
+.modal-header h5 {
+  margin: 0; 
+  font-size: 16px; 
+}
+
 
 /* Cuerpo del modal */
 .modal-body {
@@ -300,50 +296,43 @@ border: 1px solid red;
 
 /* Pie de página del modal */
 .modal-footer {
-  padding: 10px; 
-  background-color: #F5F5F5;
-  border-top: 1px solid #ccc; 
+  padding: 10px;
+  background-color: #F8F9FA;
+  border-top: 2px solid #ccc; 
   display: flex;
   justify-content: flex-end; 
 }
 
-/* Contenedor de las pestañas */
-.tabs-container {
-  margin: 20px;
-}
 
 /* Estilo para cada elemento de la pestaña */
 .nav-item {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 /* Estilo para los enlaces de las pestañas */
 .nav-link {
   display: inline-block;
+  padding: 10px;
   margin-bottom: -1px; 
   color: #838181;
-}
-
-/* Estilo para la pestaña activa */
-.nav-link.active {
-  color: #333; 
-  font-weight:600;
+  text-decoration: none;
+  border: 2px solid transparent; 
+  border-radius: 5px; 
 }
 
 .nav-link:hover {
-  background-color: #F5F5F5; 
+  background-color: #e0e0e0; /* Fondo gris más oscuro al pasar el ratón */
   color: #005f73; 
 }
 
 /* Estilo para los formularios */
 .form-group {
-  margin-bottom: 5px; 
+  margin-bottom: 10px; /* Espacio aumentado entre formularios */
 }
-
 
 .form-group label {
   display: block; 
-  font-size: 12px; 
+  font-size: 14px; /* Tamaño de fuente aumentado */
   font-weight: 600; 
   color: #495057; 
   margin-bottom: 0.5rem; 
@@ -395,8 +384,31 @@ border: 1px solid red;
 .date-time-group input[type="date"],
 .date-time-group input[type="time"] {
   width: 100%; 
+  height: 35px;
   box-sizing: border-box; 
 }
+
+/* Estilos para el contenedor de los días de la semana */
+.dias-semana {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas si no caben en una sola línea */
+  gap: 10px; /* Espacio entre los elementos */
+}
+
+/* Estilos para los labels dentro del contenedor */
+.dias-semana label {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el texto y el checkbox */
+  gap: 5px; /* Espacio entre el checkbox y el texto */
+  font-size: 12px; /* Tamaño de fuente para los días de la semana */
+}
+
+/* Estilos para los checkboxes */
+.dias-semana input[type="checkbox"] {
+  margin: 0; /* Elimina el margen por defecto del checkbox */
+}
+
+
 
 /* Estilos opcionales para ajustar el tamaño de los campos en pantallas pequeñas */
 @media (max-width: 768px) {
@@ -404,7 +416,6 @@ border: 1px solid red;
     min-width: 100%; 
   }
 }
-
 
 /* Campos de entrada */
 .form-group input[type="date"],
@@ -426,8 +437,6 @@ border: 1px solid red;
   outline: none; 
 }
 
-
-
 /* Estilo opcional para los campos de color */
 .form-group input[type="color"] {
   width: 70%; 
@@ -435,6 +444,7 @@ border: 1px solid red;
   border: none; 
 }
 
+/* Botones de día */
 .btn-day {
   display: inline-block;
   padding: 10px 15px;
@@ -483,18 +493,3 @@ border: 1px solid red;
   transform: scale(1.02); 
   color: #ffffff;
 }
-
-/* Botón de cerrar */
-.modal-close {
-  background: none;
-  border: none;
-  font-size: 14px;
-  cursor: pointer;
-  color: #fff;
-  transition: color 0.3s;
-}
-
-.modal-close:hover {
-  color: #ff6f6f; /* Rojo claro para el botón de cerrar */
-}
-

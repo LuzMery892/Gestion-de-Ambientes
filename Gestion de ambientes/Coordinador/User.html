@@ -29,47 +29,44 @@
                 <p>Aquí puedes crear un nuevo usuario y elegir el rol en el que se desempeña.</p>
                 <div class="form-row">
                     <div class="form_userlabel">
-                        <label for="nombre" class="form-label">Nombre Completo</label>
+                        <label for="nombre" class="form-label">Nombre Completo <span class="text-danger">*</span></label>
                         <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required>
                     </div>
                     
                     <div class="form_userlabel">
-                        <label for="numero-documento" class="form-label">Identificación</label>
+                        <label for="numero-documento" class="form-label">Identificación <span class="text-danger">*</span></label>
                         <input type="text" id="numero-documento" name="numeroDocumento" class="form-control" placeholder="Número de Documento" required>
-                    </div>
+                    </div>                 
                     <div class="form_userlabel">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Número celular" required>
-                    </div>
-                    <div class="form_userlabel">
-                        <label for="correo-tipo" class="form-label">Tipo de Correo</label>
+                        <label for="correo-tipo" class="form-label">Tipo de Correo <span class="text-danger">*</span></label>
                         <div class="select-container">
                             <select id="correo-tipo" name="correoTipo" class="custom-select" required>
                                 <option value="">Seleccionar</option>
-                                <option value="INSTITUCIONAL">Correo Institucional - misena.edu.co</option>
-                                <option value="ALTERNATIVO">Correo Alternativo</option>
+                                <option value="INSTITUCIONAL">Institucional @misena.edu.co (deseado)</option>
+                                <option value="ALTERNATIVO">Alternativo (solo si no tiene correo institucional)</option>
                             </select>
                         </div>
                     </div>                 
                     <div class="form_userlabel">
-                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <label for="correo" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
                         <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico@" required>
                     </div>
-
                     <div class="form_userlabel">
-                        <label for="sede-usuario" class="form-label">Centro de Formación</label>
-                        <div class="select-container">
-                            <select id="sede-usuario" name="centroFormacion" class="form-control" required>
-                                <option value="">Seleccionar</option>
-                                <option value="1">Sede Complejo Central</option>
-                                <option value="2">Sede U. San Buenaventura</option>
-                                <option value="3">Sede Buenos Aires</option>
-                                <option value="4">Sede el Pomar</option>
-                            </select>
-                        </div>
+                        <label for="telefono" class="form-label">Teléfono <span class="text-danger">*</span></label>
+                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Número celular" required>
+                    </div>
+                    <div class="form_userlabel">
+                        <label for="sede-usuario" class="form-label">Centro de Formación <span class="text-danger">*</span></label>
+                        <select id="sede-usuario" name="centroFormacion" class="form-control" required>
+                            <option value="">Seleccionar</option>
+                            <option value="1">Sede Complejo Central</option>
+                            <option value="2">Sede U. San Buenaventura</option>
+                            <option value="3">Sede Buenos Aires</option>
+                            <option value="4">Sede el Pomar</option>
+                        </select>
                     </div>
                     <div>
-                        <legend class="form-label">Rol:</legend>
+                        <legend class="form-label">Rol: <span class="text-danger">*</span></legend>
                         <div class="form-radio-group">
                             <div class="form-radio">
                                 <input type="radio" id="alistamiento" name="rol" value="ALISTAMIENTO" class="form-radio-input" required>
@@ -93,7 +90,8 @@
                 <img src="IMG-ICONS/sena-boys.jpg" class="main_img_end">
             </form>
         </div>
-    </main>  
+    </main>
+    
     
     <script>
       async function loadHTML(selector, file) {
