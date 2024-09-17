@@ -92,10 +92,17 @@ p {
   width: 100%;
   justify-items: center; 
   align-items: center; 
+
+}
+
+.card_link {
+  display: block; 
+  text-decoration: none; 
+  color: inherit;
 }
 
 /* Estilo general de las tarjetas */
-.card_calendar, .card_Calendar {
+.card_calendar {
   background-color: #f5f5f5;
   border: 2px solid #ccc;
   border-radius: 5px;
@@ -108,11 +115,11 @@ p {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%; 
-  max-width: 340px; 
+  max-width: 350px; 
 }
 
 /* Efecto de hover para las tarjetas */
-.card_calendar:hover, .card_Calendar:hover {
+.card_calendar:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
@@ -135,7 +142,7 @@ p {
 }
 
 /* Título de la tarjeta */
-.card_calendar h3, .card_Calendar h3 {
+.card_calendar h3{
   font-size: 14px;
   color: #333;
   margin: 5px 0;
@@ -149,7 +156,7 @@ p {
     gap:40px;
   }
   
-  .card_calendar, .card_Calendar {
+  .card_calendar{
     max-width: 500px;
   }
   
@@ -161,7 +168,7 @@ p {
 /* Responsividad para tabletas */
 @media (max-width: 768px) {
   .Contenedor_elegirSede {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(1, 1fr); 
   }
   
   .card-res {

@@ -6,36 +6,39 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calendario Reservas de Ambientes</title>
-
-  <!-- Importar estilos -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/main.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.2.0/main.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.2.0/main.min.css">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/main.min.css'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.2.0/main.min.css'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.2.0/main.min.css'>
   <link rel="stylesheet" href="Style_calendario/Calendario_cuatrosedes.css">
+
 </head>
 
 <body>
   <div class="grid-container">
+
     <header class="header">
       <div class="titulo_sedes">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASxJREFUSEvtV+0NwiAQfRD3kG7ACPrTGHfQSaqbuIMx/akjdAPROQwYqiTY0nKRGj9Sfl7veHD3jntl+NBiH8JFFFgUUkBjWR2QY6tmpQodlurnYuPAOzkxHAcbwDSmalEeg8BEv+8DtinTGjnDI71pJFAGOHKOTb1EjVSP9/IEQKThNaLVeV5mvvUJWHh16hm4wY8BmNQ61DL4pau3Ymuqu3r2/4FtyqpbjqBcP1JsSakOBafYgk9myobUWDqwnU7X+0vmBkQ1iSi2jsHx3aymEMlmpO43kMsXEdEak4kUItzPkov6Ntf9ksj1KqhjeZtQfK5xIYXRsNKn98U4Ml93NTSX2Mu1AfI+kQ2wvczLVavmch8e4txOpHTR1/ITEBX0fd48euN3gfn73gCKv8IuZl8XLQAAAABJRU5ErkJggg==" />
-        <h2>Sede el Pomar</h2>
+       
+          <h2>Sede Pomar</h2>
       </div>
       <div class="select_ambientesSedes">
-        <h2>Ambiente:</h2>
-        <select id="ambientesSelect">
-          <option value="1">Oficina Central</option>
-          <option value="2">Sucursal Norte</option>
-          <option value="3">Sucursal Sur</option>
-          <option value="4">Sucursal Este</option>
-          <option value="5">Sucursal Oeste</option>
-        </select>
+          <h2>Ambiente:</h2>
+          <select id="ambientesSelect">
+            <option value="1">Oficina Central</option>
+            <option value="2">Sucursal Norte</option>
+            <option value="3">Sucursal Sur</option>
+            <option value="4">Sucursal Este</option>
+            <option value="5">Sucursal Oeste</option>
+          </select>
       </div>
-    </header>
+  </header>
 
     <div id="sidebar"></div>
+
+
 
     <main class="main">
       <div id="calendar">
@@ -43,42 +46,46 @@
       </div>
     </main>
 
-    <!-- Importar scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.2.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.2.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.2.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/locales/es.js"></script>
-    <script src="js-calendar/Calendario_Central.js"></script>
-
     <script>
-      async function loadHTML(selector, file) {
-        const response = await fetch(file);
-        const text = await response.text();
-        document.querySelector(selector).innerHTML = text;
-      }
+        async function loadHTML(selector, file) {
+          const response = await fetch(file);
+          const text = await response.text();
+          document.querySelector(selector).innerHTML = text;
+        }
   
-      async function loadContent() {
-        await loadHTML('#sidebar', 'sidebar_calendar.html');
+        async function loadContent() {
+          await loadHTML('#sidebar', 'sidebar_calendar.html');
+          
+          // Cargar los scripts después de cargar el contenido HTML
+          loadScripts();
+        }
         
-        // Cargar los scripts después de cargar el contenido HTML
-        loadScripts();
-      }
-      
+
       function loadScripts() {
+
         const modal_materialscript = document.createElement('script');
-        modal_materialscript.src = 'js-calendar/Modal_materiales.js';
+        modal_materialscript.src = 'js-calendar/Modal_materiales.js'
         document.body.appendChild(modal_materialscript);
   
         const modal_reportesScript = document.createElement('script');
-        modal_reportesScript.src = 'js-calendar/Modal_reportes.js';
+        modal_reportesScript.src = 'js-calendar/Modal_reportes.js'
         document.body.appendChild(modal_reportesScript);
-      }
 
+      }
       loadContent(); // Inicia la carga de contenido
     </script>
+
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/main.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.3.0/main.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.2.0/main.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.2.0/main.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/locales/es.js'></script>
+  <script src="js-calendar/Calendario_Central.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </body>
 
 </html>
