@@ -290,7 +290,7 @@ body {
 
 /* Cuerpo del modal */
 .modal-body {
-  padding: 15px; 
+  padding: 10px; 
   color: #333; 
 }
 
@@ -321,21 +321,28 @@ body {
 }
 
 .nav-link:hover {
-  background-color: #e0e0e0; /* Fondo gris más oscuro al pasar el ratón */
+  background-color: none;
   color: #005f73; 
+  border: none; 
 }
 
 /* Estilo para los formularios */
 .form-group {
-  margin-bottom: 10px; /* Espacio aumentado entre formularios */
+  margin-bottom: 5px; 
 }
 
 .form-group label {
   display: block; 
-  font-size: 14px; /* Tamaño de fuente aumentado */
-  font-weight: 600; 
+  font-size: 12px; 
   color: #495057; 
-  margin-bottom: 0.5rem; 
+  margin-bottom: 5px; 
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px; 
+  font-size: 10px;
+  color: #495057;
 }
 
 /* Estilo para el select */
@@ -391,21 +398,22 @@ body {
 /* Estilos para el contenedor de los días de la semana */
 .dias-semana {
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas si no caben en una sola línea */
-  gap: 10px; /* Espacio entre los elementos */
+  flex-wrap: wrap; 
+  gap: 15px;
+  margin-top: 5px;
 }
 
 /* Estilos para los labels dentro del contenedor */
 .dias-semana label {
   display: flex;
-  align-items: center; /* Alinea verticalmente el texto y el checkbox */
-  gap: 5px; /* Espacio entre el checkbox y el texto */
-  font-size: 12px; /* Tamaño de fuente para los días de la semana */
+  align-items: center; 
+  gap: 5px; 
+  font-size: 12px;
 }
 
 /* Estilos para los checkboxes */
 .dias-semana input[type="checkbox"] {
-  margin: 0; /* Elimina el margen por defecto del checkbox */
+  margin: 0; 
 }
 
 
@@ -492,4 +500,8 @@ body {
   outline: none;
   transform: scale(1.02); 
   color: #ffffff;
+}
+
+.sidebar-btn {
+  text-decoration: none; /* Sin subrayado en el texto */
 }

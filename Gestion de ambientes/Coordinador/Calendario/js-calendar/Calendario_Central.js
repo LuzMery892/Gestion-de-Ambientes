@@ -9,33 +9,28 @@ document.addEventListener('DOMContentLoaded', function() {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay'
     },
-    initialView: 'dayGridMonth', 
+    initialView: 'dayGridMonth',
     editable: true,
     selectable: true,
-    height: 'auto', // Ajusta automáticamente la altura según el contenido
-    aspectRatio: 2.5, // Reduce la relación de aspecto para hacer la vista mensual más compacta
+    height: 'auto',
+    aspectRatio: 2.5,
     views: {
       dayGridMonth: {
-        titleFormat: { year: 'numeric', month: 'long' },
-        // Ajustes específicos para la vista mensual si es necesario
+        titleFormat: { year: 'numeric', month: 'long' }
       },
       timeGridWeek: {
         slotDuration: '01:00:00',
         slotLabelInterval: '01:00',
         slotMinTime: '06:00:00',
         slotMaxTime: '22:00:00',
-        slotLabelFormat: [
-          { hour: 'numeric', minute: '2-digit', hour12: true }
-        ]
+        slotLabelFormat: [{ hour: 'numeric', minute: '2-digit', hour12: true }]
       },
       timeGridDay: {
         slotDuration: '01:00:00',
         slotLabelInterval: '01:00',
         slotMinTime: '06:00:00',
         slotMaxTime: '22:00:00',
-        slotLabelFormat: [
-          { hour: 'numeric', minute: '2-digit', hour12: true }
-        ]
+        slotLabelFormat: [{ hour: 'numeric', minute: '2-digit', hour12: true }]
       }
     },
     select: function(info) {
@@ -47,73 +42,55 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   calendar.render();
-});
 
-/*--------------------------------------------------------------------------------------------------------------------------------*/ 
-// Abre el modal
-const openModalButton = document.querySelector('.btnadd_reserva');
-const modalElement = document.getElementById('addReserva');
-const modal = new bootstrap.Modal(modalElement);
+  // Abre el modal para agregar una nueva reserva
+  const openModalButton = document.querySelector('.btnadd_reserva');
+  const addModalElement = document.getElementById('addReserva');
+  const addModal = new bootstrap.Modal(addModalElement);
 
-openModalButton.addEventListener('click', () => {
-    modal.show();
-});
+  openModalButton.addEventListener('click', () => {
+    addModal.show();
+  });
 
-// Cierra el modal
-const closeButton = document.querySelector('.btn-close');
-closeButton.addEventListener('click', () => {
-    modal.hide();
-});
+  // Cierra el modal para agregar una nueva reserva
+  const closeAddButton = document.querySelector('#addReserva .btn-close');
+  closeAddButton.addEventListener('click', () => {
+    addModal.hide();
+  });
 
-// Opcional: cerrar el modal al hacer clic fuera del contenido del modal
-window.addEventListener('click', (event) => {
-    if (event.target === modalElement) {
-        modal.hide();
+  // Opcional: cerrar el modal al hacer clic fuera del contenido del modal
+  window.addEventListener('click', (event) => {
+    if (event.target === addModalElement) {
+      addModal.hide();
     }
-});
+  });
 
-/*--------------------------------------------------------------------------------------------------------------------------------*/ 
-// Selecciona los elementos del DOM
-const deleteButton = document.getElementById('delete-button');
-const cancelButton = document.getElementById('cancel-button');
-
-// Función para manejar el clic en el botón "Eliminar"
-deleteButton.addEventListener('click', () => {
-    // Aquí puedes agregar la lógica para eliminar el evento
-    // Por ejemplo, realizar una solicitud al servidor para eliminar el evento
-    console.log('Evento eliminado');
+  // Añadir una nueva reserva
+  const submitAddButton = document.getElementById('submit-button');
+  submitAddButton.addEventListener('click', () => {
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value || startDate;
+    const startTime = document.getElementById('start-time').value;
+    const endTime = document.getElementById('end-time').value || startTime;
+    const color = document.getElementById('event-color').value;
     
-    // Cierra el modal después de realizar la acción
-    const modal = new bootstrap.Modal(document.getElementById('delete-modal'));
-    modal.hide();
-});
+    // Convertir fechas y horas en el formato requerido
+    const start = `${startDate}T${startTime}`;
+    const end = `${endDate}T${endTime}`;
 
-// Función para manejar el clic en el botón "Cancelar"
-cancelButton.addEventListener('click', () => {
-    // Solo cierra el modal, no es necesario agregar lógica adicional
-    const modal = new bootstrap.Modal(document.getElementById('delete-modal'));
-    modal.hide();
-});
+    if (startDate && startTime) {
+      calendar.addEvent({
+        title: 'Nueva Reserva',
+        start: start,
+        end: end,
+        backgroundColor: color || '#3788d8',
+      });
 
-/*--------------------------------------------------------------------------------------------------------------------------------*/
-// Seleccionar dias de la semana para reservar
-const dayButtons = document.querySelectorAll('.btn-day');
+      // Cierra el modal
+      addModal.hide();
 
-// Añade un event listener a cada botón
-dayButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    // Alterna la clase 'active' para el botón clicado
-    this.classList.toggle('active');
-    this.classList.toggle('inactive');
-    
-    // Aquí puedes recoger los días seleccionados si es necesario
-    const selectedDays = Array.from(dayButtons)
-      .filter(btn => btn.classList.contains('active'))
-      .map(btn => btn.getAttribute('data-day'));
-
-    console.log('Días seleccionados:', selectedDays); // Muestra los días seleccionados en la consola
+      // Opcional: guardar el evento en localStorage o enviar a un servidor aquí
+      // ...
+    }
   });
 });
-
-
-/*--------------------------------------------------------------------------------------------------------------------------------*/

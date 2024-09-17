@@ -103,6 +103,14 @@ if (ver_calendarios  ) {
   });
 }
 
+const Historial_usoAmbientes = document.getElementById('Historial_usoAmbientes');
+
+if (Historial_usoAmbientes  ) {
+  Historial_usoAmbientes  .addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'Historial_usoAmbientes.html'; 
+  });
+}
 
 // Cargar notificaciones en la barra de navegación
 function cargarNotificacionesNavbar() {
