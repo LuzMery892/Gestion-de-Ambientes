@@ -1,0 +1,270 @@
+  .main {
+    position: relative;
+    grid-column: 2 / span 5;
+    grid-row: 2 / span 4;
+    background-color: white;
+    display: grid;
+    box-sizing: border-box;
+    margin:0;
+    border-radius: 10px;
+  }
+
+  .container_panel{
+  background-color: #f5f5f5;;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 5;
+  position: relative;
+  border: 4px solid #ccc;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: auto;
+  }
+
+  .container_tittleNov {
+    display: flex; 
+    align-items: left; 
+    justify-content: left; 
+    padding: 5px; 
+}
+
+.tittle_novedad {
+    font-size: 20px; 
+    color:#04324D;   
+ 
+}
+.uso-ambientes {
+    color: rgb(119, 115, 115);
+    font-size: 15px;
+    margin-top: -5px;
+    margin-left: 70px;
+}
+
+.icono_novedad {
+    width: 50px; 
+    height: 50px; 
+    background-color: #005f73; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; 
+    margin-top: -10px;
+
+  }
+
+/* Botón de Cerrar */
+.close-form10 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+/* Contenedor de Tarjetas */
+.contenedor_tarjetas {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+  width: 92%; 
+  margin: 2px auto; 
+  height: 190px;
+}
+
+/* Estilo de Tarjeta */
+.card {
+  flex: 1; 
+  min-width: 220px; 
+  max-width: calc(25% - 20px); 
+  border: 1px solid #dee2e6; 
+  border-radius: 0.5rem; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s; 
+}
+
+.card:hover {
+    transform: translateY(-4px); 
+}
+
+.card-header {
+    font-weight: bold;
+    font-size: 14px; 
+    color: #04324D;
+    border: 2px solid #ccc;
+    background-color: #ccc; 
+}
+
+/* Cuerpo de la Tarjeta */
+.card-body {
+    background-color: #ffffff; 
+    border: 2px solid #ccc;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+/* Títulos y Texto */
+.card-title {
+    font-size: 13px; 
+    margin-bottom: 7px; 
+    font-weight: 900;
+
+}
+
+.card-text {
+    font-size: 12px; 
+    margin-bottom: 7px; 
+    color: #525252;
+}
+
+/* Botón */
+.btn_card {
+    border-radius: 7px;
+    padding: 7px 10px; 
+    background-color: #F5F5F5;
+    border: 1px solid #333;
+    color: #04324D;
+    font-size: 13px;
+    text-decoration: none; 
+}
+
+/* Selector de Mes */
+.contenedor_datosSedes {
+  display: grid;
+  grid-template-columns: 25% 75%; 
+  width: 100%;
+  height: 100%;
+}
+
+
+.contenedor_fecha {
+  display: flex; 
+  flex-direction: column; 
+  justify-content:flex-start;
+  align-items: center; 
+  padding: 10px;
+}
+
+.col-auto {
+  display: flex;
+  margin-bottom: 10px; 
+}
+
+/* Estilos para el input */
+.form-control {
+  padding: 5px; 
+  border: 3px solid #ccc; 
+  border-radius: 7px; 
+  font-size: 14px; 
+  width: 70%; 
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Cambiar borde en foco */
+.form-control:focus {
+  border-color: none; 
+  outline: none; 
+}
+
+.form-label {
+  font-size: 14px; 
+  margin-top: 10px;
+  margin-bottom: 15px; 
+  color: rgb(119, 115, 115);
+  text-align: center;
+}
+
+/* Estilos para el botón */
+.btn_cargar{
+  padding: 10px 15px; 
+  font-size: 16px; 
+  color: white; 
+  background-color: #005f73; 
+  border: none; 
+  border-radius: 7px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Cambiar color de fondo en hover */
+.btn_cargar:hover {
+  background-color: #1fb530; 
+}
+
+
+.contenedor_grafico {
+  padding: 10px; 
+  border: solid 1px #ccc; 
+  border-radius: 8px; 
+  background-color:white; 
+  margin: 5px;
+  width: 95%;
+  max-width: 1000px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 10px; 
+  font-size: 1rem; 
+  font-weight: bold;
+  color: #333;
+  text-align: center; 
+}
+
+.chart-container {
+  position: relative; 
+  width: 100%; 
+  height: auto; 
+  padding-bottom: 56.25%; 
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100% !important; 
+  height: 100% !important; 
+}
+
+
+@media (max-width: 800px) {
+  .card {
+      max-width: calc(50% - 20px); /* 2 columnas en pantallas más pequeñas */
+  }
+
+  .sede-title {
+      font-size: 20px; /* Ajustar el tamaño de la fuente */
+      margin-left: 20px; /* Menos margen */
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+      max-width: 100%; /* 1 columna en pantallas más pequeñas */
+  }
+
+  .sede-title {
+      font-size: 18px; /* Ajustar el tamaño de la fuente */
+      margin-left: 10px; /* Menos margen */
+  }
+
+  .form-control {
+      width: 90%; /* Ajustar el ancho del input */
+  }
+
+  .btn_card {
+      font-size: 12px; /* Ajustar tamaño del botón */
+  }
+
+  .btn_cargar {
+      font-size: 14px; /* Ajustar tamaño del botón */
+  }
+}

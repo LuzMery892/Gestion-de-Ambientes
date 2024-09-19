@@ -11,7 +11,7 @@ body {
   
   .grid-container {
     display: grid;
-    grid-template-columns: 1.5fr repeat(5, 1fr); 
+    grid-template-columns: 1.3fr repeat(5, 1fr); 
     grid-template-rows: auto 1fr auto; 
     gap: 0px;
     width: 100vw; 
@@ -326,12 +326,7 @@ input {
     display: block;
   }
   
-  .navbar__submenu-item {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
+ 
   .navbar__submenu-img {
     width: 30px;
     height: 30px;
@@ -344,12 +339,18 @@ input {
     text-decoration: none;
     display: block;
     padding: 10px;
-    font-size: 12px;
+    font-size: 13px;
+  }
+  .navbar__submenu-item {
+    padding: 5px;
+    display: flex;
+    align-items: center;
   }
   
   .navbar__submenu-item:hover {
-    background-color: #ade8ad;
-    border-radius: 20px;
+    background-color: white;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
   }
   
 
@@ -384,7 +385,7 @@ input {
   
   /* Estilo para la imagen dentro del botón */
   .menu-toggle img {
-    width: 30px; 
+    width: 25px; 
     height: auto; 
     filter: sepia(100%) hue-rotate(200deg) saturate(200%);
   }

@@ -114,11 +114,7 @@ body {
   color:#626b74;
 }
 
-/* Ajusta el tamaño de los días en la vista mensual */
-.fc-daygrid-day {
-  font-size: 10px;
-  padding: 2px; 
-}
+
 
 /*encabezados del calendario*/
 

@@ -103,14 +103,17 @@ if (ver_calendarios  ) {
   });
 }
 
-const Historial_usoAmbientes = document.getElementById('Historial_usoAmbientes');
+const Historial_ocupacion = document.getElementById('historial_ocupacion');
 
-if (Historial_usoAmbientes  ) {
-  Historial_usoAmbientes  .addEventListener('click', function(event) {
+if (Historial_ocupacion) {
+  Historial_ocupacion.addEventListener('click', function(event) {
     event.preventDefault(); 
-    window.location.href = 'Historial_usoAmbientes.html'; 
+    window.location.href = 'Historico_panel4sedes.html'; 
   });
 }
+
+
+
 
 // Cargar notificaciones en la barra de navegación
 function cargarNotificacionesNavbar() {

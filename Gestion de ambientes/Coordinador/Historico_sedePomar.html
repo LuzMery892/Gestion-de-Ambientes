@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles Históricos de la Sede</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/Historico_4Sedes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.7.0/chart.min.css">
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header text-center">
+            <img src="IMG-ICONS/Logo SENA.png" alt="Logo de la Sede Pomar" class="header-logo">
+            <h1 class="header-title">SEDE POMAR</h1>
+
+           
+            <div class="header-actions">
+                <a href="Historico_panel4sedes.html"  class="btn btn-primary">Volver a Historial Sedes</a>
+            </div>
+        </header>
+
+        <aside class="aside">
+            <div class="container mt-4">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card custom-card">
+                            <h5>Total de Reservas</h5>
+                            <p class="fs-4"><strong id="totalReservasMensual">180</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card custom-card">
+                            <h5>Total Canceladas</h5>
+                            <p class="fs-4"><strong id="totalCanceladasMensual">15</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card custom-card">
+                            <h5>Porcentaje de Ocupación Promedio</h5>
+                            <p class="fs-4"><strong id="ocupacionPromedioMensual">75%</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="container mt-4">
+                <h2 class="mb-4">Análisis de Ocupación</h2>
+                <!-- Pestañas -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="ocupacion-tab" data-bs-toggle="tab" href="#ocupacion" role="tab" aria-controls="ocupacion" aria-selected="true">Ocupación por Ambiente</a>
+                    </li>
+                   
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="reservas-tab" data-bs-toggle="tab" href="#reservas" role="tab" aria-controls="reservas" aria-selected="false">Reservas Canceladas</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="ocupacion" role="tabpanel" aria-labelledby="ocupacion-tab">
+                        <canvas id="ocupacionPorAmbienteChart" class="mt-4"></canvas>
+                    </div>
+   
+                    <div class="tab-pane fade" id="reservas" role="tabpanel" aria-labelledby="reservas-tab">
+                        <table class="table custom-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Ambiente</th>
+                                    <th scope="col">Cancelado por:</th>
+                                    <th scope="col">Instructor</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Motivo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaReservas">
+                                <tr>
+                                    <td>2024-09-10</td>
+                                    <td>Salón 1</td>
+                                    <td>Juan Cortes</td>
+                                    <td>Diana Rosas</td>
+                                    <td>Cancelada</td>
+                                    <td>Incapacidad</td>
+                                </tr>
+                                <!-- Más filas según sea necesario -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/Historico_usoAmbiente.js"></script>
+</body>
+</html>
