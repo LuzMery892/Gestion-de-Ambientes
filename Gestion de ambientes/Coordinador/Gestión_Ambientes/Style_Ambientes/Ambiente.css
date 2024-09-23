@@ -1,0 +1,100 @@
+.formulario__ambiente {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+
+}
+
+.form__ambiente {
+    flex: 1 1 calc(25% - 20px); 
+    max-width: calc(25% - 20px); 
+    margin-bottom: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-family: var(--font-family);
+}
+.form__ambiente label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: var( --color-text);
+    margin-left: 10px;
+}
+
+.form__ambiente input,
+.form__ambiente select,
+.form__ambiente textarea {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid var(--color-border);
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    color: var( --color-text);
+    font-size: 1rem; 
+}
+
+/* Contenedor principal del formulario */
+.form__ambiente {
+    margin: 5px; 
+}
+
+.form__ambiente input:focus {
+    border-color: var(--border-secundary); 
+    outline: none; 
+}
+
+/* Estilo para el contenedor de los campos de selección de tiempo */
+.time-select-container {
+    display: flex;
+    gap: 15px; 
+    margin-bottom: 5px; 
+}
+
+/* Estilo para los campos de entrada de tiempo */
+.time-select-container input[type="text"] {
+    flex: 1; 
+    padding: 10px; 
+    border: 3px solid var(--color-border);;
+    border-radius: 10px; 
+    font-size: 12px; 
+    max-width: 120px;
+}
+
+.time-select-container input:focus{
+    border-color: var(--border-secundary); 
+    outline: none; 
+}
+/* Estilo para el contenedor de Flatpickr */
+.flatpickr-calendar {
+    font-size: 10px; 
+    width:6.5%; 
+    padding: 3px; 
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+}
+
+/* Estilo para el textarea en foco */
+.form__ambiente textarea:focus {
+    border-color: var(--border-secundary);
+    background-color: white;
+    outline: none; 
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+select:focus {
+    border-color: var(--border-secundary);
+    box-shadow: none;
+    outline: none; 
+}
+

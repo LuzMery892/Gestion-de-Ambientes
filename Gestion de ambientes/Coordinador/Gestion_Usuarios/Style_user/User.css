@@ -1,0 +1,234 @@
+/* Estilo para cada fila de formulario */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: space-between;
+}
+
+/* Ajustar los elementos dentro de cada fila */
+.form_userlabel {
+    flex: 1 1 calc(50% - 16px); 
+    max-width: calc(50% - 16px); 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Estilo de los campos de formulario */
+.form-control {
+    width: 90%;
+    height: 40px;
+    padding: 10px;
+    font-size: 14px; 
+    border: 2px solid var( --color-border); 
+    border-radius: 8px; 
+    background-color: var(--color-textbottom); 
+    color: var(--color-light-text); 
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo cuando el campo está en foco */
+.form-control:focus {
+    border-color: var(--border-secundary); 
+    box-shadow: none;
+    outline: none;
+}
+
+/* Estilo cuando el campo está en hover */
+.form-control:hover {
+    border-color: var(--color-primary-hover); 
+}
+
+/* Estilo para el fieldset */
+.form_rollabel {
+    padding: 16px; 
+    border: 2px solid var( --color-border); 
+    border-radius: 8px; 
+    margin-top: 20px; 
+}
+
+.form-label {
+    font-size: 14px; 
+    margin-top: 4px;
+    margin-bottom: 4px; 
+    font-weight: 600; 
+    color: var(--color-text); 
+}
+
+.form-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-radio-label {
+    font-size: 14px;
+    color: var(--color-light-text);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1.2;
+}
+
+/* Contenedor del botón */
+.button-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Estilo del input de radio */
+.form-radio-input {
+    margin: 0;
+    width: 10px;  
+    height: 10px; 
+    accent-color: var(--color-secondary); 
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+/* Imagen final del contenedor principal */
+.main_img_end {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 200px;
+    height: auto;
+    z-index: 1;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+
+/* Estilo para el contenedor del select */
+.custom-select-container,
+.select-container {
+    display: flex;
+    padding-left: 0; 
+}
+
+/* Estilo personalizado para el select */
+.custom-select,
+.select {
+    width: 90%; 
+    height: 40px;
+    padding: 10px;
+    border: 2px solid var( --color-border); 
+    border-radius: 8px; 
+    color: var( --color-light-text);
+    font-size: 14px; 
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 0; 
+}
+
+/* Estilo cuando el select está en foco */
+.custom-select:focus,
+.select:focus {
+    border-color: var( --border-secundary); 
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 150, 136, 0.2); 
+}
+
+/* Estilo cuando el select está en hover */
+.custom-select:hover,
+.select:hover {
+    border-color: var( --border-secundary); 
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas de tabletas y PCs (min-width: 600px) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .main {
+        grid-column: 1 / span 12;
+        grid-row: auto;
+        margin: 5px;
+    }
+
+    .form_newUser {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form_userlabel {
+        max-width: 100%;
+    }
+
+    .form-control {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .btn-primary {
+        padding: 10px 40px;
+        font-size: 14px;
+    }
+
+    .main_img_end {
+        width: 150px;
+    }
+
+    .icon-wrapper {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    .main_form-img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Pantallas móviles (max-width: 480px) */
+@media (max-width: 480px) {
+    .form_newUser {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form_userlabel {
+        max-width: 100%;
+    }
+
+    .form-control {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .btn-primary {
+        padding: 8px 30px;
+        font-size: 12px;
+    }
+
+    .main_img_end {
+        width: 100px;
+    }
+
+    .icon-wrapper {
+        width: 25px;
+        height: 25px;
+        margin-right: 6px;
+    }
+
+    .main_form-img {
+        width: 18px;
+        height: 18px;
+    }
+}

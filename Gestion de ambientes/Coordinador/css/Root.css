@@ -1,0 +1,456 @@
+:root {
+  --color-background: #f5f5f5;
+  --color-white: white;
+  --color-primary: #005f73;
+  --color-primary-hover: #1fb530;
+  --color-secundary-hover: #ade8ad;
+  --color-secondary: #04324D;
+  --color-text: #333;
+  --color-text-secundary: #04324D;
+  --color-textbottom:#fff;
+  --color-border: #ccc;
+  --border-secundary: #16a34a;
+  --color-light-text: #706d6d;
+  --font-family: 'Montserrat', sans-serif;
+}
+
+/*--------------------estilos css grid---------------------------------------------*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; 
+}
+  
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.25fr repeat(5, 1fr); 
+  grid-template-rows: auto 1fr auto; 
+  gap: 0px;
+  width: 100vw; 
+  height: 100vh; 
+  padding: 0;
+}
+  
+#header {
+  grid-column: 2 / span 6; 
+  grid-row: 1;
+  background-color: var(--color-white);
+  font-family: var(--font-family);
+}
+  
+#navbar {
+  grid-column: 1; 
+  grid-row: 1 / span 4; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0e0e0;
+  border-bottom-right-radius: 70px;
+  font-family: var(--font-family);
+}
+ 
+.main {
+  position: relative;
+  grid-column: 2 / span 5; 
+  grid-row: 2 / span 3;   
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin: 20px;
+  font-family: var(--font-family);
+}
+
+.container_principal {
+  background-color:  var (--color-white);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 10px;
+  position: relative;
+  border: 4px solid var(--color-border);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column; 
+  overflow: auto;
+  font-family: var(--font-family);
+}
+/*-----------------------------------------------------------------*/
+
+/* Estilo para el título del formulario */
+.container_tittle {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 10px; 
+  position: relative; 
+  top: 0; 
+  width: 100%; 
+  margin-top: -10px;
+}
+  
+
+.titulo_h2 {
+    font-size: 22px; 
+    font-weight: bold; 
+    color: var(--color-secondary); 
+    margin: 5px 0; 
+    text-align: center; 
+}
+/* Estilo para el ícono del título */
+.icon-wrapper {
+  width: 45px;
+  height: 45px;
+  background-color: var(--color-primary); 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+/* Imagen dentro del ícono */
+.main_form-img {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1); 
+}
+
+p {
+  color: rgb(119, 115, 115);
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  margin-top: 5px;
+  font-family: var(--font-family);
+}
+
+/*-----------------------------------------------------------------*/
+
+/* Estilo global para todos los botones de cierre */
+button.btn-close.close_pag {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px; 
+  height: 24px;
+}
+
+/* Estilo para las imágenes dentro de los botones de cierre */
+button.btn-close.close_pag img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease; 
+}
+
+button.btn-close.close_pag:hover img {
+  transform: scale(1.1); /* Ejemplo de efecto hover */
+}
+
+/*-----------------------------------------------------------------*/
+ /* Estilo para los botones de guardar - principales */
+.button-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary); 
+  color: var(--color-white);
+  padding: 10px 70px; 
+  border: none;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 16px; 
+  z-index: 2;
+  font-family: var(--font-family);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover); 
+}
+  /*-----------------------------------------------------------------*/
+ /* Estilo para los botones de acciones CRUD*/
+
+ .action-button {
+  border: none;
+  background: transparent; 
+  cursor: pointer; 
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Efecto de hover para el botón */
+.action-button:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo para las imágenes dentro del botón */
+.action-button img {
+  width: 20px; 
+  height: 20px;
+  transition: opacity 0.3s ease; 
+}
+
+/* Efecto de hover en la imagen */
+.action-button:hover img {
+  opacity: 0.8; 
+}
+
+/*----------------------Estilos pestañas TABS-------------------------------------------*/
+
+.nav-tabs .nav-link {
+  margin-top: 10px;
+  border: 1px solid transparent; 
+  border-radius: 0.5rem 0.5rem 0 0; 
+  color: var(--color-light-text);
+  font-size: 13px;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+/*----------------------Estilos Navbar-------------------------------------------*/
+  .img_sena {
+    position: relative;
+    max-width: 100px;
+    height: 80px;
+    margin: 20px;
+    margin-left: 100px;
+  }
+  
+  .navbar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+  }
+  
+  .navbar__item {
+    position: relative;
+    margin-bottom: 0;
+    padding: 10px;
+    transition: margin-bottom 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .navbar__button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    background-color: #f6f1f1a4;
+    border: 1px solid var (var(--color-border));
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, border-radius 0.3s;
+    position: relative;
+  }
+  
+  .navbar__button:hover {
+    background-color: #38de38;
+    border-radius: 30px;
+    color: white;
+    border: 2px solid #bbb;
+  }
+  
+  .navbar__button:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+  
+  .navbar__img {
+    width: 35px;
+    height: 30px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .navbar__link {
+    flex-grow: 1;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  
+  .navbar__circle {
+    width: 55px;
+    height: 55px;
+    background-color: #38de38;
+    border-radius: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: 7px;
+    overflow: hidden;
+  }
+  
+  .navbar__arrow {
+    margin-left: 10px;
+    width: 15px;
+    height: 15px;
+    transition: transform 0.3s;
+  }
+  
+  .navbar__arrow--rotate {
+    transform: rotate(180deg);
+  }
+  
+  .navbar__submenu {
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    width: 90%;
+    border-left: 1px solid #38de38;
+    z-index: 1;
+    transition: height 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .navbar__submenu--show {
+    display: block;
+  }
+  
+ 
+  .navbar__submenu-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(80deg) brightness(95%) contrast(90%);
+  }
+  
+  .navbar__submenu-link {
+    color: var(--color-text);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 12px;
+  }
+  .navbar__submenu-item {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__submenu-item:hover {
+    background-color:  white;
+   border-radius: 20px;
+  }
+  
+/*----------------------Estilos header------------------------------------------*/
+  .contenedor_header {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start; 
+    padding: 10px; 
+    position: relative; 
+  }
+  
+  /* Estilo para el contenedor de la navegación */
+  .navheader {
+    display: flex;
+    align-items: center; 
+    position: relative; 
+  }
+  
+  /* Estilo para el botón de menú */
+  .menu-toggle {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0; 
+    margin-right: 30px; 
+  }
+  
+  /* Estilo para la imagen dentro del botón */
+  .menu-toggle img {
+    width: 25px; 
+    height: auto; 
+    filter: sepia(100%) hue-rotate(200deg) saturate(200%);
+  }
+  
+  /* Estilo para el menú de navegación */
+  .navigation-menu {
+    width: 150px;
+    background-color: var( --color-background);
+    display: none; 
+    list-style: none; 
+    margin: 0; 
+    position: absolute; 
+    top: 80%; 
+    right: 55%; 
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2); 
+    padding: 10px; 
+    z-index: 1000; 
+    display: flex;
+    flex-direction: column; 
+    gap: 5px;
+    border-radius: 5px;
+  }
+  /* Estilo para los ítems del menú */
+  .navigation-item {
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    transition: background-color 0.3s ease;  
+}
+
+.navigation-item:hover {
+    background-color: var(--color-secundary-hover); 
+}
+  /* Estilo para las imágenes dentro de los ítems del menú */
+  .subheader__img {
+    width: 20px; 
+    height: auto; 
+    margin-right: 10px; 
+    filter: invert(32%) sepia(87%) saturate(516%) hue-rotate(115deg) brightness(95%) contrast(101%)
+  }
+  
+  /* Estilo para los enlaces del menú */
+  .menu_item {
+    color: var(----color-text); 
+    text-decoration: none; 
+    font-size: 14px; 
+  }
+
+/*----------------------Estilos mensajes error------------------------------------------*/
+/* Contenedor de errores */
+.error-container {
+  color: red;
+  border: 1px solid red;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fdd;
+}

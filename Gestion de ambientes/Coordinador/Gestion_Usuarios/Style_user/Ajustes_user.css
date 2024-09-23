@@ -1,0 +1,213 @@
+/* Contenedor principal para la búsqueda */
+.container_busqueda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Estilo para cada columna dentro del contenedor de búsqueda */
+.column {
+  flex: 1 1 calc(33.333% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 280px;
+}
+
+/* Estilo para los títulos dentro de cada columna */
+.column h3 {
+  font-size: 12px;
+  color: var(--color-secondary);
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+/* Estilo para las opciones de rol */
+.role-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: var(--font-family);
+}
+
+/* Estilo para cada opción de rol */
+.role-option {
+  background-color: var(--color-white);
+  border: 3px solid   var(--color-border);
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  color: var(--color-text);
+  border-radius: 10px;
+  flex: 1;
+  min-width: 93px;
+  font-size: 11px;
+}
+
+.role-option:hover {
+  background-color: var(--color-secundary-hover);
+  color: var(--color-secondary);
+  border-color: #f2f2f2;
+  transform: scale(1.05);
+}
+
+/* Estilo para el select de sede */
+#sede-usuario {
+  width: 100%;
+  padding: 8px;
+  border: 3px solid var(--color-border);
+  border-radius: 10px;
+  font-size: 11px;
+  background-color: #fff;
+  color: var(  --color-text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: var(--font-family);
+}
+
+/* Estilo del select cuando está en foco */
+#sede-usuario:focus {
+  border-color: var( --border-secundary);
+  box-shadow: 0 0 5px rgba(22, 163, 74, 0.3);
+  outline: none;
+}
+
+/* Estilo para la barra de búsqueda */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Estilo para la barra de búsqueda */
+.search-bar input[type="text"] {
+  height: 35px;
+  padding: 10px;
+  border: 3px solid   var(--color-border);
+  border-radius: 10px;
+  font-size: 12px;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  font-family: var(--font-family);
+}
+
+.search-bar input[type="text"]:focus {
+  border: 1px solid var(--border-secundary);
+  outline: none;
+}
+
+/* Estilo para el botón de búsqueda */
+.search-button {
+  background-color: var(--color-primary);
+  color:  var(--color-textbottom);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-family);
+}
+
+.search-button:hover {
+  background-color:  var(--color-primary-hover);
+}
+
+
+/* Contenedor de la tabla */
+.table-container {
+  width: 100%;
+  margin: 10px 0;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+/* Estilo de la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  border: 1px solid #333;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Color de fondo para el encabezado */
+thead th {
+  background-color: #ccc;
+  border: 1px solid #333;
+}
+
+th {
+  color: #333;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 12px;
+  border: 1px solid #ccc;
+}
+
+tbody td {
+  border: none; /* Quita el borde interno de las celdas */
+}
+
+/* Botones de acción dentro de la tabla */
+td.action-buttons {
+  text-align: center;
+}
+
+/* Opcional: mejorar la visibilidad de las filas alternas */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/*---------------------- Media Queries para Responsividad -----------------------------------------*/
+
+@media (min-width: 768px) {
+  .container_busqueda {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .column {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+
+  .save-button {
+    width: 20%;
+  }
+}
+
+/* Estilos para pantallas de 480px a 767px (tabletas en orientación vertical) */
+@media (max-width: 767px) {
+  .container_busqueda {
+    flex-direction: column; 
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .column {
+    flex: 1 1 100%; 
+    min-width: auto; 
+  }
+
+  .save-button {
+    width: auto; /
+  }
+}

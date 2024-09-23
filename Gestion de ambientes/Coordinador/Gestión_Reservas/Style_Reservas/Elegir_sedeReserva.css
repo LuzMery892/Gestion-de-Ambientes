@@ -1,0 +1,95 @@
+/* Contenedor de tarjetas de sede usando CSS Grid */
+.Contenedor_elegirSede {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  padding: 7px;
+  box-sizing: border-box;
+  width: 100%;
+  justify-items: center; 
+  align-items: center; 
+  font-size: var(--font-family) ;
+}
+
+.card_link {
+  display: block; 
+  text-decoration: none; 
+  color: inherit;
+}
+
+/* Estilo general de las tarjetas */
+.card_calendar {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-border);
+  border-radius: 5px;
+  overflow: hidden; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; 
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; 
+  max-width: 320px; 
+  text-decoration: none; 
+}
+
+/* Efecto de hover para las tarjetas */
+.card_calendar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen dentro de la tarjeta */
+.card-res {
+  width: 95%; 
+  height: 160px; 
+  object-fit: cover; 
+  border-bottom-left-radius: 5px; 
+  border-bottom-right-radius: 5px;
+}
+
+/* Contenedor del contenido de la tarjeta */
+.card-content {
+  padding: 5px;
+  text-align: center;
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+/* Título de la tarjeta */
+.card_calendar h3{
+  font-size: 16px;
+  color: var(--color-light-text);
+  margin: 5px 0;
+}
+
+/* Responsividad para pantallas grandes*/
+@media (min-width: 1440px) {
+  .Contenedor_elegirSede {
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 40px; 
+    gap:40px;
+  }
+  
+  .card_calendar{
+    max-width: 500px;
+  }
+  
+  .card-res {
+    height: 240px; 
+  }
+}
+
+/* Responsividad para tabletas */
+@media (max-width: 768px) {
+  .Contenedor_elegirSede {
+    grid-template-columns: repeat(1, 1fr); 
+  }
+  
+  .card-res {
+    height: 140px; 
+  }
+}
+

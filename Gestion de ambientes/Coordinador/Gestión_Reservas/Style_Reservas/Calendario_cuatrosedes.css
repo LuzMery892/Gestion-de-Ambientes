@@ -1,0 +1,512 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color:#F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.50fr repeat(5, 1fr);
+  grid-template-rows: 50px 1fr auto;
+  gap: 0px;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.header {
+  grid-column: 2/ span 5;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  position: relative; 
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000; 
+}
+
+.titulo_sedes{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+.titulo_sedes img {
+  max-width: 100px;
+  width: 40px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.titulo_sedes h2, .select_ambientesSedes h2 {
+  margin: 0;
+  color: #04324D;
+  font-size: 16px;
+}
+
+.select_ambientesSedes{
+  display: flex;
+  align-items: center; 
+  margin-right:200px;
+  padding:10px;
+  gap:10px;
+}
+
+
+#ambientesSelect {
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #ddd; 
+  border-radius: 8px; 
+  background-color: #ffffff; 
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#ambientesSelect:focus {
+  border-color: #1fb530; 
+  outline: none; 
+  box-shadow: 0 0 0 2px rgba(118, 247, 67, 0.25); 
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+.main {
+  position: relative;
+  grid-column: 2 / span 5;
+  grid-row: 2 / span 4;
+  background-color: #F5F5F5;
+  display: grid;
+  box-sizing: border-box;
+  margin:0;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+
+#calendar {
+  box-sizing: border-box;
+  display: grid;
+  overflow: auto;
+  height: 95%;
+  width: 97%;
+  background-color: #F5F5F5; 
+  padding: 0; 
+  margin: 10px; 
+  color:#626b74;
+}
+
+
+
+/*encabezados del calendario*/
+
+.fc-header-toolbar {
+  background-color: #F5F5F5;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+}
+
+.fc-button {
+  background-color: #ccc; 
+  color: #333; 
+  border: none; 
+  padding: 10px 15px; 
+  border-radius: 4px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+/* Sidebar */
+#sidebar {
+  grid-column: 1; 
+  grid-row: 1 / span 4; 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; 
+  background-color:  #005f73;
+  transition: width 0.5s ease;
+  overflow: hidden;
+  border-bottom-right-radius: 30px;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+  width: 100%; 
+  align-items:left;
+  margin: 0;
+}
+
+#sidebar:hover,
+#sidebar.expanded {
+  width: 190px; 
+  max-width: 250px;
+}
+
+.sidebar-btn{
+  display: flex;
+  align-items: left;
+  justify-content: flex-start;
+  padding: 5px 18px;
+  font-size: 15px;
+  background-color: transparent; 
+  border: none;
+  color: inherit; 
+}
+
+.btn-text {
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  display: none;
+  color: white;
+}
+
+/* Mostrar texto cuando el sidebar está expandido o en hover */
+#sidebar:hover .btn-text,
+#sidebar.expanded .btn-text {
+  opacity: 1; 
+  display: block; 
+  margin-left: 5px; 
+  color: white;
+}
+
+/* Cambios en el hover sobre los botones cuando el sidebar está expandido */
+#sidebar.expanded .sidebar-btn:hover .btn-text,
+#sidebar:hover .sidebar-btn:hover .btn-text {
+    color: #333; 
+}
+
+
+/* Cambios en el hover sobre los botones cuando el sidebar está expandido */
+#sidebar.expanded .sidebar-btn:hover,
+#sidebar:hover .sidebar-btn:hover {
+    background-color: #F5F5F5;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius:0;
+    border-bottom-right-radius: 0;
+    margin-left: 5px;
+    color:#333
+}
+
+.btn-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 0;
+}
+
+#sidebar.expanded .btn-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.sidebar-btn:hover .btn-icon,
+#sidebar:hover .sidebar-btn:hover .btn-icon {
+  filter: invert(50%) sepia(100%) saturate(3000%) hue-rotate(90deg) brightness(95%) contrast(100%);
+}
+
+/* Ocultar el texto en estado minimizado */
+.btn-text {
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  display: none; 
+}
+
+/* Mostrar texto cuando el sidebar está expandido o en hover */
+#sidebar:hover .btn-text,
+#sidebar.expanded .btn-text {
+  opacity: 1; 
+  display: block; 
+  margin-left: 10px; 
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1050 !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo del modal */
+.modal-backdrop {
+  z-index: 1040 !important; 
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Contenido del modal */
+.modal-content {
+  position: relative;
+  margin: 10px auto; 
+  width: 100%; 
+  max-width: 500px; 
+  background-color: white;
+  border-radius: 12px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+  overflow: hidden; 
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  color: #333;
+}
+
+/* Encabezado del modal */
+.modal-header {
+  padding: 10px;
+  background-color: #F8F9FA; 
+  border-bottom: 2px solid #ccc; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  color: #04324D; 
+}
+
+/* Título del modal */
+.modal-header h5 {
+  margin: 0; 
+  font-size: 16px; 
+}
+
+
+/* Cuerpo del modal */
+.modal-body {
+  padding: 10px; 
+  color: #333; 
+}
+
+/* Pie de página del modal */
+.modal-footer {
+  padding: 10px;
+  background-color: #F8F9FA;
+  border-top: 2px solid #ccc; 
+  display: flex;
+  justify-content: flex-end; 
+}
+
+
+/* Estilo para cada elemento de la pestaña */
+.nav-item {
+  margin-right: 20px;
+}
+
+/* Estilo para los enlaces de las pestañas */
+.nav-link {
+  display: inline-block;
+  padding: 10px;
+  margin-bottom: -1px; 
+  color: #838181;
+  text-decoration: none;
+  border: 2px solid transparent; 
+  border-radius: 5px; 
+}
+
+.nav-link:hover {
+  background-color: none;
+  color: #005f73; 
+  border: none; 
+}
+
+/* Estilo para los formularios */
+.form-group {
+  margin-bottom: 5px; 
+}
+
+.form-group label {
+  display: block; 
+  font-size: 12px; 
+  color: #495057; 
+  margin-bottom: 5px; 
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px; 
+  font-size: 10px;
+  color: #495057;
+}
+
+/* Estilo para el select */
+.form-control {
+  display: block; 
+  width: 100%; 
+  padding: 0.75rem 1.25rem; 
+  border: 2px solid #ccc; 
+  border-radius: 7px; 
+  background-color: #ffffff; 
+  color: #333; 
+  font-size: 14px; 
+  line-height: 1.5; 
+  transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+/* Estilo adicional para el select cuando está enfocado */
+.form-control:focus {
+  border-color: #1fb530; 
+  outline: none; 
+  box-shadow: none;
+}
+
+/* Opcional: Añadir estilo para las opciones dentro del select*/
+.form-control option {
+  background-color: #fff; 
+  color: #333; 
+}
+
+/* Agrupación horizontal de fechas y horas */
+.date-time-group {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  margin: 0 -5px; 
+}
+
+/* Estilos para los grupos de formulario dentro de .date-time-group */
+.date-time-group .form-group {
+  flex: 1;
+  min-width: calc(50% - 10px); 
+  padding: 0 5px; 
+}
+
+/* Ajustes específicos para los campos de fecha y hora */
+.date-time-group input[type="date"],
+.date-time-group input[type="time"] {
+  width: 100%; 
+  height: 35px;
+  box-sizing: border-box; 
+}
+
+/* Estilos para el contenedor de los días de la semana */
+.dias-semana {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 15px;
+  margin-top: 5px;
+}
+
+/* Estilos para los labels dentro del contenedor */
+.dias-semana label {
+  display: flex;
+  align-items: center; 
+  gap: 5px; 
+  font-size: 12px;
+}
+
+/* Estilos para los checkboxes */
+.dias-semana input[type="checkbox"] {
+  margin: 0; 
+}
+
+
+
+/* Estilos opcionales para ajustar el tamaño de los campos en pantallas pequeñas */
+@media (max-width: 768px) {
+  .date-time-group .form-group {
+    min-width: 100%; 
+  }
+}
+
+/* Campos de entrada */
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%; 
+  padding: 12px;
+  border: 2px solid #ccc; 
+  border-radius: 8px; 
+  transition: border-color 0.3s ease; 
+}
+
+.form-group input[type="date"]:focus,
+.form-group input[type="time"]:focus,
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  border-color: #1fb530; 
+  outline: none; 
+}
+
+/* Estilo opcional para los campos de color */
+.form-group input[type="color"] {
+  width: 70%; 
+  padding: 0; 
+  border: none; 
+}
+
+/* Botones de día */
+.btn-day {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  border: 1px solid #7e0707;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo para los botones inactivos */
+.btn-day.inactive {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+/* Estilo para los botones activos */
+.btn-day.active {
+  background-color: #1fb530;
+  color: #ffffff;
+}
+
+.btn-day:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilos para los botones de acción */
+.btn {
+  background-color: #1fb530; 
+  color: #fff;
+  border: none;
+  border-radius: 7px; 
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #005f73; 
+  outline: none;
+  transform: scale(1.02); 
+  color: #ffffff;
+}
+
+.sidebar-btn {
+  text-decoration: none; /* Sin subrayado en el texto */
+}

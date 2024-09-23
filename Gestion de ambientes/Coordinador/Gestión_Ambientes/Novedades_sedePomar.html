@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo Gestión de Ambientes - Sede Pomar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+    <link rel="stylesheet" href="../css/Root.css">
+    <link rel="stylesheet" href="../Gestión_Ambientes/Style_Ambientes/Novedades_cuatrosedes.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div id="header"></div>
+        <div id="navbar"></div>
+        
+        <main class="main">
+            <div class="container_principal">
+                <form id="form_novedadesUsb" class="Usb_novedades">
+                    <div class="container_tittle">                  
+                        <h2 class="titulo_h2">Sede Pomar</h2>
+                    </div>
+                    <a href="../Gestión_Ambientes/Novedades-Estado.html"> 
+                        <button type="button" class="btn-close close_pag" aria-label="Cerrar formulario">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar página">
+                        </button>
+                    </a>
+                    <!-- Pestañas -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="reportes-tab" data-bs-toggle="tab" data-bs-target="#reportes_Usb" type="button" role="tab" aria-controls="reportes_Usb" aria-selected="true">Reportes</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="actualizar-tab" data-bs-toggle="tab" data-bs-target="#actualizarUsb" type="button" role="tab" aria-controls="actualizarUsb" aria-selected="false">Actualizar</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="reportes_Usb" role="tabpanel" aria-labelledby="reportes-tab">
+                            <div class="Buscar_sedes">
+                                <div class="Buscar mb-3">
+                                    <h3>Consultar reporte por estado</h3>
+                                    <div class="estado-options">              
+                                        <button class="btn estado-option" data-role="Pendiente">Pendiente</button>
+                                        <button class="btn estado-option" data-role="En revisión">En revisión</button>
+                                        <button class="btn estado-option" data-role="Cerrado">Cerrado</button>                      
+                                    </div>             
+                                </div>
+                                <div class="Buscar mb-3">
+                                    <h3>Consultar reporte por fecha</h3>
+                                    <div class="filter-container">
+                                        <form id="dateFilterForm" class="filter-form">
+                                            <div class="filter-group">
+                                                <label for="reportDate" class="form-label">Fecha del reporte:</label>
+                                                <input type="date" id="reportDate" name="reportDate" class="form-control" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary fecha-button">Buscar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                            <div class="table">
+                                <table id="reportTable" class="reportTable">                
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Sede</th>
+                                            <th>Ambiente</th>
+                                            <th>Fecha del reporte</th>
+                                            <th>Reportado por</th>
+                                            <th>Descripción</th>                                                          
+                                            <th>Estado del reporte</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" id="rowSelect-1" name="rowSelect-1" class="rowSelect"></td>
+                                            <td>Pomar</td>
+                                            <td>Oficina</td>
+                                            <td>25/08/2024</td>
+                                            <td>Juan Pérez</td>
+                                            <td>Fugas en la tubería</td>                                                          
+                                            <td>
+                                                <select id="status-select-1" name="status-select-1" class="form-select select-status" onchange="updateStatus(this)">
+                                                    <option value="" disabled selected>Seleccione</option>
+                                                    <option value="pendiente" class="option-pending">Pendiente</option>
+                                                    <option value="en-revision" class="option-in-review">En revisión</option>
+                                                    <option value="cerrado" class="option-closed">Cerrado</option>
+                                                </select>
+                                            </td>
+                                            <td class="action-buttons">
+                                                <button type="button" class="action-button" onclick="editRow(this)">
+                                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="usb_setting">
+                                                </button>
+                                                <button type="button" class="action-button" onclick="deleteRow(this)">
+                                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ouLDrkuLHrHzTqX/Pe9AKs3kJ8Su2QpHKeOY+pDqYF8M13GHNnhUA17JOdUogb5nNr3jBUDFPESm4uxzYgf6SOGH0AL/E4AAAAASUVORK5CYII=" alt="eliminar" class="usb_setting">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="button-container">
+                                <button type="button" class="btn btn-primary">Actualizar</button>          
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="actualizarUsb" role="tabpanel" aria-labelledby="actualizar-tab">
+                            <div class="Actualizar">
+                                <h3>Buscar Ambiente por Estado</h3>
+                                <div class="Select_estadoAmbiente">
+                                    <select id="ambienteStatus" class="form-select search-input">
+                                        <option value="">Seleccionar estado</option>
+                                        <option value="disponible">Disponible</option>
+                                        <option value="cerrado">Clausurado</option>
+                                    </select>
+                                    <button type="button" class="btn btn-primary fecha-button" onclick="searchAmbiente()">Buscar</button>
+                                </div>
+                            </div>
+                            <div id="card-containerUsb" class="card-container">
+                                <div class="card mb-3" data-id="1">
+                                    <h4 class="card-title">Oficina</h4>
+                                    <p class="card-description">
+                                        Estado actual: 
+                                        <span class="card-status available" id="availableStatus">Disponible</span>
+                                        <span class="card-status closed" id="closedStatus" style="display: none;">Clausurado</span>
+                                    </p>
+                                    <select id="card-status-select" name="cardStatus" class="card-status-select" onchange="handleStatusChange(this)">
+                                        <option value="disponible">Disponible</option>
+                                        <option value="clausurado">Clausurar</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="statusModalLabel">Clausurar</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="statusForm">
+                                                <div class="mb-3">
+                                                    <label for="observaciones" class="form-label">Observaciones:</label>
+                                                    <textarea id="observaciones" name="observaciones" rows="3" class="form-control" required></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" onclick="saveDetails()">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                       
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <script>
+            async function loadHTML(selector, file) {
+                const response = await fetch(file);
+                const text = await response.text();
+                document.querySelector(selector).innerHTML = text;
+            }
+        
+            async function loadContent() {
+                await loadHTML('#header', '../Layout/header.html');
+                await loadHTML('#navbar', '../Layout/navbar.html');
+                loadScripts();
+            }
+        
+            function loadScripts() {    
+                const navbarScript = document.createElement('script');
+                navbarScript.src = '../js/navbar.js';
+                document.body.appendChild(navbarScript);
+                
+                const novedadesUsbScript = document.createElement('script');
+                novedadesUsbScript.src = '../js/Novedades_usb.js';
+                document.body.appendChild(novedadesUsbScript);
+                
+                const menuNotificacionScript = document.createElement('script');
+                menuNotificacionScript.src = '../js/menu_notificacion.js';
+                document.body.appendChild(menuNotificacionScript); 
+            }
+            loadContent(); 
+        </script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</body>
+</html>

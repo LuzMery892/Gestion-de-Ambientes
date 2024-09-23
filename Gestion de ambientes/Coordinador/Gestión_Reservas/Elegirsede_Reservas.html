@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="../css/Root.css">
+  <link rel="stylesheet" href="../Gestión_Reservas/Style_Reservas/Elegir_sedeReserva.css">
+</head>
+<body>
+  <div class="grid-container">
+    <div id="header"></div>
+    <div id="navbar"></div>
+
+    <main class="main">
+      <div class="container_principal">
+
+          <form id="tarjetas_sedes" class="elegir_sedeCalendario">
+              <div class="container_tittle">
+                  <div class="icon-wrapper">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASxJREFUSEvtV+0NwiAQfRD3kG7ACPrTGHfQSaqbuIMx/akjdAPROQwYqiTY0nKRGj9Sfl7veHD3jntl+NBiH8JFFFgUUkBjWR2QY6tmpQodlurnYuPAOzkxHAcbwDSmalEeg8BEv+8DtinTGjnDI71pJFAGOHKOTb1EjVSP9/IEQKThNaLVeV5mvvUJWHh16hm4wY8BmNQ61DL4pau3Ymuqu3r2/4FtyqpbjqBcP1JsSakOBafYgk9myobUWDqwnU7X+0vmBkQ1iSi2jsHx3aymEMlmpO43kMsXEdEak4kUItzPkov6Ntf9ksj1KqhjeZtQfK5xIYXRsNKn98U4Ml93NTSX2Mu1AfI+kQ2wvczLVavmch8e4txOpHTR1/ITEBX0fd48euN3gfn73gCKv8IuZl8XLQAAAABJRU5ErkJggg==" class="main_form-img">
+                  </div>
+                  <h2 class="titulo_h2">Calendario de Reservas</h2>
+              </div>
+
+              <a href="../coordinadorDashboard.html"> 
+                  <button type="button" class="btn-close close_pag" aria-label="Cerrar formulario">
+                  </button>
+              </a>
+
+              <p>Seleccione la sede para ver el calendario de reservas.</p>
+
+      <div class="Contenedor_elegirSede">
+        <!-- Sede 1 -->
+        <a href="../Gestión_Reservas/Calendario_sedeCentral.html" class="card_calendar" id="card-central">
+            <img src="../../Imagenes-appSENA/SEDE_COMPLEJO_CENTRAL.jpeg" alt="Sede Central" class="card-res">
+            <h3 id="title-1">Sede Complejo Central</h3>
+        </a>
+        <!-- Sede 2 -->
+        <a href="../Gestión_Reservas/Calendario_sedePomar.html" class="card_calendar" id="card-pomar">
+            <img src="../../Imagenes-appSENA/SEDE_EL_POMAR_1.jpeg" alt="Sede Pomar" class="card-res">
+            <h3 id="title-2">Sede el Pomar</h3>
+        </a>
+        <!-- Sede 3 -->
+        <a href="../Gestión_Reservas/Calendario_sedeBuenosAires.html" class="card_calendar" id="card-buenosaires">
+            <img src="../../Imagenes-appSENA/SEDE_BUENOS_AIRES - Ajustada.jpeg" alt="Sede Buenos Aires" class="card-res">
+            <h3 id="title-3">Sede Buenos Aires</h3>
+        </a>
+        <!-- Sede 4 -->
+        <a href="../Gestión_Reservas/Calendario_sedeUSB.html" class="card_calendar" id="card-usb">
+            <img src="../../Imagenes-appSENA/u.s.b.jpg" alt="Sede U. San Buenaventura" class="card-res">
+            <h3 id="title-4">Sede San Buenaventura</h3>
+        </a>
+    </div>
+    
+         
+      </div>
+      </main>
+
+      <script>
+        async function loadHTML(selector, file) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${file}: ${response.statusText}`);
+                }
+                const text = await response.text();
+                document.querySelector(selector).innerHTML = text;
+            } catch (error) {
+                console.error(error);
+                // Añadir mensaje de error para el usuario.
+            }
+        }
+    
+        async function loadContent() {
+            await loadHTML('#header', '../Layout/header.html');
+            await loadHTML('#navbar', '../Layout/navbar.html');
+            loadScripts();
+        }
+    
+        function loadScripts() {
+            // Carga de scripts
+            const scripts = [
+                { src: '../js/navbar.js' },
+                { src: '../js/menu_notificacion.js' },
+                { src: '../Gestión_Reservas/Script_Reservas/Elegir_Sede.js' }
+            ];
+    
+            scripts.forEach(script => {
+                const scriptElement = document.createElement('script');
+                scriptElement.src = script.src;
+                document.body.appendChild(scriptElement);
+            });
+        }
+    
+        loadContent();
+    </script>
+              
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </div>
+
+</body>
+</html>

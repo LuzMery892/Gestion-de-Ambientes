@@ -1,0 +1,206 @@
+/* Contenedor principal para la búsqueda, dividido en dos columnas */
+.container_busquedaAmb {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  padding: 10px; 
+  margin-bottom: 20px;
+  font-family: var(--font-family);
+}
+
+/* Estilo para cada columna dentro del contenedor de búsqueda */
+.column_Amb {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+/* Estilo para los títulos dentro de cada columna */
+.column_Amb h3 {
+  font-size: 13px; 
+  color: var(--color-text); 
+  margin: 0 0 10px 0; 
+  text-align: center; 
+  font-family: var(--font-family);
+}
+
+/* Estilo para la barra de búsqueda */
+.search-containerAmb {
+  display: flex; 
+  align-items: center; 
+  margin-left: 70px;
+  gap: 20px; 
+  width: 60%; 
+  font-family: var(--font-family);
+}
+
+.search-barAmb {
+  flex: 1; 
+}
+
+.search-barAmb input[type="text"] {
+  height: 40px; 
+  padding: 7px; 
+  border-radius: 10px; 
+  font-size: 12px; 
+  transition: border-color 0.3s ease; 
+  width: 100%; 
+  border: 3px solid var(--color-border); 
+}
+
+.search-barAmb input[type="text"]:focus {
+  border-color: var(--border-secundary); 
+  outline: none; 
+  box-shadow: none;
+}
+
+/* Estilo para el botón de búsqueda */
+.search-buttonAmb {
+  background-color: var(--color-primary); 
+  color: white; 
+  border: none;
+  padding: 8px 15px; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  font-size: 12px; 
+  transition: background-color 0.3s ease; 
+}
+
+.search-buttonAmb:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Contenedor de la tabla */
+.table-containerAmb {
+  width: calc(100% - 20px);
+  margin: 10px;
+  overflow-x: auto; 
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo general para el select */
+select {
+  font-size: 14px; 
+  padding: 10px; 
+  border: 3px solid var(--color-border); 
+  border-radius: 10px; 
+  background-color: #fff; 
+  color: var(--color-text);  
+  width: 50%; 
+  max-width: 300px; 
+  box-sizing: border-box; 
+  cursor: pointer;
+  outline: none; 
+}
+
+/* Estilo para el contenedor del select en el estado de focus */
+select:focus {
+  border-color: #38de38; 
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2); 
+}
+
+
+.table-containerAmb {
+  width: calc(100% - 20px);
+  margin: 10px;
+  overflow-x: auto; 
+  box-sizing: border-box;
+}
+
+/* Estilo de la tabla */
+.table_amb {
+  width: 100%;
+  border-collapse: collapse; 
+  table-layout: auto; 
+  border: 1px solid #005f73;
+  font-family: var(--font-family);
+}
+
+/* Color de fondo para el encabezado */
+th, td {
+  box-sizing: border-box; 
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd; 
+}
+
+tbody tr:first-child {
+  border-top: 1px solid #ddd; 
+}
+
+tbody tr:last-child {
+  border-bottom: 1px solid #333; 
+}
+
+thead th {
+  background-color: #ccc; 
+  border: 1px solid #333;
+  border-bottom: 1px solid #04324D;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
+th {
+  color: #04324D; 
+  font-size: 13px;
+  text-align: center; 
+  padding: 10px; 
+}
+
+td {
+  padding: 3px;
+  text-align: center; 
+  box-sizing: border-box; 
+  font-size: 11px;
+  border: 1px solid #333;
+}
+
+/* Botones de acción dentro de la tabla */
+td.action-buttons {
+  text-align: center; 
+}
+
+
+/* Pantallas de tabletas y PCs (min-width: 600px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .main {
+    grid-column: 1 / span 12;
+    grid-row: auto;
+    margin: 5px;
+  }
+
+  .container_ambiente_setting {
+    padding: 20px;
+    margin: 5px;
+  }
+
+  .titulo_settingAmb {
+    gap: 10px; 
+  }
+
+  .search-containerAmb {
+    margin-left: 10px; 
+    width: 100%; 
+  }
+
+  .search-buttonAmb {
+    padding: 8px 15px; 
+    font-size: 14px;
+  }
+
+  .table_amb th,
+  .table_amb td {
+    font-size: 12px; 
+  }
+
+  .save-button {
+    padding: 8px 15px; 
+    font-size: 14px;
+    width: auto; 
+  }
+}
+

@@ -1,0 +1,103 @@
+<nav class="navbar">
+    <img src="/Gestion de ambientes/Imagenes-appSENA/Logo SENA.png" alt="logosena" class="img_sena">
+    <ul class="navbar__list">
+      <!-- Submenú: Gestión de Usuarios -->
+      <li class="navbar__item">
+        <div class="navbar__button navbar__button--click" id="gestion-usuarios">
+          <div class="navbar__circle">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASBJREFUSEvllmsOAiEMhGdvojfRm+jJ9CZ6E72JmzE26bI8BiSisQl/SOlHSx9MGCTTIC5qwBsAh4aLXgFwLUQFnxqhBjsDOHqyCn40eOqP3AFsa8E7AJfXoX0sbJlLJc8qHn8V2Cca34+hjO119zhmUN17vkxrqFVId4/VJP9NMEuJN6es6tG53jW5PNQYKbj67sXk8lDrtTnPu4BDKDsWQ8merYTdolOVXDGoGaqFy+ActARvTi7OWobSxA8EH14ml/eE+hx53A+HieQxb3yLgEtJQ6DN2iYwmSWIRUGdWJLHKTAjwUXxZaXM6LfAsb78EY//B6yOPlVv8V8LPwJhSalGFT3+Mll6ySHBRmJZrBhUdFafeuXroxiu1hkGngEmJpAffcLfTQAAAABJRU5ErkJggg=="class="navbar__img">
+          </div>
+          <a class="navbar__link">Gestión de Usuarios</a>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAIdJREFUOE/tksENgCAMRT+b6Ca6iZsZJ9FNdBT9pE0qFnvhCBcSfnk8CgmNRmrEQQfFnfR6NAFYAYyV7cw2AIfNS9AA4JSCy4HtD4AHMZtlzuWe0SJGzC1MIVwn5NdIbUsYgTRxITUjD6ZrHxMNog9pzaqQyMia8WqvnpQvGhnFH0gqOihu1Q0+RRYTCdOR6AAAAABJRU5ErkJggg==" class="navbar__arrow">
+        </div>
+        <ul class="navbar__submenu" id="submenu-usuarios">
+          <li class="navbar__submenu-item"> 
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAWxJREFUSEvtlv9NwzAQhV8noWwCk1AmASaBTgJMAkwC+ZAfOkU5x3Ei8k9PqqLW8X2+dz/cg3ayw05cXcD/pvyc1DeS7iTxxD4lPQ3f39aesAZ+lPSQAICz3m0ZmAhfg9cXSV8l+mP5/boo0AXPwECBIy0AG1DWeCL3bRd1yFcG/i4OpyR9Hg50KutzNZKeK9v4UaJC4vvRbud+rEZ8zYqlqrRIjZxAMCTmUFhN6m5wLC6gZ0lXQWLAHChrq24wjpe0E0q42tlLHbgAqRMbQfyqN1ccRE4v2zE5J/pxpLVDxtz/FescuLVbNgUTLR9yG2V8LxHHqMdSo5LnQOyKqtQ4IUeez1nUgHHqil/VTrFd7Giczxgd0Nhu3rO4qmOupoaHHcfpNTXdFoFbh8MUfPGFEas6Do3acDA4vk+uUajZIjjK3NpmvkxWgblx+Lfhcdhyet/ZDJXuiFtAm73TKulmQDu6gDeXNHO4m9Q/WDdWH/rl31UAAAAASUVORK5CYII=" class="navbar__submenu-img">      
+            <!-- Enlace html a interfaz de crear Usuario -->
+            <a href="../Gestion_Usuarios/User.html" class="navbar__submenu-link" id="redirigir_user">Crear Usuario</a>
+            <!-- Enlace que redirige al backend -->
+            <a href="/usuarios/crear" class="navbar__submenu-link" id="createUserLink"></a>
+        </li>
+          <li class="navbar__submenu-item"> 
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAdxJREFUSEvFltFRxDAMRH2dQCdQCVAJUAlQydEJdAJ5N9mbjSI5zjHM+ScTx9FKq5XkQ7vSOlwJt10K/GIOf7fW3vcGcAnwTwIC+FNr7XPUgb3Ab621x8I4UQM+tPYCf0203syR3c8Ix+n9LuxtgveAFZnoI1oAWB6dgNkX5Tz97MqRDJiIHAQj7GnFfOIg56vFedjheV4ZsEcQjb1OG65ofccxHHgu0GFNqTkdicDQA7DoBIhoMDyiWrGl8w8mRoDPqo/ArtrbSM/sEM4RGU/ow9hHUUo4gCBZi6gjsGjGIMYirb18Zmngf9G/KLce1XjpxjwNUjBReF07nbHmu1Rj0OlxL92QG6nodJEuQDNxSZRqFA6c7em8pwhtsEQzadNet5z4KBCnOutaEdiDEUPDwJ5LV2JF3VZq0gGyJS6nOopLo7ASl1fACrxXx1vlEZsUDcbncuxmw3W86q8zEgbVQFRWOFnNYs3v4TrmIAYFMtoyOY9z/i8ObtZxb0jImcWkmYF6Q2J1SajGIuA+Cj2fgBKN8hlFF3M/XE7qXhrk2UWgKrM/XQSix3r3C0IGnEZWGdt75/JpE23+62XPu1TMe1V+adB7I/b8u/iy61DF8mn/EuCuwdGPVwP+BYcbkx/LXuokAAAAAElFTkSuQmCC" class="navbar__submenu-img">
+            <a href="../Gestion_Usuarios/Ajustes_user.html" id="settingUserLink" class="navbar__submenu-link">Ajustar Usuario</a>
+          </li>
+        </ul>
+      </li>
+  
+      <!-- Submenú: Gestión de Ambientes -->
+      <li class="navbar__item">
+        <div class="navbar__button navbar__button--click" id="gestion-ambientes">
+          <div class="navbar__circle">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASBJREFUSEvllmsOAiEMhGdvojfRm+jJ9CZ6E72JmzE26bI8BiSisQl/SOlHSx9MGCTTIC5qwBsAh4aLXgFwLUQFnxqhBjsDOHqyCn40eOqP3AFsa8E7AJfXoX0sbJlLJc8qHn8V2Cca34+hjO119zhmUN17vkxrqFVId4/VJP9NMEuJN6es6tG53jW5PNQYKbj67sXk8lDrtTnPu4BDKDsWQ8merYTdolOVXDGoGaqFy+ActARvTi7OWobSxA8EH14ml/eE+hx53A+HieQxb3yLgEtJQ6DN2iYwmSWIRUGdWJLHKTAjwUXxZaXM6LfAsb78EY//B6yOPlVv8V8LPwJhSalGFT3+Mll6ySHBRmJZrBhUdFafeuXroxiu1hkGngEmJpAffcLfTQAAAABJRU5ErkJggg==" class="navbar__img">
+          </div>
+          <a class="navbar__link">Gestión de Ambientes</a>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAIdJREFUOE/tksENgCAMRT+b6Ca6iZsZJ9FNdBT9pE0qFnvhCBcSfnk8CgmNRmrEQQfFnfR6NAFYAYyV7cw2AIfNS9AA4JSCy4HtD4AHMZtlzuWe0SJGzC1MIVwn5NdIbUsYgTRxITUjD6ZrHxMNog9pzaqQyMia8WqvnpQvGhnFH0gqOihu1Q0+RRYTCdOR6AAAAABJRU5ErkJggg==" class="navbar__arrow">
+        </div>
+        <ul class="navbar__submenu" id="submenu-ambientes">
+          <li class="navbar__submenu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAUJJREFUSEvtltsNwjAMRd1NGAU2gUmASWATGIVNIBfFlevmYbugCgn/tI3SnPp164FWsmElLi0Bb4hoS0TXyMdHwRci2mfgOV1PXngELKHMc8O9YAl9ZCpCDnPBPWANPaRwA35LeXbDreAS9C48dsMt4BaUcwyPXfAe2AINwVtgD9QNr4EjUBe8BLZAkVMWECgXt5YZrsFaHGq9CalEMcF2STq5wqWAQc2OYmFylgTDA4ClfRKMc9H7b22XYOlFTwojHk+io0ON3HFPahnk0GKd9+Fehxmhh8lQYw11MNZCraqfBf3lNZWN2SOfKcEzjgcsPQYN4YZNPMnFpj1eBJaueXP8B1dnrlJxyVD3lOtrOe5V9u+B0TrcLhbvWnsgMCwq475aH5d0O/oBxZ9IaxDggZ0HuQi4Om/3Rp8IzPTOauAXSv5vH7YvPjAAAAAASUVORK5CYII=" class="navbar__submenu-img">
+                <!-- Enlace html a interfaz de crear Ambiente -->
+            <a href="../Gestión_Ambientes/Ambiente.html" id="newAmbiente"class="navbar__submenu-link">Crear Ambiente</a>                           
+            <!--añadi la redireccion de crear ambientes del backend -->
+            <a href="/ambientes/crear/ambiente" id="newAmbienteLink"class="navbar__submenu-link"></a>
+          </li>
+
+
+          <li class="navbar__submenu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAdxJREFUSEvFltFRxDAMRH2dQCdQCVAJUAlQydEJdAJ5N9mbjSI5zjHM+ScTx9FKq5XkQ7vSOlwJt10K/GIOf7fW3vcGcAnwTwIC+FNr7XPUgb3Ab621x8I4UQM+tPYCf0203syR3c8Ix+n9LuxtgveAFZnoI1oAWB6dgNkX5Tz97MqRDJiIHAQj7GnFfOIg56vFedjheV4ZsEcQjb1OG65ofccxHHgu0GFNqTkdicDQA7DoBIhoMDyiWrGl8w8mRoDPqo/ArtrbSM/sEM4RGU/ow9hHUUo4gCBZi6gjsGjGIMYirb18Zmngf9G/KLce1XjpxjwNUjBReF07nbHmu1Rj0OlxL92QG6nodJEuQDNxSZRqFA6c7em8pwhtsEQzadNet5z4KBCnOutaEdiDEUPDwJ5LV2JF3VZq0gGyJS6nOopLo7ASl1fACrxXx1vlEZsUDcbncuxmw3W86q8zEgbVQFRWOFnNYs3v4TrmIAYFMtoyOY9z/i8ObtZxb0jImcWkmYF6Q2J1SajGIuA+Cj2fgBKN8hlFF3M/XE7qXhrk2UWgKrM/XQSix3r3C0IGnEZWGdt75/JpE23+62XPu1TMe1V+adB7I/b8u/iy61DF8mn/EuCuwdGPVwP+BYcbkx/LXuokAAAAAElFTkSuQmCC" class="navbar__submenu-img">
+            <a href="../Gestión_Ambientes/Ajustes_ambiente.html" id="settingAmbienteLink"class="navbar__submenu-link">Ajustar Ambiente</a>
+            <!--añadi la redireccion de editar ambientes del backend -->
+            <a href="/ambientes/editarAmbiente/{id}" id="settingAmbienteLink"class="navbar__submenu-link"></a>
+          </li>
+          <li class="navbar__submenu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtloENwjAMBL+bwCTAJjAJMAkwCWwCm0Af1dUrpGBSRxUSkRCKlPj8ju26wUSrmYiLHHgGYB3s0A3AUW2m4DOAZTDUzBE+t42CqfJQCWpmV62wCzcK3gHYdiei3/7e2d23/+T8waNDzcRkEvGnq2qoCWVVMHk2Cbwa2KCmkmWjqkeB2Vi40jCm0L5kJNbFYEKvmTB6oOQXgwk1xfaG3PNNX5pDpgkVg2krhWtrzYU3NKsV7lFqZ0YpNiMK/6Q0FGxhZ60+G75jhSh2cF6O/A44+hvt+h5zKIgcgQYnEB0EmDRWp7xwKnlYufN25lKw3aEDDE/4Ghp9COrHlHDqwOjDsHxTo0V+pYoXtUKbeqdgJpO3ExWp1EvRY6zbocnADwZyYx+ytwPQAAAAAElFTkSuQmCC" class="navbar__submenu-img">
+            <a href="../Gestión_Ambientes/Novedades-Estado.html" id="ReportesAmbienteLink"class="navbar__submenu-link">Estado Ambientes</a>
+          </li>
+        </ul>
+      </li>
+  
+      <!-- Elemento simple: Gestión de Reservas -->
+      <li class="navbar__item">
+        <div class="navbar__button">
+          <div class="navbar__circle">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAQpJREFUSEvtl90NwjAMhK+bwCYwCTAJsAlMQjeBUeBQGqVVEp2VIPPQPFWt688/18Qd4LQGJy4U8AbAMQR4+1y/CsGqdt/XFfAOwCPA9gDGAli1+z8wS3ZOytsiA7aFFbouW5Qr9RMA4T0XA9imDpfgtE89wfQ100cNzChLCrYExWRM4JqCVXBR6bWM3cCl71XNlnYU6SRUuccWgGK7gmdVyn3H7DXLxMU9mzbqvdS5udQqJGfXBOYmcg8eDkGl6r0msKJYxcZcasWpYmMGu/XYDawKKWe3iisePMtjkScJR59fLI4+cbDIzVyXMOz1hHMeP9VmrukZM+ee3GPoy/4EKAN9z8yjLzfwG4YjZx9h25KgAAAAAElFTkSuQmCC" class="navbar__img">
+          </div>
+          <a  class="navbar__link">Gestión de Reservas</a>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAIdJREFUOE/tksENgCAMRT+b6Ca6iZsZJ9FNdBT9pE0qFnvhCBcSfnk8CgmNRmrEQQfFnfR6NAFYAYyV7cw2AIfNS9AA4JSCy4HtD4AHMZtlzuWe0SJGzC1MIVwn5NdIbUsYgTRxITUjD6ZrHxMNog9pzaqQyMia8WqvnpQvGhnFH0gqOihu1Q0+RRYTCdOR6AAAAABJRU5ErkJggg==" class="navbar__arrow">
+        </div>
+        <ul class="navbar__submenu" id="submenu-reservas">
+          <li class="navbar__submenu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAgBJREFUSEvtls1NwzAYhl87rsQWpBtAxJ32ThAb0E7SMknLBohwb7ijwAYtWyA1sZHz66SO7bSquJBb4tjP+/n7Jfijh/wRF87gi6sHP2WpTzjxBRW79OMtPkW0EZzDKJ8BYqGDCGBHQJ7T5HU5VEQvmN3cTcDJxuXAYwRowSy4X6pWCmBNQL5BecxStpNiMppNOHBLgFkjjjy5Wn8AVi3NLaFibvLnKAhnHFgQwM8FUDF18f8B2AvCbXVImkT1uim45NqeZhu5T4rNkmhsc1EL7AXhqr46Rbm0SgAr9bCuX9V/pGuyJJqb4F1wYa1AnH5G02pj1+fqgQSY75NoLb+x63ADgomL1S0wC0IhD1APa8MBxum6DKzcrypEFci4N/75eskDUffUYPWqbJvkQa3rL93SSkFLkNVgVa0aVH2Km+IiI5nHMpKLb9m22GNOrQasFgzHlOiKUi3WuasTG8XrELV9tzDEXU5RbcvJOgDLqJbvNnf15rHtqkzXPDiPuxVoxL2pKSUqeNtNdmvLlG1rP6jVlrbX7WIu1mrBeQXSdCcKvFcDQJVKAuKy3Z0A1xZp7MeCE1m7i65jeCQMQFyJcIE7TSAC4rFfQFMoOo3COJ0cNXNJ4/vmLle4M9h23eq6C/ws4IMmoqnbZwNXcDmX6YaCs4JN7vkHDwnek/79BW9xYS5IjL1XAAAAAElFTkSuQmCC" class="navbar__submenu-img">            
+            
+            <a href="../Gestión_Reservas/BuscarAmbiente_reserva.html" id="buscar_reserva" class="navbar__submenu-link">Buscar Disponibilidad</a>
+            
+            <!-- Añadí la redirección de crear reservas del backend -->
+            <a href="/reservas/crear" id="buscar_Backreserva" class="navbar__submenu-link"></a>
+        </li>
+          <li class="navbar__submenu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAS5JREFUSEvdl+sNwjAMhK+bwCawCUwCbMImwCRlFDhUVyaKWzspSkV+IeHm8/lVt0Oj0zXiwgPeADgMDl7fv5+Gs167z+Me8A7AbYDtAdwNsNdufWCG7KTCW1MGTAsjdElTlAt1D4DwJQ8d2OoLU7DO05Jg3vVVH1NgemlVcMQpigmBpyrYCzYrfUpxM7DVr161tGORSqG6cxwBeGz/D8zUPIbhk4vATxQTyot5zga8GMyezk00DSWYLxTpXa28CCwjj2COVDleaGiAWN4KPAItBlPxUb2LCdfj1Apvdah5QQqXSz3QYsUCSeFeaDVYK+eykKtea4oVVbVnJM7ZrBOc9umcisj/XH3GTsjtXNbIi0BSW+7jbMfxWHs1lbNwllj6sh8BnoW+Rqn5bDPwC9QpXh+Tk8LzAAAAAElFTkSuQmCC"class="navbar__submenu-img">       
+            <a href="../Gestión_Reservas/Elegirsede_Reservas.html" id="ver_calendario"class="navbar__submenu-link">Calendario</a>
+          </li>
+      </ul>
+      </li>
+      <!-- Elemento simple: Historial -->
+      <li class="navbar__item">
+        <div class="navbar__button">
+          <div class="navbar__circle">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAQJJREFUSEvt1tERwiAMBuC/m+gmuolOok6im+gmOkr7e8QLCFgkLX0od33pA18TkpQOjVbXyMWi4J3LwgsAn0lWGDHRu5P2AB6TqMBXqld4TbVZrc1V1QcAN/3Vc8BsT3bLZYDPgtfCG7epF42KTFC+YqFyNrxXDax7nhNuGxRAEq2BNSqexrPov3CIEmTKuWS+y7z30ltTXCHKMyN2dWet906ipRHHUJlsjFjjWbQEzqESJXH2K9enbVITZ2xVc6OT5e9yLCxRMIUmP44S2GxOl5yxKfoLPhrfubw7XC7V1lF6d7gQZks8rcVYN8Tu1cRlBFp+g9cNi7rQW0aZ3KtZxD3HPFMfaqAe0wAAAABJRU5ErkJggg==" class="navbar__img">
+          </div>
+          <a href="#" class="navbar__link">Historial</a>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAIdJREFUOE/tksENgCAMRT+b6Ca6iZsZJ9FNdBT9pE0qFnvhCBcSfnk8CgmNRmrEQQfFnfR6NAFYAYyV7cw2AIfNS9AA4JSCy4HtD4AHMZtlzuWe0SJGzC1MIVwn5NdIbUsYgTRxITUjD6ZrHxMNog9pzaqQyMia8WqvnpQvGhnFH0gqOihu1Q0+RRYTCdOR6AAAAABJRU5ErkJggg==" class="navbar__arrow">
+        </div>
+        <ul class="navbar__submenu" id="submenu-historial">
+          <li class="navbar__submenu-item"> 
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAYFJREFUSEvNldFRw0AMRDedQCWBSiCVAJVAKgEqIamE5HlOHlk+WQ4fHu7HnjnpVrta3e200dpthKN/DfQs6c4pcZL0JYlvutYyepD0cj2Qb7YAe2ugs5g1QK8NxCd/SDpL2jd2niFg7E8YVkCfjgXJx6TiyBgwChzXEpBncmhVViZNczIgpPhpp/ZATKqeAQyMvUeTMAN6vwbgLoLvOzRsfyZRi6VIihn3M6DflkBFuCmuCogiiSGXM7oDa7JlbMirgIixYlHk1GPkNe7J5oEoxvdpqL6tiSoeCIs+NW35t4n/7jjOGHlJowIGNJgpMrIm2gGZfBQSbwlimbWSEQH0hyE1+2ZmqObJj8dAZqlHmXUrEPZnfc7sjT29DGsOtxjPppyjeDDJi8+AS7D7cdLf6lIln0SSqG4JLF6sk/5WQEjIO2TmQM4ISAzPBV9bMxNVQCRSKXPj35ysZ+njtwbIDqViG+gICtPeYI8F3QLkWdiwxisodedfgW6x+xC7GdAFmbRgGzgoxqgAAAAASUVORK5CYII=" class="navbar__submenu-img">
+             <!--añadi la redireccion de cancelar una reserva del backend -->
+            <a href="../Historico/Historico_panel4sedes.html" id="historial_ocupacion" class="navbar__submenu-link">Ambientes y Reservas</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+

@@ -1,0 +1,93 @@
+.card-container {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 10px; 
+    justify-content: center; 
+    overflow: hidden ; 
+    width: 100%;
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+
+/* Estilo de cada tarjeta */
+.card {
+    background-color: var(--color-white);
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    flex: 1 1 250px; 
+    max-width: 300px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; 
+    cursor: pointer;
+}
+
+/* Estilo para la imagen dentro de la tarjeta */
+.card img {
+    width: 100%;
+    max-width: 350px; 
+    height: auto; 
+    max-height: 300px; 
+    min-height: 150px;
+    object-fit: cover; 
+    border-radius: 10px;
+    margin-bottom: 10px; 
+}
+
+/* Estilo del título de la tarjeta */
+.card h3 {
+    font-size: 15px; 
+    color: #005f73;
+    margin: 10px 0;
+}
+
+/* Estilo del texto en la tarjeta */
+.card p {
+    font-size: 13px; 
+    color: var(--color-text);
+    margin: 5px 0;
+}
+
+a {
+    text-decoration: none;
+}
+@media (min-width: 1440px) {
+    
+    .card {
+        max-width: 400px; 
+    }
+
+    .card img {
+        height: 250px; 
+    }
+}
+
+/* Media Query para tabletas */
+@media (max-width: 1024px) {
+    .contenedor_principalNov {
+        padding: 15px; 
+    }
+
+    .card {
+        max-width: 300px; 
+  
+    }
+
+    .card img {
+        height: 200px; 
+    }
+
+    .card h3 {
+        font-size: 10px; 
+        margin: 5px 0;
+    }
+    
+    .card p {
+        font-size: 9px; 
+       
+    }
+}
