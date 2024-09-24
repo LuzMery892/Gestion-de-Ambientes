@@ -15,7 +15,7 @@
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.2.0/main.min.css'>
 
   
-  <link rel="stylesheet" href="Style_Reservas/Calendario_cuatrosedes.css">
+  <link rel="stylesheet" href="../../Css/Calendario_cuatrosedes.css">
 </head>
 
 <body>
@@ -63,18 +63,17 @@
     
       function loadScripts() {
         const nuevaReservaScript = document.createElement('script');
-        nuevaReservaScript.src = 'Script_Reservas/Modal_materiales.js';
+        nuevaReservaScript.src = '../../Scripts/ModalReserva.js';
         document.body.appendChild(nuevaReservaScript);
 
         const modalMaterialScript = document.createElement('script');
-        modalMaterialScript.src = 'Script_Reservas/Modal_materiales.js';
+        modalMaterialScript.src = '../../Scripts/Modal_materiales.js';
         document.body.appendChild(modalMaterialScript);
     
         const modalReportesScript = document.createElement('script');
-        modalReportesScript.src = 'Script_Reservas/Modal_reportes.js';
+        modalReportesScript.src = '../../Scripts/Modal_reportes.js';
         document.body.appendChild(modalReportesScript);
       }
-    
       document.addEventListener('DOMContentLoaded', loadContent);
     </script>
 
@@ -87,7 +86,7 @@
     <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.2.0/main.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.2.0/locales/es.js'></script>
 
-    <script src="../Gestión_Reservas/Script_Reservas/fullCalendar.js"></script>
+    <script src="../../Scripts/fullCalendar.js"></script>
 
   </div>
 </body>
