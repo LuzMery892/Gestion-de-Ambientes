@@ -5,48 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles Históricos de la Sede</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+   
     <link rel="stylesheet" href="Style_Historial/Historico_4Sedes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.7.0/chart.min.css">
 </head>
-<body>
+
     <div class="grid-container">
         <header class="header text-center">
-            <img src="IMG-ICONS/Logo SENA.png" alt="Logo de la Sede Pomar" class="header-logo">
-            <h1 class="header-title">SEDE COMPLEJO CENTRAL</h1>
-           
-            <div class="header-actions">
-                <a href="Historico_panel4sedes.html" class="btn btn-primary">Volver a Historial Sedes</a>
-            </div>
+            <img src="../../Imagenes-appSENA/Logo SENA.png" alt="Logo de la Sede Pomar" class="img_sena">
+            <h1 class="header-title">Estadisticas SEDE CENTRAL</h1>       
         </header>
 
         <aside class="aside">
             <div class="container mt-4">
-                <div class="row mb-4">
-                    <div class="col-md-4">
-                        <div class="card custom-card">
-                            <h5>Total de Reservas</h5>
-                            <p class="fs-4"><strong id="totalReservasMensual">180</strong></p>
+                <div class="row mb-4 justify-content-center">
+                    <div class="col-md-3">
+                        <div class="card custom-card text-center">
+                            <div class="card-body">
+                                <label for="selectorFecha" class="form-label">Seleccione el mes y año</label>
+                                <input type="text" id="selectorFecha" class="form-control mb-3" placeholder="Seleccionar mes y año" readonly>
+                                <button type="button" class="btn btn-primary" id="cargar_graficaOcupacion" onclick="cargarDatos(event)">Cargar Datos</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card custom-card">
-                            <h5>Total Canceladas</h5>
-                            <p class="fs-4"><strong id="totalCanceladasMensual">15</strong></p>
+        
+                    <div class="col-md-3">
+                        <div class="card custom-card text-center">
+                            <div class="card-body">
+                                <h5>Total de Reservas</h5>
+                                <p class="fs-4"><strong id="totalReservasMensual">180</strong></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card custom-card">
-                            <h5>Porcentaje de Ocupación Promedio</h5>
-                            <p class="fs-4"><strong id="ocupacionPromedioMensual">75%</strong></p>
+        
+                    <div class="col-md-3">
+                        <div class="card custom-card text-center">
+                            <div class="card-body">
+                                <h5>Total Canceladas</h5>
+                                <p class="fs-4"><strong id="totalCanceladasMensual">15</strong></p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3">
+                        <div class="card custom-card text-center">
+                            <div class="card-body">
+                                <h5>Ocupación Promedio</h5>
+                                <p class="fs-4"><strong id="ocupacionPromedioMensual">75%</strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </aside>
-
+        
         <main class="main">
-            <div class="container mt-4">
-                <h2 class="mb-4">Análisis de Ocupación</h2>
+            <div class="container mt-4">    
                 <!-- Pestañas -->
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -63,6 +80,13 @@
                         <canvas id="ocupacionPorAmbienteChart" class="mt-4"></canvas>
                     </div>
    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label for="searchInstructor" class="form-label">Buscar por Instructor</label>
+                            <input type="text" id="searchInstructor" class="form-control" placeholder="Escriba el nombre del instructor">
+                        </div>
+                    </div>
+
                     <div class="tab-pane fade" id="reservas" role="tabpanel" aria-labelledby="reservas-tab">
                         <table class="table custom-table">
                             <thead>
@@ -95,6 +119,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
     <script src="Script_Historial/Historico_usoAmbiente.js"></script>
+    <script src="Script_Historial/Selector_fecha.js"></script>
 </body>
 </html>

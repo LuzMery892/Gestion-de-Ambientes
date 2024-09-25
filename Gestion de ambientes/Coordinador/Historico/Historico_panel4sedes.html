@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
-
+   
     <link rel="stylesheet" href="../../Css/Root.css">
     <link rel="stylesheet" href="../Historico/Style_Historial/Panel_historico.css">
 </head>
@@ -19,28 +19,31 @@
     
         <main class="main">
             <div class="container_principal ">
-                <form id="uso_cuatroSedes" class="historial_Sedes">
+               
                     <div class="container_tittle text-center mb-4">
                         <div class="icon-wrapper">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAPpJREFUSEvtlt0RgjAQhHc70UrUTqAStRK1ErETOjldJudARiD8CC/kmdyX3exdIBZaXIiDdUBmlgE4AHiRvM+ptqHIzG4ABLuSvGygLgc265LzoWCRzH3DX6wzsyeA4yfBJcm9YKNAod/OAB5xG9Qgqp97Pw4GBYj6Tausw9oggxVFELe/goWJIrsaSgbfUQQpZAsAKfPiXvNrVz05SdbFEJInFTGzXQT7CUmyrg3ipw0wzUclrHUQ9yoyMw1XJaxwJcnNVPuwFxQsyqY+G0mgMQriPauD1BtzLD2gVUBiRX7xc0A6R5D6Im7AKVAltXJnnb+gKUfv2/sGx1KzG2mU7AcAAAAASUVORK5CYII" alt="Icono de historial" class="main_form-img">
                         </div>
-                        <h2 class="titulo_h2">Historial Uso de Ambientes</h2>
+                        <h2 class="titulo_h2">Historial Uso de Ambientes y Reservas</h2>
                     </div>
         
                     <button type="button" class="btn-close close_pag" aria-label="Cerrar formulario">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar página">
                     </button>
-        
+                    <p>Aquí puedes visualizar las reservas de Septiembre 2024<span th:text="${mesNombre}"></span> <span th:text="${añoSeleccionado}"></span></p>
+
                     <div class="contenedor_tarjetas">
+                  
                         <div class="row">
+                         
                             <!-- Tarjeta de Sede Central -->
                             <div class="col-md-3">
                                 <div class="card text-center mb-4">
                                     <div class="card-header">Sede Central</div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Ocupación: 80%</h5>
-                                        <p class="card-text">Reservas ejecutadas: 45</p>
-                                        <p class="card-text">Reservas canceladas: 1</p>
+                 
+                                    <div class="card-body">                                    
+                                        <h2 class="card-title">Reservas ejecutadas: 45</h2>
+                                        <h2 class="card-text">Reservas canceladas: 1</h2>
                                         <a href="Historico_sedeCentral.html" class="btn-cargar">Ver Detalles</a>
                                     </div>
                                 </div>
@@ -49,9 +52,8 @@
                                 <div class="card text-center mb-4">
                                     <div class="card-header">Sede Pomar</div>
                                     <div class="card-body">
-                                        <h5 class="card-title">Ocupación: 80%</h5>
-                                        <p class="card-text">Reservas ejecutadas: 45</p>
-                                        <p class="card-text">Reservas canceladas: 1</p>
+                                        <h2 class="card-title">Reservas ejecutadas: 45</h2>
+                                        <h2 class="card-text">Reservas canceladas: 1</h2>
                                         <a href="Historico_sedePomar.html" class="btn-cargar">Ver Detalles</a>
                                     </div>
                                 </div>
@@ -60,9 +62,8 @@
                                 <div class="card text-center mb-4">
                                     <div class="card-header">Sede Buenos Aires</div>
                                     <div class="card-body">
-                                        <h5 class="card-title">Ocupación: 80%</h5>
-                                        <p class="card-text">Reservas ejecutadas: 45</p>
-                                        <p class="card-text">Reservas canceladas: 1</p>
+                                        <h2 class="card-title">Reservas ejecutadas: 45</h2>
+                                        <h2 class="card-text">Reservas canceladas: 1</h2>
                                         <a href="Historico_sedeBuenosAires.html" class="btn-cargar">Ver Detalles</a>
                                     </div>
                                 </div>
@@ -71,9 +72,8 @@
                                 <div class="card text-center mb-4">
                                     <div class="card-header">Sede USB</div>
                                     <div class="card-body">
-                                        <h5 class="card-title">Ocupación: 80%</h5>
-                                        <p class="card-text">Reservas ejecutadas: 45</p>
-                                        <p class="card-text">Reservas canceladas: 1</p>
+                                        <h2 class="card-title">Reservas ejecutadas: 45</h2>
+                                        <h2 class="card-text">Reservas canceladas: 1</h2>
                                         <a href="Historico_sedeUSB.html" class="btn-cargar">Ver Detalles</a>
                                     </div>
                                 </div>
@@ -81,22 +81,19 @@
                             <!-- Repite lo mismo para las otras tarjetas... -->
                         </div>
                     </div>
+                     
+               <div class="contenedor_fecha">
+                    <label for="selectorFecha" class="form-label">Seleccione el mes y el año para ver el % de ocupación por Sede</label>
+                    <input type="text" id="selectorFecha" class="form-control" placeholder="Seleccionar mes y año" readonly>
+                    <button type="button" class="btn-grafico" id="cargar_graficaOcupacion" onclick="cargarDatos(event)">Cargar Datos</button>
+                </div>
         
-                    <div class="contenedor_datosSedes mt-4">
-                        <div class="contenedor_fecha">
-                            <label for="selectorFecha" class="form-label">Seleccione el mes y el año para ver el % de ocupación por Sede</label>
-                            <input type="text" id="selectorFecha" class="form-control" placeholder="Seleccionar mes y año" readonly>
-                            <button class="btn btn-success mt-2" onclick="cargarDatos()">Cargar Datos</button>
-                        </div>
-        
-                        <div class="contenedor_grafico mt-4">
+                    <div class="contenedor_grafico mt-4">
                             <h2 class="text-center">Ocupación General de Ambientes</h2>
                             <div class="chart-container">
                                 <canvas id="ocupacionChart"></canvas>
                             </div>
-                        </div>
-                    </div>                                                  
-                </form>
+                        </div>                                                                 
             </div>
         </main>
             
@@ -134,7 +131,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
-    <script src="../Historico/Script_Historial/Panel_historico.js"></script>
+    <script src="../Historico/Script_Historial/Panel_ocupacion.js"></script>
 </div>
 </body>
 </html>

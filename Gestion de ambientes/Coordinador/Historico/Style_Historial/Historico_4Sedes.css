@@ -13,14 +13,12 @@ body {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr repeat(5, 1fr);
-    grid-template-rows: 50px 150px 1fr; 
+    grid-template-rows: 140px 110px 1fr; 
     width: 100vw;
     height: 100vh;
     padding: 0;
     box-sizing: border-box;
     overflow: auto;
-    border: 1px solid red;
-
   }
   
   .header {
@@ -31,28 +29,21 @@ body {
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
-    background-color: #F5F5F5;
+    background-color: #005f73;
     position: relative; 
-    border: 1px solid rgb(179, 19, 228);
 }
 
-
-.aside{
-    grid-column: 1/ span 6;
-    grid-row: 2 /span 1;
-    border: 1px solid rgb(66, 10, 219);
+.header-title {
+    font-size: 2rem; /* Tamaño para el h1 */
+    margin-top: -20px;
+    color: white; /* Color del texto */
 }
 
 .main{
     grid-column: 1/ span 6;
     grid-row: 4 span 2;
-    border: 1px solid rgb(66, 10, 219);
 }
 
-.header-logo {
-    max-width: 150px; /* Ajusta el tamaño del logo */
-    margin-bottom: 10px;
-}
 
 .breadcrumb {
     background: transparent; /* Fondo transparente para las migas de pan */
@@ -63,11 +54,41 @@ body {
 }
 
 
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
+
+.card:hover {
+    transform: translateY(-4px); /* Efecto de elevación al pasar el mouse */
+}
+
+.custom-card {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+}
+
+.row {
+    display: flex; /* Usar flexbox para alinear las tarjetas en una fila */
+    justify-content: center; /* Centrar las tarjetas */
+}
+
+.col-md-4 {
+    margin-bottom: 20px; /* Espacio entre las filas */
+}
+
+/* Estilo del input y el botón */
+.form-control {
+    border-radius: 0.25rem;
+}
+
+.btn-primary {
+    border-radius: 0.25rem; /* Bordes redondeados para el botón */
+}
+
+
+
 .table thead th {
     background-color: #007bff;
     color: white;
@@ -77,17 +98,16 @@ body {
     border: none;
 }
 
-.custom-card {
-    background-color: #e9ecef; /* Fondo claro para las tarjetas */
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.2s; /* Transición suave */
+/**************************** *********************************/
+.aside{
+    grid-column: 1/ span 6;
+    grid-row: 2 /span 1;
+    margin-top: -80px; /* Ajusta este valor según necesites */
+    z-index: 1; /* Asegúrate de que esté por encima del header */
+    position: relative; /* Permite que el z-index funcione */
+    border: 1px solid red;
 }
 
-.custom-card:hover {
-    transform: scale(1.05); /* Efecto hover */
-}
 
 
 
@@ -117,3 +137,12 @@ body {
 .custom-table tbody tr:hover {
     background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
 }
+
+.img_sena {
+    position: relative;
+    max-width: 100px;
+    height: 70px;
+    margin: 20px;
+    margin-left: 50px;
+    margin-top: -20px;
+  }
