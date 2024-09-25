@@ -67,23 +67,23 @@
         </div>
         
       <div class="table-container">
-          <table>
-              <thead>
-                  <tr>
-                      <th></th>
-                      <th>Nombre Completo</th> 
-                      <th>Identificación</th>        
-                      <th>Tipo de correo </th>        
-                      <th>Correo electrónico</th>          
-                      <th>Teléfono</th>          
-                      <th>Rol</th>
-                      <th>Acciones</th>
-                  </tr>
-              </thead>
-              <tbody id="userTableBody">
-                  
-              </tbody>
-            </table>
+        <table>
+          <thead>
+              <tr>
+                  <th><input type="checkbox" onclick="toggleSelectAll(this)"></th>
+                  <th>Nombre</th>
+                  <th>Correo Institucional</th>
+                  <th>Correo Alternativo</th>
+                  <th>Teléfono</th>
+                  <th>Identificación</th>
+                  <th>Rol</th>
+                  <th>Acciones</th>
+              </tr>
+          </thead>
+          <tbody id="userTableBody">
+              <!-- Los usuarios se agregarán aquí -->
+          </tbody>
+      </table>
             <div class="button-container">
               <button type="button" class="btn btn-primary" onclick="saveChanges()">
                   Guardar

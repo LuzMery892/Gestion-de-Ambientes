@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color:#F5F5F5;
+    background-color:white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,12 +12,11 @@ body {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr repeat(5, 1fr);
-    grid-template-rows: 140px 110px 1fr; 
+    grid-template-rows: 170px 80px 1fr;
     width: 100vw;
     height: 100vh;
     padding: 0;
     box-sizing: border-box;
-    overflow: auto;
   }
   
   .header {
@@ -29,120 +27,269 @@ body {
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
-    background-color: #005f73;
+    background-color: #012a42;
     position: relative; 
 }
 
 .header-title {
-    font-size: 2rem; /* Tamaño para el h1 */
-    margin-top: -20px;
-    color: white; /* Color del texto */
+    font-size: 35px; 
+    margin-top: -50px;
+    color: gray;
+    flex: 0 0 75%;
+    text-align: center;
+}
+.img_contenedor{
+  flex: 0 0 17%; 
+  display: flex;
+  justify-content: flex-end;
+}
+.img_sena {
+    position: relative;
+    max-width: 100px;
+    height: 60px;
+    margin-top: -50px;
+  }
+
+.btn_volver{
+  flex: 0 0 10%;
+  margin-top: -50px;
+  text-decoration: none;
+
 }
 
+/****************************Main-tabla*********************************/
 .main{
-    grid-column: 1/ span 6;
-    grid-row: 4 span 2;
+    grid-column: 1 / span 6;
+    grid-row: 3;
 }
 
-
-.breadcrumb {
-    background: transparent; /* Fondo transparente para las migas de pan */
+.custom-table {
+    overflow: hidden;
+    width: 60%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    table-layout: auto;
+    border: 1px solid #333;
+    font-family: 'Montserrat', sans-serif;
 }
-
-.header-actions {
-    margin-top: 10px;
-}
-
-
-card {
-    border: 1px solid #dee2e6;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-4px); /* Efecto de elevación al pasar el mouse */
-}
-
-.custom-card {
-    background-color: #ffffff; /* Fondo blanco para las tarjetas */
-}
-
-.row {
-    display: flex; /* Usar flexbox para alinear las tarjetas en una fila */
-    justify-content: center; /* Centrar las tarjetas */
-}
-
-.col-md-4 {
-    margin-bottom: 20px; /* Espacio entre las filas */
-}
-
-/* Estilo del input y el botón */
-.form-control {
-    border-radius: 0.25rem;
-}
-
-.btn-primary {
-    border-radius: 0.25rem; /* Bordes redondeados para el botón */
-}
-
-
 
 .table thead th {
-    background-color: #007bff;
-    color: white;
+    background-color: #ccc;
+    color: #04324D;
 }
 .btn-info {
     background-color: #17a2b8;
     border: none;
 }
 
+.table th {
+  color: #333;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+}
+
+.table td {
+  padding: 7px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 12px;
+  border: 2px solid #ccc;
+}
+
+.table tbody td {
+  border: none; 
+}
+
+/* Opcional: mejorar la visibilidad de las filas alternas */
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/****************************Main-tabs********************************/
+.nav-tabs{
+  margin-left: 70px;
+}
+
+.nav-tabs .nav-link {
+    margin-top: 10px;
+    border: 1px solid transparent; 
+    border-radius: 0.5rem 0.5rem 0 0; 
+    color:#706d6d;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .nav-tabs .nav-link.active {
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
 /**************************** *********************************/
 .aside{
     grid-column: 1/ span 6;
     grid-row: 2 /span 1;
-    margin-top: -80px; /* Ajusta este valor según necesites */
-    z-index: 1; /* Asegúrate de que esté por encima del header */
-    position: relative; /* Permite que el z-index funcione */
-    border: 1px solid red;
+    margin-top: -90px; 
+    z-index: 1; 
+    position: relative; 
+}
+
+.card {
+    border: 3px solid #ccc;
+    border-radius: 60px;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1350px;
+    justify-content: center;
 }
 
 
-
-
-.nav-tabs {
-    margin-bottom: 20px;
+.custom-card {
+    background-color: white; 
+    border-radius: 12px; 
+    padding: 2px;
 }
 
-.nav-link {
-    color: #495057; /* Color de texto en las pestañas */
+.card-title {
+    font-size: 20px; 
+    color: #333; 
+    margin-bottom: 5px;
 }
 
-.nav-link.active {
-    background-color: #343a40; /* Color de fondo para la pestaña activa */
-    color: white;
+.card-body {
+    display: flex;
+    align-items: center; 
 }
 
-.custom-table {
-    border-radius: 8px;
-    overflow: hidden;
+.img_estadistica {
+    width: 30px; 
+    margin-right: 10px;
+    margin-bottom: 5px;
 }
 
-.custom-table thead {
-    background-color: #343a40; /* Color oscuro para el encabezado de la tabla */
-    color: white;
+.indicador {
+    font-size: 18px; 
+    color: #706d6d;
 }
 
-.custom-table tbody tr:hover {
-    background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
-}
-
-.img_sena {
-    position: relative;
-    max-width: 100px;
-    height: 70px;
-    margin: 20px;
-    margin-left: 50px;
-    margin-top: -20px;
+/****************************fecha********************************/
+.contenedor_fecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
+
+
+  .contenedor_fecha label {
+    margin-right: 10px; 
+    margin-top: 5px;
+    color: #706d6d;
+  }
+  
+  .contenedor_fecha input {
+    margin-right: 30px; 
+    width: 10%;
+    border-radius: 7px;
+    border: 2px solid #ccc;
+    color: #04324D;
+    text-align: center;
+  }
+  
+  /* Efecto focus */
+  .contenedor_fecha input:focus {
+    border-color: #ccc; 
+    outline: none; 
+    box-shadow: none;
+  }
+
+/****************************grafico********************************/
+
+.contenedor_grafico {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    background-color: white; 
+    width: 100%; 
+    height: 500px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Asegúrate de usar la clase correcta */
+.ocupacionPorAmbienteChart {
+    position: relative;  
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    background-color: white; 
+    width: 100%; 
+    height: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: -150px;
+}
+
+
+canvas {
+    position: absolute; 
+    top: 30%; 
+    left: 0; 
+    width: 100% !important; 
+    height: 100% !important; 
+}
+
+/****************************busqueda Instructor********************************/
+.row {
+    display: flex;
+    justify-content: center; 
+    margin: 20px 30px 10px;
+}
+
+.buscar_instructor {
+    display: flex; 
+    align-items: center; 
+    padding: 10px 15px; 
+}
+
+.form-label {
+    font-size: 14px; 
+    color: #04324D; 
+    margin-right: 20px; 
+}
+
+.form-control {
+    border: 3px solid #ccc; 
+    border-radius: 8px; 
+    padding: 8px;
+    font-size: 14px; 
+    width: 250px; 
+    transition: border-color 0.3s; 
+    margin-top: -10px;
+}
+
+.form-control:focus {
+    border-color: #16a34a; 
+    outline: none;
+    box-shadow: none;
+}
+/****************************boton********************************/
+.btn-estadistica{
+        padding: 7px 15px; 
+        font-size: 13px; 
+        color: white; 
+        background-color: #16a34a;
+        border-radius: 7px; 
+        border: none;
+        cursor: pointer;
+      }
+      
+      .btn-estadistica:hover{
+        background-color: #005f73;
+      }

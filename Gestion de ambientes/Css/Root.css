@@ -1,8 +1,8 @@
 :root {
   --color-background: #f5f5f5;
   --color-white: white;
-  --color-primary: #005f73;
-  --color-primario-Alistador: red;
+  --color-primary:   #005f73;
+  --color-primario-Alistador: #FFC107;
   --color-primary-hover: #1fb530;
   --color-secundary-hover: #ade8ad;
   --color-secondary: #04324D;
@@ -191,6 +191,7 @@ button.btn-close.close_pag:hover img {
   display: inline-flex;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  margin-right: 10px;
 }
 
 /* Efecto de hover para el botón */

@@ -14,47 +14,53 @@
 </head>
 
     <div class="grid-container">
-        <header class="header text-center">
+        <header class="header">
+            <div class="img_contenedor">
             <img src="../../Imagenes-appSENA/Logo SENA.png" alt="Logo de la Sede Pomar" class="img_sena">
-            <h1 class="header-title">Estadisticas SEDE CENTRAL</h1>       
+        </div>
+            <h1 class="header-title">ESTADÍSTICAS SEDE CENTRAL</h1>  
+        <a href="Historico_panel4sedes.html" class="btn_volver">Volver</a>       
         </header>
-
+        
         <aside class="aside">
             <div class="container mt-4">
                 <div class="row mb-4 justify-content-center">
                     <div class="col-md-3">
                         <div class="card custom-card text-center">
-                            <div class="card-body">
-                                <label for="selectorFecha" class="form-label">Seleccione el mes y año</label>
-                                <input type="text" id="selectorFecha" class="form-control mb-3" placeholder="Seleccionar mes y año" readonly>
-                                <button type="button" class="btn btn-primary" id="cargar_graficaOcupacion" onclick="cargarDatos(event)">Cargar Datos</button>
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAcZJREFUSEu9lktywjAMhuXSg6QnKZwkyQ2Yhn1hTzq9QZOTlJs0F6Eq8gO/5Mjd4JkMCyx/svRLsoIHLfUgDtSBun0D8NxppxBfrXOL/lVqhul8kRxeBzkA4rtw0GKBx9K+Mqh76wDVV2JoDkRsAaBhDl1AXXcwfZrbBosHpRClTjCdvbftQA6YUOaLnOnTcOag7rC95eHb2l9AXfvMw3UQmWY3y0HtQJDt7bvAPO5Yn2UQmUX2Mag7HMElXl1fuFhrcB2IFLlzIYxB7YBGstjD9DEVlVYLCm7lQWFu5nFd9vWgBebxRft+99orrZwbt7kedA+fB3njCeaxXy3Qf4FMGkKQUVtaMxyRwgy/XMH63aiomzQu32GOnOLk0EmNzSgzEhYnhnsCa85j94TCsmUSgPYN4OZHG0qqkzwIW5g9K60jAlHsZUGswdohOyfpDEHHDqpaukD0v29hAEF34Xqd68zFll8ER7mJOz7TvXWuSOoUQnGgaWg+IDPlFuZRBLNtH08AT0s0Z/gJzJbHyoS174R8jNP0pI9GSbjYgec2yI8T8ho3VOV0cGF86wdK8b0QN9UaaZlQNab9JGEU7OUb1ThQsecP/nvfG4GBYjwAAAAASUVORK5CYII=" class="img_estadistica">
+                                <h5 class="card-title">Tasa de Ocupación</h5>
+                                <p class="indicador" id="ocupacionPromedioMensual">75%</strong></p>                       
                             </div>
                         </div>
                     </div>
         
                     <div class="col-md-3">
                         <div class="card custom-card text-center">
-                            <div class="card-body">
-                                <h5>Total de Reservas</h5>
-                                <p class="fs-4"><strong id="totalReservasMensual">180</strong></p>
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAVFJREFUSEvVltFNwzAQhv8r7EHYJJmk7gaI9r3lvUVsgDMJ3YQMArg9X0xsxU4iJ6rAT610vu/+376LCTdadCMOhkHqqYC5e7fF1KcqWpTalTBmPxgDjIFsko82Sbwo9axgiItpUJ8eUw71N7MK3Cu7wZiHawL5TfQSTdLFNCCqJeangX7VfnwIEhtEwfwVKAxB6y1bIAqWWEQV9PFsDQnyLQ4yG2dhCtTMFFTIuY6B+OD18ZANW28/ART/FGTb4Vq/fuvsXlyRTA62qQF9V7+wbBAn9CtmBR2E/3GzbtxVRhbINbF/QYYgjM0C+b1lx9CXbu3qK3HXNAskFcYmRmiX3wvZoD4sDcm2LqyUlZXBwce6epYil5AvRzsok5NjEdCUufR3QGp3aL//PE7mTPBSpnfqexQ24hSThmLO/oMm8WZYlcBKhmXWGnszZCWdtukCV6z0G5bubJMAAAAASUVORK5CYII=" class="img_estadistica">
+                                <h5 class="card-title">Reservas Totales</h5>
+                                <p class="indicador" id="totalReservasMensual">180</strong></p>                       
                             </div>
                         </div>
                     </div>
         
                     <div class="col-md-3">
                         <div class="card custom-card text-center">
-                            <div class="card-body">
-                                <h5>Total Canceladas</h5>
-                                <p class="fs-4"><strong id="totalCanceladasMensual">15</strong></p>
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAVZJREFUSEvNll9SwyAQxr+N3sN4k+QkpTdwbN/bvjeON5CcxN5EDlLFLqQBGtIoZDrdp4SB/bF/+IBwI6MbcXAdJF5K6IcPs5m2qaObEusKWm+uzgGmQMbJZ+ckvinxKqCJN6PQNs9jGRou5ijwKMwCrZ9ODuw30S7qxM1RIGrtnB8F+Sb9+SHIpsFGkG9BhCFoseIU2AjmMKIacn8wCQn8zQ7Sy3MKx0AqM6DS1nUKxIWX+20ybLH6AlDeOYg7sitsHymP4agg38NUJ0fk2t61rD9G33UASwf1p5+D4YO59M7bUBGSQezeSY3fI3HZyQIZ2HrbCyj/t01c/7JAcXmaOaIQokB61ym2rdmlaidH5FLmdZ13PXBz+K2fDDrX51ItuEFQqMH5ygL9R4/uB+TXgoucbpVV77H7yD5GWHnnsIP/oBl5MxQVUNg7Jcmm3gxJTv+26BeIMQcqUvjSewAAAABJRU5ErkJggg==" class="img_estadistica">
+                                <h5 class="card-title">Reservas Canceladas</h5>
+                                <p class="indicador"id="totalCanceladasMensual">15</strong></p>                     
                             </div>
                         </div>
                     </div>
         
                     <div class="col-md-3">
                         <div class="card custom-card text-center">
-                            <div class="card-body">
-                                <h5>Ocupación Promedio</h5>
-                                <p class="fs-4"><strong id="ocupacionPromedioMensual">75%</strong></p>
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAStJREFUSEvtlkFOwkAYhd8r5yCpt3AHPQTrjjcwhT24NQjewGHhxktYTwIk3kLIr8NQ6QhTx7TSDU266uv75n9p/lfiTBfPxEFLIJUpCHuNTEmugY2GflwZv8NEajSByLgRSNmE2ysDO4DS4SuA/tedg3yrDRRJAcSg3EDP9DGIvIOeTmqDioPv/S6g8EQv0YVn9UMZHJ3KBpBo4Ly+iTI8378Hwf8G4osL6nT/B4To2gF9RPPmQUH5VIh+jQ7QIBd1ORB5srvOrrQWtre6jSEdUxNmg8e1J9qVkN3cbh/5nMs9RSbQ0/xb6jyzveOzqa5yNepDxPQUiqyPjNLhcp/ACtwmPpgfZKM0EBNjjsVDcvK0ZV1Fl4VMNPZCCrKNsFela+kvqJFP7bTJJwvQwhv4NArEAAAAAElFTkSuQmCC" class="img_estadistica">
+                                <h5 class="card-title">Ambiente -uso</h5>
+                                <p class="indicador" id="ambienteMenosUtilizado">Sala de reuniones</strong></p>
                             </div>
                         </div>
                     </div>
@@ -64,6 +70,11 @@
         
         <main class="main">
             <div class="container mt-4">    
+                <div class="contenedor_fecha">
+                    <label for="selectorFecha" class="form-label">Seleccione el mes y el año para ver las estadisticas de la Sede</label>
+                    <input type="text" id="selectorFecha" class="form-control" placeholder="Seleccionar mes y año" readonly>
+                    <button type="button" class="btn-estadistica" id="cargar_graficaOcupacion" onclick="cargarDatos(event)">Cargar Datos</button>
+                </div>
                 <!-- Pestañas -->
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -74,20 +85,26 @@
                         <a class="nav-link" id="reservas-tab" data-bs-toggle="tab" href="#reservas" role="tab" aria-controls="reservas" aria-selected="false">Reservas Canceladas</a>
                     </li>
                 </ul>
+                
+                <div class="tab-content" id="myTabContent">                   
 
-                <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="ocupacion" role="tabpanel" aria-labelledby="ocupacion-tab">
-                        <canvas id="ocupacionPorAmbienteChart" class="mt-4"></canvas>
-                    </div>
-   
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <label for="searchInstructor" class="form-label">Buscar por Instructor</label>
-                            <input type="text" id="searchInstructor" class="form-control" placeholder="Escriba el nombre del instructor">
+                        <div class="contenedor_grafico mt-1">   
+                            <canvas id="ocupacionPorAmbienteChart" class="ocupacionPorAmbienteChart"></canvas>
                         </div>
                     </div>
+                
 
                     <div class="tab-pane fade" id="reservas" role="tabpanel" aria-labelledby="reservas-tab">
+               
+
+                        <div class="row">
+                            <div class="buscar_instructor">
+                                <label for="searchInstructor" class="form-label me-2">Buscar por Instructor</label>
+                                <input type="text" id="searchInstructor" class="form-control" placeholder="Nombre">
+                            </div>
+                        </div>
+
                         <table class="table custom-table">
                             <thead>
                                 <tr>
@@ -99,7 +116,7 @@
                                     <th scope="col">Motivo</th>
                                 </tr>
                             </thead>
-                            <tbody id="tablaReservas">
+                            <tbody id="tbody_cancelar">
                                 <tr>
                                     <td>2024-09-10</td>
                                     <td>Salón 1</td>
@@ -123,5 +140,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
     <script src="Script_Historial/Historico_usoAmbiente.js"></script>
     <script src="Script_Historial/Selector_fecha.js"></script>
+    <script src="Script_Historial/Periodicidad.js"></script>
 </body>
 </html>

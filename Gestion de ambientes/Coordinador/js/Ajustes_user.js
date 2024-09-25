@@ -31,10 +31,10 @@ function fetchUsersByRole(role) {
           <td>${user.rol.nombre}</td>
           <td class="action-buttons">
             <button type="button" class="action_botton" onclick="editRow(${user.id})">
-              <img src="IMG-ICONS/edit-solid-40.png" alt="editar" class="setting1">
+              <img src="../../Imagenes-appSENA/edit-solid.png" class="action-button">
             </button>
             <button type="button" class="action_botton" onclick="deleteRow(${user.id})">
-              <img src="IMG-ICONS/trash-regular-40.png" alt="borrar" class="setting2">
+              <img src="../../Imagenes-appSENA/trash-regular-40.png" alt="borrar" class="action-button">
             </button>
           </td>
         `;
@@ -73,10 +73,10 @@ function searchUser() {
           <td>${user.rol.nombre}</td>
           <td class="action-buttons">
             <button type="button" class="action_botton" onclick="editRow(${user.id})">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltENwjAMRK+bwCawCUwCTAKbwCawCfQkUjWunSZuon5ApH7V9bMvtusOK51uJS5agzcAXlpyKfCuQA06lwB+fwdwA3CUvjTwAcC1AKo5DtDgZmKjgZ99lJQo56jZANB8RLYSPI70AuAxQ7feM3DKLBPYB58p8GCUk3rvkEHzOX/tJTzyVwsslZJwFlekTg2wLCQmzGsKcFWwpWANGkBJ+BJwCkp4ska84EVQRuUBe6BhCg4FVgr2QtnT7nbyQNnLnGKTOy/J+J0YJFYhjYN1Z2yBU9XbDDw3VpuA56C8mSrgzH9FZPYHZw0Q/srURa1Ac0p9yulja3MoYJmm23Ei1rLHKHP3rpygqB53ruFY6y2htcDqXtZ6oTfV+D3wB28pax8GeWDyAAAAAElFTkSuQmCC" alt="editar" class="setting1">
+              <img src="../../Imagenes-appSENA/edit-solid.png" class="action-button">
             </button>
             <button type="button" class="action_botton" onclick="deleteRow(${user.id})">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAPFJREFUSEvtVtEVwiAQSyfRUXQT3cxNdBN1Exuf9VEEEmyf+AGfNHch4bjegEZraMSLGuIDgK046G3EnBwxLvEZwM5JOOIuAPYK6xBT5VUlir6TmAfILoeYSqmYq5TQxT0T/Q0xbWURhWsT7LFw7hn/FI6xLL6k4tCuymuV8Nk1xVY3Iw6PPT0h63lEemVsqbhkcMFcGVtLPHWvsEOl9lYnTiV092YG1Sp2SbrijzrsVqsG0ou+WTgU+CLP7F3fsv6Lkfhzrnq/kij0rGGpU06QjQ+moJhYjs7Nw+g8aV7guD+Xdyc/jNGT4mIjR6kpYhMFUMowXYu2P93sbzzv9nLxIBXlmmMOm9zWsT0y5o+pdjUFLkjB55nDsKtK/DnZ3yzNQy+td64A3XswA3AsrZTeHtsMkr7yMl9LlWY5sSOF1tE3C4DgGgB2P0OCX/xmMm8wUsE/Z1fsdN6yJmiqWT1McVR1PibG5W8X+hrhZ1A5RDa9iMJ5Wxu/Muf05zeI7vNP7gJY5cfjvHpC+gc7NOoT5E/1coM4bACW7dgsuU1VApXyOwTz2jXaKpYkCO7DRJ5H/mocOfmPHTXVIVtFSwh0M/QWFn8+dkQzyb6I40CBRPzTz2T3NRwYkJHkxb8H7y7M+bIlz4h//74nM9TrvlPC1XMEvwLPJ2mWjK0MzddRdFF9iH5d8Ey5wTRm3mnSy6/4D54Ta4vo6bqc8/UW2rHRZyEkc0VKLvEdLAAAAABJRU5ErkJggg==" alt="borrar" class="setting2">
+               <img src="../../Imagenes-appSENA/trash-regular-40.png" alt="borrar" class="action-button">
             </button>
           </td>
         `;

@@ -37,8 +37,7 @@
         <div class="container_busqueda">
           <div class="column">
             <h3>Consultar Usuarios por rol</h3>
-            <div class="role-options">
-              <div class="role-option" data-role="COORDINADOR" onclick="fetchUsersByRole('COORDINADOR')">Coordinador</div>
+            <div class="role-options">            
               <div class="role-option" data-role="ALISTAMIENTO" onclick="fetchUsersByRole('ALISTAMIENTO')">Alistamiento</div>
               <div class="role-option" data-role="INSTRUCTOR" onclick="fetchUsersByRole('INSTRUCTOR')">Instructor</div>
             </div>
@@ -76,19 +75,13 @@
                       <th>Tipo de correo </th>        
                       <th>Correo electrónico</th>          
                       <th>Teléfono</th>          
-                      <th>Rol</th>
-                      <th>Acciones</th>
+                      <th>Rol</th>              
                   </tr>
               </thead>
               <tbody id="userTableBody">
                   
               </tbody>
-            </table>
-            <div class="button-container">
-              <button type="button" class="btn btn-primary" onclick="saveChanges()">
-                  Guardar
-              </button>
-          </div>
+            </table>            
           </div>
           </form>
         </div>
@@ -102,8 +95,8 @@
   }
 
   async function loadContent() {
-    await loadHTML('#header', '../Layout/header.html');
-    await loadHTML('#navbar', '../Layout/navbar.html');
+    await loadHTML('#header', '../../Alistamiento/Layout_alistamiento/Encabezado.html');
+    await loadHTML('#navbar', '../../Alistamiento/Layout_alistamiento/Menu_lateral.html');
        
      // Cargar los scripts después de cargar el contenido HTML
     loadScripts();
