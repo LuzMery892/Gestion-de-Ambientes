@@ -35,11 +35,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }),
             credentials: 'include' // Incluir cookies para enviar credenciales
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('La respuesta de la red no fue correcta');
+            }
+            return response.json();
+        })
         .then(data => {
             if (data.bloqueado) {
                 window.location.href = 'ActualizarCorreoAlternativoBloqueado.html';
             } else {
+                // Almacenar el token en localStorage
+                if (data.token) {
+                    localStorage.setItem('token', data.token);
+                }
+
+                // Redirigir según el rol
                 switch (data.rol) {
                     case 'ROL_COORDINADOR':
                         window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Coordinador/Layout/coordinadorDashboard.html';
@@ -58,18 +69,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function togglePassword() {
-  const passwordField = document.getElementById('password');
-  const toggleButton = document.querySelector('.toggle-password span');
+    const passwordField = document.getElementById('password');
+    const toggleButton = document.querySelector('.toggle-password span');
 
-  if (passwordField.type === 'password') {
-    passwordField.type = 'text';
-    toggleButton.textContent = 'visibility_off';
-  } else {
-    passwordField.type = 'password';
-    toggleButton.textContent = 'visibility';
-  }
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleButton.textContent = 'visibility_off';
+    } else {
+        passwordField.type = 'password';
+        toggleButton.textContent = 'visibility';
+    }
 }
 
 document.querySelector('.toggle-password').addEventListener('click', togglePassword);
-
-
