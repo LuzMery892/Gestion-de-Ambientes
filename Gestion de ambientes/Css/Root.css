@@ -2,7 +2,7 @@
   --color-background: #f5f5f5;
   --color-white: white;
   --color-primary:   #005f73;
-  --color-primario-Alistador: #FFC107;
+  --color-primario-Alistador: purple;
   --color-primary-hover: #1fb530;
   --color-secundary-hover: #ade8ad;
   --color-secondary: #04324D;
@@ -93,26 +93,6 @@ body {
   margin-top: -10px;
 }
   
-
-.titulo_h2 {
-    font-size: 22px; 
-    font-weight: bold; 
-    color: var(--color-secondary); 
-    margin: 5px 0; 
-    text-align: center; 
-}
-/* Estilo para el ícono del título */
-.icon-wrapper {
-  width: 45px;
-  height: 45px;
-  background-color: var(--color-primary); 
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;
-}
-
 /* Imagen dentro del ícono */
 .main_form-img {
   width: 35px;
@@ -123,7 +103,7 @@ body {
 p {
   color: rgb(119, 115, 115);
   font-size: 15px;
-  margin-bottom: 1px;
+  margin-bottom: 10px;
   margin-left: 50px;
   margin-top: -10px;
   font-family: var(--font-family);
@@ -155,32 +135,6 @@ button.btn-close.close_pag:hover img {
 }
 
 /*-----------------------------------------------------------------*/
- /* Estilo para los botones de guardar - principales */
-.button-container {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.btn-primary {
-  background-color: var(--color-primary); 
-  color: var(--color-white);
-  padding: 10px 70px; 
-  border: none;
-  border-radius: 8px; 
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  font-size: 16px; 
-  z-index: 2;
-  font-family: var(--font-family);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-primary-hover); 
-}
-  /*-----------------------------------------------------------------*/
  /* Estilo para los botones de acciones CRUD*/
 
  .action-button {
@@ -374,17 +328,24 @@ button.btn-close.close_pag:hover img {
 /*----------------------Estilos header------------------------------------------*/
   .contenedor_header {
     display: flex;
-    justify-content: flex-end; 
-    align-items: flex-start; 
+    justify-content: center; 
+    align-items: center; 
     padding: 10px; 
     position: relative; 
   }
-  
+
+  .bienvenido h5{
+    font-size: 14px;
+    color: var(--color-text);
+    margin-left: 30px;
+    margin-top: 10px;
+  }
   /* Estilo para el contenedor de la navegación */
   .navheader {
     display: flex;
     align-items: center; 
     position: relative; 
+    margin-right: 50px;
   }
   
   /* Estilo para el botón de menú */
@@ -403,24 +364,28 @@ button.btn-close.close_pag:hover img {
     filter: sepia(100%) hue-rotate(200deg) saturate(200%);
   }
   
-  /* Estilo para el menú de navegación */
   .navigation-menu {
     width: 150px;
-    background-color: var( --color-background);
+    background-color: var(--color-background);
     display: none; 
     list-style: none; 
     margin: 0; 
     position: absolute; 
-    top: 80%; 
-    right: 55%; 
+    top: 10px; 
+    right: 30px;
     box-shadow: 0 3px 7px rgba(0,0,0,0.2); 
     padding: 10px; 
     z-index: 1000; 
-    display: flex;
     flex-direction: column; 
     gap: 5px;
     border-radius: 5px;
-  }
+}
+
+/* Clase para mostrar el menú */
+.navigation-menu.show {
+  display: flex; /* Mostrar cuando se agrega la clase 'show' */
+}
+
   /* Estilo para los ítems del menú */
   .navigation-item {
     display: flex;

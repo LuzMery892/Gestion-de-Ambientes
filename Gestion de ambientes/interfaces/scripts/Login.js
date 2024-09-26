@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Coordinador/Layout/coordinadorDashboard.html';
                         break;
                     case 'ROL_ALISTAMIENTO':
-                        window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Alistamiento/alistamientoDashboard.html';
+                        window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Alistamiento/Layout_alistamiento/alistamientoDashboard.html';
                         break;
                     case 'ROL_INSTRUCTOR':
                         window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Instructor/instructorDashboard.html';

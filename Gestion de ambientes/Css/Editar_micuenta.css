@@ -8,6 +8,7 @@
   cursor: pointer;
   margin-left: 80px;
   margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .form-editarusuario {
@@ -21,7 +22,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 350px;
-  margin: 0 auto; 
+  margin: 20px auto; 
 }
 
 .editUser-form {
@@ -102,6 +103,8 @@ input:focus {
   justify-content: center;
   width: 100%;
   height: auto;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .formpass-container {
