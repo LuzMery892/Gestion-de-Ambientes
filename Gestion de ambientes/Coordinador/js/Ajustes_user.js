@@ -1,6 +1,6 @@
 // Función para obtener el token de autorización
 function getAuthToken() {
-  return localStorage.getItem('token'); // Suponiendo que el token se almacena en localStorage
+  return localStorage.getItem('token'); //el token se almacena en localStorage
 }
 
 // Función personalizada para realizar fetch con el token de autorización
