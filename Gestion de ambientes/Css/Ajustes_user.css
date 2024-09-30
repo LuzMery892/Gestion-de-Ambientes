@@ -26,7 +26,7 @@
 }
 
 /* Estilo para las opciones de rol */
-.role-options {
+.rol {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
@@ -58,8 +58,14 @@
   transform: scale(1.05);
 }
 
+.role-option.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
 /* Estilo para el select de sede */
-#sede-usuario {
+#centroId {
   width: 100%;
   padding: 8px;
   border: 3px solid var(--color-border);
@@ -75,7 +81,7 @@
 }
 
 /* Estilo del select cuando está en foco */
-#sede-usuario:focus {
+#centroId:focus {
   border-color: var( --border-secundary);
   box-shadow: 0 0 5px rgba(22, 163, 74, 0.3);
   outline: none;
@@ -107,7 +113,7 @@
 }
 
 /* Estilo para el botón de búsqueda */
-.search-button {
+.btnBuscar {
   background-color: var(--color-primary);
   color:  var(--color-textbottom);
   border: none;
@@ -119,7 +125,7 @@
   font-family: var(--font-family);
 }
 
-.search-button:hover {
+.btnBuscar:hover {
   background-color:  var(--color-primary-hover);
 }
 

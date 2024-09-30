@@ -1,6 +1,6 @@
 // Función para obtener el token de autorización
 function getAuthToken() {
-  return localStorage.getItem('token'); //el token se almacena en localStorage
+  return localStorage.getItem('token'); // El token se almacena en localStorage
 }
 
 // Función personalizada para realizar fetch con el token de autorización
@@ -20,180 +20,96 @@ function fetchWithToken(url, options = {}) {
   });
 }
 
-// Función para seleccionar o deseleccionar todas las filas
-function toggleSelectAll(source) {
-  const checkboxes = document.querySelectorAll('.rowSelect');
-  checkboxes.forEach(checkbox => checkbox.checked = source.checked);
-}
+// Función para buscar usuarios por filtro
+async function buscarUsuarios() {
+  const nombre = document.getElementById('nombre').value;
+  const rol = document.getElementById('rol').value;
+  const centroId = document.getElementById('centroId').value;
 
-// Función para obtener y mostrar usuarios por rol
-function fetchUsersByRole(role) {
-  fetchWithToken(`/usuarios/listaPorRol?rol=${role}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error en la solicitud: ' + response.status);
-      }
-      return response.json();
-    })
-    .then(data => {
-      const tbody = document.getElementById('userTableBody');
-      tbody.innerHTML = ''; // Limpiar tabla
+  let queryParams = [];
 
-      data.forEach(user => {
-        const row = document.createElement('tr');
-        row.setAttribute('data-id', user.id); // Añadir atributo data-id
-        row.innerHTML = `
-          <td><input type="checkbox" class="rowSelect"></td>
-          <td>${user.nombre}</td>
-          <td>${user.correoInstitucional}</td>
-          <td>${user.correoAlternativo}</td>
-          <td>${user.telefono}</td>
-          <td>${user.identificacion}</td>
-          <td>${user.rol.nombre}</td>
-          <td class="action-buttons">
-            <button type="button" class="action_botton" onclick="editRow(${user.id})">
-              <img src="../../Imagenes-appSENA/edit-solid.png" class="action-button">
-            </button>
-            <button type="button" class="action_botton" onclick="deleteRow(${user.id})">
-              <img src="../../Imagenes-appSENA/trash-regular-40.png" alt="borrar" class="action-button">
-            </button>
-          </td>
-        `;
-        tbody.appendChild(row);
-      });
-      hideError();
-    })
-    .catch(error => {
-      showError(error.message);
-    });
-}
-
-// Función para buscar usuarios por nombre
-function searchUser() {
-  const name = document.getElementById('searchName').value;
-  fetchWithToken(`/usuarios/buscarPorNombre?nombre=${name}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error en la solicitud: ' + response.status);
-      }
-      return response.json();
-    })
-    .then(data => {
-      const tbody = document.getElementById('userTableBody');
-      tbody.innerHTML = ''; // Limpiar tabla
-
-      data.forEach(user => {
-        const row = document.createElement('tr');
-        row.setAttribute('data-id', user.id); // Añadir atributo data-id
-        row.innerHTML = `
-          <td><input type="checkbox" class="rowSelect"></td>
-          <td>${user.nombre}</td>
-          <td>${user.correoInstitucional}</td>
-          <td>${user.correoAlternativo}</td>
-          <td>${user.telefono}</td>
-          <td>${user.identificacion}</td>
-          <td>${user.rol.nombre}</td>
-          <td class="action-buttons">
-            <button type="button" class="action_botton" onclick="editRow(${user.id})">
-              <img src="../../Imagenes-appSENA/edit-solid.png" class="action-button">
-            </button>
-            <button type="button" class="action_botton" onclick="deleteRow(${user.id})">
-               <img src="../../Imagenes-appSENA/trash-regular-40.png" alt="borrar" class="action-button">
-            </button>
-          </td>
-        `;
-        tbody.appendChild(row);
-      });
-      hideError();
-    })
-    .catch(error => {
-      showError(error.message);
-    });
-}
-
-// Función para editar un usuario (redirige a la página de edición del usuario)
-function editRow(userId) {
-  window.location.href = `/usuarios/${userId}`;
-}
-
-// Función para eliminar un usuario
-function deleteRow(userId) {
-  if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
-    fetchWithToken(`/usuarios/${userId}`, {
-      method: 'DELETE'
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Error en la solicitud: ' + response.status);
-        }
-        // Eliminar fila de la tabla
-        document.querySelector(`tr[data-id="${userId}"]`).remove();
-        hideError();
-      })
-      .catch(error => {
-        showError(error.message);
-      });
+  if (nombre) {
+      queryParams.push(`nombre=${encodeURIComponent(nombre)}`);
   }
-}
+  if (rol) {
+      queryParams.push(`rol=${encodeURIComponent(rol)}`);
+  }
+  if (centroId) {
+      queryParams.push(`centroId=${encodeURIComponent(centroId)}`);
+  }
 
-// Función para guardar cambios
-function saveChanges() {
-  const usersToDelete = [...document.querySelectorAll('.rowSelect:checked')].map(checkbox => {
-    return checkbox.closest('tr').getAttribute('data-id');
-  });
+  const queryString = queryParams.length ? `?${queryParams.join('&')}` : '';
 
-  if (usersToDelete.length > 0) {
-    if (confirm('¿Estás seguro de que deseas eliminar los usuarios seleccionados?')) {
-      Promise.all(usersToDelete.map(userId => {
-        return fetchWithToken(`/usuarios/${userId}`, {
-          method: 'DELETE'
-        });
-      }))
-      .then(responses => {
-        responses.forEach((response, index) => {
-          if (!response.ok) {
-            throw new Error('Error al eliminar el usuario con ID: ' + usersToDelete[index]);
-          }
-          // Eliminar fila de la tabla
-          document.querySelector(`tr[data-id="${usersToDelete[index]}"]`).remove();
-        });
-        hideError();
-      })
-      .catch(error => {
-        showError(error.message);
-      });
+  try {
+    // Usar fetchWithToken para incluir el token
+    const response = await fetchWithToken(`http://localhost:8080/usuarios/buscarPorFiltro${queryString}`);
+    
+    if (!response.ok) {
+        console.error('Código de estado HTTP:', response.status);
+        // Manejo de errores basado en el estado
+        const errorMessage = await response.text(); // Obtiene el mensaje de error del servidor
+        throw new Error(`Error en la solicitud: ${errorMessage}`);
     }
-  } else {
-    alert('No se han seleccionado usuarios para eliminar.');
+
+    const usuarios = await response.json();
+    mostrarUsuarios(usuarios);
+  } catch (error) {
+    mostrarMensajeError('No se pudieron cargar los usuarios: ' + error.message);
+    console.error('Detalles del error:', error);
   }
 }
 
-// Función para mostrar errores
-function showError(message) {
-  const errorElement = document.getElementById('error-message');
-  errorElement.textContent = message;
-  errorElement.style.display = 'block'; // Mostrar el mensaje de error
-}
+// Función para mostrar usuarios en la tabla
+function mostrarUsuarios(usuarios) {
+  const tbody = document.getElementById('userTableBody');
+  tbody.innerHTML = ''; // Limpiar tabla
 
-// Función para ocultar errores
-function hideError() {
-  const errorElement = document.getElementById('error-message');
-  errorElement.textContent = '';
-  errorElement.style.display = 'none'; // Ocultar el mensaje de error
-}
-//probando : 
-// Inicialización
-document.addEventListener('DOMContentLoaded', () => {
-  // Cargar usuarios por rol al cargar la página
-  const rolUsuario = localStorage.getItem('rol'); // se guarda el rol del usuario en localStorage
-  if (rolUsuario) {
-      fetchUsersByRole(rolUsuario); // Cargar usuarios según el rol
-  } else {
-      fetchAllUsers(); // Cargar todos los usuarios si no hay rol
+  if (usuarios.length === 0) {
+      mostrarMensajeError('No se encontraron usuarios.');
+      return;
   }
 
-  // Manejador de evento para cargar todos los usuarios
-  document.getElementById('cargarTodosUsuarios').addEventListener('click', () => {
-      fetchAllUsers(); // Cargar todos los usuarios al hacer clic
+  usuarios.forEach(usuario => {
+      const fila = document.createElement('tr');
+      
+      // Checkbox para seleccionar usuario
+      const celdaCheckbox = document.createElement('td');
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.classList.add('user-checkbox');
+      checkbox.value = usuario.id; // El ID del usuario
+      celdaCheckbox.appendChild(checkbox);
+      fila.appendChild(celdaCheckbox);
+      
+      // Celdas para mostrar los campos del usuario
+      fila.appendChild(crearCeldaTexto(usuario.rol));
+      fila.appendChild(crearCeldaTexto(usuario.nombreCompleto));
+      fila.appendChild(crearCeldaTexto(usuario.centroFormacion));
+      fila.appendChild(crearCeldaTexto(usuario.identificacion));
+      fila.appendChild(crearCeldaTexto(usuario.correoInstitucional));
+      fila.appendChild(crearCeldaTexto(usuario.correoAlternativo));
+      fila.appendChild(crearCeldaTexto(usuario.telefono));
+      
+      tbody.appendChild(fila);
   });
-});
+}
+
+// Función auxiliar para crear una celda de texto
+function crearCeldaTexto(contenido) {
+  const celda = document.createElement('td');
+  celda.textContent = contenido || 'N/A';
+  return celda;
+}
+
+// Función para mostrar un mensaje de error
+function mostrarMensajeError(mensaje) {
+  const mensajeError = document.getElementById('error-message');
+  mensajeError.textContent = mensaje;
+  mensajeError.style.display = 'block';
+}
+
+// Función para seleccionar/deseleccionar todos los checkboxes
+function toggleSelectAll(checkbox) {
+  const checkboxes = document.querySelectorAll('.user-checkbox');
+  checkboxes.forEach(cb => cb.checked = checkbox.checked);
+}
