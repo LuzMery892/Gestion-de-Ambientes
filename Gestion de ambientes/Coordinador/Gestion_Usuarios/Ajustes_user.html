@@ -43,28 +43,9 @@
       <input type="hidden" id="rol" name="rol" value="">
     </div>
 
-         <!-- Búsqueda por rol con botones -->
-    <div class="column">
-      <h3>Consultar Usuarios por rol</h3>
-      <div class="rol-container">
-        <div class="role-option" data-role="COORDINADOR" onclick="seleccionarRol('COORDINADOR')">Coordinador</div>
-        <div class="role-option" data-role="ALISTAMIENTO" onclick="seleccionarRol('ALISTAMIENTO')">Alistamiento</div>
-        <div class="role-option" data-role="INSTRUCTOR" onclick="seleccionarRol('INSTRUCTOR')">Instructor</div>
-      </div>
-      <!-- Campo oculto para enviar el rol seleccionado -->
-      <input type="hidden" id="rol" name="rol" value="">
-    </div>
-
           <div class="column">
             <h3>Consultar Usuarios por sede</h3>
             <div class="sede-options">
-            <select id="centroId" name="centroId" class="form-control" required>
-              <option value="">Seleccionar</option>
-              <option value="1">Sede Complejo Central</option>
-              <option value="2">Sede U. San Buenaventura</option>
-              <option value="3">Sede Buenos Aires</option>
-              <option value="4">Sede el Pomar</option>
-            </select>
             <select id="centroId" name="centroId" class="form-control" required>
               <option value="">Seleccionar</option>
               <option value="1">Sede Complejo Central</option>
@@ -87,15 +68,11 @@
         
       <div class="table-container">
         <table id="resultadosBusqueda" >
-        <table id="resultadosBusqueda" >
           <thead>
               <tr>
                   <th><input type="checkbox" onclick="toggleSelectAll(this)"></th>
                   <th>Rol</th>
-                  <th>Rol</th>
                   <th>Nombre</th>
-                  <th>Centro de Formación</th>
-                  <th>Identificación</th>
                   <th>Centro de Formación</th>
                   <th>Identificación</th>
                   <th>Correo Institucional</th>
@@ -105,7 +82,6 @@
           </thead>
           <tbody id="userTableBody">
               <!-- Los usuarios se agregarán aquí dinámicamente -->
-              <!-- Los usuarios se agregarán aquí dinámicamente -->
           </tbody>
         </table>
         <!-- Mensaje de error -->
@@ -113,30 +89,11 @@
 
         <!-- Botón para eliminar múltiples usuarios -->
         <button type="button" class="btn btn-danger" onclick="saveChanges()">Eliminar Seleccionados</button>
-        </table>
-        <!-- Mensaje de error -->
-        <div id="error-message" style="display:none; color:red;"></div>
 
-        <!-- Botón para eliminar múltiples usuarios -->
-        <button type="button" class="btn btn-danger" onclick="saveChanges()">Eliminar Seleccionados</button>
-
-      </div>
-    </main>
       </div>
     </main>
 
 <script>
-  function seleccionarRol(rol) {
-    // Establece el valor del campo oculto con el rol seleccionado
-    document.getElementById('rol').value = rol;
-
-    // Cambia el estilo visual de los botones seleccionados
-    const opciones = document.querySelectorAll('.role-option');
-    opciones.forEach(opcion => {
-      opcion.classList.remove('selected');
-    });
-    document.querySelector(`[data-role="${rol}"]`).classList.add('selected');
-  }
   function seleccionarRol(rol) {
     // Establece el valor del campo oculto con el rol seleccionado
     document.getElementById('rol').value = rol;
@@ -174,13 +131,9 @@
     Ajustes_userScript.src = '../js/Ajustes_user.js';
     document.body.appendChild(Ajustes_userScript);
   }
-  }
 
-  loadContent();
   loadContent();
 </script>
-
-
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
@@ -188,6 +141,4 @@
 
 </div>
 </body>
-</html>
-
 </html>
