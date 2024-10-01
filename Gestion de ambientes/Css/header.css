@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.bienvenido {
+  flex: 1; 
+}
+
+.bienvenido h5 {
+  margin: 0; 
+  font-size: 1.2em;
+}
+
+.menu-toggle {
+  display: flex; 
+  align-items: center; 
+  margin-left: 10px; 
+}
+
+.navigation-menu {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.navigation-item {
+  margin-left: 10px; /* Espacio entre los elementos de la navegación */
+}
+
+.navigation-item a {
+  text-decoration: none; 
+  color: inherit; 
+}

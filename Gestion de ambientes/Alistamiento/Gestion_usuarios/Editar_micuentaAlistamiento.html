@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
   <link rel="stylesheet" href="../../Css/Root.css">
   <link rel="stylesheet" href="../../Css/Editar_micuenta.css">
+  <link rel="stylesheet" href="../../Css/Style_colorAlistador.css">
 </head>
 <body>
   <div class="grid-container">
@@ -23,7 +24,7 @@
                     </div>
                     <h2 class="titulo_h2">Mi Cuenta</h2>
                 </div>
-                <a href="../Layout/coordinadorDashboard.html">
+                <a href="../Layout_alistamiento/alistamientoDashboard.html">
                     <button type="button" class="btn-close close_pag" aria-label="Cerrar formulario">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar página">
                     </button>
@@ -54,7 +55,8 @@
                                     <div class="form-group_edit">
                                         <label for="nombre">Nombre Completo</label>
                                         <input type="text" id="nombre" name="nombre" required>
-                                    </div>                             
+                                    </div>
+                              
                                     <div class="form-group_edit">
                                         <label for="correo_institucional">Correo electrónico @misena</label>
                                         <input type="email" id="correo_institucional" name="correoSENA" required>
@@ -114,7 +116,8 @@
             </form>
         </div>
     </main>
-
+    
+    <!-- Agregar enlaces a jQuery y Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -128,8 +131,8 @@
                 }
             
                 async function loadContent() {
-                await loadHTML('#header', '../../Layout/header.html');
-                await loadHTML('#navbar', '../../Layout/navbar.html');
+                await loadHTML('#header', '../Layout_alistamiento/Encabezado.html');
+                await loadHTML('#navbar', '../Layout_alistamiento/Menu_lateral.html');
                 
 
                 loadScripts();

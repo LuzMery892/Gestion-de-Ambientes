@@ -113,3 +113,24 @@ function toggleSelectAll(checkbox) {
   const checkboxes = document.querySelectorAll('.user-checkbox');
   checkboxes.forEach(cb => cb.checked = checkbox.checked);
 }
+//tartando de crear una funcion que combine todos los filtros de buqueda 
+function buscarUsuariosCombinado() {
+  const rol = document.getElementById('rol').value; 
+  const sede = document.getElementById('centroId').value; 
+  const nombre = document.getElementById('nombre').value; 
+
+  let url = '/usuarios?'; // URL base para la búsqueda
+
+  // Agregar parámetros a la URL según los valores seleccionados
+  if (rol) url += `rol=${rol}&`;
+  if (sede) url += `centroId=${sede}&`;
+  if (nombre) url += `nombre=${nombre}`;
+
+  fetchWithToken(url)
+    .then(response => {
+      if (!response.ok) throw new Error('Error en la solicitud: ' + response.status);
+      return response.json();
+    })
+    .then(data => populateUserTable(data)) // Llenar la tabla con los datos recibidos
+    .catch(error => showError(error.message)); // Manejo de errores
+}
