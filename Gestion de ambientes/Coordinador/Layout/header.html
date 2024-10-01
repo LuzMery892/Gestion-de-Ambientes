@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="../../Css/header.css">
+    <!-- Estilos adicionales en línea -->
+    <style>
+      .header {
+        padding: 20px;
+        background-color: #f8f9fa;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="contenedor_header d-flex align-items-center justify-content-between">
+        <div class="bienvenido">
+          <h5 class="mb-0">Bienvenido, Coordinador</h5>
+        </div>
+        <!--notificacion-->
+        <div class="d-flex align-items-center justify-content-end">
+          <button class="menu-toggle" id="notificacion_portal">
+            <ion-icon name="notifications-outline"></ion-icon>
+          </button>
+          <!--ajustes-->
+          <button class="menu-toggle" id="toggleButton">
+            <ion-icon name="menu-outline"></ion-icon> 
+          </button>
+          <!--mi cuenta-->
+          <div class="navheader">
+            <ul class="navigation-menu">
+              <li class="navigation-item d-flex align-items-center">
+                <ion-icon name="person-outline"></ion-icon> 
+                <a href="../Gestion_usuarios/Editar_micuentaAlistamiento.html" class="menu_item" id="editar_cuentaAlistamiento">Mi Cuenta</a>
+              </li>
+              <!--salir-->
+              <li class="navigation-item d-flex align-items-center">
+                <ion-icon name="exit-outline"></ion-icon>
+                <a href="#" class="menu_item" id="submenuToggle3">Salir</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Scripts para iconos -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
