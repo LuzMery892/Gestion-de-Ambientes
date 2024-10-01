@@ -28,7 +28,7 @@
               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar página">
            </button>
           </a>
-        <p>Aquí puedes consultar y eliminar  la información de los usuarios.</p>
+        <p>Aquí puedes consultar y eliminar los usuarios.</p>
 
          <!-- Búsqueda por rol con botones -->
       <div class="container_busqueda">
@@ -83,10 +83,23 @@
               </tr>
           </thead>
           <tbody id="userTableBody">
+            <!-- Contenedor del cuadro de diálogo -->
+     <div id="modal" class="modal">
+        <div class="modal-content">
+           <span class="close" onclick="closeModal()">&times;</span>
+           <h2 class="modal-heading">Confirmación</h2>
+           <p id="modal-message">¿Estás seguro de que deseas eliminar este usuario?</p>
+           <button id="confirm-btn" onclick="confirmAction()">Sí</button>
+           <button onclick="closeModal()">No</button>
+       </div>
+     </div>
           </tbody>
         </table>
-        <!-- Mensaje de error -->
-        <div id="error-message" style="display:none; color:red;"></div>
+        <!-- Error Message -->
+      <div id="error-message" class="alert alert-danger" style="display:none;"></div>
+
+       <!-- Success Message -->
+       <div id="success-message" class="alert alert-success" style="display:none;"></div>
 
         <!-- Botón para eliminar múltiples usuarios -->
         <button type="button" class="btn btn-danger" onclick="saveChanges()">

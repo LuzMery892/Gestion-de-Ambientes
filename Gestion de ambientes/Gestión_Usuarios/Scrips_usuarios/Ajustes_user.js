@@ -7,7 +7,6 @@ function getAuthToken() {
 function fetchWithToken(url, options = {}) {
   const token = getAuthToken();
   
-  // Agregar el token de autorización en los encabezados
   const headers = {
     'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json',
@@ -41,20 +40,18 @@ async function buscarUsuarios() {
   const queryString = queryParams.length ? `?${queryParams.join('&')}` : '';
 
   try {
-    // Usar fetchWithToken para incluir el token
     const response = await fetchWithToken(`http://localhost:8080/usuarios/buscarPorFiltro${queryString}`);
     
     if (!response.ok) {
         console.error('Código de estado HTTP:', response.status);
-        // Manejo de errores basado en el estado
-        const errorMessage = await response.text(); // Obtiene el mensaje de error del servidor
+        const errorMessage = await response.text();
         throw new Error(`Error en la solicitud: ${errorMessage}`);
     }
 
     const usuarios = await response.json();
     mostrarUsuarios(usuarios);
   } catch (error) {
-    mostrarMensajeError('No se pudieron cargar los usuarios: ' + error.message);
+    showMessage('error', 'No se pudieron cargar los usuarios: ' + error.message);
     console.error('Detalles del error:', error);
   }
 }
@@ -65,7 +62,7 @@ function mostrarUsuarios(usuarios) {
   tbody.innerHTML = ''; // Limpiar tabla
 
   if (usuarios.length === 0) {
-      mostrarMensajeError('No se encontraron usuarios.');
+      showMessage('error', 'No se encontraron usuarios.');
       return;
   }
 
@@ -89,7 +86,16 @@ function mostrarUsuarios(usuarios) {
       fila.appendChild(crearCeldaTexto(usuario.correoInstitucional));
       fila.appendChild(crearCeldaTexto(usuario.correoAlternativo));
       fila.appendChild(crearCeldaTexto(usuario.telefono));
-      
+
+      // Celda para el botón de eliminar
+      const celdaEliminar = document.createElement('td');
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'Eliminar';
+      btnEliminar.classList.add('btn', 'btn-danger');
+      btnEliminar.onclick = () => eliminarUsuario(usuario.id); // Llama a la función de eliminación
+      celdaEliminar.appendChild(btnEliminar);
+      fila.appendChild(celdaEliminar);
+
       tbody.appendChild(fila);
   });
 }
@@ -101,36 +107,86 @@ function crearCeldaTexto(contenido) {
   return celda;
 }
 
-// Función para mostrar un mensaje de error
-function mostrarMensajeError(mensaje) {
-  const mensajeError = document.getElementById('error-message');
-  mensajeError.textContent = mensaje;
-  mensajeError.style.display = 'block';
-}
-
 // Función para seleccionar/deseleccionar todos los checkboxes
 function toggleSelectAll(checkbox) {
   const checkboxes = document.querySelectorAll('.user-checkbox');
   checkboxes.forEach(cb => cb.checked = checkbox.checked);
 }
-//tartando de crear una funcion que combine todos los filtros de buqueda 
-function buscarUsuariosCombinado() {
-  const rol = document.getElementById('rol').value; 
-  const sede = document.getElementById('centroId').value; 
-  const nombre = document.getElementById('nombre').value; 
 
-  let url = '/usuarios?'; // URL base para la búsqueda
+let currentDeleteId = null; // Variable para almacenar el ID del usuario a eliminar
 
-  // Agregar parámetros a la URL según los valores seleccionados
-  if (rol) url += `rol=${rol}&`;
-  if (sede) url += `centroId=${sede}&`;
-  if (nombre) url += `nombre=${nombre}`;
+// Función para mostrar el modal
+function showModal(message, confirmCallback) {
+    document.getElementById('modal-message').textContent = message; // Establece el mensaje
+    document.getElementById('modal').style.display = 'block'; // Muestra el modal
+    document.getElementById('confirm-btn').onclick = function() {
+        confirmCallback(); // Llama a la función de confirmación
+        closeModal(); // Cierra el modal
+    };
+}
 
-  fetchWithToken(url)
-    .then(response => {
-      if (!response.ok) throw new Error('Error en la solicitud: ' + response.status);
-      return response.json();
-    })
-    .then(data => populateUserTable(data)) // Llenar la tabla con los datos recibidos
-    .catch(error => showError(error.message)); // Manejo de errores
+// Función para cerrar el modal
+function closeModal() {
+    document.getElementById('modal').style.display = 'none'; // Oculta el modal
+}
+
+// Función para eliminar un solo usuario por ID
+async function eliminarUsuario(id) {
+    currentDeleteId = id; // Guarda el ID del usuario a eliminar
+    showModal("¿Estás seguro de que deseas eliminar este usuario?", async function() {
+        try {
+            const response = await fetchWithToken(`http://localhost:8080/usuarios/eliminar-usuario/${currentDeleteId}`, {
+                method: 'DELETE',
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al eliminar el usuario');
+            }
+
+            buscarUsuarios(); // Actualiza la lista de usuarios después de la eliminación
+            showMessage('success', 'Usuario eliminado con éxito.');
+        } catch (error) {
+            showMessage('error', error.message);
+        }
+    });
+}
+
+// Función para eliminar múltiples usuarios
+async function saveChanges() {
+    const selectedCheckboxes = document.querySelectorAll('.user-checkbox:checked');
+    const ids = Array.from(selectedCheckboxes).map(cb => cb.value);
+
+    if (ids.length === 0) {
+        showMessage('error', 'No se ha seleccionado ningún usuario para eliminar.');
+        return;
+    }
+
+    showModal("¿Estás seguro de que deseas eliminar estos usuarios?", async function() {
+        try {
+            const response = await fetchWithToken('http://localhost:8080/usuarios/eliminar-multiples', {
+                method: 'POST',
+                body: JSON.stringify(ids),
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al eliminar los usuarios');
+            }
+
+            buscarUsuarios(); // Actualiza la lista de usuarios después de la eliminación
+            showMessage('success', 'Usuarios eliminados con éxito.');
+        } catch (error) {
+            showMessage('error', error.message);
+        }
+    });
+}
+// Función para mostrar un mensaje general (error o éxito)
+function showMessage(type, message) {
+    const messageDiv = type === 'error' ? document.getElementById('error-message') : document.getElementById('success-message');
+
+    messageDiv.textContent = message; 
+    messageDiv.style.display = 'block'; 
+
+    setTimeout(() => {
+        messageDiv.style.display = 'none';
+    }, 3000); 
 }
