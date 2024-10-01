@@ -137,17 +137,17 @@
 
             function loadScripts() {
                 const navbarScript = document.createElement('script');
-                navbarScript.src = '/Gestion de ambientes/Scripts/navbar.js';
+                navbarScript.src = '../../Scripts/navbar.js';
                
                 document.body.appendChild(navbarScript);
 
                         
                 const editar_cuentaScript = document.createElement('script');
-                editar_cuentaScript.src = ' /Gestion de ambientes/Gestión_Usuarios/Scrips_usuarios/Editar_micuenta.js';
+                editar_cuentaScript.src = '../Scrips_usuarios/Editar_micuenta.js';
                 document.body.appendChild(editar_cuentaScript);
 
                 const menuNotificacionScript = document.createElement('script');
-                menuNotificacionScript.src = '/Gestion de ambientes/Scripts/menu_notificacion.js';
+                menuNotificacionScript.src = '../../Scripts/menu_notificacion.js';
                 document.body.appendChild(menuNotificacionScript); 
             }
             loadContent(); 
