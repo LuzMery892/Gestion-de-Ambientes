@@ -23,7 +23,7 @@
                     </div>
                     <h2 class="titulo_h2">Mi Cuenta</h2>
                 </div>
-                <a href="../Layout/coordinadorDashboard.html">
+                <a href="../../Coordinador/coordinadorDashboard.html">
                     <button type="button" class="btn-close close_pag" aria-label="Cerrar formulario">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar página">
                     </button>
@@ -137,16 +137,17 @@
 
             function loadScripts() {
                 const navbarScript = document.createElement('script');
-                navbarScript.src = '../../Scripts/navbar.js';
+                navbarScript.src = '/Gestion de ambientes/Scripts/navbar.js';
+               
                 document.body.appendChild(navbarScript);
 
                         
                 const editar_cuentaScript = document.createElement('script');
-                editar_cuentaScript.src = '../../Scripts/Editar_micuenta.js';
+                editar_cuentaScript.src = ' /Gestion de ambientes/Gestión_Usuarios/Scrips_usuarios/Editar_micuenta.js';
                 document.body.appendChild(editar_cuentaScript);
 
                 const menuNotificacionScript = document.createElement('script');
-                menuNotificacionScript.src = '../../Scripts/menu_notificacion.js';
+                menuNotificacionScript.src = '/Gestion de ambientes/Scripts/menu_notificacion.js';
                 document.body.appendChild(menuNotificacionScript); 
             }
             loadContent(); 
