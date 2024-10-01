@@ -6,6 +6,7 @@
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
+ 
 }
 
 /* Estilo para cada columna dentro del contenedor de búsqueda */
@@ -14,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 280px;
+  min-width: 300px;
 }
 
 /* Estilo para los títulos dentro de cada columna */
@@ -26,7 +27,7 @@
 }
 
 /* Estilo para las opciones de rol */
-.role-option {
+.rol-container {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
@@ -87,28 +88,26 @@
   outline: none;
 }
 
-/* Estilo para la barra de búsqueda */
-.search-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
+.search-bar{
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
 }
-
 /* Estilo para la barra de búsqueda */
 .search-bar input[type="text"] {
   height: 35px;
   padding: 10px;
-  border: 3px solid   var(--color-border);
+  border: 3px solid var(--color-border);
   border-radius: 10px;
   font-size: 12px;
   transition: border-color 0.3s ease;
   width: 100%;
   font-family: var(--font-family);
+  flex-grow: 1;
 }
 
 .search-bar input[type="text"]:focus {
-  border: 1px solid var(--border-secundary);
+  border: 2px solid var(--border-secundary);
   outline: none;
 }
 
@@ -117,7 +116,7 @@
   background-color: var(--color-primary);
   color:  var(--color-textbottom);
   border: none;
-  padding: 8px 15px;
+  padding: 8px 12px;
   border-radius: 7px;
   cursor: pointer;
   font-size: 12px;
@@ -132,21 +131,23 @@
 
 /* Contenedor de la tabla */
 .table-container {
-  width: 100%;
-  margin: 10px 0;
-  overflow-x: auto;
-  box-sizing: border-box;
+  display: grid; 
+  grid-template-columns: 95% 5%; 
+  gap: 10px; 
+  align-items: center; 
+  justify-content: center;
+  
 }
 
-/* Estilo de la tabla */
-table {
+#resultadosBusqueda {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse; 
   table-layout: auto;
   border: 1px solid #333;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
+
 
 /* Color de fondo para el encabezado */
 thead th {
@@ -183,6 +184,31 @@ tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
+.btn-danger {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 7px; 
+  background-color: transparent;
+  border: none;
+}
+.btn-danger:hover {
+  background-color: transparent;
+  transform: scale(1.1); 
+  opacity: 0.8; 
+}
+
+.btn-danger:active {
+  background-color: transparent;
+  transform: scale(0.95); 
+  opacity: 1; 
+}
+
+.btn-danger img {
+  width: 35px;
+  height: 35px; 
+  margin-right: 5px; 
+}
 /*---------------------- Media Queries para Responsividad -----------------------------------------*/
 
 @media (min-width: 768px) {
@@ -214,6 +240,6 @@ tbody tr:nth-child(even) {
   }
 
   .save-button {
-    width: auto; /
+    width: auto; 
   }
 }

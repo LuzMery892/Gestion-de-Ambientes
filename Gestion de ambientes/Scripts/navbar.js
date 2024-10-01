@@ -38,3 +38,19 @@ buttons.forEach(button => {
   });
 });
 
+//************************************************************* */
+
+function hideElementsBasedOnRole(rol) {
+  // Ocultar el contenedor de 'coordinador-container' si es necesario
+  const coordinadorContainer = document.getElementById('coordinador-container');
+  if (rol === 'ALISTAMIENTO' && coordinadorContainer) {
+      coordinadorContainer.style.display = 'none';
+  }
+
+  // Ocultar el elemento de historial
+  const historialItem = document.getElementById('historial_item');
+  if (rol === 'ALISTAMIENTO' && historialItem) {
+      historialItem.style.display = 'none'; // Oculta el elemento
+  }
+}
+

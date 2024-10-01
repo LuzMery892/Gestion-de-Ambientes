@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo Gestión de Ambientes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="../../Css/Root.css">
+  <link rel="stylesheet" href="../../Css/Novedades_estadoAmb.css">
+
+</head>
+<body>
+  <div class="grid-container">
+    <div id="header"></div>
+    <div id="navbar"></div>
+    
+    <main class="main">
+      <div class="container_principal">
+          <form id="form_reportesNovedades" class="estadosAmb">
+              <div class="container_tittle">
+                  <div class="icon-wrapper">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtloENwjAMBL+bwCTAJjAJMAkwCWwCm0Af1dUrpGBSRxUSkRCKlPj8ju26wUSrmYiLHHgGYB3s0A3AUW2m4DOAZTDUzBE+t42CqfJQCWpmV62wCzcK3gHYdiei3/7e2d23/+T8waNDzcRkEvGnq2qoCWVVMHk2Cbwa2KCmkmWjqkeB2Vi40jCm0L5kJNbFYEKvmTB6oOQXgwk1xfaG3PNNX5pDpgkVg2krhWtrzYU3NKsV7lFqZ0YpNiMK/6Q0FGxhZ60+G75jhSh2cF6O/A44+hvt+h5zKIgcgQYnEB0EmDRWp7xwKnlYufN25lKw3aEDDE/4Ghp9COrHlHDqwOjDsHxTo0V+pYoXtUKbeqdgJpO3ExWp1EvRY6zbocnADwZyYx+ytwPQAAAAAElFTkSuQmCC" class="main_form-img">
+                  </div>
+                  <h2 class="titulo_h2">Estado de Ambientes</h2>
+              </div>
+              <a href="../../Coordinador/coordinadorDashboard.html"> 
+                  <button type="button" class="btn-close close_pag" aria-label="Cerrar formulario">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAJhJREFUOE/d08EZQDAMhuHPJNiESTAJJmETbMIm5FBPVdo6uODaPq8kf5rw0pe85PAdKANWT9vqma+1CVgOqHOwASiOs9L9kQ8SoAV6CxOkBkagcasNDdvG0hAiaCw1g8ldtRJTWQwy7ch9u81bDiHInsmmzOyC+SBtsFoAJ6ZBsicS/6ykI1gF5E9TCy2kuqexYT9+0z+GdjXpHRNgSVZEAAAAAElFTkSuQmCC" alt="Cerrar página">
+                  </button>
+              </a>
+  
+              <p>Seleccione la sede para visualizar el estado de los ambientes y los reportes de las novedades.</p>
+  
+              <div class="card-container">
+                  <!-- Sede 1 -->
+                  <div class="card" id="card-1">
+                      <a href="../Gestión_Ambientes/Novedades_sedeCentral.html">
+                          <img src="../../Imagenes-appSENA/SEDE_COMPLEJO_CENTRAL.jpeg" alt="Sede Central" class="card-img">
+                          <h3 id="title-1">Sede Complejo Central</h3>
+                          <p><strong>Total Ambientes:</strong> <span id="total-ambientes-1">15</span></p>
+                          <p><strong>Reportes Pendientes:</strong> <span id="reportes-pendientes-1">3</span></p>
+                          <p><strong>Ambientes Cerrados:</strong> <span id="ambientes-cerrados-1">1</span></p>
+                      </a>
+                  </div>
+                  <!-- Sede 2 -->
+                  <div class="card" id="card-2">
+                      <a href="../Gestión_Ambientes/Novedades_sedePomar.html">
+                          <img src="../../Imagenes-appSENA/SEDE_EL_POMAR_1.jpeg" alt="Sede Pomar" class="card-img">
+                          <h3 id="title-2">Sede el Pomar</h3>
+                          <p><strong>Total Ambientes:</strong> <span id="total-ambientes-2">20</span></p>
+                          <p><strong>Reportes Pendientes:</strong> <span id="reportes-pendientes-2">7</span></p>
+                          <p><strong>Ambientes Cerrados:</strong> <span id="ambientes-cerrados-2">1</span></p>
+                      </a>
+                  </div>
+                  <!-- Sede 3 -->
+                  <div class="card" id="card-3">
+                      <a href="../Gestión_Ambientes/Novedades_sedeBuenosaires.html">
+                          <img src="../../Imagenes-appSENA/SEDE_BUENOS_AIRES - Ajustada.jpeg" alt="Sede Buenos Aires" class="card-img">
+                          <h3 id="title-3">Sede Buenos Aires</h3>
+                          <p><strong>Total Ambientes:</strong> <span id="total-ambientes-3">10</span></p>
+                          <p><strong>Reportes Pendientes:</strong> <span id="reportes-pendientes-3">1</span></p>
+                          <p><strong>Ambientes Cerrados:</strong> <span id="ambientes-cerrados-3">1</span></p>
+                      </a>
+                  </div>
+                  <!-- Sede 4 -->
+                  <div class="card" id="card-4">
+                      <a href="../Gestión_Ambientes/Novedades_usb.html">
+                          <img src="../../Imagenes-appSENA/u.s.b.jpg" alt="Sede U. San Buenaventura" class="card-img">
+                          <h3 id="title-4">Sede San Buenaventura</h3>
+                          <p><strong>Total Ambientes:</strong> <span id="total-ambientes-4">10</span></p>
+                          <p><strong>Reportes Pendientes:</strong> <span id="reportes-pendientes-4">1</span></p>
+                          <p><strong>Ambientes Cerrados:</strong> <span id="ambientes-cerrados-4">1</span></p>
+                      </a>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </main>
+  
+
+<script>
+  async function loadHTML(selector, file) {
+      const response = await fetch(file);
+      const text = await response.text();
+      document.querySelector(selector).innerHTML = text;
+  }
+
+  async function loadContent() {
+    await loadHTML('#header', '../../Layout/header.html');
+    await loadHTML('#navbar', '../../Layout/navbar.html');
+       
+     // Cargar los scripts después de cargar el contenido HTML
+    loadScripts();
+  }
+
+  function loadScripts() {
+    // Crear y agregar el script para navbar.js
+    const navbarScript = document.createElement('script');
+    navbarScript.src = '../../Scripts/navbar.js';
+    document.body.appendChild(navbarScript);
+
+    const menuNotificacionScript = document.createElement('script');
+    menuNotificacionScript.src = '../../Scripts/menu_notificacion.js';
+    document.body.appendChild(menuNotificacionScript);       
+}
+  loadContent(); // Inicia la carga de contenido
+</script>
+
+<script src="../Scripts_ambiente/Novedades_estadosAMb.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</div>
+</body>

@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Redirigir según el rol
                 switch (data.rol) {
                     case 'ROL_COORDINADOR':
-                        window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Coordinador/Layout/coordinadorDashboard.html';
+                        window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Coordinador/coordinadorDashboard.html';
                         break;
                     case 'ROL_ALISTAMIENTO':
-                        window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Alistamiento/Layout_alistamiento/alistamientoDashboard.html';
+                        window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Alistamiento/alistamientoDashboard.html';
                         break;
                     case 'ROL_INSTRUCTOR':
                         window.location.href = 'http://127.0.0.1:5500/Gestion-de-Ambientes/Gestion%20de%20ambientes/Instructor/instructorDashboard.html';

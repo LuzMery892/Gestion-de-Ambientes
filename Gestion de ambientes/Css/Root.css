@@ -2,7 +2,6 @@
   --color-background: #f5f5f5;
   --color-white: white;
   --color-primary:   #005f73;
-  --color-primario-Alistador: purple;
   --color-primary-hover: #1fb530;
   --color-secundary-hover: #ade8ad;
   --color-secondary: #04324D;
@@ -110,7 +109,53 @@ p {
 }
 
 /*-----------------------------------------------------------------*/
+ /* Estilo para los botones de guardar - principales */
+ .button-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
+.btn-primary {
+  background-color: var(--color-primary); 
+  color: var(--color-white);
+  padding: 10px 70px; 
+  border: none;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 16px; 
+  z-index: 2;
+  font-family: var(--font-family);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover); 
+}
+
+/*-----------------------------------------------------------------*/ 
+
+.titulo_h2 {
+font-size: 22px; 
+font-weight: bold; 
+color: var(--color-secondary); 
+margin: 5px 0; 
+text-align: center; 
+}
+/* Estilo para el ícono del título */
+.icon-wrapper {
+width: 45px;
+height: 45px;
+background-color: var(--color-primary); 
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 12px;
+}
+/*-----------------------------------------------------------------*/ 
 /* Estilo global para todos los botones de cierre */
 button.btn-close.close_pag {
   background: none;
@@ -134,42 +179,12 @@ button.btn-close.close_pag:hover img {
   transform: scale(1.1); /* Ejemplo de efecto hover */
 }
 
-/*-----------------------------------------------------------------*/
- /* Estilo para los botones de acciones CRUD*/
 
- .action-button {
-  border: none;
-  background: transparent; 
-  cursor: pointer; 
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  margin-right: 10px;
-}
-
-/* Efecto de hover para el botón */
-.action-button:hover {
-  transform: scale(1.1); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-}
-
-/* Estilo para las imágenes dentro del botón */
-.action-button img {
-  width: 20px; 
-  height: 20px;
-  transition: opacity 0.3s ease; 
-}
-
-/* Efecto de hover en la imagen */
-.action-button:hover img {
-  opacity: 0.8; 
-}
 
 /*----------------------Estilos pestañas TABS-------------------------------------------*/
 
 .nav-tabs .nav-link {
-  margin-top: 10px;
+  margin-top: 5px;
   border: 1px solid transparent; 
   border-radius: 0.5rem 0.5rem 0 0; 
   color: var(--color-light-text);

@@ -1,14 +1,13 @@
-
-const Editar_cuenta = document.getElementById('editar_cuenta');
-
-if (Editar_cuenta) {
-  Editar_cuenta.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    window.location.href = '../Gestion_Usuarios/Editar_micuenta.html'; 
-  });
+//*................MENSAJE BIENVENIDA..................*//
+function displayWelcomeMessage(rol, nombre) {
+  const bienvenidoMessage = document.getElementById('bienvenido-message');
+  if (rol === 'ALISTAMIENTO') {
+    bienvenidoMessage.textContent = `Bienvenido, ${nombre}`; // Mensaje para Alistamiento
+  } else if (rol === 'COORDINADOR') {
+    bienvenidoMessage.textContent = `Bienvenido, Coordinador ${nombre}`; // Mensaje para Coordinador
+  }
 }
-
-//*.............*//
+//*..................................*//
 
 const toggleButton = document.getElementById('toggleButton');
 const navigationMenu = document.querySelector('.navigation-menu');
