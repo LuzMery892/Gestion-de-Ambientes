@@ -4,10 +4,39 @@
     <link rel="stylesheet" href="../../Css/header.css">
     <!-- Estilos adicionales en línea -->
     <style>
-      .header {
-        padding: 20px;
-        background-color: #f8f9fa;
-      }
+ .header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; 
+}
+
+.bienvenido {
+  flex: 1; 
+}
+
+.bienvenido h5 {
+  margin: 0; 
+  font-size: 1.2em; 
+}
+
+.menu-toggle {
+  display: flex; 
+  align-items: center; 
+  margin-left: 10px; 
+}
+
+.menu-toggle ion-icon {
+  font-size: 20px; /* Tamaño del icono */
+}
+
+.navigation-item {
+  margin-left: 10px; /* Espacio entre los elementos de la navegación */
+}
+
     </style>
   </head>
   <body>
