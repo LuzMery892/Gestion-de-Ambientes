@@ -1,3 +1,13 @@
+.btn-success {
+  background-color: #28a745; /* Verde */
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Rojo */
+  color: white;
+}
+
 .modal {
   display: none; 
   position: fixed; 

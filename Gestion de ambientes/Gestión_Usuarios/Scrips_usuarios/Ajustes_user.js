@@ -99,6 +99,33 @@ function mostrarUsuarios(usuarios) {
       tbody.appendChild(fila);
   });
 }
+// Celda para el botón de eliminar
+const celdaEliminar = document.createElement('td');
+const btnEliminar = document.createElement('button');
+
+// Texto y clase inicial del botón (verde)
+btnEliminar.textContent = 'Eliminar';
+btnEliminar.classList.add('btn', 'btn-success'); // Inicialmente verde
+
+// Evento al hacer clic
+btnEliminar.onclick = () => {
+  btnEliminar.classList.remove('btn-success'); // Elimina la clase verde
+  btnEliminar.classList.add('btn-danger'); // Añade la clase roja
+  btnEliminar.textContent = 'Confirmar eliminación'; // Cambia el texto del botón
+  
+  // Aquí puedes añadir una confirmación adicional antes de llamar a eliminarUsuario
+  setTimeout(() => {
+    if (confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
+      eliminarUsuario(usuario.id); // Llama a la función de eliminación
+    }
+  }, 100);
+};
+
+celdaEliminar.appendChild(btnEliminar);
+fila.appendChild(celdaEliminar);
+
+tbody.appendChild(fila);
+
 
 // Función auxiliar para crear una celda de texto
 function crearCeldaTexto(contenido) {
